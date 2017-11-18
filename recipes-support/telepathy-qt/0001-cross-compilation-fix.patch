@@ -1,0 +1,23 @@
+commit 18af404679a4cf537adcd328a4dec8d63f2d9b7e
+Author: Volker Krause <vkrause@kde.org>
+Date:   Sat Nov 18 11:58:39 2017 +0100
+
+    Fix cross-compilation
+    
+    find_file() changes behavior during cross-compilation and only considers
+    files from the target sysroot. Instead, use the fact that the file we
+    are looking for is always right next to us.
+
+diff --git a/cmake/modules/FindPythonLibrary.cmake b/cmake/modules/FindPythonLibrary.cmake
+index 2c052bad..5e2bcc08 100644
+--- a/cmake/modules/FindPythonLibrary.cmake
++++ b/cmake/modules/FindPythonLibrary.cmake
+@@ -32,7 +32,7 @@ else()
+   FIND_PACKAGE(PythonInterp ${PythonLibrary_FIND_VERSION})
+ 
+   if(PYTHONINTERP_FOUND)
+-    FIND_FILE(_find_lib_python_py FindLibPython.py PATHS ${CMAKE_MODULE_PATH})
++    SET(_find_lib_python_py ${CMAKE_CURRENT_LIST_DIR}/FindLibPython.py)
+ 
+     EXECUTE_PROCESS(COMMAND ${PYTHON_EXECUTABLE} ${_find_lib_python_py} OUTPUT_VARIABLE python_config)
+     if(python_config)
