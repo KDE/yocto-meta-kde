@@ -51,3 +51,5 @@ FILES_${PN}-dev += " \
     ${libdir}/cmake/KScreenLocker/*.cmake \
     ${libdir}/cmake/ScreenSaverDBusInterface/*.cmake \
 "
+
+RDEPENDS_${PN} += "perl"
