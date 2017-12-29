@@ -7,5 +7,6 @@ inherit packagegroup
 RDEPENDS_${PN} = " \
     kdecoration \
     kscreenlocker \
+    kwin \
     plasma-phone-components \
 "
