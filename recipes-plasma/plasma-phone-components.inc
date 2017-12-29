@@ -35,4 +35,5 @@ FILES_${PN} += " \
     ${datadir}/telepathy/clients/Plasma.Dialer.client \
     ${datadir}/kwin/scripts/org.kde.phone.multitasking/* \
     ${datadir}/wallpapers/org.kde.plasma.phone.lockers/* \
+    ${datadir}/wayland-sessions/*.desktop \
 "
