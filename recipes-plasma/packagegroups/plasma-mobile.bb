@@ -10,4 +10,5 @@ RDEPENDS_${PN} = " \
     kwin \
     libksysguard \
     plasma-phone-components \
+    plasma-workspace \
 "
