@@ -10,6 +10,7 @@ RDEPENDS_${PN} = " \
     kdecoration \
     kscreenlocker \
     kwin \
+    libkscreen \
     libksysguard \
     plasma-phone-components \
     plasma-workspace \
