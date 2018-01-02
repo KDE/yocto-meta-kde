@@ -6,6 +6,7 @@ inherit packagegroup
 
 RDEPENDS_${PN} = " \
     breeze \
+    kactivitymanagerd \
     kdecoration \
     kscreenlocker \
     kwin \
