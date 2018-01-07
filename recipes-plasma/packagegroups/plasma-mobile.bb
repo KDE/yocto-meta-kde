@@ -17,6 +17,7 @@ RDEPENDS_${PN} = " \
     plasma-integration \
     plasma-phone-components \
     plasma-workspace \
+    polkit-kde-agent-1 \
     powerdevil \
     systemsettings \
 "
