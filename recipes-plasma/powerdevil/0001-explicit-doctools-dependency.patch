@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 8a8b04f..c91b631 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -22,7 +22,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+ endif()
+ 
+ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS Widgets DBus X11Extras)
+-find_package(KF5 REQUIRED COMPONENTS Activities Auth IdleTime Config DBusAddons Solid I18n GlobalAccel KIO NotifyConfig Screen KDELibs4Support Wayland)
++find_package(KF5 REQUIRED COMPONENTS Activities Auth IdleTime Config DBusAddons Solid I18n GlobalAccel KIO NotifyConfig Screen KDELibs4Support Wayland DocTools)
+ find_package(LibKWorkspace CONFIG REQUIRED)
+ 
+ find_package(KF5BluezQt)

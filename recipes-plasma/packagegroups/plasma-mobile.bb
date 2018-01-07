@@ -17,5 +17,6 @@ RDEPENDS_${PN} = " \
     plasma-integration \
     plasma-phone-components \
     plasma-workspace \
+    powerdevil \
     systemsettings \
 "
