@@ -5,8 +5,6 @@ LIC_FILES_CHKSUM = "file://COPYING.LIB;md5=2d5025d4aa3495befef8f17206a5b0a1"
 PR = "r0"
 
 DEPENDS = " \
-    qtbase \
-    extra-cmake-modules \
     kidletime \
     kwindowsystem \
     kwayland \
@@ -17,9 +15,4 @@ SRC_URI = " \
 "
 S = "${WORKDIR}/git"
 
-inherit cmake_qt5
-
-FILES_${PN} += " \
-    ${libdir}/plugins/kf5/org.kde.kwindowsystem.platforms/*.so \
-    ${libdir}/plugins/kf5/org.kde.kidletime.platforms/*.so \
-"
+inherit cmake_plasma

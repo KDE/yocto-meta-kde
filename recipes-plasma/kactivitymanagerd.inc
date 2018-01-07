@@ -6,8 +6,6 @@ PR = "r0"
 
 DEPENDS = " \
     boost \
-    qtbase \
-    extra-cmake-modules \
     \
     kconfig \
     kcoreaddons \
@@ -20,13 +18,11 @@ DEPENDS = " \
 "
 
 SRC_URI = " \
-    git://anongit.kde.org/kactivitymanagerd;nobranch=1 \
+    git://anongit.kde.org/${BPN};nobranch=1 \
 "
 S = "${WORKDIR}/git"
 
-inherit cmake_qt5
-inherit gettext
-inherit python3native
+inherit cmake_plasma
 
 CXXFLAGS += "-DBOOST_DISABLE_ASSERTS"
 
@@ -43,9 +39,6 @@ EXTRA_OECMAKE += " \
 
 FILES_${PN} += " \
     ${libdir}/*.so \
-    ${libdir}/plugins/kactivitymanagerd/1/*.so \
-    ${datadir}/kservices5/*.desktop \
-    ${datadir}/kservicetypes5/*.desktop \
 "
 
 FILES_${PN}-dev = ""

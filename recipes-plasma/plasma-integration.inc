@@ -5,10 +5,8 @@ LIC_FILES_CHKSUM = "file://COPYING.LGPL-3;md5=e6a600fd5e1d9cbde2d983680233ad02"
 PR = "r0"
 
 DEPENDS = " \
-    qtbase \
     qtx11extras \
     qtquickcontrols2 \
-    extra-cmake-modules \
     kconfig \
     kconfigwidgets \
     ki18n \
@@ -23,17 +21,10 @@ DEPENDS = " \
 "
 
 SRC_URI = " \
-    git://anongit.kde.org/plasma-integration;nobranch=1 \
+    git://anongit.kde.org/${BPN};nobranch=1 \
 "
 S = "${WORKDIR}/git"
 
-inherit cmake_qt5
-inherit gettext
-inherit python3native
-
-FILES_${PN} += " \
-    ${libdir}/plugins/platformthemes/KDEPlasmaPlatformTheme.so \
-    ${datadir}/kconf_update/* \
-"
+inherit cmake_plasma
 
 RDEPENDS_${PN} += "perl"

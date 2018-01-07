@@ -5,9 +5,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=5c213a7de3f013310bd272cdb6eb7a24"
 PR = "r0"
 
 DEPENDS = " \
-    qtbase \
     qtdeclarative \
-    extra-cmake-modules \
     kconfigwidgets \
     kcrash \
     kglobalaccel \
@@ -47,7 +45,7 @@ SRC_URI_append_raspberrypi += " \
 
 S = "${WORKDIR}/git"
 
-inherit cmake_qt5 gettext python3native
+inherit cmake_plasma
 
 do_compile_prepend() {
     # desktoptojson needs to find installed service type files
