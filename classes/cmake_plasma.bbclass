@@ -18,7 +18,8 @@ FILES_${PN} += " \
     ${libdir}/plugins/*/*/*.so \
     ${datadir}/config.kcfg/*.kcfg \
     ${datadir}/dbus-1/services/*.service \
-    ${datadir}/kconf_update/*.upd \
+    ${datadir}/dbus-1/system-services/*.service \
+    ${datadir}/kconf_update/* \
     ${datadir}/knotifications5/*.notifyrc \
     ${datadir}/kservices5/*.desktop \
     ${datadir}/kservices5/*.protocol \
