@@ -13,6 +13,7 @@ RDEPENDS_${PN} = " \
     kwin \
     libkscreen \
     libksysguard \
+    milou \
     plasma-integration \
     plasma-phone-components \
     plasma-workspace \
