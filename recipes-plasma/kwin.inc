@@ -34,12 +34,17 @@ DEPENDS = " \
     xcb-util-cursor \
     fontconfig \
     libepoxy \
+    libinput \
 "
 
 SRC_URI = " \
-    git://anongit.kde.org/${PN};nobranch=1 \
+    git://anongit.kde.org/${BPN};nobranch=1 \
     file://0001-compile-fix.patch \
 "
+SRC_URI_append_raspberrypi += " \
+    file://0002-rpi-compile-fix.patch \
+"
+
 S = "${WORKDIR}/git"
 
 inherit cmake_qt5 gettext python3native
@@ -79,4 +84,10 @@ FILES_${PN}-dev = " \
     ${libdir}/cmake/KWinDBusInterface/*.cmake \
     ${datadir}/dbus-1/interfaces/*.xml \
     ${includedir}/*.h \
+"
+
+RDEPENDS_${PN} += " \
+    qtvirtualkeyboard-qmlplugins \
+    qtwayland-plugins \
+    xserver-xorg-xwayland \
 "

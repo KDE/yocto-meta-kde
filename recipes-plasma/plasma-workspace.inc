@@ -41,7 +41,7 @@ DEPENDS = " \
 "
 
 SRC_URI = " \
-    git://anongit.kde.org/${PN};nobranch=1 \
+    git://anongit.kde.org/${BPN};nobranch=1 \
 "
 S = "${WORKDIR}/git"
 
@@ -101,4 +101,10 @@ FILES_${PN}-dev = " \
     ${libdir}/cmake/*/*.cmake \
     ${datadir}/kdevappwizard/templates/* \
     ${datadir}/dbus-1/interfaces/*.xml \
+"
+
+RDEPENDS_${PN} += " \
+    kinit \
+    xprop \
+    xset \
 "

@@ -35,3 +35,5 @@ FILES_${PN} += " \
     ${libdir}/plugins/platformthemes/KDEPlasmaPlatformTheme.so \
     ${datadir}/kconf_update/* \
 "
+
+RDEPENDS_${PN} += "perl"

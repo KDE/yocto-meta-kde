@@ -10,19 +10,6 @@ index a77261a54..6404ba006 100644
  #include <QCursor>
  #include <QPainter>
  #include <QQmlContext>
-diff --git a/plugins/platforms/x11/common/eglonxbackend.cpp b/plugins/platforms/x11/common/eglonxbackend.cpp
-index 1990fc49b..ac3376bfa 100644
---- a/plugins/platforms/x11/common/eglonxbackend.cpp
-+++ b/plugins/platforms/x11/common/eglonxbackend.cpp
-@@ -272,7 +272,7 @@ EGLSurface EglOnXBackend::createSurface(xcb_window_t window)
-         //       cannot be an xcb_window_t.
-         surface = eglCreatePlatformWindowSurfaceEXT(eglDisplay(), config(), (void *) &window, nullptr);
-     } else {
--        surface = eglCreateWindowSurface(eglDisplay(), config(), window, nullptr);
-+        surface = eglCreateWindowSurface(eglDisplay(), config(), (void *) &window, nullptr);
-     }
- 
-     return surface;
 diff --git a/plugins/platforms/x11/standalone/x11_platform.h b/plugins/platforms/x11/standalone/x11_platform.h
 index 07d79b889..c8b3078af 100644
 --- a/plugins/platforms/x11/standalone/x11_platform.h
