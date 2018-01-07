@@ -32,3 +32,7 @@ FILES_${PN} += " \
     ${datadir}/wallpapers/org.kde.plasma.phone.lockers/* \
     ${datadir}/wayland-sessions/*.desktop \
 "
+
+RDEPENDS_${PN} += " \
+    libqofono \
+"
