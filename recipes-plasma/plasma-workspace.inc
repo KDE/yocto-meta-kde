@@ -88,6 +88,7 @@ FILES_${PN}-dev = " \
 
 RDEPENDS_${PN} += " \
     kinit \
+    milou \
     xprop \
     xset \
 "
