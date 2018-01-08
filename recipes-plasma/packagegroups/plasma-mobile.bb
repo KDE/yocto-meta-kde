@@ -15,6 +15,8 @@ RDEPENDS_${PN} = " \
     libksysguard \
     milou \
     plasma-integration \
+    plasma-nm \
+    plasma-pa \
     plasma-phone-components \
     plasma-workspace \
     polkit-kde-agent-1 \

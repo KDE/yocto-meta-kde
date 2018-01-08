@@ -31,11 +31,6 @@ S = "${WORKDIR}/git"
 
 inherit cmake_plasma
 
-do_compile_prepend() {
-    # desktoptojson needs to find installed service type files
-    export XDG_DATA_DIRS=${STAGING_DATADIR}:$XDG_DATA_DIRS
-}
-
 FILES_${PN} += " \
   ${datadir}/ksmserver/screenlocker/org.kde.passworddialog/*.desktop \
 "

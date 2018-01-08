@@ -32,10 +32,3 @@ SRC_URI = " \
 S = "${WORKDIR}/git"
 
 inherit cmake_plasma
-
-do_compile_prepend() {
-    # desktoptojson needs to find installed service type files
-    export XDG_DATA_DIRS=${STAGING_DATADIR}:$XDG_DATA_DIRS
-    # meinproc5 needs to find its libraries
-    export LD_LIBRARY_PATH=${STAGING_LIBDIR_NATIVE}:$LD_LIBRARY_PATH
-}

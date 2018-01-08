@@ -47,11 +47,6 @@ S = "${WORKDIR}/git"
 
 inherit cmake_plasma
 
-do_compile_prepend() {
-    # desktoptojson needs to find installed service type files
-    export XDG_DATA_DIRS=${STAGING_DATADIR}:$XDG_DATA_DIRS
-}
-
 FILES_${PN} += " \
     ${libdir}/libkdeinit5_kwin*.so \
     ${libdir}/kconf_update_bin/kwin5_update_default_rules \

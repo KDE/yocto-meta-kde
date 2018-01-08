@@ -47,13 +47,6 @@ inherit cmake_plasma
 
 EXTRA_OECMAKE += " -DBUILD_xembed-sni-proxy=OFF"
 
-do_compile_prepend() {
-    # desktoptojson needs to find installed service type files
-    export XDG_DATA_DIRS=${STAGING_DATADIR}:$XDG_DATA_DIRS
-    # meinproc5 needs to find its libraries
-    export LD_LIBRARY_PATH=${STAGING_LIBDIR_NATIVE}:$LD_LIBRARY_PATH
-}
-
 FILES_${PN} += " \
     ${libdir}/libkdeinit5_*.so \
     ${libdir}/qml/org/kde/taskmanager/* \
