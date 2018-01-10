@@ -7,6 +7,7 @@ inherit packagegroup
 RDEPENDS_${PN} = " \
     breeze \
     kactivitymanagerd \
+    kde-cli-tools \
     kdecoration \
     kscreenlocker \
     kwayland-integration \

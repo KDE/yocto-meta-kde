@@ -11,6 +11,11 @@ DEPENDS += " \
     qtbase \
 "
 
+do_configure_prepend() {
+    # kpackagetool5 needs to find installed service type files
+    export XDG_DATA_DIRS=${STAGING_DATADIR}:$XDG_DATA_DIRS
+}
+
 do_compile_prepend() {
     # desktoptojson needs to find installed service type files
     export XDG_DATA_DIRS=${STAGING_DATADIR}:$XDG_DATA_DIRS
@@ -31,6 +36,7 @@ FILES_${PN} += " \
     ${datadir}/kservices5/*.desktop \
     ${datadir}/kservices5/*.protocol \
     ${datadir}/kservicetypes5/*.desktop \
+    ${datadir}/metainfo/*.xml \
     ${datadir}/polkit-1/actions/*.policy \
 "
 
