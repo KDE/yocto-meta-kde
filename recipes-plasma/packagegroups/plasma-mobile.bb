@@ -6,6 +6,7 @@ inherit packagegroup
 
 RDEPENDS_${PN} = " \
     breeze \
+    discover \
     kactivitymanagerd \
     kde-cli-tools \
     kdecoration \

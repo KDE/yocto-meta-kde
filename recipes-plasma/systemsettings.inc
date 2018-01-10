@@ -33,7 +33,6 @@ inherit cmake_plasma
 
 FILES_${PN} += " \
     ${datadir}/kpackage/genericqml/org.kde.systemsettings.sidebar \
-    ${datadir}/kxmlgui5/systemsettings/systemsettingsui.rc \
 "
 
 RDEPENDS_${PN} += " \

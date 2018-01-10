@@ -36,6 +36,7 @@ FILES_${PN} += " \
     ${datadir}/kservices5/*.desktop \
     ${datadir}/kservices5/*.protocol \
     ${datadir}/kservicetypes5/*.desktop \
+    ${datadir}/kxmlgui5/*/*.rc \
     ${datadir}/metainfo/*.xml \
     ${datadir}/polkit-1/actions/*.policy \
 "
