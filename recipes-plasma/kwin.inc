@@ -80,6 +80,7 @@ FILES_${PN}-dev = " \
 "
 
 RDEPENDS_${PN} += " \
+    qtvirtualkeyboard-plugins \
     qtvirtualkeyboard-qmlplugins \
     qtwayland-plugins \
     xserver-xorg-xwayland \
