@@ -22,7 +22,9 @@ DEPENDS = " \
     kitemmodels \
     plasma-workspace \
     bluez-qt \
+    \
     kdoctools \
+    karchive-native \
 "
 
 SRC_URI = " \

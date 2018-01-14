@@ -7,7 +7,6 @@ PR = "r0"
 DEPENDS = " \
     qtsvg \
     kconfig \
-    kdoctools \
     kiconthemes \
     kinit \
     ki18n \
@@ -17,6 +16,9 @@ DEPENDS = " \
     kwindowsystem \
     kactivities \
     kdesu \
+    \
+    karchive-native \
+    kdoctools \
 "
 
 SRC_URI = " \

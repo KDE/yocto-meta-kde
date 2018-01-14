@@ -16,12 +16,14 @@ DEPENDS += " \
     kxmlgui \
     kdbusaddons \
     kconfig \
-    kdoctools \
     kpackage \
     kdeclarative \
     kactivities \
     kactivitiesstats \
     kirigami \
+    \
+    kdoctools \
+    karchive-native \
 "
 
 SRC_URI = " \

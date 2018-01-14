@@ -8,12 +8,14 @@ DEPENDS = " \
     qtdeclarative \
     kcoreaddons \
     kdeclarative \
-    kdoctools \
     kglobalaccel \
     ki18n \
     plasma-framework \
     pulseaudio \
     libcanberra \
+    \
+    kdoctools \
+    karchive-native \
 "
 
 SRC_URI = " \
