@@ -11,7 +11,7 @@ index a77261a54..6404ba006 100644
  #include <QPainter>
  #include <QQmlContext>
 diff --git a/plugins/platforms/x11/standalone/x11_platform.h b/plugins/platforms/x11/standalone/x11_platform.h
-index 07d79b889..c8b3078af 100644
+index 02a4ae15d..4fd77c6ca 100644
 --- a/plugins/platforms/x11/standalone/x11_platform.h
 +++ b/plugins/platforms/x11/standalone/x11_platform.h
 @@ -24,6 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
@@ -20,13 +20,13 @@ index 07d79b889..c8b3078af 100644
  #include <QObject>
 +#include <QX11Info>
  
- #include <memory>
- 
+ namespace KWin
+ {
 diff --git a/plugins/platforms/x11/windowed/x11windowed_backend.cpp b/plugins/platforms/x11/windowed/x11windowed_backend.cpp
-index 95306b027..8b7513f68 100644
+index 302bac7f4..27b70810d 100644
 --- a/plugins/platforms/x11/windowed/x11windowed_backend.cpp
 +++ b/plugins/platforms/x11/windowed/x11windowed_backend.cpp
-@@ -42,6 +42,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+@@ -40,6 +40,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  // system
  #include <linux/input.h>
  #include <X11/Xlib-xcb.h>
@@ -34,3 +34,17 @@ index 95306b027..8b7513f68 100644
  
  namespace KWin
  {
+diff --git a/wayland_server.cpp b/wayland_server.cpp
+index dd4727727..a64bd10d5 100644
+--- a/wayland_server.cpp
++++ b/wayland_server.cpp
+@@ -33,7 +33,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ #include <KWayland/Client/surface.h>
+ // Server
+ #include <KWayland/Server/compositor_interface.h>
++#include <KWayland/Server/datadevice_interface.h>
+ #include <KWayland/Server/datadevicemanager_interface.h>
++#include <KWayland/Server/datasource_interface.h>
+ #include <KWayland/Server/display.h>
+ #include <KWayland/Server/dpms_interface.h>
+ #include <KWayland/Server/idle_interface.h>
