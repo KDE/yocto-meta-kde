@@ -34,17 +34,3 @@ index 302bac7f4..27b70810d 100644
  
  namespace KWin
  {
-diff --git a/wayland_server.cpp b/wayland_server.cpp
-index dd4727727..a64bd10d5 100644
---- a/wayland_server.cpp
-+++ b/wayland_server.cpp
-@@ -33,7 +33,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
- #include <KWayland/Client/surface.h>
- // Server
- #include <KWayland/Server/compositor_interface.h>
-+#include <KWayland/Server/datadevice_interface.h>
- #include <KWayland/Server/datadevicemanager_interface.h>
-+#include <KWayland/Server/datasource_interface.h>
- #include <KWayland/Server/display.h>
- #include <KWayland/Server/dpms_interface.h>
- #include <KWayland/Server/idle_interface.h>
