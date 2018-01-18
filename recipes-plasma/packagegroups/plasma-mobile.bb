@@ -11,6 +11,7 @@ RDEPENDS_${PN} = " \
     kde-cli-tools \
     kdecoration \
     kscreenlocker \
+    ksysguard \
     kwayland-integration \
     kwin \
     libkscreen \

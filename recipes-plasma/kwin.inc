@@ -47,8 +47,8 @@ S = "${WORKDIR}/git"
 
 inherit cmake_plasma
 
+FILES_SOLIBSDEV = ""
 FILES_${PN} += " \
-    ${libdir}/libkdeinit5_kwin*.so \
     ${libdir}/kconf_update_bin/kwin5_update_default_rules \
     ${libdir}/plugins/*.so \
     ${libdir}/plugins/kpackage/packagestructure/*.so \
@@ -67,16 +67,12 @@ FILES_${PN} += " \
     ${datadir}/kservices5/kwin/*.desktop \
     ${datadir}/knotifications5/*.notifyrc \
     ${datadir}/kservicetypes5/*.desktop \
-    ${datadir}/icons/hicolor/*/*/* \
     ${datadir}/kwincompositing/qml/*.qml \
     ${datadir}/config.kcfg/*.kcfg \
 "
 
-FILES_${PN}-dev = " \
+FILES_${PN}-dev += " \
     ${libdir}/libkwin*.so \
-    ${libdir}/cmake/KWinDBusInterface/*.cmake \
-    ${datadir}/dbus-1/interfaces/*.xml \
-    ${includedir}/*.h \
 "
 
 RDEPENDS_${PN} += " \

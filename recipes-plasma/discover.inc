@@ -32,5 +32,4 @@ inherit cmake_plasma
 FILES_${PN} += " \
     ${libdir}/qml/org/kde/discovernotifier \
     ${libdir}/plasma-discover \
-    ${datadir}/icons/hicolor \
 "

@@ -15,6 +15,7 @@ DEPENDS = " \
     kiconthemes \
     kconfigwidgets \
     kservice \
+    plasma-framework \
 "
 
 SRC_URI = " \

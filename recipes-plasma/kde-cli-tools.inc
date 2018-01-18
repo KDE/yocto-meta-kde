@@ -29,6 +29,3 @@ S = "${WORKDIR}/git"
 inherit cmake_plasma
 
 FILES_SOLIBSDEV = ""
-FILES_${PN} += " \
-    ${libdir}/libkdeinit5_*.so \
-"

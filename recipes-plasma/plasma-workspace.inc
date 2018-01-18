@@ -47,8 +47,8 @@ inherit cmake_plasma
 
 EXTRA_OECMAKE += " -DBUILD_xembed-sni-proxy=OFF"
 
+FILES_SOLIBSDEV = ""
 FILES_${PN} += " \
-    ${libdir}/libkdeinit5_*.so \
     ${libdir}/qml/org/kde/taskmanager/* \
     ${libdir}/qml/org/kde/plasma \
     ${datadir}/kstyle/themes/*.themerc \
@@ -68,15 +68,11 @@ FILES_${PN} += " \
     ${datadir}/xsessions/*.desktop \
 "
 
-FILES_${PN}-dev = " \
-    ${includedir} \
+FILES_${PN}-dev += " \
     ${libdir}/libtaskmanager.so \
     ${libdir}/libkworkspace5.so \
     ${libdir}/libplasma-geolocation-interface.so \
     ${libdir}/libweather_ion.so \
-    ${libdir}/cmake/*/*.cmake \
-    ${datadir}/kdevappwizard/templates/* \
-    ${datadir}/dbus-1/interfaces/*.xml \
 "
 
 RDEPENDS_${PN} += " \

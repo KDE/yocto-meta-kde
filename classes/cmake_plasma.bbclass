@@ -24,6 +24,7 @@ do_compile_prepend() {
 }
 
 FILES_${PN} += " \
+    ${libdir}/libkdeinit5_*.so \
     ${libdir}/kconf_update_bin/* \
     ${libdir}/plugins/*.so \
     ${libdir}/plugins/*/*.so \
@@ -31,6 +32,7 @@ FILES_${PN} += " \
     ${datadir}/config.kcfg/*.kcfg \
     ${datadir}/dbus-1/services/*.service \
     ${datadir}/dbus-1/system-services/*.service \
+    ${datadir}/icons/hicolor \
     ${datadir}/kconf_update/* \
     ${datadir}/knotifications5/*.notifyrc \
     ${datadir}/kservices5/*.desktop \
