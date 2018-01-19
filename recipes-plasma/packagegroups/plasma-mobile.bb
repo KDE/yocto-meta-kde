@@ -25,4 +25,5 @@ RDEPENDS_${PN} = " \
     polkit-kde-agent-1 \
     powerdevil \
     systemsettings \
+    xdg-desktop-portal-kde \
 "
