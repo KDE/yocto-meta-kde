@@ -49,12 +49,10 @@ EXTRA_OECMAKE += " -DBUILD_xembed-sni-proxy=OFF"
 
 FILES_SOLIBSDEV = ""
 FILES_${PN} += " \
-    ${libdir}/qml/org/kde/taskmanager/* \
-    ${libdir}/qml/org/kde/plasma \
+    ${libdir}/qml/org/kde \
     ${datadir}/kstyle/themes/*.themerc \
     ${datadir}/ksmserver/themes \
     ${datadir}/ksplash/Themes \
-    ${datadir}/kservicetypes5/*.desktop \
     ${datadir}/kio_desktop \
     ${datadir}/plasma/plasmoids \
     ${datadir}/plasma/look-and-feel \
@@ -69,6 +67,7 @@ FILES_${PN} += " \
 "
 
 FILES_${PN}-dev += " \
+    ${libdir}/libcolorcorrect.so \
     ${libdir}/libtaskmanager.so \
     ${libdir}/libkworkspace5.so \
     ${libdir}/libplasma-geolocation-interface.so \

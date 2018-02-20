@@ -6,7 +6,6 @@ PR = "r0"
 
 DEPENDS = " \
     qtdeclarative \
-    qtscript \
     kcoreaddons \
     ki18n \
     kdeclarative \

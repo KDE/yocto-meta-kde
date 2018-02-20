@@ -6,6 +6,7 @@ PR = "r0"
 
 DEPENDS = " \
     qtdeclarative \
+    qtsensors \
     kconfigwidgets \
     kcrash \
     kglobalaccel \
