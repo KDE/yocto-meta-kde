@@ -42,6 +42,7 @@ SRC_URI = " \
 "
 SRC_URI_append_raspberrypi += " \
     file://0002-rpi-compile-fix.patch \
+    file://0003-rpi-compile-fix-2.patch \
 "
 
 S = "${WORKDIR}/git"

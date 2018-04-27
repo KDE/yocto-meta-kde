@@ -15,6 +15,7 @@ DEPENDS = " \
     libcanberra \
     \
     kdoctools \
+    kdoctools-native \
     karchive-native \
 "
 

@@ -19,6 +19,7 @@ DEPENDS = " \
     \
     karchive-native \
     kdoctools \
+    kdoctools-native \
 "
 
 SRC_URI = " \

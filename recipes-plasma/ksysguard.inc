@@ -19,6 +19,7 @@ DEPENDS = " \
     libksysguard \
     \
     kdoctools \
+    kdoctools-native \
     karchive-native \
 "
 

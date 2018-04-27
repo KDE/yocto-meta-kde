@@ -24,6 +24,7 @@ DEPENDS = " \
     bluez-qt \
     \
     kdoctools \
+    kdoctools-native \
     karchive-native \
 "
 

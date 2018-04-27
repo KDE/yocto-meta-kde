@@ -18,6 +18,7 @@ DEPENDS = " \
     kdelibs4support \
     kdesu \
     kdoctools \
+    kdoctools-native \
     kidletime \
     kitemmodels \
     kjsembed \

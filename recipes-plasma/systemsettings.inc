@@ -23,6 +23,7 @@ DEPENDS += " \
     kirigami \
     \
     kdoctools \
+    kdoctools-native \
     karchive-native \
 "
 
