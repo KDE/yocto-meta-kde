@@ -25,6 +25,8 @@ DEPENDS += " \
     kdoctools \
     kdoctools-native \
     karchive-native \
+    \
+    plasma-workspace \
 "
 
 SRC_URI = " \

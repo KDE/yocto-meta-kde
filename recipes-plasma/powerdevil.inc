@@ -30,7 +30,6 @@ DEPENDS = " \
 
 SRC_URI = " \
     git://git.kde.org/${BPN};nobranch=1 \
-    file://0001-explicit-doctools-dependency.patch \
 "
 S = "${WORKDIR}/git"
 

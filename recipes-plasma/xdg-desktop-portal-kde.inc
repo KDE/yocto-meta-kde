@@ -8,6 +8,8 @@ DEPENDS += " \
     kcoreaddons \
     ki18n \
     knotifications \
+    kwayland \
+    kwidgetsaddons \
 "
 
 SRC_URI = " \

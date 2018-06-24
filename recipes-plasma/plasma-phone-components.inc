@@ -2,7 +2,8 @@ DESCRIPTION = "Plasma Phone Components"
 HOMEPAGE = "https://community.kde.org/Plasma/Mobile/Code"
 LICENSE = "GPLv2+"
 # TODO: repo does not have a license file!
-LIC_FILES_CHKSUM = "file://README.md;md5=4b29ea33c047d21253e6e3718dc59f7c"
+LICENSE = "GPLv2+"
+LIC_FILES_CHKSUM = "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263"
 PR = "r0"
 
 DEPENDS = " \
