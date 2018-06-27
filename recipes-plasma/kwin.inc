@@ -38,11 +38,6 @@ DEPENDS = " \
 
 SRC_URI = " \
     git://anongit.kde.org/${BPN};nobranch=1 \
-    file://0001-compile-fix.patch \
-"
-SRC_URI_append_raspberrypi += " \
-    file://0002-rpi-compile-fix.patch \
-    file://0003-rpi-compile-fix-2.patch \
 "
 
 S = "${WORKDIR}/git"
