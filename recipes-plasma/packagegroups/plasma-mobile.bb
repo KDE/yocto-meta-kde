@@ -10,6 +10,7 @@ RDEPENDS_${PN} = " \
     kactivitymanagerd \
     kde-cli-tools \
     kdecoration \
+    kscreen \
     kscreenlocker \
     ksysguard \
     kwayland-integration \
