@@ -1,0 +1,38 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 8903b52..ce9b5bc 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -178,6 +178,7 @@ set(DATA_INSTALL_DIR            "${CMAKE_INSTALL_FULL_DATADIR}/sddm"
+ set(DBUS_CONFIG_DIR             "${CMAKE_INSTALL_SYSCONFDIR}/dbus-1/system.d"       CACHE PATH      "DBus config files directory")
+ set(STATE_DIR                   "${CMAKE_INSTALL_FULL_LOCALSTATEDIR}/lib/sddm"      CACHE PATH      "State directory")
+ set(RUNTIME_DIR                 "${CMAKE_INSTALL_FULL_LOCALSTATEDIR}/run/sddm"      CACHE PATH      "Runtime data storage directory")
++set(QML_INSTALL_DIR             "${QT_IMPORTS_DIR}"                                 CACHE PATH      "QML component installation directory")
+ 
+ set(SESSION_COMMAND             "${DATA_INSTALL_DIR}/scripts/Xsession"              CACHE PATH      "Script to execute when starting the X11 desktop session")
+ set(WAYLAND_SESSION_COMMAND     "${DATA_INSTALL_DIR}/scripts/wayland-session"       CACHE PATH      "Script to execute when starting the Wayland desktop session")
+diff --git a/components/CMakeLists.txt b/components/CMakeLists.txt
+index 33920a6..22d75c9 100644
+--- a/components/CMakeLists.txt
++++ b/components/CMakeLists.txt
+@@ -1,5 +1,5 @@
+ configure_file("2.0/LayoutBox.qml" "2.0/LayoutBox.qml")
+ 
+-install(DIRECTORY "2.0/" DESTINATION "${QT_IMPORTS_DIR}/SddmComponents")
+-install(DIRECTORY "common/" DESTINATION "${QT_IMPORTS_DIR}/SddmComponents")
+-install(DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/2.0/" DESTINATION "${QT_IMPORTS_DIR}/SddmComponents")
++install(DIRECTORY "2.0/" DESTINATION "${QML_INSTALL_DIR}/SddmComponents")
++install(DIRECTORY "common/" DESTINATION "${QML_INSTALL_DIR}/SddmComponents")
++install(DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/2.0/" DESTINATION "${QML_INSTALL_DIR}/SddmComponents")
+diff --git a/src/common/Constants.h.in b/src/common/Constants.h.in
+index 7500a49..e174b5b 100644
+--- a/src/common/Constants.h.in
++++ b/src/common/Constants.h.in
+@@ -24,7 +24,7 @@
+ #define LIBEXEC_INSTALL_DIR         "@CMAKE_INSTALL_FULL_LIBEXECDIR@"
+ #define DATA_INSTALL_DIR            "@DATA_INSTALL_DIR@"
+ #define SYS_CONFIG_DIR              "@CMAKE_INSTALL_FULL_SYSCONFDIR@"
+-#define IMPORTS_INSTALL_DIR         "@QT_IMPORTS_DIR@"
++#define IMPORTS_INSTALL_DIR         "@QML_INSTALL_DIR@"
+ #define COMPONENTS_TRANSLATION_DIR  "@COMPONENTS_TRANSLATION_DIR@"
+ #define RUNTIME_DIR                 "@RUNTIME_DIR@"
+ #define STATE_DIR                   "@STATE_DIR@"
