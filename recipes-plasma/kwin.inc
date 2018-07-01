@@ -44,6 +44,11 @@ S = "${WORKDIR}/git"
 
 inherit cmake_plasma
 
+do_install_append() {
+    # dirty workaround for aurora crash on Wayland
+    rm -rf ${D}/${libdir}/plugins/org.kde.kdecoration2/
+}
+
 FILES_SOLIBSDEV = ""
 FILES_${PN} += " \
     ${libdir}/kconf_update_bin/kwin5_update_default_rules \
