@@ -16,12 +16,22 @@ DEPENDS = " \
 SRC_URI = " \
     git://github.com/sddm/${BPN};nobranch=1 \
     file://0001-fix-qml-installation.diff \
+    file://sddm.conf \
 "
 S = "${WORKDIR}/git"
 
 inherit cmake_qt5 pkgconfig systemd useradd
 
 EXTRA_OECMAKE += "-DQML_INSTALL_DIR=${OE_QMAKE_PATH_QML}"
+
+do_install_append() {
+    mkdir -p ${d}${sysconfdir}
+    cp ${WORKDIR}/sddm.conf ${D}${sysconfdir}/sddm.conf
+
+    mkdir -p ${D}${localstatedir}/lib/sddm
+    chown -R sddm:sddm ${D}${localstatedir}/lib/sddm
+    chmod 0750 ${D}${localstatedir}/lib/sddm
+}
 
 FILES_${PN} += " \
     ${libdir}/qml \
