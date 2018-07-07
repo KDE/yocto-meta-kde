@@ -17,6 +17,8 @@ SRC_URI = " \
     git://github.com/sddm/${BPN};nobranch=1 \
     file://0001-fix-qml-installation.diff \
     file://sddm.conf \
+    file://sddm.pam \
+    file://sddm-autologin.pam \
 "
 S = "${WORKDIR}/git"
 
@@ -28,9 +30,17 @@ do_install_append() {
     mkdir -p ${d}${sysconfdir}
     cp ${WORKDIR}/sddm.conf ${D}${sysconfdir}/sddm.conf
 
+    # ensure the home dir exists, sddm doesn't start without that
     mkdir -p ${D}${localstatedir}/lib/sddm
     chown -R sddm:sddm ${D}${localstatedir}/lib/sddm
     chmod 0750 ${D}${localstatedir}/lib/sddm
+
+    # deploy PAM files
+    cp ${WORKDIR}/sddm.pam ${D}${sysconfdir}/pam.d/sddm
+    cp ${WORKDIR}/sddm-autologin.pam ${D}${sysconfdir}/pam.d/sddm-autologin
+
+    # make SDDM actually auto-start
+    echo "WantedBy=multi-user.target" >> ${D}/lib/systemd/system/sddm.service
 }
 
 FILES_${PN} += " \
