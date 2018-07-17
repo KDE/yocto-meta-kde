@@ -1,0 +1,27 @@
+From 160dde9c82ba170bd5b1600d3c85536194b35ed3 Mon Sep 17 00:00:00 2001
+From: Alistair Francis <alistair.francis@wdc.com>
+Date: Tue, 5 Jun 2018 11:47:08 -0700
+Subject: [PATCH] textplugin: Fix missing QTextStream include
+
+Signed-off-by: Alistair Francis <alistair.francis@wdc.com>
+Upstream-Status: Submitted [https://phabricator.kde.org/D13874]
+---
+ lib/previews/textplugin.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/lib/previews/textplugin.cpp b/lib/previews/textplugin.cpp
+index 895f4d9..fdc6c72 100644
+--- a/lib/previews/textplugin.cpp
++++ b/lib/previews/textplugin.cpp
+@@ -26,7 +26,7 @@
+ #include <QQmlEngine>
+ #include <QQmlComponent>
+ #include <QQmlContext>
+-
++#include <QTextStream>
+ #include <QStandardPaths>
+ 
+ TextPlugin::TextPlugin(QObject* parent, const QVariantList&)
+-- 
+2.17.0
+
