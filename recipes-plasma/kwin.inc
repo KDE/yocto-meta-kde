@@ -34,6 +34,7 @@ DEPENDS = " \
     fontconfig \
     libepoxy \
     libinput \
+    libxslt-native \
 "
 
 SRC_URI = " \
