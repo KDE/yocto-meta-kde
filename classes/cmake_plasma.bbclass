@@ -9,6 +9,7 @@ EXTRA_OECMAKE += " \
 DEPENDS += " \
     extra-cmake-modules \
     qtbase \
+    gettext-native \
 "
 
 do_configure_prepend() {
