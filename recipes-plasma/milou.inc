@@ -16,7 +16,6 @@ DEPENDS = " \
 
 SRC_URI = " \
     git://git.kde.org/${BPN};nobranch=1 \
-    file://0001-textplugin-Fix-missing-QTextStream-include.patch \
 "
 S = "${WORKDIR}/git"
 
