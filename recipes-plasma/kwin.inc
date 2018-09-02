@@ -35,6 +35,7 @@ DEPENDS = " \
     libepoxy \
     libinput \
     libxslt-native \
+    karchive-native \
 "
 
 SRC_URI = " \
