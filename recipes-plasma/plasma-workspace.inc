@@ -6,7 +6,6 @@ PR = "r0"
 
 DEPENDS = " \
     qtdeclarative \
-    qtscript \
     baloo \
     karchive-native \
     kcoreaddons \

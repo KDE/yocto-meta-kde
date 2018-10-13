@@ -23,7 +23,6 @@ DEPENDS = " \
 
 SRC_URI = " \
     git://git.kde.org/${BPN};nobranch=1 \
-    file://0001-license-files.diff \
 "
 S = "${WORKDIR}/git"
 

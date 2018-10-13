@@ -26,4 +26,5 @@ inherit cmake_plasma
 FILES_${PN} += " \
     ${datadir}/kded_kscreen \
     ${datadir}/kcm_kscreen \
+    ${datadir}/plasma/plasmoids/org.kde.kscreen \
 "
