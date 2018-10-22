@@ -27,7 +27,6 @@ DEPENDS = " \
     plasma-framework \
     kdeclarative \
     kinit \
-    kdelibs4support \
     kitemmodels \
     qca \
 "
