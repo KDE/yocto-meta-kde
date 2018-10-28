@@ -6,6 +6,7 @@ PR = "r0"
 
 DEPENDS = " \
     telepathy-qt \
+    libphonenumber \
     kwayland \
     plasma-framework \
     kpeople \
