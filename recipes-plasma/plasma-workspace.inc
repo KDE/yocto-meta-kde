@@ -80,4 +80,5 @@ RDEPENDS_${PN} += " \
     milou \
     xprop \
     xset \
+    qttools \
 "
