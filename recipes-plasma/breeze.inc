@@ -33,3 +33,7 @@ FILES_${PN} += " \
     ${datadir}/QtCurve/*.qtcurve \
     ${datadir}/wallpapers \
 "
+
+RDEPENDS_${PN} += " \
+    breeze-icons \
+"
