@@ -10,6 +10,7 @@ DEPENDS = " \
     kwayland \
     plasma-framework \
     kpeople \
+    gstreamer1.0 \
 "
 
 SRC_URI = " \
