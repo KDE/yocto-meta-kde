@@ -27,4 +27,6 @@ S = "${WORKDIR}/git"
 
 inherit cmake_plasma
 
-RDEPENDS_${PN} += "perl"
+RDEPENDS_${PN} += "perl \
+                   qtquickcontrols \
+                  "
