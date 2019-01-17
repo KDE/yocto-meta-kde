@@ -6,7 +6,6 @@ PR = "r0"
 
 DEPENDS = " \
     boost \
-    \
     kconfig \
     kcoreaddons \
     kdbusaddons \
