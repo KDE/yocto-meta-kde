@@ -8,9 +8,10 @@ inherit core-image distro_features_check
 
 REQUIRED_DISTRO_FEATURES = "wayland x11 kde"
 
-CORE_IMAGE_BASE_INSTALL += "wayland plasma-mobile kwin dbus"
+CORE_IMAGE_BASE_INSTALL += "wayland plasma-mobile kwin dbus kirigami"
 
-FEATURE_PACKAGES += " packagegroup-plasma-mobile \
+FEATURE_PACKAGES += " packagegroup-kde-frameworks5 \
+                      packagegroup-plasma-mobile \
                       packagegroup-core-x11-xserver \
                       packagegroup-core-x11-utils \
                     "
