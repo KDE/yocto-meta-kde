@@ -36,4 +36,6 @@ FILES_${PN} += " \
 
 RDEPENDS_${PN} += " \
     libqofono \
+    kded \
+    qtgraphicaleffects \
 "
