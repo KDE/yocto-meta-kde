@@ -27,7 +27,6 @@ inherit cmake_kdeapp
 EXTRA_OECMAKE += " -DEXPERIMENTALAPP_ENABLED=ON -DSMSAPP_ENABLED=ON -DOE_QCA_PATH_HOST_ROOT=${STAGING_DIR_HOST}"
 
 FILES_${PN} += " \
-    ${libdir}/qml \
     ${datadir}/plasma \
     ${datadir}/nautilus-python \
 "

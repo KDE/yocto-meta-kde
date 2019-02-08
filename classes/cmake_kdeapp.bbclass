@@ -24,6 +24,7 @@ FILES_${PN} += " \
     ${libdir}/plugins/*.so \
     ${libdir}/plugins/*/*.so \
     ${libdir}/plugins/*/*/*.so \
+    ${libdir}/qml \
     ${datadir}/config.kcfg/*.kcfg \
     ${datadir}/dbus-1/services/*.service \
     ${datadir}/dbus-1/system-services/*.service \

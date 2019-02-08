@@ -1,0 +1,3 @@
+require ${BPN}.inc
+# SRCREV = "v${PV}"
+SRCREV = "5340f0335f62359940b162abc4d8b830f883b7b1"

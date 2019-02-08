@@ -22,7 +22,3 @@ S = "${WORKDIR}/git"
 inherit cmake_kdeapp
 
 EXTRA_OECMAKE += " -DOE_QCA_PATH_HOST_ROOT=${STAGING_DIR_HOST}"
-
-FILES_${PN} += " \
-    ${libdir}/qml/ \
-"
