@@ -29,9 +29,11 @@ FILES_${PN} += " \
     ${datadir}/dbus-1/system-services/*.service \
     ${datadir}/icons/hicolor \
     ${datadir}/kconf_update/* \
+    ${datadir}/khotkeys/*.khotkeys \
     ${datadir}/knotifications5/*.notifyrc \
     ${datadir}/kservices5/*.desktop \
     ${datadir}/kservices5/*.protocol \
+    ${datadir}/kservices5/ServiceMenus/*.desktop \
     ${datadir}/kservicetypes5/*.desktop \
     ${datadir}/kxmlgui5/*/*.rc \
     ${datadir}/metainfo/*.xml \
