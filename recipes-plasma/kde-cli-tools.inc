@@ -17,10 +17,6 @@ DEPENDS = " \
     kactivities \
     kdesu \
     \
-    karchive-native \
-    kdoctools \
-    kdoctools-native \
-    \
     plasma-workspace \
 "
 
@@ -30,5 +26,6 @@ SRC_URI = " \
 S = "${WORKDIR}/git"
 
 inherit cmake_plasma
+inherit kdoctools
 
 FILES_SOLIBSDEV = ""

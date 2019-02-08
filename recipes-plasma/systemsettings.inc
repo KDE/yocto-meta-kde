@@ -22,10 +22,6 @@ DEPENDS += " \
     kactivitiesstats \
     kirigami \
     \
-    kdoctools \
-    kdoctools-native \
-    karchive-native \
-    \
     plasma-workspace \
 "
 
@@ -35,6 +31,7 @@ SRC_URI = " \
 S = "${WORKDIR}/git"
 
 inherit cmake_plasma
+inherit kdoctools
 
 FILES_${PN} += " \
     ${datadir}/kpackage/genericqml/org.kde.systemsettings.sidebar \

@@ -17,10 +17,6 @@ DEPENDS = " \
     knotifications \
     kwindowsystem \
     libksysguard \
-    \
-    kdoctools \
-    kdoctools-native \
-    karchive-native \
 "
 
 SRC_URI = " \
@@ -29,5 +25,6 @@ SRC_URI = " \
 S = "${WORKDIR}/git"
 
 inherit cmake_plasma
+inherit kdoctools
 
 FILES_SOLIBSDEV = ""

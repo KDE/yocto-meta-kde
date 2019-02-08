@@ -7,7 +7,6 @@ PR = "r0"
 DEPENDS = " \
     qtdeclarative \
     baloo \
-    karchive-native \
     kcoreaddons \
     kcrash \
     solid \
@@ -17,8 +16,6 @@ DEPENDS = " \
     kdeclarative \
     kdelibs4support \
     kdesu \
-    kdoctools \
-    kdoctools-native \
     kidletime \
     kitemmodels \
     kjsembed \
@@ -45,6 +42,7 @@ SRC_URI = " \
 S = "${WORKDIR}/git"
 
 inherit cmake_plasma
+inherit kdoctools
 
 EXTRA_OECMAKE += " -DBUILD_xembed-sni-proxy=OFF"
 

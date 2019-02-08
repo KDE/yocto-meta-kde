@@ -22,10 +22,6 @@ DEPENDS = " \
     kitemmodels \
     plasma-workspace \
     bluez-qt \
-    \
-    kdoctools \
-    kdoctools-native \
-    karchive-native \
 "
 
 SRC_URI = " \
@@ -34,3 +30,4 @@ SRC_URI = " \
 S = "${WORKDIR}/git"
 
 inherit cmake_plasma
+inherit kdoctools

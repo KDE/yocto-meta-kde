@@ -13,10 +13,6 @@ DEPENDS = " \
     plasma-framework \
     pulseaudio \
     libcanberra \
-    \
-    kdoctools \
-    kdoctools-native \
-    karchive-native \
 "
 
 SRC_URI = " \
@@ -25,6 +21,7 @@ SRC_URI = " \
 S = "${WORKDIR}/git"
 
 inherit cmake_plasma
+inherit kdoctools
 
 FILES_${PN} += " \
     ${libdir}/qml/org/kde/plasma/private/volume/* \
