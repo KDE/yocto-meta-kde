@@ -26,6 +26,6 @@ RDEPENDS_${PN} = " \
     plasma-workspace \
     polkit-kde-agent-1 \
     powerdevil \
-    systemsettings \
+    plasma-settings \
     xdg-desktop-portal-kde \
 "
