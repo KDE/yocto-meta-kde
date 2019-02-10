@@ -9,10 +9,6 @@ SRC_URI = " \
 "
 S = "${WORKDIR}/git"
 
-DEPENDS += " \
-    ki18n \
-"
-
 inherit cmake_plasma
 
 FILES_${PN} += " \

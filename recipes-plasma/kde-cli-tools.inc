@@ -9,7 +9,6 @@ DEPENDS = " \
     kconfig \
     kiconthemes \
     kinit \
-    ki18n \
     kcmutils \
     kio \
     kservice \

@@ -7,7 +7,6 @@ PR = "r0"
 DEPENDS = " \
     qtdeclarative \
     kdbusaddons \
-    ki18n \
     plasma-framework \
     kconfigwidgets \
     kglobalaccel \

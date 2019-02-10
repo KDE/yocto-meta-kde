@@ -8,7 +8,6 @@ DEPENDS = " \
     kconfig \
     kcoreaddons \
     kdbusaddons \
-    ki18n \
     kiconthemes \
     kinit \
     kitemviews \

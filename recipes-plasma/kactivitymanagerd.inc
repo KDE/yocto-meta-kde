@@ -10,7 +10,6 @@ DEPENDS = " \
     kcoreaddons \
     kdbusaddons \
     kglobalaccel \
-    ki18n \
     kio \
     kwindowsystem \
     kxmlgui \

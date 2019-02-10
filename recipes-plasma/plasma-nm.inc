@@ -9,7 +9,6 @@ DEPENDS = " \
     qttools \
     networkmanager-qt \
     modemmanager-qt \
-    ki18n \
     kwindowsystem \
     kservice \
     kcompletion \

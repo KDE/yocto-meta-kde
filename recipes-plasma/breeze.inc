@@ -11,7 +11,6 @@ DEPENDS = " \
     kcoreaddons \
     kdecoration \
     kguiaddons \
-    ki18n \
     kpackage \
     kwayland \
     kwindowsystem \

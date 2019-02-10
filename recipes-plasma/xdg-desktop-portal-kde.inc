@@ -6,7 +6,6 @@ PR = "r0"
 
 DEPENDS += " \
     kcoreaddons \
-    ki18n \
     knotifications \
     kwayland \
     kwidgetsaddons \

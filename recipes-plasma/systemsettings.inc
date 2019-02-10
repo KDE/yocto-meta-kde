@@ -7,7 +7,6 @@ PR = "r0"
 DEPENDS += " \
     kitemviews \
     kcmutils \
-    ki18n \
     kio \
     kservice \
     kiconthemes \

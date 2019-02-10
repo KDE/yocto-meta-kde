@@ -12,7 +12,6 @@ DEPENDS = " \
     kconfig \
     kdbusaddons \
     solid \
-    ki18n \
     kglobalaccel \
     kio \
     knotifyconfig \

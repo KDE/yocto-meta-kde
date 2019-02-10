@@ -10,7 +10,6 @@ DEPENDS = " \
     kcrash \
     kdeclarative \
     kglobalaccel \
-    ki18n \
     kidletime \
     kcmutils \
     knotifications \

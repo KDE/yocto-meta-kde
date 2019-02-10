@@ -1,6 +1,5 @@
 inherit cmake_qt5
-inherit gettext
-inherit python3native
+inherit ki18n
 
 EXTRA_OECMAKE += " \
     -DBUILD_TESTING=OFF \
@@ -9,7 +8,6 @@ EXTRA_OECMAKE += " \
 DEPENDS += " \
     extra-cmake-modules \
     qtbase \
-    gettext-native \
 "
 
 do_configure_prepend() {

@@ -9,7 +9,6 @@ DEPENDS = " \
     kcoreaddons \
     kdeclarative \
     kglobalaccel \
-    ki18n \
     plasma-framework \
     pulseaudio \
     libcanberra \

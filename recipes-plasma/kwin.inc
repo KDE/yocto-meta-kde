@@ -11,7 +11,6 @@ DEPENDS = " \
     kconfigwidgets \
     kcrash \
     kglobalaccel \
-    ki18n \
     kinit \
     knotifications \
     kpackage \

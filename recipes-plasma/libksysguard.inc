@@ -7,7 +7,6 @@ PR = "r0"
 DEPENDS = " \
     kcoreaddons \
     kconfig \
-    ki18n \
     kwindowsystem \
     kcompletion \
     kauth \

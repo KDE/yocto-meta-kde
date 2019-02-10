@@ -10,7 +10,6 @@ DEPENDS = " \
     kconfig \
     kcrash \
     kdbusaddons \
-    ki18n \
     karchive \
     kdeclarative \
     kxmlgui \

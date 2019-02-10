@@ -9,7 +9,6 @@ DEPENDS = " \
     qtquickcontrols2 \
     kconfig \
     kconfigwidgets \
-    ki18n \
     kiconthemes \
     kio \
     knotifications \

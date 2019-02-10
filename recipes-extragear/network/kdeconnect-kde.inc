@@ -7,7 +7,6 @@ PR = "r0"
 DEPENDS += " \
     qtdeclarative \
     qca \
-    ki18n \
     kconfigwidgets \
     kdbusaddons \
     kiconthemes \

@@ -1,6 +1,5 @@
 inherit cmake_qt5
-inherit gettext
-inherit python3native
+inherit ki18n
 inherit kdoctools
 
 EXTRA_OECMAKE += " \

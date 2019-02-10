@@ -13,7 +13,6 @@ DEPENDS = " \
     kwindowsystem \
     kiconthemes \
     plasma-framework \
-    ki18n \
     kio \
     bluez-qt \
     kded \
