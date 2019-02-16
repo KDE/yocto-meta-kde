@@ -63,6 +63,7 @@ FILES_${PN} += " \
     ${datadir}/desktop-directories/*.directory \
     ${datadir}/wayland-sessions/*.desktop \
     ${datadir}/xsessions/*.desktop \
+    ${datadir}/kpackage \
 "
 
 FILES_${PN}-dev += " \

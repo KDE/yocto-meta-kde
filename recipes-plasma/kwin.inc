@@ -71,6 +71,7 @@ FILES_${PN} += " \
     ${datadir}/kservicetypes5/*.desktop \
     ${datadir}/kwincompositing/qml/*.qml \
     ${datadir}/config.kcfg/*.kcfg \
+    ${datadir}/kpackage \
 "
 
 FILES_${PN}-dev += " \

@@ -9,6 +9,7 @@ DEPENDS += " \
     knotifications \
     kwayland \
     kwidgetsaddons \
+    kio \
 "
 
 SRC_URI = " \
