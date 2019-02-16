@@ -73,7 +73,7 @@ RDEPENDS_${PN} += "\
     pam-plugin-tally \
 "
 
-RRECOMMENDS_${PN += " \
+RRECOMMENDS_${PN} += " \
     qtvirtualkeyboard-plugins \
     qtvirtualkeyboard-qmlplugins \
 "
