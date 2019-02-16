@@ -34,8 +34,6 @@ DEPENDS = " \
     fontconfig \
     libepoxy \
     libinput \
-    libxslt-native \
-    karchive-native \
 "
 
 SRC_URI = " \
@@ -44,7 +42,7 @@ SRC_URI = " \
 
 S = "${WORKDIR}/git"
 
-inherit cmake_plasma
+inherit cmake_plasma kdoctools
 
 do_install_append() {
     # dirty workaround for aurora crash on Wayland

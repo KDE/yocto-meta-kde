@@ -7,7 +7,6 @@ PR = "r0"
 DEPENDS = " \
     qtx11extras \
     kactivities \
-    kauth \
     kidletime \
     kconfig \
     kdbusaddons \

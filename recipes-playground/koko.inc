@@ -20,3 +20,6 @@ SRC_URI = " \
 S = "${WORKDIR}/git"
 
 inherit cmake_kdeapp
+inherit kconfig
+inherit kcoreaddons
+inherit kauth

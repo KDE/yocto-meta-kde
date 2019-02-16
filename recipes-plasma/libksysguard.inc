@@ -9,7 +9,6 @@ DEPENDS = " \
     kconfig \
     kwindowsystem \
     kcompletion \
-    kauth \
     kwidgetsaddons \
     kiconthemes \
     kconfigwidgets \

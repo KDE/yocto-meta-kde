@@ -16,6 +16,7 @@ SRC_URI = " \
 S = "${WORKDIR}/git"
 
 inherit cmake_plasma
+inherit kdoctools
 
 FILES_${PN} += " \
     ${libdir}/qml \

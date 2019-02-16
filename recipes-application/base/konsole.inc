@@ -19,5 +19,8 @@ SRC_URI = "git://anongit.kde.org/${BPN};nobranch=1"
 S = "${WORKDIR}/git"
 
 inherit cmake_kdeapp
+inherit kcoreaddons
+inherit kconfig
+inherit kauth
 
 FILES_SOLIBSDEV = ""

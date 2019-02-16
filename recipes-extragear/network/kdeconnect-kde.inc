@@ -22,6 +22,9 @@ SRC_URI = "git://anongit.kde.org/${BPN};protocol=git"
 S = "${WORKDIR}/git"
 
 inherit cmake_kdeapp
+inherit kcoreaddons
+inherit kconfig
+inherit kauth
 
 EXTRA_OECMAKE += " -DEXPERIMENTALAPP_ENABLED=ON -DSMSAPP_ENABLED=ON -DOE_QCA_PATH_HOST_ROOT=${STAGING_DIR_HOST}"
 

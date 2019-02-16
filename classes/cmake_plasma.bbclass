@@ -1,5 +1,9 @@
 inherit cmake_qt5
 inherit ki18n
+inherit kcoreaddons
+inherit kconfig
+inherit kauth
+inherit kdoctools
 
 EXTRA_OECMAKE += " \
     -DBUILD_TESTING=OFF \
@@ -13,13 +17,6 @@ DEPENDS += " \
 do_configure_prepend() {
     # kpackagetool5 needs to find installed service type files
     export XDG_DATA_DIRS=${STAGING_DATADIR}:$XDG_DATA_DIRS
-}
-
-do_compile_prepend() {
-    # desktoptojson needs to find installed service type files
-    export XDG_DATA_DIRS=${STAGING_DATADIR}:$XDG_DATA_DIRS
-    # meinproc5 needs to find its libraries
-    export LD_LIBRARY_PATH=${STAGING_LIBDIR_NATIVE}:$LD_LIBRARY_PATH
 }
 
 FILES_${PN} += " \
