@@ -31,4 +31,6 @@ EXTRA_OECMAKE += " -DEXPERIMENTALAPP_ENABLED=ON -DSMSAPP_ENABLED=ON -DOE_QCA_PAT
 FILES_${PN} += " \
     ${datadir}/plasma \
     ${datadir}/nautilus-python \
+    ${datadir}/Thunar \
+    ${datadir}/contractor \
 "
