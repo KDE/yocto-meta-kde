@@ -18,7 +18,10 @@ DEPENDS += " \
     kwayland \
 "
 
-SRC_URI = "git://anongit.kde.org/${BPN};protocol=git"
+SRC_URI = " \
+    git://anongit.kde.org/${BPN};protocol=git \
+    file://0001-fix-kf5-55-compat.diff \
+"
 S = "${WORKDIR}/git"
 
 inherit cmake_kdeapp
