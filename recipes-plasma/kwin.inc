@@ -38,6 +38,7 @@ DEPENDS = " \
 
 SRC_URI = " \
     git://anongit.kde.org/${BPN};nobranch=1 \
+    file://kwinrc \
 "
 
 S = "${WORKDIR}/git"
@@ -47,6 +48,8 @@ inherit cmake_plasma kdoctools
 do_install_append() {
     # dirty workaround for aurora crash on Wayland
     rm -rf ${D}/${libdir}/plugins/org.kde.kdecoration2/
+
+    install -m 644 ${WORKDIR}/kwinrc ${D}/${sysconfdir}/xdg/kwinrc
 }
 
 FILES_SOLIBSDEV = ""
