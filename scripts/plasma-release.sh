@@ -5,7 +5,7 @@
 
 function usage()
 {
-    echo "$1 [add|remove] <version>"
+    echo "$1 [add|remove|update] <version> [<new version>]"
     exit 1
 }
 
@@ -28,6 +28,13 @@ add)
 remove)
     for recipe in `find $base -name "*_$version.bb"`; do
         git rm -f $recipe
+    done
+    ;;
+update)
+    new_version=$3
+    for recipe in `find $base -name "*_$version.bb"`; do
+        new_recipe=`echo $recipe | sed -e "s,$version,$new_version,"`
+        git mv $recipe $new_recipe
     done
     ;;
 *)
