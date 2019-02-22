@@ -14,3 +14,5 @@ SRC_URI = " \
 S = "${WORKDIR}/git"
 
 inherit cmake_kdeapp
+
+RDEPENDS_${PN} += "qtmultimedia-qmlplugins"
