@@ -39,6 +39,7 @@ inherit cmake_plasma
 
 EXTRA_OECMAKE += " \
     -DOE_QCA_PATH_HOST_ROOT=${STAGING_DIR_HOST} \
+    -DBUILD_MOBILE=ON \
 "
 
 FILES_SOLIBSDEV = ""
@@ -47,4 +48,5 @@ FILES_${PN} += " \
     ${libdir}/qml/org/kde/plasma/networkmanagement \
     ${datadir}/plasma/plasmoids/org.kde.plasma.networkmanagement \
     ${datadir}/kcm_networkmanagement/qml/*.qml \
+    ${datadir}/kpackage \
 "
