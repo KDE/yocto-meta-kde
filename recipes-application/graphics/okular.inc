@@ -19,6 +19,11 @@ DEPENDS += " \
 SRC_URI = "git://anongit.kde.org/${BPN};nobranch=1"
 S = "${WORKDIR}/git"
 
+# dirty hack to force the mobile version and hide the desktop one
+do_install_append() {
+    sed -i 's/Exec=okular %U$/Exec=okularkirigami %U/g' ${D}${datadir}/applications/org.kde.okular.desktop
+}
+
 inherit cmake_kdeapp
 inherit kcoreaddons
 inherit kconfig
