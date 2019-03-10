@@ -10,6 +10,7 @@ DEPENDS += " \
     extra-cmake-modules \
     qtbase \
     gettext-native \
+    kpackage-native \
 "
 
 do_configure_prepend() {

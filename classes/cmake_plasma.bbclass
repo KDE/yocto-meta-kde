@@ -12,6 +12,7 @@ EXTRA_OECMAKE += " \
 DEPENDS += " \
     extra-cmake-modules \
     qtbase \
+    kpackage-native \
 "
 
 do_configure_prepend() {
