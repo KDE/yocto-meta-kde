@@ -1,4 +1,4 @@
-02bba7f29a0fb02d468125150cbe05f3bef0037ccdebb87558f075bb570592d4DESCRIPTION = "Google Noto emoji fonts"
+DESCRIPTION = "Google Noto emoji fonts"
 SECTION = "fonts"
 
 HOMEPAGE = "https://www.google.com/get/noto/"
