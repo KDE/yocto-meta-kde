@@ -32,6 +32,7 @@ DEPENDS = " \
 
 SRC_URI = " \
     git://anongit.kde.org/${BPN};nobranch=1 \
+    file://0001-wifi-list-view-hotfix.diff \
 "
 S = "${WORKDIR}/git"
 

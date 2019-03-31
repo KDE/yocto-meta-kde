@@ -1,0 +1,26 @@
+commit ac38ebd52d2936d1c2fd34507df90ba3ed64c841
+Author: Volker Krause <vkrause@kde.org>
+Date:   Sat Mar 30 22:29:55 2019 +0100
+
+    Actually make the network list view show up
+    
+    Reviewers: jgrulich!
+    
+    Subscribers: plasma-devel
+    
+    Tags: #plasma
+    
+    Differential Revision: https://phabricator.kde.org/D20132
+
+diff --git a/mobile/wifi/package/contents/ui/main.qml b/mobile/wifi/package/contents/ui/main.qml
+index 224de727..31aeff57 100644
+--- a/mobile/wifi/package/contents/ui/main.qml
++++ b/mobile/wifi/package/contents/ui/main.qml
+@@ -79,7 +79,6 @@ Kirigami.ApplicationItem {
+ 
+     NetworkListView {
+         id: networkListview
+-        anchors.fill: parent
+     }
+ 
+     Component {
