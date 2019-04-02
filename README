@@ -25,3 +25,10 @@ This layer depends on:
   URI: https://git.yoctoproject.org/cgit/cgit.cgi/poky
   layers: meta-yocto-bsp, meta-poky, meta
   branch: master
+
+Patches
+=======
+
+Please submit any patches against the kf5 layer on KDE Phabricator project.
+Project available on https://phabricator.kde.org/tag/kde_yocto/
+Phabricator guide on https://community.kde.org/Infrastructure/Phabricator 
