@@ -29,6 +29,7 @@ FILES_${PN} += " \
     ${datadir}/config.kcfg/*.kcfg \
     ${datadir}/dbus-1/services/*.service \
     ${datadir}/dbus-1/system-services/*.service \
+    ${datadir}/dbus-1/system.d/*.conf \
     ${datadir}/icons/hicolor \
     ${datadir}/kconf_update/* \
     ${datadir}/knotifications5/*.notifyrc \
