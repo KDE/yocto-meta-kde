@@ -32,6 +32,7 @@ inherit cmake_qt5 pkgconfig systemd useradd
 EXTRA_OECMAKE += " \
     -DLOGIN_DEFS_PATH=${STAGING_DIR_HOST}${sysconfdir}/login.defs \
     -DQML_INSTALL_DIR=${OE_QMAKE_PATH_QML} \
+    -DSYSTEMD_SYSTEM_UNIT_DIR=${systemd_unitdir}/system \
 "
 
 do_configure_append() {
@@ -52,7 +53,7 @@ do_install_append() {
     chmod 0750 ${D}${localstatedir}/lib/sddm
 
     # make SDDM actually auto-start
-    echo "WantedBy=multi-user.target" >> ${D}/lib/systemd/system/sddm.service
+    echo "WantedBy=multi-user.target" >> ${D}/${systemd_unitdir}/system/sddm.service
 }
 
 FILES_${PN} += "${OE_QMAKE_PATH_QML}"
