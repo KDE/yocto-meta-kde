@@ -33,6 +33,7 @@ FILES_${PN} += " \
     ${datadir}/icons/hicolor \
     ${datadir}/kconf_update/* \
     ${datadir}/knotifications5/*.notifyrc \
+    ${datadir}/knsrcfiles \
     ${datadir}/kservices5/*.desktop \
     ${datadir}/kservices5/*.protocol \
     ${datadir}/kservicetypes5/*.desktop \

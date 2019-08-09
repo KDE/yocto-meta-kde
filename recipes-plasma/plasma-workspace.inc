@@ -68,6 +68,7 @@ FILES_${PN} += " \
 
 FILES_${PN}-dev += " \
     ${libdir}/libcolorcorrect.so \
+    ${libdir}/libnotificationmanager.so \
     ${libdir}/libtaskmanager.so \
     ${libdir}/libkworkspace5.so \
     ${libdir}/libplasma-geolocation-interface.so \
