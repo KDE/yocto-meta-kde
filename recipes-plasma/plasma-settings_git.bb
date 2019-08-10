@@ -1,2 +1,2 @@
 require ${PN}.inc
-SRCREV = "e4f4d768c1603799add19d1471927b9131cefe1e"
+SRCREV = "c28d8da6850238b13b7d0891a24bc32ab4860b2e"

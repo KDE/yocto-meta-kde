@@ -1,3 +1,3 @@
 require ${BPN}.inc
 # SRCREV = "v${PV}"
-SRCREV = "7ce39d54ba99c0357f46df1be7b49b6c4c8be4b2"
+SRCREV = "d46da415a3ea03d8ec432c6c838a6e4f5d35526e"

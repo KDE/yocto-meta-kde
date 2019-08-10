@@ -39,6 +39,7 @@ FILES_${PN} += " \
     ${datadir}/kxmlgui5/*/*.rc \
     ${datadir}/metainfo/*.xml \
     ${datadir}/polkit-1/actions/*.policy \
+    ${datadir}/qlogging-categories5 \
 "
 
 FILES_${PN}-dev += " \
