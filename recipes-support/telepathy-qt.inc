@@ -12,7 +12,7 @@ SRC_URI = " \
 "
 S = "${WORKDIR}/git"
 
-inherit cmake_qt5 pythonnative
+inherit cmake_qt5 python3native
 
 EXTRA_OECMAKE += " -DDESIRED_QT_VERSION=5 -DENABLE_TESTS=FALSE -DENABLE_FARSTREAM=FALSE -DENABLE_EXAMPLES=FALSE"
 
