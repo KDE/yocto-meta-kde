@@ -7,6 +7,7 @@ PR = "r0"
 DEPENDS = " \
     qtdeclarative \
     kcoreaddons \
+    kitemmodels \
     kdeclarative \
     kservice \
     plasma-framework \

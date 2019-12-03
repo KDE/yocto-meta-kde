@@ -45,6 +45,7 @@ FILES_${PN} += " \
 FILES_${PN}-dev += " \
     ${datadir}/dbus-1/interfaces/*.xml \
     ${datadir}/kdevappwizard/templates/*.tar.bz2 \
+    ${datadir}/qlogging-categories5/* \
     ${libdir}/cmake/*/*.cmake \
     ${prefix}/mkspecs/modules/qt_*.pri \
 "

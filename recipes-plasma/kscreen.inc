@@ -9,6 +9,7 @@ DEPENDS = " \
     kdbusaddons \
     plasma-framework \
     kconfigwidgets \
+    kcmutils \
     kglobalaccel \
     kwidgetsaddons \
     kxmlgui \
@@ -25,5 +26,6 @@ inherit cmake_plasma
 FILES_${PN} += " \
     ${datadir}/kded_kscreen \
     ${datadir}/kcm_kscreen \
+    ${datadir}/kpackage \
     ${datadir}/plasma/plasmoids/org.kde.kscreen \
 "

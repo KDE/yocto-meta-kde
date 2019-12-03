@@ -34,6 +34,9 @@ DEPENDS = " \
     phonon \
     plasma-framework \
     prison \
+    kpeople \
+    kactivitiesstats \
+    libkscreen \
 "
 
 SRC_URI = " \
@@ -49,6 +52,7 @@ EXTRA_OECMAKE += " -DBUILD_xembed-sni-proxy=OFF"
 FILES_SOLIBSDEV = ""
 FILES_${PN} += " \
     ${libdir}/qml/org/kde \
+    ${datadir}/kglobalaccel \
     ${datadir}/kstyle/themes/*.themerc \
     ${datadir}/ksmserver/themes \
     ${datadir}/ksplash/Themes \

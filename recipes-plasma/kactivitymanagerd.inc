@@ -39,4 +39,6 @@ FILES_${PN} += " \
     ${libdir}/*.so \
 "
 
-FILES_${PN}-dev = ""
+FILES_${PN}-dev = " \
+    ${datadir}/qlogging-categories5 \
+"

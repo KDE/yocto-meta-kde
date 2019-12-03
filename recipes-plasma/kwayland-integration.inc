@@ -7,6 +7,7 @@ PR = "r0"
 DEPENDS = " \
     kidletime \
     kwindowsystem \
+    kguiaddons \
     kwayland \
 "
 
@@ -16,3 +17,7 @@ SRC_URI = " \
 S = "${WORKDIR}/git"
 
 inherit cmake_plasma
+
+FILES_${PN} += " \
+    ${libdir}/plugins/kf5/kguiaddons \
+"
