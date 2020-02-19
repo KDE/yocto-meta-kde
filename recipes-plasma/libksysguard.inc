@@ -13,6 +13,7 @@ DEPENDS = " \
     kiconthemes \
     kconfigwidgets \
     kservice \
+    qtwebchannel \
     plasma-framework \
 "
 
