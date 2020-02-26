@@ -8,6 +8,7 @@ DEPENDS = " \
     plasma-framework \
     kitemmodels \
     kdelibs4support \
+    kinit \
 "
 
 SRC_URI = " \
