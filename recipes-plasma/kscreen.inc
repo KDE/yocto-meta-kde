@@ -6,6 +6,7 @@ PR = "r0"
 
 DEPENDS = " \
     qtdeclarative \
+    qtsensors \
     kdbusaddons \
     plasma-framework \
     kconfigwidgets \

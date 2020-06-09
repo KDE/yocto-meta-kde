@@ -9,7 +9,10 @@ DEPENDS += " \
     knotifications \
     kwayland \
     kwidgetsaddons \
+    kirigami \
     kio \
+    kdeclarative \
+    plasma-framework \
 "
 
 SRC_URI = " \

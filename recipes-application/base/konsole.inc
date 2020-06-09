@@ -24,3 +24,6 @@ inherit kconfig
 inherit kauth
 
 FILES_SOLIBSDEV = ""
+FILES_${PN} += " \
+    ${datadir}/knsrcfiles \
+"
