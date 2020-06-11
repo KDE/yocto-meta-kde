@@ -9,7 +9,7 @@ Dependencies
 
 This layer depends on:
 
-  URI: https://cgit.kde.org/yocto-meta-kf5.git
+  URI: https://invent.kde.org/packaging/yocto-meta-kf5
   branch: master
 
   URI: https://code.qt.io/cgit/yocto/meta-qt5.git

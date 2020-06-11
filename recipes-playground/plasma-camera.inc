@@ -9,9 +9,7 @@ DEPENDS = " \
     kirigami \
 "
 
-SRC_URI = " \
-    git://anongit.kde.org/${BPN};nobranch=1 \
-"
+SRC_URI = "git://invent.kde.org/plasma-mobile/${BPN};nobranch=1;protocol=https"
 S = "${WORKDIR}/git"
 
 inherit cmake_kdeapp

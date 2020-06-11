@@ -6,7 +6,7 @@ PR = "r0"
 
 DEPENDS = "zlib boost libunwind elfutils"
 
-SRC_URI = "git://anongit.kde.org/heaptrack;protocol=git"
+SRC_URI = "git://invent.kde.org/sdk/${BPN};nobranch=1;protocol=https"
 S = "${WORKDIR}/git"
 
 inherit cmake

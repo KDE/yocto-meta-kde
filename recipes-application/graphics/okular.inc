@@ -16,7 +16,7 @@ DEPENDS += " \
     qca \
 "
 
-SRC_URI = "git://anongit.kde.org/${BPN};nobranch=1"
+SRC_URI = "git://invent.kde.org/graphics/${BPN};nobranch=1;protocol=https"
 S = "${WORKDIR}/git"
 
 # dirty hack to force the mobile version and hide the desktop one

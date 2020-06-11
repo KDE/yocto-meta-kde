@@ -37,7 +37,7 @@ DEPENDS = " \
 "
 
 SRC_URI = " \
-    git://anongit.kde.org/${BPN};nobranch=1 \
+    git://invent.kde.org/plasma/${BPN};nobranch=1;protocol=https \
     file://kwinrc \
 "
 

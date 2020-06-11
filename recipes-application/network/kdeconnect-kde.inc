@@ -19,9 +19,7 @@ DEPENDS += " \
     kwayland \
 "
 
-SRC_URI = " \
-    git://anongit.kde.org/${BPN};protocol=git \
-"
+SRC_URI = "git://invent.kde.org/network/${BPN};nobranch=1;protocol=https"
 S = "${WORKDIR}/git"
 
 inherit cmake_kdeapp

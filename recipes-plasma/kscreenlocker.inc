@@ -23,7 +23,7 @@ DEPENDS = " \
 "
 
 SRC_URI = " \
-    git://git.kde.org/${BPN};nobranch=1 \
+    git://invent.kde.org/plasma/${BPN};nobranch=1;protocol=https \
     file://kde.pam \
 "
 S = "${WORKDIR}/git"

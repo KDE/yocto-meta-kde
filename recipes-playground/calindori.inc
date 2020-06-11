@@ -11,9 +11,7 @@ DEPENDS = " \
     plasma-framework \
 "
 
-SRC_URI = " \
-    git://git@invent.kde.org/dkardarakos/${BPN}.git;nobranch=1 \
-"
+SRC_URI = "git://invent.kde.org/plasma-mobile/${BPN};nobranch=1;protocol=https"
 S = "${WORKDIR}/git"
 
 inherit cmake_kdeapp
