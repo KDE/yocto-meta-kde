@@ -5,12 +5,13 @@ LIC_FILES_CHKSUM = " \
     file://de/COPYING_GPLv3;md5=d32239bcb673463ab874e80d47fae504 \
 "
 
-SRCREV = "libreoffice-6-2-3"
+SRCREV = "libreoffice-${PV}"
 SRC_URI = " \
     git://anongit.freedesktop.org/libreoffice/dictionaries;nobranch=1 \
 "
 S = "${WORKDIR}/git"
 
+do_configure[noexec] = "1"
 do_compile[noexec] = "1"
 do_install() {
     install -m 0755 -d ${D}${datadir}/hunspell
