@@ -15,6 +15,7 @@ DEPENDS = " \
     kservice \
     qtwebchannel \
     plasma-framework \
+    knewstuff \
 "
 
 SRC_URI = "git://invent.kde.org/plasma/${BPN};nobranch=1;protocol=https"
@@ -23,6 +24,6 @@ S = "${WORKDIR}/git"
 inherit cmake_plasma
 
 FILES_${PN} += " \
-    ${datadir}/ksysguard/scripts/* \
-    ${datadir}/ksysguard/scripts/*/* \
+    ${datadir}/ksysguard \
+    ${libdir}/qml \
 "

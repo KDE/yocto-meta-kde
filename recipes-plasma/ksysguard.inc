@@ -26,3 +26,7 @@ inherit cmake_plasma
 inherit kdoctools
 
 FILES_SOLIBSDEV = ""
+
+FILES_${PN} += " \
+    ${libdir}/libksgrdbackend.so \
+"

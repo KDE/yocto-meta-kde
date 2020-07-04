@@ -19,6 +19,7 @@ DEPENDS = " \
     kiconthemes \
     kidletime \
     kwayland \
+    kwayland-server \
     kcompletion \
     kdeclarative \
     kcmutils \
@@ -87,4 +88,5 @@ RDEPENDS_${PN} += " \
     qtvirtualkeyboard-qmlplugins \
     qtwayland-plugins \
     xserver-xorg-xwayland \
+    perl \
 "
