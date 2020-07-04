@@ -1,0 +1,22 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 4b4b099..8d21422 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -21,6 +21,7 @@ set(CMAKECONFIG_INSTALL_DIR "${CMAKECONFIG_INSTALL_PREFIX}/PlasmaWaylandProtocol
+ configure_package_config_file("${CMAKE_CURRENT_SOURCE_DIR}/PlasmaWaylandProtocolsConfig.cmake.in"
+                               "${CMAKE_CURRENT_BINARY_DIR}/PlasmaWaylandProtocolsConfig.cmake"
+                               INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
++                              PATH_VARS KDE_INSTALL_DATADIR
+                               )
+ ecm_setup_version(PROJECT VARIABLE_PREFIX PLASMA_WAYLAND_PROTOCOLS
+                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/plasma_wayland_protocols_version.h"
+diff --git a/PlasmaWaylandProtocolsConfig.cmake.in b/PlasmaWaylandProtocolsConfig.cmake.in
+index c3e0b1f..3b5c41b 100644
+--- a/PlasmaWaylandProtocolsConfig.cmake.in
++++ b/PlasmaWaylandProtocolsConfig.cmake.in
+@@ -2,4 +2,4 @@
+ 
+ include(CMakeFindDependencyMacro)
+ 
+-set(PLASMA_WAYLAND_PROTOCOLS_DIR ${KDE_INSTALL_FULL_DATAROOTDIR}/plasma-wayland-protocols)
++set(PLASMA_WAYLAND_PROTOCOLS_DIR @PACKAGE_KDE_INSTALL_DATADIR@/plasma-wayland-protocols)
