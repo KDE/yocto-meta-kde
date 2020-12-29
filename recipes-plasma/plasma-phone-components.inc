@@ -36,4 +36,5 @@ RDEPENDS_${PN} += " \
     libqofono \
     kded \
     qtgraphicaleffects \
+    plasma-nano \
 "

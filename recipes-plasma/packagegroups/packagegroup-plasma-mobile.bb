@@ -24,6 +24,7 @@ RDEPENDS_${PN} = " \
     libksysguard \
     milou \
     plasma-integration \
+    plasma-nano \
     plasma-nm \
     plasma-pa \
     plasma-phone-components \
