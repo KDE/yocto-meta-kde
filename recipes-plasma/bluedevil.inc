@@ -1,21 +1,21 @@
 DESCRIPTION = "Bluedevil"
 HOMEPAGE = ""
 LICENSE = "GPL-2"
-LIC_FILES_CHKSUM = "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263"
+LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-only.txt;md5=93e64b4a83c7e441e48bbdeeea05c977"
 PR = "r0"
 
 DEPENDS = " \
-    qtdeclarative \
-    kcoreaddons \
-    kwidgetsaddons \
-    kdbusaddons \
-    knotifications \
-    kwindowsystem \
-    kiconthemes \
-    plasma-framework \
-    kio \
     bluez-qt \
+    kcoreaddons \
+    kdbusaddons \
     kded \
+    kiconthemes \
+    kio \
+    knotifications \
+    kwidgetsaddons \
+    kwindowsystem \
+    plasma-framework \
+    qtdeclarative \
     shared-mime-info \
     shared-mime-info-native \
 "
@@ -26,9 +26,10 @@ S = "${WORKDIR}/git"
 inherit cmake_plasma
 
 FILES_${PN} += " \
-    ${libdir}/qml \
-    ${datadir}/plasma \
-    ${datadir}/mime/packages \
     ${datadir}/bluedevilwizard \
+    ${datadir}/kpackage/kcms/ \
+    ${datadir}/mime/packages \
+    ${datadir}/plasma \
     ${datadir}/remoteview \
+    ${libdir}/qml \
 "

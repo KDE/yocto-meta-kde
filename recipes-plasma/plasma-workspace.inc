@@ -6,6 +6,7 @@ PR = "r0"
 
 DEPENDS = " \
     qtdeclarative \
+    qtwayland-native \
     baloo \
     kcoreaddons \
     kcrash \
@@ -23,6 +24,7 @@ DEPENDS = " \
     knotifications \
     knotifyconfig \
     kpackage \
+    kholidays \
     krunner \
     kscreenlocker \
     ktexteditor \
@@ -37,6 +39,7 @@ DEPENDS = " \
     kpeople \
     kactivitiesstats \
     libkscreen \
+    libxft \
 "
 
 SRC_URI = "git://invent.kde.org/plasma/${BPN};nobranch=1;protocol=https"
@@ -49,28 +52,37 @@ EXTRA_OECMAKE += " -DBUILD_xembed-sni-proxy=OFF"
 
 FILES_SOLIBSDEV = ""
 FILES_${PN} += " \
-    ${libdir}/qml/org/kde \
+    ${datadir}/desktop-directories/*.directory \
+    ${datadir}/kcontrol \
+    ${datadir}/kdisplay \
+    ${datadir}/kfontinst \
     ${datadir}/kglobalaccel \
-    ${datadir}/kstyle/themes/*.themerc \
+    ${datadir}/kio_desktop \
+    ${datadir}/konqsidebartng \
+    ${datadir}/kpackage \
+    ${datadir}/krunner \
+    ${datadir}/kservices5 \
     ${datadir}/ksmserver/themes \
     ${datadir}/ksplash/Themes \
-    ${datadir}/kio_desktop \
-    ${datadir}/plasma/plasmoids \
+    ${datadir}/kstyle/themes/*.themerc \
     ${datadir}/plasma/look-and-feel \
+    ${datadir}/plasma/plasmoids \
+    ${datadir}/plasma/services/*.operations \
     ${datadir}/plasma/shareprovider \
     ${datadir}/plasma/wallpapers \
-    ${datadir}/plasma/services/*.operations \
-    ${datadir}/solid/actions/*.desktop \
     ${datadir}/sddm/themes \
-    ${datadir}/desktop-directories/*.directory \
+    ${datadir}/solid/actions/*.desktop \
     ${datadir}/wayland-sessions/*.desktop \
     ${datadir}/xsessions/*.desktop \
-    ${datadir}/kpackage \
+    ${libdir}/plugins/plasmacalendarplugins \
+    ${libdir}/qml/org/kde \
 "
 
 FILES_${PN}-dev += " \
     ${libdir}/libcolorcorrect.so \
     ${libdir}/libnotificationmanager.so \
+    ${libdir}/libkfontinst.so \
+    ${libdir}/libkfontinstui.so \
     ${libdir}/libtaskmanager.so \
     ${libdir}/libkworkspace5.so \
     ${libdir}/libplasma-geolocation-interface.so \
@@ -79,6 +91,7 @@ FILES_${PN}-dev += " \
 
 RDEPENDS_${PN} += " \
     kinit \
+    kquickcharts \
     milou \
     xprop \
     xset \

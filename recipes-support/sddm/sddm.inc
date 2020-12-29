@@ -27,7 +27,10 @@ SRC_URI = " \
 "
 S = "${WORKDIR}/git"
 
-inherit cmake_qt5 pkgconfig systemd useradd
+inherit cmake_qt5
+inherit pkgconfig
+inherit systemd
+inherit useradd
 
 EXTRA_OECMAKE += " \
     -DLOGIN_DEFS_PATH=${STAGING_DIR_HOST}${sysconfdir}/login.defs \

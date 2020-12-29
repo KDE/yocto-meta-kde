@@ -32,12 +32,13 @@ S = "${WORKDIR}/git"
 inherit cmake_plasma
 
 do_install_append() {
-    mkdir -p ${D}${sysconfdir}/pam.d
-    cp ${WORKDIR}/kde.pam ${D}${sysconfdir}/pam.d/kde
+    install -d ${D}${sysconfdir}/pam.d
+    install -m 0644 ${WORKDIR}/kde.pam ${D}${sysconfdir}/pam.d/kde
 }
 
 FILES_${PN} += " \
-  ${datadir}/ksmserver/screenlocker/org.kde.passworddialog/*.desktop \
+    ${datadir}/ksmserver/screenlocker/org.kde.passworddialog/*.desktop \
+    ${datadir}/kpackage/kcms/kcm_screenlocker \
 "
 
 RDEPENDS_${PN} += "perl"

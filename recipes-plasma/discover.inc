@@ -1,7 +1,7 @@
 DESCRIPTION = "Discover"
 HOMEPAGE = ""
 LICENSE = "GPL-3"
-LIC_FILES_CHKSUM = "file://COPYING;md5=6679dc9ea294d0d265902ab8c9936a9c"
+LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-only.txt;md5=93e64b4a83c7e441e48bbdeeea05c977"
 PR = "r0"
 
 DEPENDS = " \

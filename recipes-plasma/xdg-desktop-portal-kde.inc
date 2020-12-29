@@ -14,6 +14,7 @@ DEPENDS += " \
     kdeclarative \
     plasma-framework \
     pipewire \
+    qtwayland-native \
 "
 
 SRC_URI = "git://invent.kde.org/plasma/${BPN};nobranch=1;protocol=https"

@@ -1,7 +1,7 @@
 DESCRIPTION = "Breeze Style"
 HOMEPAGE = ""
 LICENSE = "GPLv2"
-LIC_FILES_CHKSUM = "file://COPYING;md5=5c213a7de3f013310bd272cdb6eb7a24"
+LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-only.txt;md5=93e64b4a83c7e441e48bbdeeea05c977"
 PR = "r0"
 
 DEPENDS = " \
