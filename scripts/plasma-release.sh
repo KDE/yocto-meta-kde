@@ -21,7 +21,13 @@ case $command in
 add)
     for recipe in `find $base -name "*.inc" | grep -v /staging/`; do
         name=`echo $recipe | sed -e "s,\.inc,_${version}.bb,"`
-        echo -e 'require ${PN}.inc\nSRCREV = "v${PV}"' > $name
+cat <<EOM > $name
+# SPDX-FileCopyrightText: none
+# SPDX-License-Identifier: CC0-1.0
+
+require \${PN}.inc
+SRCREV = "v\${PV}"
+EOM
         git add $name
     done
     ;;
