@@ -9,6 +9,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=5a3169a2d39a757efd8b7aa66a69d97b"
 PR = "r0"
 
 DEPENDS += " \
+    exiv2 \
     kirigami \
     kparts \
     threadweaver \
@@ -17,6 +18,7 @@ DEPENDS += " \
     kactivities \
     kpty \
     poppler \
+    purpose \
     qca \
 "
 
@@ -32,5 +34,6 @@ inherit cmake_kdeapp
 inherit kcoreaddons
 inherit kconfig
 inherit kauth
+inherit mime-xdg
 
-EXTRA_OECMAKE += " -DOE_QCA_PATH_HOST_ROOT=${STAGING_DIR_HOST}"
+EXTRA_OECMAKE += " -DOE_QCA_PATH_HOST_ROOT=${STAGING_DIR_HOST} -DOKULAR_UI=both"
