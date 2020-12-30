@@ -29,6 +29,6 @@ This layer depends on:
 Patches
 =======
 
-Please submit any patches against the kf5 layer on KDE Phabricator project.
-Project available on https://phabricator.kde.org/tag/kde_yocto/
-Phabricator guide on https://community.kde.org/Infrastructure/Phabricator 
+Please submit any patches against the kde layer on KDE GitLab project.
+Project available on https://invent.kde.org/packaging/yocto-meta-kde
+GitLab guide on https://community.kde.org/Infrastructure/GitLab
