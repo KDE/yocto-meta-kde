@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2019q-2020 Volker Krause <vkrause@kde.org>
+#
+# SPDX-License-Identifier: MIT
+
 DESCRIPTION = "KoKo Gallery Application"
 HOMEPAGE = ""
 LICENSE = "GPLv2+"

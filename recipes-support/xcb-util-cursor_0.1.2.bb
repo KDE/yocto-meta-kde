@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2017 Volker Krause <vkrause@kde.org>
+#
+# SPDX-License-Identifier: MIT
+
 require recipes-graphics/xorg-lib/xcb-util.inc
 
 DEPENDS += "xcb-util xcb-util-renderutil xcb-util-image"

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2019 Volker Krause <vkrause@kde.org>
+#
+# SPDX-License-Identifier: MIT
+
 DESCRIPTION = "super simple sans display display desktop manager mockup mitigating mir"
 HOMEPAGE = "https://github.com/bhush9/simplelogin"
 LICENSE = "GPL-2.0+"

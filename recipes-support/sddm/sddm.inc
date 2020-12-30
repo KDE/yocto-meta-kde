@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2019 Alistair Francis <alistair.francis@wdc.com>
+# SPDX-FileCopyrightText: 2019-2020 Volker Krause <vkrause@kde.org>
+#
+# SPDX-License-Identifier: MIT
+
 DESCRIPTION = "QML based X11 and Wayland display manager"
 HOMEPAGE = "https://github.com/sddm/sddm"
 LICENSE = "GPLv2 & CC-BY-3.0"

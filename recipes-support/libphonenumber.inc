@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2018 Volker Krause <vkrause@kde.org>
+#
+# SPDX-License-Identifier: MIT
+
 DESCRIPTION = "libphonenumber"
 HOMEPAGE = "https://github.com/googlei18n/libphonenumber"
 LICENSE = "Apache-2"

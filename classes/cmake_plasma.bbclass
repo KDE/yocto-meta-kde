@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2018-2019 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2018 Alistair Francis <alistair.francis@wdc.com>
+#
+# SPDX-License-Identifier: MIT
+
 inherit cmake_qt5
 inherit ki18n
 inherit kcoreaddons

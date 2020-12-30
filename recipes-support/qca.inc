@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2019-2020 Volker Krause <vkrause@kde.org>
+#
+# SPDX-License-Identifier: MIT
+
 DESCRIPTION = "QCA"
 HOMEPAGE = ""
 LICENSE = "LGPL-2.1"

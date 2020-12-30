@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2019-2020 Volker Krause <vkrause@kde.org>
+#
+# SPDX-License-Identifier: MIT
+
 DESCRIPTION = "Okular"
 HOMEPAGE = "https://okular.kde.org/"
 LICENSE = "GPL-2.0"

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2019 Alistair Francis <alistair.francis@wdc.com>
+#
+# SPDX-License-Identifier: MIT
+
 SUMMARY = "A basic KDE Plasma Mobile image"
 
 IMAGE_FEATURES += "splash package-management hwcodecs x11"

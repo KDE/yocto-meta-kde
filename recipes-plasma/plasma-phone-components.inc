@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2017-2020 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2019 Alistair Francis <alistair.francis@wdc.com>
+# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
+
 DESCRIPTION = "Plasma Phone Components"
 HOMEPAGE = "https://community.kde.org/Plasma/Mobile/Code"
 LICENSE = "GPLv2+"

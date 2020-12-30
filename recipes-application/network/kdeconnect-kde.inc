@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2020 Volker Krause <vkrause@kde.org>
+#
+# SPDX-License-Identifier: MIT
+
 DESCRIPTION = "KDE Connect"
 HOMEPAGE = "https://community.kde.org/KDEConnect"
 LICENSE = "GPL-2"

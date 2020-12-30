@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2019 Volker Krause <vkrause@kde.org>
+#
+# SPDX-License-Identifier: MIT
+
 DESCRIPTION = "Google Noto CJK fonts"
 SECTION = "fonts"
 HOMEPAGE = "https://www.google.com/get/noto/"

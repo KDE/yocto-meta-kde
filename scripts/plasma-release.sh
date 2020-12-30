@@ -2,6 +2,10 @@
 #
 # add/remove Plasma release recipes
 #
+# SPDX-FileCopyrightText: 2018-2019 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
 function usage()
 {

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2019 Volker Krause <vkrause@kde.org>
+#
+# SPDX-License-Identifier: MIT
+
 inherit cmake_qt5
 inherit ki18n
 inherit kdoctools

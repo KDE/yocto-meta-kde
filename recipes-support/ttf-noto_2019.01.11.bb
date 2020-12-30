@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2019 Hannah Kiekens <hannahkiekens@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 DESCRIPTION = "Google Noto fonts"
 SECTION = "fonts"
 

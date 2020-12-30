@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2018-2020 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2020 Alistair Francis <alistair.francis@wdc.com>
+#
+# SPDX-License-Identifier: MIT
+
 DESCRIPTION = "KSysGuard library"
 HOMEPAGE = ""
 LICENSE = "LGPLv2.1"

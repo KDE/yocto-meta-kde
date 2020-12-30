@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2018-2020 Volker Krause <vkrause@kde.org>
+#
+# SPDX-License-Identifier: MIT
+
 DESCRIPTION = "KWayland Integration"
 HOMEPAGE = ""
 LICENSE = "LGPL-2.1"

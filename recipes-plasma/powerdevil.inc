@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2018-2020 Volker Krause <vkrause@kde.org>
+#
+# SPDX-License-Identifier: MIT
+
 DESCRIPTION = "Powerdevil"
 HOMEPAGE = ""
 LICENSE = "GPL-2"

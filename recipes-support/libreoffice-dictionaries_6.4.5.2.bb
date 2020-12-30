@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2020 Volker Krause <vkrause@kde.org>
+#
+# SPDX-License-Identifier: MIT
+
 DESCRIPTION = "LibreOffice Dictionaries"
 LICENSE = "GPL-2.0 & GPL-3.0"
 LIC_FILES_CHKSUM = " \

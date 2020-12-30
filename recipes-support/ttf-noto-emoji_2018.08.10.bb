@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2019 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2019 Hannah Kiekens <hannahkiekens@gmail.com>
+#
+# SPDX-License-Identifier: MIT
+
 DESCRIPTION = "Google Noto emoji fonts"
 SECTION = "fonts"
 
@@ -28,4 +33,3 @@ do_install() {
     install -d ${D}${datadir}/fonts/truetype/
     find ./ -name '*.ttf' -exec install -m 0644 {} ${D}${datadir}/fonts/truetype/ \;
 }
-

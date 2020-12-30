@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2020 Volker Krause <vkrause@kde.org>
+#
+# SPDX-License-Identifier: MIT
+
 DESCRIPTION = "KF5 PulseAudio Qt Bindings - libpulse bindings for Qt"
 HOMEPAGE = "https://invent.kde.org/libraries/pulseaudio-qt"
 LICENSE = "LGPL-2.1"

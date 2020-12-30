@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2017 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2019 Alistair Francis <alistair.francis@wdc.com>
+#
+# SPDX-License-Identifier: MIT
+
 DESCRIPTION = "Telepathy-Qt"
 HOMEPAGE = "https://telepathy.freedesktop.org/doc/telepathy-qt/"
 LICENSE = "LGPL-2.1"

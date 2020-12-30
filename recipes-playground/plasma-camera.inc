@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2019-2020 Volker Krause <vkrause@kde.org>
+#
+# SPDX-License-Identifier: MIT
+
 DESCRIPTION = "Plasma Camera"
 HOMEPAGE = ""
 LICENSE = "GPLv3+"
