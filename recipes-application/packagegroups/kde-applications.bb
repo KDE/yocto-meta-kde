@@ -21,4 +21,6 @@ RDEPENDS_${PN} = " \
     kanagram \
     khangman \
     gcompris \
+    \
+    elisa \
 "
