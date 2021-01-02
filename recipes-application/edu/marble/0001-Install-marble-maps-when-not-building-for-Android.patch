@@ -1,0 +1,30 @@
+From 9d267247bb9817dbe251d051edd600d83b061da4 Mon Sep 17 00:00:00 2001
+From: Andreas Cord-Landwehr <cordlandwehr@kde.org>
+Date: Sat, 2 Jan 2021 17:20:53 +0100
+Subject: [PATCH] Install marble-maps when not building for Android
+
+Otherwise the executable is getting missed during packaging.
+---
+ src/apps/marble-maps/CMakeLists.txt | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+
+diff --git a/src/apps/marble-maps/CMakeLists.txt b/src/apps/marble-maps/CMakeLists.txt
+index 3ecb48b4d..fcd4ae0b7 100644
+--- a/src/apps/marble-maps/CMakeLists.txt
++++ b/src/apps/marble-maps/CMakeLists.txt
+@@ -39,6 +39,9 @@ target_link_libraries (
+     marble-maps
+     marbledeclarative
+ )
+-
+-FILE(GLOB QML_FILES *.qml)
+-add_custom_target(marble-maps_resources ALL SOURCES ${QML_FILES} package/AndroidManifest.xml)
++if (ANDROID)
++    FILE(GLOB QML_FILES *.qml)
++    add_custom_target(marble-maps_resources ALL SOURCES ${QML_FILES} package/AndroidManifest.xml)
++else()
++    install(TARGETS marble-maps RUNTIME DESTINATION bin)
++endif()
+-- 
+2.27.0
+

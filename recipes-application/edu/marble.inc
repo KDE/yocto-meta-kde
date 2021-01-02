@@ -23,7 +23,10 @@ DEPENDS += " \
     qtserialport \
 "
 
-SRC_URI = "git://invent.kde.org/education/${BPN};nobranch=1;protocol=https"
+SRC_URI = " \
+    git://invent.kde.org/education/${BPN};nobranch=1;protocol=https \
+    file://0001-Install-marble-maps-when-not-building-for-Android.patch \
+"
 S = "${WORKDIR}/git"
 
 inherit cmake_kdeapp
