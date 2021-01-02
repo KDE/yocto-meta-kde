@@ -56,7 +56,7 @@ do_install_append() {
     # dirty workaround for aurora crash on Wayland
     rm -rf ${D}/${libdir}/plugins/org.kde.kdecoration2/
 
-    mkdir -p ${D}/${sysconfdir}/xdg/kwinrc
+    install -d ${D}/${sysconfdir}/xdg
     install -m 644 ${WORKDIR}/kwinrc ${D}/${sysconfdir}/xdg/kwinrc
 }
 
