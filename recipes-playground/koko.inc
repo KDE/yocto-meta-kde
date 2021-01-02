@@ -25,3 +25,4 @@ inherit cmake_kdeapp
 inherit kconfig
 inherit kcoreaddons
 inherit kauth
+inherit mime-xdg
