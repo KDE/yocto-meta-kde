@@ -1,0 +1,26 @@
+From ec48f512e6f926ab1b2aa6d7d74be62fb5a766b3 Mon Sep 17 00:00:00 2001
+From: Andreas Cord-Landwehr <cordlandwehr@kde.org>
+Date: Mon, 4 Jan 2021 20:55:47 +0100
+Subject: [PATCH 4/4] Fix header installation path
+
+Adapt installation directory to match pc file.
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 9a3ee9c..8001e45 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -131,7 +131,7 @@ if (DEFINED SYSCONF_INSTALL_DIR)
+ endif (DEFINED SYSCONF_INSTALL_DIR)
+ 
+ set (DIR_SHARE_LIBPINYIN ${DIR_SHARE}/libpinyin)
+-set (DIR_INCLUDE_LIBPINYIN ${DIR_INCLUDE}/libpinyin-${LIBPINYIN_BINARY_VERSION})
++set (DIR_INCLUDE_LIBPINYIN ${DIR_INCLUDE}/libpinyin-${VERSION})
+ 
+ ######## Configuration
+ 
+-- 
+2.27.0
+
