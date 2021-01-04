@@ -1,0 +1,33 @@
+# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
+
+LICENSE = "LGPL-2.1"
+LIC_FILES_CHKSUM = "file://COPYING;md5=4fbd65380cdd255951079008b364516c"
+SUMMARY = "The intelligent phonetic input method library"
+
+SRC_URI = " \
+    git://github.com/chewing/libchewing.git;nobranch=1 \
+    file://0001-Cross-compilation-options.patch \
+    file://0002-Disable-genkeystroke-testapp.patch \
+"
+
+S = "${WORKDIR}/git"
+
+DEPENDS = " \
+    ncurses \
+    sqlite3 \
+    ${PN}-native \
+"
+
+DEPENDS_class-native = " \
+    ncurses \
+    sqlite3 \
+"
+
+inherit cmake
+
+EXTRA_OECMAKE += "-DUSE_TOOLS_FROM_PATH=ON"
+EXTRA_OECMAKE_class-native += "-DINSTALL_TOOLS=ON"
+
+BBCLASSEXTEND = "native"

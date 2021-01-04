@@ -1,0 +1,36 @@
+From b0e780073b7729f232d18ed39089fa6caeafe255 Mon Sep 17 00:00:00 2001
+From: Andreas Cord-Landwehr <cordlandwehr@kde.org>
+Date: Mon, 4 Jan 2021 20:39:21 +0100
+Subject: [PATCH 2/2] Disable genkeystroke testapp
+
+Hard comment out problematic test app instead of fixing the
+find module for libcurses.
+---
+ CMakeLists.txt | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index f0735e8..85d5274 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -279,7 +279,7 @@ set(ALL_TESTTOOLS
+ )
+ 
+ if(${CURSES_FOUND})
+-    set(ALL_TESTTOOLS ${ALL_TESTTOOLS} genkeystroke)
++#    set(ALL_TESTTOOLS ${ALL_TESTTOOLS} genkeystroke)
+ endif()
+ 
+ enable_testing()
+@@ -330,7 +330,7 @@ foreach(target ${ALL_TESTS})
+ endforeach()
+ 
+ if (${CURSES_FOUND})
+-    target_link_libraries(genkeystroke ${CURSES_LIBRARIES})
++#    target_link_libraries(genkeystroke ${CURSES_LIBRARIES})
+ endif()
+ 
+ # data
+-- 
+2.27.0
+
