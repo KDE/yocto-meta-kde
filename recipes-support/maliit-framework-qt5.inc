@@ -23,10 +23,11 @@ DEPENDS += " \
 
 inherit cmake_qt5
 
-EXTRA_OECMAKE += "-Denable-docs=OFF -Denable-tests=OFF"
+EXTRA_OECMAKE += "-Denable-docs=OFF -Denable-tests=OFF -Denable-dbus-activation=ON"
 
 FILES_${PN} += " \
     ${libdir}/qt5/plugins \
+    ${datadir}/dbus-1/ \
 "
 
 FILES_${PN}-dev += " \
