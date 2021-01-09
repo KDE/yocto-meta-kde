@@ -91,8 +91,7 @@ FILES_${PN}-dev += " \
 "
 
 RDEPENDS_${PN} += " \
-    qtvirtualkeyboard-plugins \
-    qtvirtualkeyboard-qmlplugins \
+    maliit-keyboard-qt5 \
     qtwayland-plugins \
     xserver-xorg-xwayland \
     perl \
