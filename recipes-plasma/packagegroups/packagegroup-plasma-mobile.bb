@@ -40,4 +40,6 @@ RDEPENDS_${PN} = " \
     plasma-settings \
     plasma-systemmonitor \
     xdg-desktop-portal-kde \
+    kclock \
+    kweather \
 "
