@@ -19,7 +19,6 @@ DEPENDS = " \
     kio \
     knotifyconfig \
     libkscreen \
-    kdelibs4support \
     kwayland \
     kitemmodels \
     plasma-workspace \
