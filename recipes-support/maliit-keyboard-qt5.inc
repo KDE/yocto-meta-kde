@@ -22,6 +22,7 @@ DEPENDS += " \
 "
 
 inherit cmake_qt5
+inherit gsettings
 
 EXTRA_OECMAKE += "-Denable-presage=OFF"
 
