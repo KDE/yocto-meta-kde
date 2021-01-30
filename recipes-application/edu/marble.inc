@@ -25,7 +25,7 @@ DEPENDS += " \
 
 SRC_URI = " \
     git://invent.kde.org/education/${BPN};nobranch=1;protocol=https \
-    file://0001-Install-marble-maps-when-not-building-for-Android.patch \
+    file://0001-Provide-BUILD_TOUCH-option-to-force-install-of-touch.patch \
 "
 S = "${WORKDIR}/git"
 
@@ -34,6 +34,8 @@ inherit kcoreaddons
 inherit kconfig
 inherit kauth
 inherit mime-xdg
+
+EXTRA_OECMAKE += "-DBUILD_TOUCH=ON"
 
 FILES_SOLIBSDEV = ""
 FILES_${PN} += " \
