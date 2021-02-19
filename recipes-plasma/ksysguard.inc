@@ -10,18 +10,21 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=5c213a7de3f013310bd272cdb6eb7a24"
 PR = "r0"
 
 DEPENDS = " \
-    libxml2-native \
+    libnl \
+    libpcap \
     kconfig \
     kcoreaddons \
     kdbusaddons \
     kiconthemes \
     kinit \
-    kitemviews \
     kio \
+    kitemviews \
     knewstuff \
     knotifications \
     kwindowsystem \
     libksysguard \
+    libxml2-native \
+    networkmanager-qt \
 "
 
 SRC_URI = "git://invent.kde.org/plasma/${BPN};nobranch=1;protocol=https"

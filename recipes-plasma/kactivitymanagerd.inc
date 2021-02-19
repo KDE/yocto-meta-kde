@@ -7,7 +7,7 @@
 DESCRIPTION = "KActivity Manager Daemon"
 HOMEPAGE = ""
 LICENSE = "GPLv2"
-LIC_FILES_CHKSUM = "file://COPYING.GPL2;md5=b234ee4d69f5fce4486a80fdaf4a4263"
+LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-only.txt;md5=93e64b4a83c7e441e48bbdeeea05c977"
 PR = "r0"
 
 DEPENDS = " \

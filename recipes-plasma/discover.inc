@@ -10,20 +10,22 @@ LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-only.txt;md5=93e64b4a83c7e441e48bbde
 PR = "r0"
 
 DEPENDS = " \
-    qtdeclarative \
-    kcoreaddons \
+    attica \
+    karchive \
+    kcmutils \
     kconfig \
+    kcoreaddons \
     kcrash \
     kdbusaddons \
-    karchive \
     kdeclarative \
-    kxmlgui \
-    kitemmodels \
+    kidletime \
     kio \
     kirigami \
-    attica \
+    kitemmodels \
     knewstuff \
     knotifications \
+    kxmlgui \
+    qtdeclarative \
 "
 
 SRC_URI = "git://invent.kde.org/plasma/${BPN};nobranch=1;protocol=https"
@@ -35,4 +37,5 @@ inherit mime-xdg
 FILES_${PN} += " \
     ${libdir}/qml/org/kde/discovernotifier \
     ${libdir}/plasma-discover \
+    ${datadir}/kpackage/kcms/kcm_updates \
 "

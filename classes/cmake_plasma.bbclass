@@ -31,6 +31,7 @@ FILES_${PN} += " \
     ${libdir}/plugins/*.so \
     ${libdir}/plugins/*/*.so \
     ${libdir}/plugins/*/*/*.so \
+    ${libdir}/systemd/user \
     ${datadir}/config.kcfg/*.kcfg \
     ${datadir}/dbus-1/services/*.service \
     ${datadir}/dbus-1/system-services/*.service \

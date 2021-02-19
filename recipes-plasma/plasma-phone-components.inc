@@ -30,6 +30,7 @@ FILES_${PN} += " \
     ${libdir}/qml/org/kde/plasma/private/kpeoplehelper/* \
     ${datadir}/kpackage/genericqml/org.kde.phone.dialer/* \
     ${datadir}/plasma/shells/org.kde.plasma.phone/* \
+    ${datadir}/plasma/shells/org.kde.plasma.phoneshell/* \
     ${datadir}/plasma/plasmoids/* \
     ${datadir}/plasma/look-and-feel/org.kde.plasma.phone/* \
     ${datadir}/telepathy/clients/Plasma.Dialer.client \

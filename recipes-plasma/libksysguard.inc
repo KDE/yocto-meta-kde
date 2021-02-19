@@ -10,17 +10,20 @@ LIC_FILES_CHKSUM = "file://COPYING.LIB;md5=2d5025d4aa3495befef8f17206a5b0a1"
 PR = "r0"
 
 DEPENDS = " \
-    kcoreaddons \
-    kconfig \
-    kwindowsystem \
+    libnl \
+    libpcap \
     kcompletion \
-    kwidgetsaddons \
-    kiconthemes \
+    kconfig \
     kconfigwidgets \
-    kservice \
-    qtwebchannel \
-    plasma-framework \
+    kcoreaddons \
+    kiconthemes \
     knewstuff \
+    kservice \
+    kwidgetsaddons \
+    kwindowsystem \
+    networkmanager-qt \
+    plasma-framework \
+    qtwebchannel \
 "
 
 SRC_URI = "git://invent.kde.org/plasma/${BPN};nobranch=1;protocol=https"
