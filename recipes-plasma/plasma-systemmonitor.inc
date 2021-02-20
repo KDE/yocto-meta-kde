@@ -13,6 +13,7 @@ DEPENDS = " \
     qtbase \
     qtdeclarative \
     ki18n \
+    kitemmodels \
     kconfig \
     kdeclarative \
     kservice \
