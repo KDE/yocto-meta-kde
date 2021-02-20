@@ -23,7 +23,6 @@ RDEPENDS_${PN} = " \
     kdecoration \
     kscreen \
     kscreenlocker \
-    ksysguard \
     kwayland-integration \
     kwin \
     libkscreen \
