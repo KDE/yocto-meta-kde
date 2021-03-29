@@ -71,7 +71,7 @@ index d3df1d0..e5422ff 100644
 +        COMMAND
 +        test -f ${CMAKE_SOURCE_DIR}/model19.text.tar.gz
 +        COMMAND
-+        tar xvf ${CMAKE_SOURCE_DIR}/model19.text.tar.gz -C ${CMAKE_SOURCE_DIR}/data
++        tar xvf ${CMAKE_SOURCE_DIR}/model19.text.tar.gz -C ${CMAKE_SOURCE_DIR}/data --no-same-owner
 +    )
 +endif()
  
