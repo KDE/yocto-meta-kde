@@ -8,7 +8,7 @@ IMAGE_FEATURES += "splash package-management hwcodecs x11"
 
 LICENSE = "MIT"
 
-inherit distro_features_check
+inherit features_check
 
 REQUIRED_DISTRO_FEATURES = "wayland x11 kde"
 
