@@ -12,14 +12,15 @@ inherit allarch fontcache
 
 INHIBIT_DEFAULT_DEPS = "1"
 
-COMMIT = "c30307083469f0c05e216ac75216fd454a517858"
-SRC_URI = "https://github.com/googlei18n/noto-fonts/archive/${COMMIT}.tar.gz"
+SRC_URI = "git://github.com/googlefonts/noto-fonts;protocol=https;nobranch=1"
+SRCREV = "c30307083469f0c05e216ac75216fd454a517858"
+
 SRC_URI[md5sum] = "699fd3e70f293e58e628dfbc34ece0b0"
 SRC_URI[sha256sum] = "2c55a0422a8d51425dc2f000e7c67139f1d2756ee93568389bdeb8e2c51e1934"
 
 LIC_FILES_CHKSUM = "file://LICENSE;md5=fce5baa9b16328f04e2afc29f6e4e882"
 
-S = "${WORKDIR}/noto-fonts-${COMMIT}"
+S = "${WORKDIR}/git"
 
 PACKAGES = "ttf-noto"
 FONT_PACKAGES = "ttf-noto"

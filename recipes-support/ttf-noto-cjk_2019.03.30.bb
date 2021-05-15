@@ -12,7 +12,7 @@ inherit allarch fontcache
 
 INHIBIT_DEFAULT_DEPS = "1"
 
-SRC_URI = "git://github.com/googlei18n/noto-cjk.git;nobranch=1"
+SRC_URI = "git://github.com/googlefonts/noto-cjk.git;protocol=https;nobranch=1"
 SRCREV = "9326451d9b4f32ec7f8640581c5053cc192039f2"
 S = "${WORKDIR}/git"
 
