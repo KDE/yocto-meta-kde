@@ -53,6 +53,7 @@ S = "${WORKDIR}/git"
 
 inherit cmake_plasma
 inherit kdoctools
+inherit mime-xdg
 
 EXTRA_OECMAKE += " -DBUILD_xembed-sni-proxy=OFF"
 
