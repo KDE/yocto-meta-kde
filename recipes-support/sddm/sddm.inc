@@ -36,6 +36,7 @@ inherit cmake_qt5
 inherit pkgconfig
 inherit systemd
 inherit useradd
+inherit features_check
 
 EXTRA_OECMAKE += " \
     -DLOGIN_DEFS_PATH=${STAGING_DIR_HOST}${sysconfdir}/login.defs \
