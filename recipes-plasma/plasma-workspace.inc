@@ -1,6 +1,6 @@
 # SPDX-FileCopyrightText: 2018-2020 Volker Krause <vkrause@kde.org>
 # SPDX-FileCopyrightText: 2019 Alistair Francis <alistair.francis@wdc.com>
-# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+# SPDX-FileCopyrightText: 2020-2021 Andreas Cord-Landwehr <cordlandwehr@kde.org>
 #
 # SPDX-License-Identifier: MIT
 
@@ -11,18 +11,18 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=5c213a7de3f013310bd272cdb6eb7a24"
 PR = "r0"
 
 DEPENDS = " \
-    qtdeclarative \
-    qtwayland-native \
     baloo \
+    breeze \
+    kactivities \
+    kactivitiesstats \
+    kcmutils \
     kcoreaddons \
     kcrash \
-    solid \
-    kactivities \
-    kcmutils \
     kdbusaddons \
     kdeclarative \
-    kdelibs4support \
+    kded \
     kdesu \
+    kholidays \
     kidletime \
     kitemmodels \
     kjsembed \
@@ -30,22 +30,27 @@ DEPENDS = " \
     knotifications \
     knotifyconfig \
     kpackage \
-    kholidays \
+    kpeople \
+    kquickcharts \
     krunner \
+    kscreen \
     kscreenlocker \
     ktexteditor \
+    kunitconversion \
+    kuserfeedback \
     kwallet \
     kwayland \
     kwin \
+    libkscreen \
     libksysguard \
+    libxft \
     networkmanager-qt \
     phonon \
     plasma-framework \
     prison \
-    kpeople \
-    kactivitiesstats \
-    libkscreen \
-    libxft \
+    qtdeclarative \
+    qtwayland-native \
+    solid \
 "
 
 SRC_URI = "git://invent.kde.org/plasma/${BPN};nobranch=1;protocol=https"
@@ -81,6 +86,7 @@ FILES_${PN} += " \
     ${datadir}/solid/actions/*.desktop \
     ${datadir}/wayland-sessions/*.desktop \
     ${datadir}/xsessions/*.desktop \
+    ${libdir}/libkrdb.so \
     ${libdir}/plugins/plasmacalendarplugins \
     ${libdir}/qml/org/kde \
 "

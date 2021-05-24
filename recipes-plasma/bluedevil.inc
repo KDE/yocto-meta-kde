@@ -30,6 +30,7 @@ S = "${WORKDIR}/git"
 
 inherit cmake_plasma
 inherit mime-xdg
+inherit mime
 
 FILES_${PN} += " \
     ${datadir}/bluedevilwizard \

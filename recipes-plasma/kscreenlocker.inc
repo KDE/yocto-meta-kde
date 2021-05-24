@@ -5,25 +5,26 @@
 
 DESCRIPTION = "KScreenLocker"
 HOMEPAGE = ""
-LICENSE = "GPLv2"
+LICENSE = "GPL-2.0"
 LIC_FILES_CHKSUM = "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263"
 PR = "r0"
 
 DEPENDS = " \
-    qtdeclarative \
-    kwayland \
+    kcmutils \
     kcrash \
     kdeclarative \
     kglobalaccel \
     kidletime \
-    kcmutils \
     knotifications \
-    solid \
     ktextwidgets \
+    kwayland \
     kwindowsystem \
     kxmlgui \
-    libxcb \
+    layer-shell-qt \
     libpam \
+    libxcb \
+    qtdeclarative \
+    solid \
     wayland-native \
 "
 

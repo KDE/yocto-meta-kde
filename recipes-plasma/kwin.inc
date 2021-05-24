@@ -35,6 +35,7 @@ DEPENDS = " \
     kservice \
     kxmlgui \
     kdecoration \
+    krunner \
     kscreenlocker \
     libxcb \
     xcb-util-cursor \
@@ -84,6 +85,7 @@ FILES_${PN} += " \
     ${datadir}/kwincompositing/qml/*.qml \
     ${datadir}/config.kcfg/*.kcfg \
     ${datadir}/kpackage \
+    ${datadir}/krunner/dbusplugins/*.desktop \
 "
 
 FILES_${PN}-dev += " \

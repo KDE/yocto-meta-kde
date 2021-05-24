@@ -11,10 +11,12 @@ LIC_FILES_CHKSUM = " \
 PR = "r0"
 
 DEPENDS = " \
+    qtbase \
     qtwayland \
     qtwayland-native \
     kwayland \
     plasma-wayland-protocols \
+    qtwaylandscanner-kde-native \
 "
 
 SRC_URI = "git://invent.kde.org/plasma/${BPN};nobranch=1;protocol=https"
