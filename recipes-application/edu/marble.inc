@@ -36,26 +36,45 @@ inherit mime-xdg
 
 EXTRA_OECMAKE += "-DBUILD_TOUCH=ON"
 
+# note: marble-maps is the dedicated mobile version
 PACKAGES += " \
     ${PN}-desktop \
+    ${PN}-shared \
 "
 
-# note: marble-maps is the dedicated mobile version
+FILES_SOLIBSDEV = ""
+FILES_${PN} = " \
+    ${bindir}/marble-maps \
+    ${datadir}/applications/org.kde.marble-maps.desktop \
+"
+
+FILES_${PN}-shared = " \
+    ${datadir}/knsrcfiles \
+    ${libdir}/libmarbledeclarative.so \
+    ${libdir} \
+    ${datadir}/marble/data/ \
+    ${datadir}/icons \
+    ${datadir} \
+"
+
 FILES_${PN}-desktop = " \
     ${bindir}/marble \
     ${bindir}/marble-qt \
     ${datadir}/applications/org.kde.marble.desktop \
     ${datadir}/applications/org.kde.marble-qt.desktop \
-"
-
-FILES_SOLIBSDEV = ""
-FILES_${PN} += " \
-    ${datadir}/knsrcfiles \
-    ${libdir}/libmarbledeclarative.so \
+    ${datdair}/kxmlgui5 \
 "
 
 FILES_${PN}-dev += " \
     ${datadir}/knsrcfiles \
     ${libdir}/libastro.so \
     ${libdir}/libmarblewidget-qt5.so \
+"
+
+RDEPENDS_${PN} += " \
+    ${PN}-shared \
+"
+
+RDEPENDS_${PN}-desktop += " \
+    ${PN}-shared \
 "
