@@ -37,3 +37,13 @@ inherit kauth
 inherit mime-xdg
 
 EXTRA_OECMAKE += " -DOE_QCA_PATH_HOST_ROOT=${STAGING_DIR_HOST} -DOKULAR_UI=both"
+
+PACKAGES += " \
+    ${PN}-desktop \
+"
+
+# note: okularkirigami is the dedicated mobile version
+FILES_${PN}-desktop = " \
+    ${bindir}/okular \
+    ${datadir}/applications/org.kde.okular.desktop \
+"

@@ -36,6 +36,18 @@ inherit mime-xdg
 
 EXTRA_OECMAKE += "-DBUILD_TOUCH=ON"
 
+PACKAGES += " \
+    ${PN}-desktop \
+"
+
+# note: marble-maps is the dedicated mobile version
+FILES_${PN}-desktop = " \
+    ${bindir}/marble \
+    ${bindir}/marble-qt \
+    ${datadir}/applications/org.kde.marble.desktop \
+    ${datadir}/applications/org.kde.marble-qt.desktop \
+"
+
 FILES_SOLIBSDEV = ""
 FILES_${PN} += " \
     ${datadir}/knsrcfiles \
