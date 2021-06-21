@@ -19,7 +19,6 @@ RDEPENDS_${PN} = " \
     blinken \
     marble \
     kanagram \
-    kdeedu-data \
     khangman \
     gcompris \
     \
