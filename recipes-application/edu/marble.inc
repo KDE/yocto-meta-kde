@@ -25,7 +25,6 @@ DEPENDS += " \
 
 SRC_URI = " \
     git://invent.kde.org/education/${BPN};nobranch=1;protocol=https \
-    file://0001-Provide-BUILD_TOUCH-option-to-force-install-of-touch.patch \
 "
 S = "${WORKDIR}/git"
 

@@ -6,7 +6,7 @@ SUMMARY = "Blinken"
 DESCRIPTION = "Memory Enhancement Game"
 HOMEPAGE = "https://edu.kde.org/blinken/"
 LICENSE = "GPL-2.0"
-LIC_FILES_CHKSUM = "file://COPYING;md5=751419260aa954499f7abaabaa882bbe"
+LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-or-later.txt;md5=9e2385fe012386d34dcc5c9863070881"
 PR = "r0"
 
 DEPENDS += " \

@@ -6,7 +6,7 @@
 DESCRIPTION = "KDE Connect"
 HOMEPAGE = "https://community.kde.org/KDEConnect"
 LICENSE = "GPL-2.0"
-LIC_FILES_CHKSUM = "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263"
+LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-or-later.txt;md5=fed54355545ffd980b814dab4a3b312c"
 PR = "r0"
 
 DEPENDS += " \
