@@ -24,3 +24,7 @@ S = "${WORKDIR}/git"
 inherit cmake_kdeapp
 inherit kconfig
 inherit kcoreaddons
+
+RDEPENDS_${PN} += " \
+    kirigami-addons \
+"
