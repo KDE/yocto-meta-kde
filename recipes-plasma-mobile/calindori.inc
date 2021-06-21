@@ -3,15 +3,16 @@
 # SPDX-License-Identifier: MIT
 
 DESCRIPTION = "Calindori"
-HOMEPAGE = ""
-LICENSE = "GPLv3"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=d32239bcb673463ab874e80d47fae504"
+HOMEPAGE = "https://invent.kde.org/plasma-mobile/calindori"
+LICENSE = "GPL-3.0"
+LIC_FILES_CHKSUM = "file://LICENSES/GPL-3.0-or-later.txt;md5=1c76c4cc354acaac30ed4d5eefea7245"
 PR = "r0"
 
 DEPENDS = " \
     kconfig \
-    kcalcore \
+    kcalendarcore \
     kirigami \
+    kpeople \
     plasma-framework \
 "
 
@@ -20,3 +21,4 @@ S = "${WORKDIR}/git"
 
 inherit cmake_kdeapp
 inherit kconfig
+inherit mime-xdg
