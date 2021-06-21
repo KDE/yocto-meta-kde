@@ -24,4 +24,6 @@ RDEPENDS_${PN} = " \
     gcompris \
     \
     elisa \
+    \
+    kjournald-browser \
 "
