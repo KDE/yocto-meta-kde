@@ -32,6 +32,8 @@ FILES_${PN} = " \
 
 FILES_${PN}-browser = " \
     ${bindir}/journald-browser \
+    ${datadir}/applications \
+    ${datadir}/metainfo \
 "
 
 RDEPENDS_${PN}-browser += " \
