@@ -17,7 +17,5 @@ RDEPENDS_${PN} = " \
     kongress \
     krecorder \
     ktrip \
-    \
-    kclock \
     kweather \
 "
