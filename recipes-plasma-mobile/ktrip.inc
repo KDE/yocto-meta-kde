@@ -9,6 +9,7 @@ LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-only.txt;md5=93e64b4a83c7e441e48bbde
 PR = "r0"
 
 DEPENDS = " \
+    qqc2-desktop-style \
     qtdeclarative \
     qtquickcontrols2 \
     ki18n \
