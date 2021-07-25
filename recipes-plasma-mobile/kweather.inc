@@ -18,6 +18,7 @@ DEPENDS = " \
     knotifications \
     kquickcharts \
     plasma-framework \
+    kweathercore \
 "
 
 SRC_URI = "git://invent.kde.org/plasma-mobile/${BPN};nobranch=1;protocol=https"
@@ -33,4 +34,8 @@ RDEPENDS_${PN} += " \
     qtdeclarative-qmlplugins \
     qtquickcontrols2-qmlplugins \
     qtcharts-qmlplugins \
+"
+
+FILES_${PN} += " \
+    ${datadir}/plasma/plasmoids/ \
 "
