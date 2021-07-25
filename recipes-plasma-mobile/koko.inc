@@ -21,8 +21,7 @@ DEPENDS = " \
     exiv2 \
 "
 
-SRC_URI = "git://invent.kde.org/graphics/${BPN};nobranch=1;protocol=https"
-S = "${WORKDIR}/git"
+SRC_URI ?= "git://invent.kde.org/graphics/${BPN};nobranch=1;protocol=https"
 
 inherit cmake_kdeapp
 inherit kconfig

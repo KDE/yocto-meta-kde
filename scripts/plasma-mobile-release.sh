@@ -9,7 +9,7 @@
 
 function usage()
 {
-    echo "$1 [add|remove|update] <version> [<new version>]"
+    echo "$1 [add|add-tarball|remove|update <version> [<new version>]"
     exit 1
 }
 
@@ -31,8 +31,32 @@ cat <<EOM > $name
 
 require \${PN}.inc
 SRCREV = "v\${PV}"
+S = "\${WORKDIR}/git"
 EOM
         git add $name
+    done
+    ;;
+add-tarball)
+    # search for all non-staging inc files without underlines
+    for recipe in $(find $base -regex ".*/[0-9a-zA-Z\-]+\.inc" | grep -v /staging/); do
+        name=$(echo $recipe | sed -e "s,\.inc,_${version}.bb,")
+        app=$(echo $recipe | grep -P -o '[0-9a-zA-Z\-]+(?=\.inc)')
+        url="https://download.kde.org/stable/plasma-mobile/${version}/${app}-${version}.tar.xz"
+        sha256=$(curl -s "${url}.sha256" | cut -d" " -f1)
+        echo "${url} : ${sha256}"
+# examples:
+#https://download.kde.org/stable/plasma-mobile/21.07/kclock-21.07.tar.xz
+#https://download.kde.org/stable/plasma-mobile/21.07/kclock-21.07.tar.xz.sha256
+cat <<EOM > $name
+# SPDX-FileCopyrightText: none
+# SPDX-License-Identifier: CC0-1.0
+
+require \${PN}.inc
+SRC_URI = "${url}"
+SRC_URI[sha256sum] = "${sha256}"
+${extraconfig}
+EOM
+         git add $name
     done
     ;;
 remove)

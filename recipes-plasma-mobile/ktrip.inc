@@ -19,8 +19,7 @@ DEPENDS = " \
     kpublictransport \
 "
 
-SRC_URI = "git://invent.kde.org/utilities/${BPN};nobranch=1;protocol=https"
-S = "${WORKDIR}/git"
+SRC_URI ?= "git://invent.kde.org/utilities/${BPN};nobranch=1;protocol=https"
 
 inherit cmake_kdeapp
 inherit kconfig
