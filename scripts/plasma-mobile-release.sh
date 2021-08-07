@@ -25,11 +25,13 @@ case $command in
 add)
     for recipe in `find $base -name "*.inc" | grep -v /staging/`; do
         name=`echo $recipe | sed -e "s,\.inc,_${version}.bb,"`
+        app=$(echo $recipe | grep -P -o '[0-9a-zA-Z\-]+(?=\.inc)')
 cat <<EOM > $name
 # SPDX-FileCopyrightText: none
 # SPDX-License-Identifier: CC0-1.0
 
 require \${PN}.inc
+SRC_URI = "git://anongit.kde.org/${app};nobranch=1;protocol=https"
 SRCREV = "v\${PV}"
 S = "\${WORKDIR}/git"
 EOM

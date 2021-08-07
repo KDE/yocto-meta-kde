@@ -16,8 +16,6 @@ DEPENDS = " \
     plasma-framework \
 "
 
-SRC_URI ?= "git://invent.kde.org/plasma-mobile/${BPN};nobranch=1;protocol=https"
-
 inherit cmake_kdeapp
 inherit kconfig
 inherit mime-xdg
