@@ -12,5 +12,5 @@ PR = "r0"
 inherit cmake_kdeapp
 
 FILES_${PN} += " \
-    ${datadir}/apps/kvtml/en \
+    ${datadir}/apps/kvtml/* \
 "
