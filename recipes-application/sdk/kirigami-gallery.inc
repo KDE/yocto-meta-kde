@@ -10,6 +10,7 @@ PR = "r0"
 
 DEPENDS += " \
     kirigami \
+    kitemmodels \
 "
 
 inherit cmake_kdeapp

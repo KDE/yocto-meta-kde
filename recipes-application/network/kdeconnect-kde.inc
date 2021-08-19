@@ -12,6 +12,7 @@ PR = "r0"
 DEPENDS += " \
     qtdeclarative \
     qtmultimedia \
+    qtwayland-native \
     qca \
     kconfigwidgets \
     kdbusaddons \
@@ -22,6 +23,7 @@ DEPENDS += " \
     kirigami \
     kpeople \
     kwayland \
+    qqc2-desktop-style \
 "
 
 inherit cmake_kdeapp
