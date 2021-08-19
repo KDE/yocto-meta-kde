@@ -24,10 +24,6 @@ DEPENDS += " \
     kdbusaddons \
 "
 
-RDEPENDS_${PN} += " \
-    kirigami \
-"
-
 SRC_URI = "git://invent.kde.org/multimedia/${BPN};nobranch=1;protocol=https"
 S = "${WORKDIR}/git"
 

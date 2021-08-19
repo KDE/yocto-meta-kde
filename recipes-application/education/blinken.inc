@@ -16,9 +16,6 @@ DEPENDS += " \
     phonon \
 "
 
-SRC_URI = "git://invent.kde.org/education/${BPN};nobranch=1;protocol=https"
-S = "${WORKDIR}/git"
-
 inherit cmake_kdeapp
 inherit kcoreaddons
 inherit kconfig

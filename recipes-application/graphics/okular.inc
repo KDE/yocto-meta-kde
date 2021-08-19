@@ -22,9 +22,6 @@ DEPENDS += " \
     qca \
 "
 
-SRC_URI = "git://invent.kde.org/graphics/${BPN};nobranch=1;protocol=https"
-S = "${WORKDIR}/git"
-
 # dirty hack to force the mobile version and hide the desktop one
 do_install_append() {
     sed -i 's/Exec=okular %U$/Exec=okularkirigami %U/g' ${D}${datadir}/applications/org.kde.okular.desktop

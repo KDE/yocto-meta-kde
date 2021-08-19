@@ -2,26 +2,25 @@
 #
 # SPDX-License-Identifier: MIT
 
-SUMMARY = "Kanagram"
-DESCRIPTION = "Kanagram is a game based on anagrams of words: the puzzle is solved when \
-    the letters of the scrambled word are put back in the correct order"
-HOMEPAGE = "https://edu.kde.org/kanagram/"
+SUMMARY = "KHangMan"
+DESCRIPTION = "KHangMan is a game based on the well-known hangman game."
+HOMEPAGE = "https://edu.kde.org/khangman/"
 LICENSE = "GPL-2.0"
-LIC_FILES_CHKSUM = "file://COPYING;md5=751419260aa954499f7abaabaa882bbe"
+LIC_FILES_CHKSUM = "file://COPYING;md5=cb56c8b10bbb1c97490192a78c4fb273"
 PR = "r0"
 
 DEPENDS += " \
+    kcompletion \
     kcrash \
     ki18n \
     kio \
     knewstuff \
     knotifications \
     knotifyconfig \
+    kparts \
+    kxmlgui \
     libkeduvocdocument \
 "
-
-SRC_URI = "git://invent.kde.org/education/${BPN};nobranch=1;protocol=https"
-S = "${WORKDIR}/git"
 
 inherit cmake_kdeapp
 inherit kcoreaddons

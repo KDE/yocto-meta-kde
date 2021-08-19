@@ -2,6 +2,6 @@
 # SPDX-License-Identifier: CC0-1.0
 
 require ${PN}.inc
-SRC_URI = "git://invent.kde.org/network/kdeconnect-kde;nobranch=1;protocol=https"
+SRC_URI = "git://invent.kde.org/education/libkeduvocdocument;nobranch=1;protocol=https"
 SRCREV = "v${PV}"
 S = "${WORKDIR}/git"
