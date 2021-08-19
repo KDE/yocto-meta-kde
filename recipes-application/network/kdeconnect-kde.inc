@@ -22,6 +22,7 @@ DEPENDS += " \
     kcmutils \
     kirigami \
     kpeople \
+    kpeoplevcard \
     kwayland \
     qqc2-desktop-style \
 "
@@ -46,4 +47,8 @@ FILES_${PN} += " \
     ${datadir}/nautilus-python \
     ${datadir}/plasma \
     ${datadir}/zsh \
+"
+
+RDEPENDS_${PN} += " \
+    kpeoplevcard \
 "
