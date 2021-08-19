@@ -24,9 +24,6 @@ DEPENDS += " \
     kdbusaddons \
 "
 
-SRC_URI = "git://invent.kde.org/multimedia/${BPN};nobranch=1;protocol=https"
-S = "${WORKDIR}/git"
-
 inherit cmake_kdeapp
 inherit kcoreaddons
 inherit kconfig
