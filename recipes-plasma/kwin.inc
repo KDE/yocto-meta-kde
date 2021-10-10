@@ -44,12 +44,9 @@ DEPENDS = " \
     libinput \
 "
 
-SRC_URI = " \
-    git://invent.kde.org/plasma/${BPN};nobranch=1;protocol=https \
+SRC_URI_append = " \
     file://kwinrc \
 "
-
-S = "${WORKDIR}/git"
 
 inherit cmake_plasma kdoctools
 

@@ -27,11 +27,9 @@ DEPENDS = " \
     gstreamer1.0 \
 "
 
-SRC_URI = " \
-    git://invent.kde.org/plasma/${BPN};nobranch=1;protocol=https \
+SRC_URI_append = " \
     file://0001-Simplify-apps-model.patch \
 "
-S = "${WORKDIR}/git"
 
 inherit cmake_plasma
 

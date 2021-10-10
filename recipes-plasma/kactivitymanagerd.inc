@@ -21,9 +21,6 @@ DEPENDS = " \
     kxmlgui \
 "
 
-SRC_URI = "git://invent.kde.org/plasma/${BPN};nobranch=1;protocol=https"
-S = "${WORKDIR}/git"
-
 inherit cmake_plasma
 
 CXXFLAGS += "-DBOOST_DISABLE_ASSERTS"

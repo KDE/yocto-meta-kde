@@ -28,12 +28,9 @@ DEPENDS = " \
     wayland-native \
 "
 
-SRC_URI = " \
-    git://invent.kde.org/plasma/${BPN};nobranch=1;protocol=https \
+SRC_URI_append = " \
     file://kde.pam \
 "
-S = "${WORKDIR}/git"
-
 
 inherit cmake_plasma
 
