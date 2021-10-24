@@ -25,10 +25,7 @@ DEPENDS = " \
     kpeople \
     kwin \
     gstreamer1.0 \
-"
-
-SRC_URI_append = " \
-    file://0001-Simplify-apps-model.patch \
+    modemmanager-qt \
 "
 
 inherit cmake_plasma
@@ -38,10 +35,12 @@ FILES_${PN} += " \
     ${libdir}/qml/org/kde/plasma/private/mobileshell/* \
     ${libdir}/qml/org/kde/plasma/private/kpeoplehelper/* \
     ${libdir}/qml/org/kde/plasma/private/mobilehomescreencomponents/* \
+    ${libdir}/qml/org/kde/plasma/mm/* \
     ${datadir}/kpackage/genericqml/org.kde.phone.dialer/* \
     ${datadir}/plasma/shells/org.kde.plasma.phone/* \
     ${datadir}/plasma/shells/org.kde.plasma.phoneshell/* \
     ${datadir}/plasma/plasmoids/* \
+    ${datadir}/plasma/quicksettings/* \
     ${datadir}/plasma/look-and-feel/org.kde.plasma.phone/* \
     ${datadir}/telepathy/clients/Plasma.Dialer.client \
     ${datadir}/kwin/scripts/org.kde.phone.multitasking/* \

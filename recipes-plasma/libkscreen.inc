@@ -17,6 +17,7 @@ PR = "r0"
 
 DEPENDS = " \
     qtx11extras \
+    qtwayland-native \
     kwayland \
 "
 

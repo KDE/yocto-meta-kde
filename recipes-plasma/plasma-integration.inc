@@ -5,8 +5,8 @@
 
 DESCRIPTION = "Plasma Integration"
 HOMEPAGE = ""
-LICENSE = "LGPL-3.0"
-LIC_FILES_CHKSUM = "file://COPYING.LGPL-3;md5=e6a600fd5e1d9cbde2d983680233ad02"
+LICENSE = "LGPL-2.0"
+LIC_FILES_CHKSUM = "file://LICENSES/LGPL-2.0-only.txt;md5=da48810c4ddf8e49efa031294a26b98c"
 PR = "r0"
 
 DEPENDS = " \

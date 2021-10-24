@@ -13,6 +13,7 @@ DEPENDS = " \
     kwindowsystem \
     kguiaddons \
     kwayland \
+    qtwayland-native \
 "
 
 inherit cmake_plasma

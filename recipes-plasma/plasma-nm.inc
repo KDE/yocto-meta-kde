@@ -4,8 +4,8 @@
 
 DESCRIPTION = "Plasma NM"
 HOMEPAGE = ""
-LICENSE = "GPL-2"
-LIC_FILES_CHKSUM = "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263"
+LICENSE = "GPL-2.0"
+LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-only.txt;md5=9e2385fe012386d34dcc5c9863070881"
 PR = "r0"
 
 DEPENDS = " \
@@ -44,6 +44,7 @@ EXTRA_OECMAKE += " \
 FILES_SOLIBSDEV = ""
 FILES_${PN} += " \
     ${libdir}/*.so \
+    ${libdir}/plugins/plasma/network/vpn/*.so \
     ${libdir}/qml/org/kde/plasma/networkmanagement \
     ${datadir}/plasma/plasmoids/org.kde.plasma.networkmanagement \
     ${datadir}/kcm_networkmanagement/qml/*.qml \

@@ -17,6 +17,7 @@ DEPENDS = " \
     kwayland \
     plasma-wayland-protocols \
     qtwaylandscanner-kde-native \
+    wayland-protocols \
 "
 
 inherit cmake_plasma
