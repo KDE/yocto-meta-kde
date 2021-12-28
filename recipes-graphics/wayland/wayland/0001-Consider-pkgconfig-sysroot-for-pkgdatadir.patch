@@ -1,0 +1,85 @@
+From ebf972fab4be46249b3eabcfd5f73a611a0c73f2 Mon Sep 17 00:00:00 2001
+From: Volker Krause <vkrause@kde.org>
+Date: Sat, 2 Jan 2021 18:07:01 +0100
+Subject: [PATCH] Consider pkgconfig sysroot for pkgdatadir
+
+For libs/cflags this is done automatically, but not for manually accessed
+variables. This matches what wayland-protocols does.
+
+---
+ src/meson.build           | 6 +++---
+ src/wayland-client.pc.in  | 2 +-
+ src/wayland-scanner.pc.in | 2 +-
+ src/wayland-server.pc.in  | 2 +-
+ 4 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/src/meson.build b/src/meson.build
+index 7e410fa..d20ae58 100644
+--- a/src/meson.build
++++ b/src/meson.build
+@@ -47,7 +47,7 @@ pkgconfig.generate(
+ 	version: meson.project_version(),
+ 	variables: [
+ 		'datarootdir=' + join_paths('${prefix}', get_option('datadir')),
+-		'pkgdatadir=' + join_paths('${datarootdir}', meson.project_name()),
++		'pkgdatadir=' + join_paths('${pc_sysrootdir}${datarootdir}', meson.project_name()),
+ 		'bindir=' + join_paths('${prefix}', get_option('bindir')),
+ 		'wayland_scanner=wayland-scanner'
+ 	],
+@@ -172,7 +172,7 @@ if get_option('libraries')
+ 		filebase: 'wayland-server',
+ 		variables: [
+ 			'datarootdir=' + join_paths('${prefix}', get_option('datadir')),
+-			'pkgdatadir=' + join_paths('${datarootdir}', meson.project_name())
++			'pkgdatadir=' + join_paths('${pc_sysrootdir}${datarootdir}', meson.project_name())
+ 		]
+ 	)
+ 
+@@ -204,7 +204,7 @@ if get_option('libraries')
+ 		filebase: 'wayland-client',
+ 		variables: [
+ 			'datarootdir=' + join_paths('${prefix}', get_option('datadir')),
+-			'pkgdatadir=' + join_paths('${datarootdir}', meson.project_name())
++			'pkgdatadir=' + join_paths('${pc_sysrootdir}${datarootdir}', meson.project_name())
+ 		]
+ 	)
+ 
+diff --git a/src/wayland-client.pc.in b/src/wayland-client.pc.in
+index eef61da..8221a87 100644
+--- a/src/wayland-client.pc.in
++++ b/src/wayland-client.pc.in
+@@ -1,7 +1,7 @@
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+ datarootdir=@datarootdir@
+-pkgdatadir=@datadir@/@PACKAGE@
++pkgdatadir=${pc_sysrootdir}@datadir@/@PACKAGE@
+ libdir=@libdir@
+ includedir=@includedir@
+ 
+diff --git a/src/wayland-scanner.pc.in b/src/wayland-scanner.pc.in
+index 7b2a4c9..af50511 100644
+--- a/src/wayland-scanner.pc.in
++++ b/src/wayland-scanner.pc.in
+@@ -1,7 +1,7 @@
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+ datarootdir=@datarootdir@
+-pkgdatadir=@datadir@/@PACKAGE@
++pkgdatadir=${pc_sysrootdir}@datadir@/@PACKAGE@
+ wayland_scanner=@bindir@/wayland-scanner
+ 
+ Name: Wayland Scanner
+diff --git a/src/wayland-server.pc.in b/src/wayland-server.pc.in
+index 50dff53..a5fe9d7 100644
+--- a/src/wayland-server.pc.in
++++ b/src/wayland-server.pc.in
+@@ -1,7 +1,7 @@
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+ datarootdir=@datarootdir@
+-pkgdatadir=@datadir@/@PACKAGE@
++pkgdatadir=${pc_sysrootdir}@datadir@/@PACKAGE@
+ libdir=@libdir@
+ includedir=@includedir@
+ 
