@@ -17,8 +17,17 @@ DEPENDS = " \
     qtmultimedia \
     syndication \
     ki18n \
+    taglib \
+    networkmanager-qt \
+    qtkeychain \
 "
 
 inherit cmake_kdeapp
 inherit kconfig
 inherit kcoreaddons
+
+FILES_SOLIBSDEV = ""
+
+FILES_${PN} += " \
+    ${libdir}/libKastsSolidExtras.so \
+"
