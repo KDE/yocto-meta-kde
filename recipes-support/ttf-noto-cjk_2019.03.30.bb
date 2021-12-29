@@ -19,7 +19,7 @@ S = "${WORKDIR}/git"
 PACKAGES = "ttf-noto-cjk"
 FONT_PACKAGES = "ttf-noto-cjk"
 
-FILES_${PN}  = " ${datadir}/fonts/truetype/ "
+FILES:${PN}  = " ${datadir}/fonts/truetype/ "
 
 do_compile[noexec] = "1"
 

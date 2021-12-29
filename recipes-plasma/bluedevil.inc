@@ -29,7 +29,7 @@ inherit cmake_plasma
 inherit mime-xdg
 inherit mime
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${datadir}/bluedevilwizard \
     ${datadir}/kpackage/kcms/ \
     ${datadir}/mime/packages \

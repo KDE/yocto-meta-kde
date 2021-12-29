@@ -27,6 +27,6 @@ inherit kcoreaddons
 inherit kauth
 inherit mime-xdg
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
     qtgraphicaleffects-qmlplugins \
 "

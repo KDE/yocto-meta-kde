@@ -60,7 +60,7 @@ inherit mime-xdg
 EXTRA_OECMAKE += " -DBUILD_xembed-sni-proxy=OFF"
 
 FILES_SOLIBSDEV = ""
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${datadir}/desktop-directories/*.directory \
     ${datadir}/kcontrol \
     ${datadir}/kdisplay \
@@ -88,7 +88,7 @@ FILES_${PN} += " \
     ${libdir}/qml/org/kde \
 "
 
-FILES_${PN}-dev += " \
+FILES:${PN}-dev += " \
     ${libdir}/libcolorcorrect.so \
     ${libdir}/libnotificationmanager.so \
     ${libdir}/libkfontinst.so \
@@ -99,7 +99,7 @@ FILES_${PN}-dev += " \
     ${libdir}/libweather_ion.so \
 "
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
     kinit \
     kquickcharts \
     milou \

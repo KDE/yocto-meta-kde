@@ -31,7 +31,7 @@ DEPENDS = " \
 inherit cmake_plasma
 inherit mime-xdg
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${libdir}/qml/org/kde/discovernotifier \
     ${libdir}/plasma-discover \
     ${datadir}/kpackage/kcms/kcm_updates \

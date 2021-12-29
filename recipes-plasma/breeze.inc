@@ -24,7 +24,7 @@ DEPENDS = " \
 
 inherit cmake_plasma
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${libdir}/qml/QtQuick/Controls/Styles \
     ${datadir}/kstyle/themes \
     ${datadir}/plasma/look-and-feel \
@@ -34,6 +34,6 @@ FILES_${PN} += " \
     ${datadir}/wallpapers \
 "
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
     breeze-icons \
 "

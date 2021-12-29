@@ -28,6 +28,6 @@ inherit kcoreaddons
 
 FILES_SOLIBSDEV = ""
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${libdir}/libKastsSolidExtras.so \
 "

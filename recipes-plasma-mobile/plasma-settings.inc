@@ -19,7 +19,7 @@ DEPENDS = " \
 inherit cmake_plasma
 inherit kdoctools
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${libdir}/qml \
     ${datadir}/kpackage \
 "

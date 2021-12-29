@@ -26,7 +26,7 @@ DEPENDS = " \
 
 inherit cmake_plasma
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
     perl \
     qtquickcontrols \
 "

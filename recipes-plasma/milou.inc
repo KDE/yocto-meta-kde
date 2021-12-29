@@ -30,7 +30,7 @@ DEPENDS = " \
 
 inherit cmake_plasma
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${libdir}/qml/org/kde/milou/* \
     ${datadir}/plasma/plasmoids/org.kde.milou \
 "

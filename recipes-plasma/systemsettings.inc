@@ -31,10 +31,10 @@ DEPENDS += " \
 inherit cmake_plasma
 inherit kdoctools
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${datadir}/kpackage/genericqml/org.kde.systemsettings.sidebar \
 "
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
     qtquickcontrols-qmlplugins \
 "

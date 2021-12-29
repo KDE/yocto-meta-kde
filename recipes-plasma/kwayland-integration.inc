@@ -18,6 +18,6 @@ DEPENDS = " \
 
 inherit cmake_plasma
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${libdir}/plugins/kf5/kguiaddons \
 "

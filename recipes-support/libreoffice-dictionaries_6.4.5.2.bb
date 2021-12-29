@@ -23,6 +23,6 @@ do_install() {
     cp ${S}/*/*.aff ${D}/${datadir}/hunspell
 }
 
-FILES_${PN} = " \
+FILES:${PN} = " \
     ${datadir}/hunspell \
 "

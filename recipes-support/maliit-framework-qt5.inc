@@ -30,11 +30,11 @@ EXTRA_OECMAKE += " \
     -DQT5_PLUGINS_INSTALL_DIR=${OE_QMAKE_PATH_PLUGINS} \
 "
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${libdir}/plugins \
     ${datadir}/dbus-1/ \
 "
 
-FILES_${PN}-dev += " \
+FILES:${PN}-dev += " \
     ${libdir}/qt5/mkspecs \
 "

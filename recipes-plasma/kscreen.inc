@@ -24,7 +24,7 @@ DEPENDS = " \
 
 inherit cmake_plasma
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${datadir}/kded_kscreen \
     ${datadir}/kcm_kscreen \
     ${datadir}/kpackage \

@@ -42,7 +42,7 @@ EXTRA_OECMAKE += " \
 "
 
 FILES_SOLIBSDEV = ""
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${libdir}/*.so \
     ${libdir}/plugins/plasma/network/vpn/*.so \
     ${libdir}/qml/org/kde/plasma/networkmanagement \

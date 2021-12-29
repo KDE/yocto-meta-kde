@@ -44,12 +44,12 @@ PACKAGES += " \
     ${PN}-shared \
 "
 
-FILES_${PN} = " \
+FILES:${PN} = " \
     ${bindir}/okularkirigami \
     ${datadir}/applications/org.kde.okular.kirigami.desktop \
 "
 
-FILES_${PN}-shared = " \
+FILES:${PN}-shared = " \
     ${datadir}/okular/pics \
     ${datadir}/okular/icons \
     ${datadir}/qlogging-categories5 \
@@ -82,15 +82,15 @@ FILES_${PN}-shared = " \
     ${libdir} \
 "
 
-FILES_${PN}-desktop = " \
+FILES:${PN}-desktop = " \
     ${bindir}/okular \
     ${datadir}/applications/org.kde.okular.desktop \
 "
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
     ${PN}-shared \
 "
 
-RDEPENDS_${PN}-desktop += " \
+RDEPENDS:${PN}-desktop += " \
     ${PN}-shared \
 "

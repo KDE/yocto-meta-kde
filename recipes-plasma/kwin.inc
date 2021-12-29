@@ -59,7 +59,7 @@ do_install_append() {
 }
 
 FILES_SOLIBSDEV = ""
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${libdir}/kconf_update_bin/kwin5_update_default_rules \
     ${libdir}/plugins/*.so \
     ${libdir}/plugins/kpackage/packagestructure/*.so \
@@ -85,11 +85,11 @@ FILES_${PN} += " \
     ${datadir}/krunner/dbusplugins/*.desktop \
 "
 
-FILES_${PN}-dev += " \
+FILES:${PN}-dev += " \
     ${libdir}/libkwin*.so \
 "
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
     maliit-keyboard-qt5 \
     qtwayland-plugins \
     xserver-xorg-xwayland \

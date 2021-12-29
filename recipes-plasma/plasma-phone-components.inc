@@ -30,7 +30,7 @@ DEPENDS = " \
 
 inherit cmake_plasma
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${libdir}/qml/QtQuick/VirtualKeyboard/Styles/Plasma/* \
     ${libdir}/qml/org/kde/plasma/private/mobileshell/* \
     ${libdir}/qml/org/kde/plasma/private/kpeoplehelper/* \
@@ -48,7 +48,7 @@ FILES_${PN} += " \
     ${datadir}/wayland-sessions/*.desktop \
 "
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
     libqofono \
     kded \
     qtgraphicaleffects \

@@ -21,7 +21,7 @@ inherit cmake_qt5 python3native
 
 EXTRA_OECMAKE += " -DDESIRED_QT_VERSION=5 -DENABLE_TESTS=FALSE -DENABLE_FARSTREAM=FALSE -DENABLE_EXAMPLES=FALSE"
 
-FILES_${PN}-dev += " \
+FILES:${PN}-dev += " \
     ${libdir}/cmake/TelepathyQt5/* \
     ${libdir}/cmake/TelepathyQt5Service/* \
 "

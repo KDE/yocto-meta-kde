@@ -23,6 +23,6 @@ inherit cmake_kdeapp
 inherit kconfig
 inherit kcoreaddons
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
     kirigami-addons \
 "

@@ -25,7 +25,7 @@ S = "${WORKDIR}/git"
 PACKAGES = "ttf-noto"
 FONT_PACKAGES = "ttf-noto"
 
-FILES_${PN}  = " ${datadir}/fonts/truetype/ "
+FILES:${PN}  = " ${datadir}/fonts/truetype/ "
 
 do_install() {
     install -d ${D}${datadir}/fonts/truetype/

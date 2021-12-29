@@ -20,4 +20,4 @@ S = "${WORKDIR}/git"
 inherit cmake_qt5
 inherit systemd
 
-SYSTEMD_SERVICE_${PN} = "${BPN}.service"
+SYSTEMD_SERVICE:${PN} = "${BPN}.service"

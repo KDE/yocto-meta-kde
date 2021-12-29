@@ -18,4 +18,4 @@ S = "${WORKDIR}/git"
 
 inherit cmake_kdeapp
 
-RDEPENDS_${PN} += "qtmultimedia-qmlplugins"
+RDEPENDS:${PN} += "qtmultimedia-qmlplugins"

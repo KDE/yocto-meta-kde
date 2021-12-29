@@ -22,11 +22,11 @@ do_install_prepend() {
     fi
 }
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${libdir}/qca-qt5/crypto/libqca-*.so \
 "
 
-FILES_${PN}-dev += " \
+FILES:${PN}-dev += " \
     ${prefix}/mkspecs/features/*  \
     ${libdir}/cmake/Qca-qt5/*.cmake \
 "

@@ -65,14 +65,14 @@ do_install_append() {
     echo "WantedBy=multi-user.target" >> ${D}/${systemd_unitdir}/system/sddm.service
 }
 
-FILES_${PN} += "${OE_QMAKE_PATH_QML}"
+FILES:${PN} += "${OE_QMAKE_PATH_QML}"
 
-SYSTEMD_SERVICE_${PN} = "${BPN}.service"
+SYSTEMD_SERVICE:${PN} = "${BPN}.service"
 
 USERADD_PACKAGES = "${PN}"
-USERADD_PARAM_${PN} = "--system --home ${localstatedir}/lib/sddm --shell /bin/false --user-group --groups video sddm"
+USERADD_PARAM:${PN} = "--system --home ${localstatedir}/lib/sddm --shell /bin/false --user-group --groups video sddm"
 
-RDEPENDS_${PN} += "\
+RDEPENDS:${PN} += "\
     bash \
     packagegroup-core-x11-xserver \
     xcb-util \
@@ -86,7 +86,7 @@ RDEPENDS_${PN} += "\
     pam-plugin-tally \
 "
 
-RRECOMMENDS_${PN} += " \
+RRECOMMENDS:${PN} += " \
     qtvirtualkeyboard-plugins \
     qtvirtualkeyboard-qmlplugins \
 "

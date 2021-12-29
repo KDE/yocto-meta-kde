@@ -22,13 +22,13 @@ DEPENDS = " \
 
 inherit cmake_plasma
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${libdir}/qml/org/kde/plasma/ \
     ${datadir}/plasma/shells/org.kde.plasma.nano/ \
     ${datadir}/plasma/packages/org.kde.plasma.nano.desktoptoolbox/ \
 "
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
     qtdeclarative \
     plasma-workspace \
 "

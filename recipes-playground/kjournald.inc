@@ -26,16 +26,16 @@ PACKAGES += " \
     ${PN}-browser \
 "
 
-FILES_${PN} = " \
+FILES:${PN} = " \
     ${libdir} \
 "
 
-FILES_${PN}-browser = " \
+FILES:${PN}-browser = " \
     ${bindir}/journald-browser \
     ${datadir}/applications \
     ${datadir}/metainfo \
 "
 
-RDEPENDS_${PN}-browser += " \
+RDEPENDS:${PN}-browser += " \
     qtdeclarative-qmlplugins \
 "

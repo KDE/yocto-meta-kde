@@ -26,6 +26,6 @@ inherit kconfig
 inherit kauth
 inherit mime-xdg
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
     kdeedu-data \
 "

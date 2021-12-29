@@ -14,7 +14,7 @@ inherit packagegroup features_check
 
 REQUIRED_DISTRO_FEATURES = "wayland x11 kde"
 
-RDEPENDS_${PN} = " \
+RDEPENDS:${PN} = " \
     bluedevil \
     breeze \
     discover \

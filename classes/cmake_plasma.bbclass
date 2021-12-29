@@ -25,7 +25,7 @@ do_configure_prepend() {
     export XDG_DATA_DIRS=${STAGING_DATADIR}:$XDG_DATA_DIRS
 }
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${libdir}/libkdeinit5_*.so \
     ${libdir}/kconf_update_bin/* \
     ${libdir}/plugins/*.so \
@@ -48,7 +48,7 @@ FILES_${PN} += " \
     ${datadir}/polkit-1/actions/*.policy \
 "
 
-FILES_${PN}-dev += " \
+FILES:${PN}-dev += " \
     ${datadir}/dbus-1/interfaces/*.xml \
     ${datadir}/kdevappwizard/templates/*.tar.bz2 \
     ${datadir}/qlogging-categories5/* \

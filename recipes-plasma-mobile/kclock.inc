@@ -26,11 +26,11 @@ inherit kcoreaddons
 inherit kauth
 inherit mime-xdg
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
     qtdeclarative-qmlplugins \
     qtquickcontrols2-qmlplugins \
 "
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${datadir}/plasma/plasmoids/ \
 "

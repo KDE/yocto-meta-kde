@@ -26,7 +26,7 @@ inherit gsettings
 
 EXTRA_OECMAKE += "-Denable-presage=OFF"
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${datadir}/glib-2.0/schemas/org.maliit.keyboard.maliit.gschema.xml \
     ${datadir}/maliit/keyboard2/themes \
     ${datadir}/maliit/keyboard2/styles \

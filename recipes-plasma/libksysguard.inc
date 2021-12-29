@@ -30,7 +30,7 @@ DEPENDS = " \
 
 inherit cmake_plasma
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${datadir}/ksysguard \
     ${libdir}/qml \
 "

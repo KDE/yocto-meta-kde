@@ -20,7 +20,7 @@ DEPENDS = " \
     ${PN}-native \
 "
 
-DEPENDS_class-native = " \
+DEPENDS:class-native = " \
     ncurses \
     sqlite3 \
 "
@@ -28,6 +28,6 @@ DEPENDS_class-native = " \
 inherit cmake
 
 EXTRA_OECMAKE += "-DUSE_TOOLS_FROM_PATH=ON"
-EXTRA_OECMAKE_class-native += "-DINSTALL_TOOLS=ON"
+EXTRA_OECMAKE:class-native += "-DINSTALL_TOOLS=ON"
 
 BBCLASSEXTEND = "native"

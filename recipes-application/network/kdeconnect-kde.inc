@@ -39,7 +39,7 @@ EXTRA_OECMAKE += "-DOE_QCA_PATH_HOST_ROOT=${STAGING_DIR_HOST}"
 # workaround for missing variable, which is only used for Windows builds
 EXTRA_OECMAKE += "-DCMAKE_SYSTEM_VERSION=0.0.0"
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${datadir}/Thunar \
     ${datadir}/contractor \
     ${datadir}/kdeconnect \
@@ -49,6 +49,6 @@ FILES_${PN} += " \
     ${datadir}/zsh \
 "
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
     kpeoplevcard \
 "

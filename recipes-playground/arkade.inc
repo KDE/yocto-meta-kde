@@ -23,12 +23,12 @@ S = "${WORKDIR}/git"
 inherit cmake_kdeapp
 inherit mime-xdg
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
     qtdeclarative-qmlplugins \
     qtquickcontrols2-qmlplugins \
 "
 
-FILES_${PN} += "\
+FILES:${PN} += "\
     ${datadir}/game/packages/org.kde.arkade.fourinline \
     ${datadir}/game/packages/org.kde.arkade.samegame \
     ${datadir}/game/packages/org.kde.arkade.blocktennis \

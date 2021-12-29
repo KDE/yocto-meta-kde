@@ -38,12 +38,12 @@ PACKAGES += " \
 "
 
 FILES_SOLIBSDEV = ""
-FILES_${PN} = " \
+FILES:${PN} = " \
     ${bindir}/marble-maps \
     ${datadir}/applications/org.kde.marble-maps.desktop \
 "
 
-FILES_${PN}-shared = " \
+FILES:${PN}-shared = " \
     ${datadir}/knsrcfiles \
     ${libdir}/libmarbledeclarative.so \
     ${libdir} \
@@ -52,7 +52,7 @@ FILES_${PN}-shared = " \
     ${datadir} \
 "
 
-FILES_${PN}-desktop = " \
+FILES:${PN}-desktop = " \
     ${bindir}/marble \
     ${bindir}/marble-qt \
     ${datadir}/applications/org.kde.marble.desktop \
@@ -60,16 +60,16 @@ FILES_${PN}-desktop = " \
     ${datdair}/kxmlgui5 \
 "
 
-FILES_${PN}-dev += " \
+FILES:${PN}-dev += " \
     ${datadir}/knsrcfiles \
     ${libdir}/libastro.so \
     ${libdir}/libmarblewidget-qt5.so \
 "
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
     ${PN}-shared \
 "
 
-RDEPENDS_${PN}-desktop += " \
+RDEPENDS:${PN}-desktop += " \
     ${PN}-shared \
 "

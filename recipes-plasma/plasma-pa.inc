@@ -31,11 +31,11 @@ DEPENDS = " \
 inherit cmake_plasma
 inherit kdoctools
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${libdir}/qml/org/kde/plasma/private/volume/* \
     ${datadir}/kpackage/kcms/kcm_pulseaudio \
     ${datadir}/plasma/plasmoids/org.kde.plasma.volume \
     ${datadir}/kde4/apps/kconf_update/* \
 "
 
-RDEPENDS_${PN} += "perl"
+RDEPENDS:${PN} += "perl"

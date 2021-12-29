@@ -11,6 +11,6 @@ PR = "r0"
 
 inherit cmake_plasma
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${datadir}/locale \
 "

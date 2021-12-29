@@ -21,7 +21,7 @@ DEPENDS += " \
     qtdeclarative \
 "
 
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
     qtdeclarative-qmlplugins \
     qtgraphicaleffects-qmlplugins \
     qtmultimedia-qmlplugins \
@@ -37,7 +37,7 @@ inherit kconfig
 inherit kauth
 inherit mime-xdg
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${datadir}/gcompris-qt/rcc \
     ${datadir}/gcompris-qt/translations \
 "

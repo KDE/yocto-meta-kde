@@ -36,11 +36,11 @@ EXTRA_OECMAKE += " \
     -DHAVE_CXX11_INITIALIZER_LISTS=ON \
 "
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${libdir}/*.so \
     ${datadir}/krunner/dbusplugins/plasma-runnners-activities.desktop \
 "
 
-FILES_${PN}-dev = " \
+FILES:${PN}-dev = " \
     ${datadir}/qlogging-categories5 \
 "

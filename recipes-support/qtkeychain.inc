@@ -20,10 +20,10 @@ S = "${WORKDIR}/git"
 
 inherit cmake_qt5
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${datadir}/qt5keychain/translations \
 "
 
-FILES_${PN}-dev += " \
+FILES:${PN}-dev += " \
     ${prefix}/mkspecs \
 "

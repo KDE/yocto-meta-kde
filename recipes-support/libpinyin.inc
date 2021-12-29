@@ -14,7 +14,7 @@ SRC_URI = " \
     file://0002-Provide-option-to-use-pre-downloaded-archive.patch \
     file://0004-Fix-header-installation-path.patch \
 "
-SRC_URI_class-native = " \
+SRC_URI:class-native = " \
     git://github.com/libpinyin/libpinyin.git;nobranch=1 \
     file://0001-Optionally-install-utilities.patch \
     file://0002-Provide-option-to-use-pre-downloaded-archive.patch \
@@ -29,7 +29,7 @@ DEPENDS = " \
     glib-2.0 \
     libpinyin-native \
 "
-DEPENDS_class-native = " \
+DEPENDS:class-native = " \
     db \
     glib-2.0 \
 "
@@ -37,7 +37,7 @@ DEPENDS_class-native = " \
 inherit cmake
 
 EXTRA_OECMAKE += "-DDOWNLOAD_MODEL_DATA_ARCHIVE=OFF"
-EXTRA_OECMAKE_class-native += "-DINSTALL_UTILS=ON -DDISABLE_DATA_GENERATION=ON"
+EXTRA_OECMAKE:class-native += "-DINSTALL_UTILS=ON -DDISABLE_DATA_GENERATION=ON"
 
 # workaround for generator that can be executed only once:
 # https://github.com/libpinyin/libpinyin/issues/128

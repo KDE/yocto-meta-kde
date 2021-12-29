@@ -39,9 +39,9 @@ do_install_append() {
     install -m 0644 ${WORKDIR}/kde.pam ${D}${sysconfdir}/pam.d/kde
 }
 
-FILES_${PN} += " \
+FILES:${PN} += " \
     ${datadir}/ksmserver/screenlocker/org.kde.passworddialog/*.desktop \
     ${datadir}/kpackage/kcms/kcm_screenlocker \
 "
 
-RDEPENDS_${PN} += "perl"
+RDEPENDS:${PN} += "perl"
