@@ -28,13 +28,13 @@ DEPENDS = " \
     wayland-native \
 "
 
-SRC_URI_append = " \
+SRC_URI:append = " \
     file://kde.pam \
 "
 
 inherit cmake_plasma
 
-do_install_append() {
+do_install:append() {
     install -d ${D}${sysconfdir}/pam.d
     install -m 0644 ${WORKDIR}/kde.pam ${D}${sysconfdir}/pam.d/kde
 }

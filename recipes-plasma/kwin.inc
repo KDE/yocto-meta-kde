@@ -44,13 +44,13 @@ DEPENDS = " \
     libinput \
 "
 
-SRC_URI_append = " \
+SRC_URI:append = " \
     file://kwinrc \
 "
 
 inherit cmake_plasma kdoctools
 
-do_install_append() {
+do_install:append() {
     # dirty workaround for aurora crash on Wayland
     rm -rf ${D}/${libdir}/plugins/org.kde.kdecoration2/
 

@@ -15,7 +15,7 @@ S = "${WORKDIR}/git"
 
 inherit cmake_qt5
 
-do_install_prepend() {
+do_install:prepend() {
     if [ "0" -ne $(find . -name \*.cmake | grep _usr | wc -l) ]; then
         sed -i 's/\"\/usr\//\"\$\{OE_QCA_PATH_HOST_ROOT\}\/usr\//g' $(find . -name "*.cmake" | grep _usr)
         sed -i 's/\;\/usr\//\;\$\{OE_QCA_PATH_HOST_ROOT\}\/usr\//g' $(find . -name "*.cmake" | grep _usr)

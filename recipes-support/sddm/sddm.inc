@@ -44,12 +44,12 @@ EXTRA_OECMAKE += " \
     -DSYSTEMD_SYSTEM_UNIT_DIR=${systemd_unitdir}/system \
 "
 
-do_configure_append() {
+do_configure:append() {
     # fix sysroot path
     sed -i 's:${STAGING_DIR_HOST}.*${libdir}:${libdir}:g' ${B}/src/common/Constants.h
 }
 
-do_install_append() {
+do_install:append() {
     install -d ${D}/${sysconfdir}/sddm.conf.d
     install -m 644 ${WORKDIR}/sddm.conf ${D}/${sysconfdir}/sddm.conf.d/00-default.conf
 

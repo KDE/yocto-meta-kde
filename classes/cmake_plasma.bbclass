@@ -20,7 +20,7 @@ DEPENDS += " \
     kpackage-native \
 "
 
-do_configure_prepend() {
+do_configure:prepend() {
     # kpackagetool5 needs to find installed service type files
     export XDG_DATA_DIRS=${STAGING_DATADIR}:$XDG_DATA_DIRS
 }

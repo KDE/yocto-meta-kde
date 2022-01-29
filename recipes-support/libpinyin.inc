@@ -41,7 +41,7 @@ EXTRA_OECMAKE:class-native += "-DINSTALL_UTILS=ON -DDISABLE_DATA_GENERATION=ON"
 
 # workaround for generator that can be executed only once:
 # https://github.com/libpinyin/libpinyin/issues/128
-do_install_prepend() {
+do_install:prepend() {
     rm -f ${WORKDIR}/build/data/*.bin
     rm -f ${WORKDIR}/build/data/*.db
 }
