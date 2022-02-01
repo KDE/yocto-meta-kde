@@ -19,7 +19,7 @@ SRC_URI = " \
     git://invent.kde.org/plasma/kwayland-server;nobranch=1;protocol=https \
     file://fake_project_root.patch \
 "
-S = "${WORKDIR}/git/"
+S = "${WORKDIR}/git"
 
 OECMAKE_SOURCEPATH = "${S}/src/tools"
 
