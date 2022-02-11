@@ -12,24 +12,19 @@ PR = "r0"
 
 DEPENDS = " \
     qtdeclarative \
-    qtsensors \
-    qtscript \
     kconfigwidgets \
     kcrash \
     kglobalaccel \
-    kinit \
     knotifications \
     kpackage \
     plasma-framework \
     kwindowsystem \
-    kiconthemes \
     kidletime \
     kwayland \
     kwayland-server \
     kcompletion \
     kdeclarative \
     kcmutils \
-    kio \
     ktextwidgets \
     knewstuff \
     kservice \
