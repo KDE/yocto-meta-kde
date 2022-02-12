@@ -43,6 +43,7 @@ DEPENDS = " \
     kwin \
     libkscreen \
     libksysguard \
+    libqalculate \
     libxft \
     networkmanager-qt \
     phonon \
@@ -75,6 +76,7 @@ FILES:${PN} += " \
     ${datadir}/ksplash/Themes \
     ${datadir}/kstyle/themes/*.themerc \
     ${datadir}/plasma/look-and-feel \
+    ${datadir}/plasma/avatars \
     ${datadir}/plasma/plasmoids \
     ${datadir}/plasma/services/*.operations \
     ${datadir}/plasma/shareprovider \
@@ -85,6 +87,9 @@ FILES:${PN} += " \
     ${datadir}/xsessions/*.desktop \
     ${libdir}/libkrdb.so \
     ${libdir}/plugins/plasmacalendarplugins \
+    ${libdir}/plugins/kf5/krunner/kcms/kcm_krunner_kill.so \
+    ${libdir}/plugins/plasma/kcms/systemsettings/*.so \
+    ${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_fontinst.so \
     ${libdir}/qml/org/kde \
 "
 
@@ -98,6 +103,8 @@ FILES:${PN}-dev += " \
     ${libdir}/libplasma-geolocation-interface.so \
     ${libdir}/libweather_ion.so \
 "
+
+INSANE_SKIP:${PN} = "dev-so"
 
 RDEPENDS:${PN} += " \
     kinit \

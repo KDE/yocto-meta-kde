@@ -1,6 +1,6 @@
 # SPDX-FileCopyrightText: 2017-2020 Volker Krause <vkrause@kde.org>
 # SPDX-FileCopyrightText: 2019 Alistair Francis <alistair.francis@wdc.com>
-# SPDX-FileCopyrightText: 2020-2021 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+# SPDX-FileCopyrightText: 2020-2022 Andreas Cord-Landwehr <cordlandwehr@kde.org>
 #
 # SPDX-License-Identifier: MIT
 
@@ -26,6 +26,7 @@ DEPENDS = " \
     kwin \
     gstreamer1.0 \
     modemmanager-qt \
+    networkmanager-qt \
 "
 
 inherit cmake_plasma
@@ -35,6 +36,7 @@ FILES:${PN} += " \
     ${libdir}/qml/org/kde/plasma/private/mobileshell/* \
     ${libdir}/qml/org/kde/plasma/private/kpeoplehelper/* \
     ${libdir}/qml/org/kde/plasma/private/mobilehomescreencomponents/* \
+    ${libdir}/qml/org/kde/plasma/quicksetting/nightcolor/* \
     ${libdir}/qml/org/kde/plasma/mm/* \
     ${datadir}/kpackage/genericqml/org.kde.phone.dialer/* \
     ${datadir}/plasma/shells/org.kde.plasma.phone/* \

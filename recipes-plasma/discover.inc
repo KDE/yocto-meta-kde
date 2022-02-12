@@ -34,5 +34,6 @@ inherit mime-xdg
 FILES:${PN} += " \
     ${libdir}/qml/org/kde/discovernotifier \
     ${libdir}/plasma-discover \
+    ${libdir}/plugins/plasma/kcms/systemsettings/* \
     ${datadir}/kpackage/kcms/kcm_updates \
 "

@@ -39,4 +39,8 @@ inherit cmake_plasma
 inherit kdoctools
 inherit mime-xdg
 
+FILES:${PN} += " \
+    ${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_filetypes.so \
+"
+
 FILES_SOLIBSDEV = ""

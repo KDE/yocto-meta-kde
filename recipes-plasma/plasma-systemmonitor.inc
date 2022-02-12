@@ -29,6 +29,7 @@ inherit kdoctools
 
 FILES:${PN} += " \
     ${datadir}/ksysguard/sensorfaces/ \
+    ${datadir}/plasma/kinfocenter/externalmodules/ \
     ${libdir}/qml/org/kde/ksysguard/table/ \
     ${libdir}/qml/org/kde/ksysguard/page/ \
 "

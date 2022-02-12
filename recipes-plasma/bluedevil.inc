@@ -36,4 +36,5 @@ FILES:${PN} += " \
     ${datadir}/plasma \
     ${datadir}/remoteview \
     ${libdir}/qml \
+    ${libdir}/plugins/plasma/kcms/systemsettings/ \
 "

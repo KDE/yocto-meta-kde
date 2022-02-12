@@ -1,6 +1,6 @@
 # SPDX-FileCopyrightText: 2017-2020 Volker Krause <vkrause@kde.org>
 # SPDX-FileCopyrightText: 2018 Alistair Francis <alistair.francis@wdc.com>
-# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+# SPDX-FileCopyrightText: 2020-2022 Andreas Cord-Landwehr <cordlandwehr@kde.org>
 #
 # SPDX-License-Identifier: MIT
 
@@ -10,7 +10,14 @@ LICENSE = "GPL-2.0"
 LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-only.txt;md5=93e64b4a83c7e441e48bbdeeea05c977"
 PR = "r0"
 
+SRC_URI:append:class-native  = " \
+    file://0001-Create-artifical-packageroot-just-for-host-tools.patch \
+    file://0002-Comment-out-all-effects.patch \
+    file://0003-Install-kwin-strip-effect-metadata.patch \
+"
+
 DEPENDS = " \
+    kwin-native \
     qtdeclarative \
     qtsensors \
     qtscript \
@@ -40,15 +47,30 @@ DEPENDS = " \
     libxcb \
     xcb-util-cursor \
     fontconfig \
+    lcms \
     libepoxy \
     libinput \
+    pipewire \
+"
+
+DEPENDS:class-native = " \
+    extra-cmake-modules-native \
+    qtbase-native \
+    kpackage-native \
+    kconfig-native \
 "
 
 SRC_URI:append = " \
     file://kwinrc \
 "
 
-inherit cmake_plasma kdoctools
+inherit cmake_plasma kconfig
+
+BBCLASSEXTEND = "native"
+
+OECMAKE_SOURCEPATH:class-native = "${S}/src/effects"
+
+EXTRA_OECMAKE:append:class-target = " -DKWIN_HOST_TOOLING=${STAGING_DIR_NATIVE}/${libdir}/cmake"
 
 do_install:append() {
     # dirty workaround for aurora crash on Wayland
@@ -60,36 +82,37 @@ do_install:append() {
 
 FILES_SOLIBSDEV = ""
 FILES:${PN} += " \
+    ${datadir}/config.kcfg/*.kcfg \
+    ${datadir}/knotifications5/*.notifyrc \
+    ${datadir}/kpackage \
+    ${datadir}/krunner/dbusplugins/*.desktop \
+    ${datadir}/kservices5/*.desktop \
+    ${datadir}/kservices5/kwin/*.desktop \
+    ${datadir}/kservicetypes5/*.desktop \
+    ${datadir}/kwincompositing/qml/*.qml \
     ${libdir}/kconf_update_bin/kwin5_update_default_rules \
     ${libdir}/plugins/*.so \
-    ${libdir}/plugins/kpackage/packagestructure/*.so \
-    ${libdir}/plugins/org.kde.kwin.scenes/*.so \
-    ${libdir}/plugins/org.kde.kglobalaccel5.platforms/*.so \
-    ${libdir}/plugins/kwin/effects/configs/*.so \
-    ${libdir}/plugins/org.kde.kwin.waylandbackends/*.so \
-    ${libdir}/plugins/org.kde.kdecoration2/*.so \
     ${libdir}/plugins/kf5/org.kde.kidletime.platforms/*.so \
+    ${libdir}/plugins/kpackage/packagestructure/*.so \
+    ${libdir}/plugins/kwin/effects/configs/*.so \
+    ${libdir}/plugins/org.kde.kdecoration2/*.so \
+    ${libdir}/plugins/org.kde.kglobalaccel5.platforms/*.so \
     ${libdir}/plugins/org.kde.kwin.platforms/*.so \
+    ${libdir}/plugins/org.kde.kwin.scenes/*.so \
+    ${libdir}/plugins/org.kde.kwin.waylandbackends/*.so \
     ${libdir}/plugins/platforms/*.so \
     ${libdir}/qml/org/kde/kwin/decoration/* \
     ${libdir}/qml/org/kde/kwin/decorations/plastik/* \
     ${libdir}/qml/org/kde/kwin/private/kdecoration/* \
+    ${libdir}/qml/org/kde/plasma/quicksetting/nightcolor/* \
     ${libdir}/systemd/user/*.service \
-    ${datadir}/kservices5/*.desktop \
-    ${datadir}/kservices5/kwin/*.desktop \
-    ${datadir}/knotifications5/*.notifyrc \
-    ${datadir}/kservicetypes5/*.desktop \
-    ${datadir}/kwincompositing/qml/*.qml \
-    ${datadir}/config.kcfg/*.kcfg \
-    ${datadir}/kpackage \
-    ${datadir}/krunner/dbusplugins/*.desktop \
 "
 
 FILES:${PN}-dev += " \
     ${libdir}/libkwin*.so \
 "
 
-RDEPENDS:${PN} += " \
+RDEPENDS:${PN}:append:class-target = " \
     maliit-keyboard-qt5 \
     qtwayland-plugins \
     xserver-xorg-xwayland \
