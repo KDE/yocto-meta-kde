@@ -22,7 +22,7 @@ DEPENDS = " \
 
 DEPENDS:class-native = " \
     ncurses \
-    sqlite3 \
+    sqlite3-native \
 "
 
 inherit cmake
