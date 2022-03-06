@@ -1,0 +1,112 @@
+From baf35f3b268596b7e8c2b987349d40021599097f Mon Sep 17 00:00:00 2001
+From: Andreas Cord-Landwehr <cordlandwehr@kde.org>
+Date: Sat, 19 Feb 2022 18:07:53 +0100
+Subject: [PATCH] Comment out all effects
+
+---
+ src/effects/CMakeLists.txt | 88 +++++++++++++++++++-------------------
+ 1 file changed, 44 insertions(+), 44 deletions(-)
+
+diff --git a/src/effects/CMakeLists.txt b/src/effects/CMakeLists.txt
+index bbeae8a..4f6e055 100644
+--- a/src/effects/CMakeLists.txt
++++ b/src/effects/CMakeLists.txt
+@@ -160,51 +160,51 @@ install_scripted_effect(sessionquit)
+ # Built-in effects go here
+ 
+ # Common effects
+-add_subdirectory(colorpicker)
+-add_subdirectory(desktopgrid)
+-add_subdirectory(diminactive)
+-add_subdirectory(fallapart)
+-add_subdirectory(highlightwindow)
+-add_subdirectory(kscreen)
+-add_subdirectory(screentransform)
+-add_subdirectory(magiclamp)
+-add_subdirectory(overview)
+-add_subdirectory(presentwindows)
+-add_subdirectory(screenedge)
+-add_subdirectory(showfps)
+-add_subdirectory(showpaint)
+-add_subdirectory(slide)
+-add_subdirectory(slideback)
+-add_subdirectory(slidingpopups)
+-add_subdirectory(thumbnailaside)
+-add_subdirectory(touchpoints)
+-add_subdirectory(zoom)
+-
+-# OpenGL-specific effects
+-add_subdirectory(blur)
+-add_subdirectory(backgroundcontrast)
+-add_subdirectory(glide)
+-add_subdirectory(invert)
+-add_subdirectory(lookingglass)
+-add_subdirectory(magnifier)
+-add_subdirectory(mouseclick)
+-add_subdirectory(mousemark)
+-add_subdirectory(screenshot)
+-add_subdirectory(sheet)
+-add_subdirectory(snaphelper)
+-add_subdirectory(startupfeedback)
+-add_subdirectory(trackmouse)
+-add_subdirectory(wobblywindows)
++#add_subdirectory(colorpicker)
++#add_subdirectory(desktopgrid)
++#add_subdirectory(diminactive)
++#add_subdirectory(fallapart)
++#add_subdirectory(highlightwindow)
++#add_subdirectory(kscreen)
++#add_subdirectory(screentransform)
++#add_subdirectory(magiclamp)
++#add_subdirectory(overview)
++#add_subdirectory(presentwindows)
++#add_subdirectory(screenedge)
++#add_subdirectory(showfps)
++#add_subdirectory(showpaint)
++#add_subdirectory(slide)
++#add_subdirectory(slideback)
++#add_subdirectory(slidingpopups)
++#add_subdirectory(thumbnailaside)
++#add_subdirectory(touchpoints)
++#add_subdirectory(zoom)
++
++## OpenGL-specific effects
++#add_subdirectory(blur)
++#add_subdirectory(backgroundcontrast)
++#add_subdirectory(glide)
++#add_subdirectory(invert)
++#add_subdirectory(lookingglass)
++#add_subdirectory(magnifier)
++#add_subdirectory(mouseclick)
++#add_subdirectory(mousemark)
++#add_subdirectory(screenshot)
++#add_subdirectory(sheet)
++#add_subdirectory(snaphelper)
++#add_subdirectory(startupfeedback)
++#add_subdirectory(trackmouse)
++#add_subdirectory(wobblywindows)
+ 
+ ###############################################################################
+ 
+ # Add the builtins plugin
+-add_library(kwin4_effect_builtins STATIC)
+-kcoreaddons_target_static_plugins(kwin4_effect_builtins "kwin/effects/plugins" LINK_OPTION "PRIVATE")
+-target_link_libraries(kwin4_effect_builtins PRIVATE
+-    ${kwin_effect_KDE_LIBS}
+-    ${kwin_effect_OWN_LIBS}
+-    ${kwin_effect_QT_LIBS}
+-    ${kwin_effect_XCB_LIBS}
+-    ${kwin_effect_XLIB_LIBS}
+-)
++#add_library(kwin4_effect_builtins STATIC)
++#kcoreaddons_target_static_plugins(kwin4_effect_builtins "kwin/effects/plugins" LINK_OPTION "PRIVATE")
++#target_link_libraries(kwin4_effect_builtins PRIVATE
++    #${kwin_effect_KDE_LIBS}
++    #${kwin_effect_OWN_LIBS}
++    #${kwin_effect_QT_LIBS}
++    #${kwin_effect_XCB_LIBS}
++    #${kwin_effect_XLIB_LIBS}
++#)
+-- 
+2.32.0
+

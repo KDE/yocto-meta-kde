@@ -1,0 +1,26 @@
+From c0351feb30e282eded80b943e86b84c2c334e83b Mon Sep 17 00:00:00 2001
+From: Andreas Cord-Landwehr <cordlandwehr@kde.org>
+Date: Mon, 21 Feb 2022 18:53:38 +0100
+Subject: [PATCH] Install kwin-strip-effect-metadata
+
+---
+ src/effects/CMakeLists.txt | 3 ++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/src/effects/CMakeLists.txt b/src/effects/CMakeLists.txt
+index 4f6e055..707fc5f 100644
+--- a/src/effects/CMakeLists.txt
++++ b/src/effects/CMakeLists.txt
+@@ -156,6 +156,9 @@ install_scripted_effect(translucency)
+ install_scripted_effect(windowaperture)
+ install_scripted_effect(sessionquit)
+ 
++install(TARGETS kwin-strip-effect-metadata EXPORT StripEffectMetadataTargets)
++install(EXPORT StripEffectMetadataTargets DESTINATION ${KDE_INSTALL_CMAKEPACKAGEDIR})
++
+ ###############################################################################
+ # Built-in effects go here
+ 
+-- 
+2.32.0
+
