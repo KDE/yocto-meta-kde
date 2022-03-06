@@ -30,8 +30,8 @@ DEPENDS = " \
     libpinyin-native \
 "
 DEPENDS:class-native = " \
-    db \
-    glib-2.0 \
+    db-native \
+    glib-2.0-native \
 "
 
 inherit cmake
