@@ -3,5 +3,5 @@
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/${BPN}:"
 SRC_URI += " \
-    file://0001-Consider-pkgconfig-sysroot-for-pkgdatadir.patch \
+    file://wayland-${PV}_0001-Consider-pkgconfig-sysroot-for-pkgdatadir.patch \
 "
