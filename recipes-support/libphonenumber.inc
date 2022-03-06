@@ -13,7 +13,7 @@ DEPENDS = " \
     protobuf \
     protobuf-native \
     icu \
-    virtual/java-native \
+    virtual/javac-native \
 "
 
 SRC_URI = " \
