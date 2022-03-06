@@ -32,7 +32,7 @@ RDEPENDS:${PN} = " \
     plasma-nano \
     plasma-nm \
     plasma-pa \
-    plasma-phone-components \
+    plasma-mobile \
     plasma-workspace \
     polkit-kde-agent-1 \
     powerdevil \
