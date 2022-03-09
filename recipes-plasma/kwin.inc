@@ -96,6 +96,6 @@ FILES:${PN}-dev += " \
 RDEPENDS:${PN}:append = " \
     maliit-keyboard-qt5 \
     qtwayland-plugins \
-    xserver-xorg-xwayland \
+    xwayland \
     perl \
 "
