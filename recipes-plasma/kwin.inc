@@ -10,14 +10,7 @@ LICENSE = "GPL-2.0"
 LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-only.txt;md5=93e64b4a83c7e441e48bbdeeea05c977"
 PR = "r0"
 
-SRC_URI:append:class-native  = " \
-    file://0001-Create-artifical-packageroot-just-for-host-tools.patch \
-    file://0002-Comment-out-all-effects.patch \
-    file://0003-Install-kwin-strip-effect-metadata.patch \
-"
-
 DEPENDS = " \
-    kwin-native \
     qtdeclarative \
     qtsensors \
     qtscript \
@@ -53,24 +46,12 @@ DEPENDS = " \
     pipewire \
 "
 
-DEPENDS:class-native = " \
-    extra-cmake-modules-native \
-    qtbase-native \
-    kpackage-native \
-    kconfig-native \
-"
-
 SRC_URI:append = " \
+    file://0001-Use-a-python-script-to-strip-effect-metadata.patch \
     file://kwinrc \
 "
 
 inherit cmake_plasma kconfig
-
-BBCLASSEXTEND = "native"
-
-OECMAKE_SOURCEPATH:class-native = "${S}/src/effects"
-
-EXTRA_OECMAKE:append:class-target = " -DKWIN_HOST_TOOLING=${STAGING_DIR_NATIVE}/${libdir}/cmake"
 
 do_install:append() {
     # dirty workaround for aurora crash on Wayland
@@ -112,7 +93,7 @@ FILES:${PN}-dev += " \
     ${libdir}/libkwin*.so \
 "
 
-RDEPENDS:${PN}:append:class-target = " \
+RDEPENDS:${PN}:append = " \
     maliit-keyboard-qt5 \
     qtwayland-plugins \
     xserver-xorg-xwayland \

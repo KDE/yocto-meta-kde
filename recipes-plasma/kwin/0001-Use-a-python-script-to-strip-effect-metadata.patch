@@ -1,0 +1,171 @@
+From f5554f4ef243e42d8cf5eb1ccbe369a047871f6c Mon Sep 17 00:00:00 2001
+From: Alex Richardson <Alexander.Richardson@cl.cam.ac.uk>
+Date: Sun, 20 Feb 2022 20:20:52 +0000
+Subject: [PATCH] Use a python script to strip effect metadata
+
+This makes it easier to cross-compile KWin since it is no longer necessary
+to have all the KWin dependencies on the host machine. This could be
+partially addressed by moving the strip-effects-metadata.cpp into a
+separate folder than can be built as a top-level project, thereby reducing
+the dependencies to just QtCore. However, it still means we have to build
+a native binary. Since all this script is doing is removing some JSON keys,
+we could also use a python script and avoid the need to compile a
+build-time helper program.
+---
+ src/effects/CMakeLists.txt            | 21 ++------
+ src/effects/strip-effect-metadata.cpp | 71 ---------------------------
+ src/effects/strip-effect-metadata.py  | 28 +++++++++++
+ 3 files changed, 33 insertions(+), 87 deletions(-)
+ delete mode 100644 src/effects/strip-effect-metadata.cpp
+ create mode 100755 src/effects/strip-effect-metadata.py
+
+diff --git a/src/effects/CMakeLists.txt b/src/effects/CMakeLists.txt
+index 9d06969b9..da9998932 100644
+--- a/src/effects/CMakeLists.txt
++++ b/src/effects/CMakeLists.txt
+@@ -8,26 +8,15 @@ function(kwin_add_effect_config name)
+     kcoreaddons_add_plugin(${name} INSTALL_NAMESPACE "kwin/effects/configs" SOURCES ${ARGV})
+ endfunction()
+ 
+-if (CMAKE_CROSSCOMPILING)
+-    if (NOT KWIN_HOST_TOOLING)
+-        message(FATAL_ERROR "Please provide the path to a native build and pass -DKWIN_HOST_TOOLING=path")
+-    endif()
+-    find_file(KSEM_EXECUTABLE StripEffectMetadataTargets.cmake
+-              PATHS ${KWIN_HOST_TOOLING}
+-              NO_DEFAULT_PATH
+-              NO_CMAKE_FIND_ROOT_PATH)
+-    include(${KSEM_EXECUTABLE})
+-else()
+-    add_executable(kwin-strip-effect-metadata strip-effect-metadata.cpp)
+-    target_link_libraries(kwin-strip-effect-metadata Qt5::Core)
+-    # Export the kwin-strip-effect-metadata target to a file, so it can be used by another build.
+-    export(TARGETS kwin-strip-effect-metadata FILE ${CMAKE_BINARY_DIR}/StripEffectMetadataTargets.cmake)
+-endif()
++# Add a CMake-time check for python3 to avoid failures during build.
++find_package (Python3 COMPONENTS Interpreter)
++add_feature_info("Python3" Python3_Interpreter_FOUND "Required to strip effects metadata")
++set(KSEM_EXE "${CMAKE_CURRENT_SOURCE_DIR}/strip-effect-metadata.py")
+ 
+ function (kwin_strip_builtin_effect_metadata target metadata)
+     set(stripped_metadata "${CMAKE_CURRENT_BINARY_DIR}/${metadata}.stripped")
+ 
+-    set(command kwin-strip-effect-metadata --source=${metadata} --output=${stripped_metadata})
++    set(command ${KSEM_EXE} --source=${metadata} --output=${stripped_metadata})
+     add_custom_command(
+         OUTPUT ${stripped_metadata}
+         COMMAND ${command}
+diff --git a/src/effects/strip-effect-metadata.cpp b/src/effects/strip-effect-metadata.cpp
+deleted file mode 100644
+index d882854a0..000000000
+--- a/src/effects/strip-effect-metadata.cpp
++++ /dev/null
+@@ -1,71 +0,0 @@
+-/*
+-    SPDX-FileCopyrightText: 2021 Vlad Zahorodnii <vlad.zahorodnii@kde.org>
+-
+-    SPDX-License-Identifier: GPL-2.0-or-later
+-*/
+-
+-#include <QCommandLineOption>
+-#include <QCommandLineParser>
+-#include <QCoreApplication>
+-#include <QDebug>
+-#include <QFile>
+-#include <QJsonObject>
+-#include <QJsonDocument>
+-#include <QJsonValue>
+-
+-/**
+- * This little helper strips unnecessary information from builtin effect metadata files to
+- * reduce the size of kwin executables and json parsing runtime overhead.
+- */
+-
+-static bool stripMetaData(const QString &fileName, const QString &target)
+-{
+-    QFile originalFile(fileName);
+-    if (!originalFile.open(QFile::ReadOnly)) {
+-        qWarning("Failed to open %s: %s", qPrintable(fileName), qPrintable(originalFile.errorString()));
+-        return false;
+-    }
+-
+-    QJsonDocument fullDocument = QJsonDocument::fromJson(originalFile.readAll());
+-    if (fullDocument.isNull()) {
+-        qWarning() << "Invalid metadata in" << fileName;
+-        return false;
+-    }
+-
+-    const QJsonObject originalRootObject = fullDocument.object();
+-
+-    QJsonObject kpluginObject;
+-    kpluginObject["Id"] = originalRootObject["KPlugin"]["Id"];
+-    kpluginObject["EnabledByDefault"] = originalRootObject["KPlugin"]["EnabledByDefault"];
+-
+-    QJsonObject strippedRootObject;
+-    strippedRootObject["KPlugin"] = kpluginObject;
+-
+-    QFile targetFile(target);
+-    if (!targetFile.open(QFile::WriteOnly)) {
+-        qWarning("Failed to open %s: %s", qPrintable(target), qPrintable(targetFile.errorString()));
+-        return false;
+-    }
+-
+-    targetFile.write(QJsonDocument(strippedRootObject).toJson());
+-    targetFile.close();
+-
+-    return targetFile.error() == QFile::NoError;
+-}
+-
+-int main(int argc, char **argv)
+-{
+-    QCoreApplication app(argc, argv);
+-
+-    QCommandLineParser parser;
+-    parser.setApplicationDescription("kwin-strip-effect-metadata");
+-
+-    QCommandLineOption inputOption(QStringLiteral("source"), QStringLiteral("input file"), QStringLiteral("path/to/file"));
+-    parser.addOption(inputOption);
+-
+-    QCommandLineOption outputOption(QStringLiteral("output"), QStringLiteral("output file"), QStringLiteral("path/to/file"));
+-    parser.addOption(outputOption);
+-
+-    parser.process(app);
+-    return !stripMetaData(parser.value(inputOption), parser.value(outputOption));
+-}
+diff --git a/src/effects/strip-effect-metadata.py b/src/effects/strip-effect-metadata.py
+new file mode 100755
+index 000000000..77f316d26
+--- /dev/null
++++ b/src/effects/strip-effect-metadata.py
+@@ -0,0 +1,28 @@
++#!/usr/bin/env python3
++# SPDX-FileCopyrightText: 2021 Vlad Zahorodnii <vlad.zahorodnii@kde.org>
++# SPDX-FileCopyrightText: 2022 Alex Richardson <arichardson.kde@gmail.com>
++# SPDX-License-Identifier: GPL-2.0-or-later
++#
++# This little helper strips unnecessary information from builtin effect metadata files to
++# reduce the size of kwin executables and json parsing runtime overhead.
++
++import argparse
++import json
++
++def main():
++    parser = argparse.ArgumentParser(prog="kwin-strip-effect-metadata")
++    parser.add_argument("--source", help="input file", required=True)
++    parser.add_argument("--output", help="output file", required=True)
++    args = parser.parse_args()
++    stripped_json = dict(KPlugin=dict())
++    with open(args.source, "r") as src:
++        original_json = json.load(src)
++        stripped_json["KPlugin"]["Id"] = original_json["KPlugin"]["Id"]
++        stripped_json["KPlugin"]["EnabledByDefault"] = original_json["KPlugin"]["EnabledByDefault"]
++
++    with open(args.output, "w") as dst:
++        json.dump(stripped_json, dst)
++
++
++if __name__ == "__main__":
++    main()
+-- 
+2.32.0
+
