@@ -83,7 +83,6 @@ RDEPENDS:${PN} += "\
     qtbase-plugins \
     qtdeclarative-plugins \
     qtdeclarative-qmlplugins \
-    pam-plugin-tally \
 "
 
 RRECOMMENDS:${PN} += " \
