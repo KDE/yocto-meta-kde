@@ -23,6 +23,7 @@ DEPENDS += " \
     knotifications \
     kwidgetsaddons \
     kactivities \
+    phonon \
     purpose \
 "
 

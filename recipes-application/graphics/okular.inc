@@ -20,6 +20,7 @@ DEPENDS += " \
     kjs \
     kactivities \
     kpty \
+    phonon \
     poppler \
     purpose \
     qca \
