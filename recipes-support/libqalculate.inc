@@ -8,7 +8,7 @@ SUMMARY = "Qalculate! library and CLI"
 HOMEPAGE = "https://qalculate.github.io/"
 
 SRC_URI = " \
-    git://github.com/Qalculate/libqalculate.git;nobranch=1 \
+    git://github.com/Qalculate/libqalculate.git;nobranch=1;protocol=https \
 "
 
 S = "${WORKDIR}/git"

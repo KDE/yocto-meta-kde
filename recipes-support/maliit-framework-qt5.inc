@@ -6,7 +6,7 @@ LICENSE = "LGPL-2.1"
 LIC_FILES_CHKSUM = "file://LICENSE.LGPL;md5=5c917f6ce94ceb8d8d5e16e2fca5b9ad"
 
 SRC_URI = " \
-    git://github.com/maliit/framework.git;nobranch=1 \
+    git://github.com/maliit/framework.git;nobranch=1;protocol=https \
 "
 S = "${WORKDIR}/git"
 

@@ -12,7 +12,7 @@ PR = "r0"
 DEPENDS = "qtbase"
 
 SRC_URI = " \
-    git://anongit.freedesktop.org/git/telepathy/telepathy-qt.git;nobranch=1 \
+    git://anongit.freedesktop.org/git/telepathy/telepathy-qt.git;nobranch=1;protocol=https \
     file://0001-cross-compilation-fix.patch \
 "
 S = "${WORKDIR}/git"

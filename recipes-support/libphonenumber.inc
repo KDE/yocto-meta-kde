@@ -17,7 +17,7 @@ DEPENDS = " \
 "
 
 SRC_URI = " \
-    git://github.com/googlei18n/${BPN}.git;nobranch=1 \
+    git://github.com/googlei18n/${BPN}.git;nobranch=1;protocol=https \
 "
 S = "${WORKDIR}/git/cpp"
 

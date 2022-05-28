@@ -7,7 +7,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=4fbd65380cdd255951079008b364516c"
 SUMMARY = "The intelligent phonetic input method library"
 
 SRC_URI = " \
-    git://github.com/chewing/libchewing.git;nobranch=1 \
+    git://github.com/chewing/libchewing.git;nobranch=1;protocol=https \
     file://0001-Cross-compilation-options.patch \
     file://0002-Disable-genkeystroke-testapp.patch \
 "

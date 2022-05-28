@@ -13,7 +13,7 @@ DEPENDS = " \
 "
 
 SRC_URI = " \
-    git://invent.kde.org/bshah/${BPN}.git;nobranch=1 \
+    git://invent.kde.org/bshah/${BPN}.git;nobranch=1;protocol=https \
 "
 S = "${WORKDIR}/git"
 

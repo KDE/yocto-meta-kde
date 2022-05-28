@@ -23,7 +23,7 @@ DEPENDS = " \
 "
 
 SRC_URI = " \
-    git://github.com/sddm/${BPN};nobranch=1 \
+    git://github.com/sddm/${BPN};nobranch=1;protocol=https \
     file://0001-fix-qml-install-dir.patch \
     file://0002-Workaround-missing-sessions.patch \
     file://sddm.conf \
