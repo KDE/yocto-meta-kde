@@ -9,6 +9,7 @@ inherit kcoreaddons
 inherit kconfig
 inherit kauth
 inherit kdoctools
+inherit pkgconfig
 
 EXTRA_OECMAKE += " \
     -DBUILD_TESTING=OFF \

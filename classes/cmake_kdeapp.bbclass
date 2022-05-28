@@ -5,12 +5,13 @@
 inherit cmake_qt5
 inherit ki18n
 inherit kdoctools
+inherit pkgconfig
 
-EXTRA_OECMAKE += " \
+EXTRA_OECMAKE:append = " \
     -DBUILD_TESTING=OFF \
 "
 
-DEPENDS += " \
+DEPENDS:append = " \
     extra-cmake-modules \
     qtbase \
     gettext-native \
@@ -22,7 +23,7 @@ do_configure:prepend() {
     export XDG_DATA_DIRS=${STAGING_DATADIR}:$XDG_DATA_DIRS
 }
 
-FILES:${PN} += " \
+FILES:${PN}:append = " \
     ${libdir}/libkdeinit5_*.so \
     ${libdir}/kconf_update_bin/* \
     ${libdir}/plugins/*.so \
@@ -46,7 +47,7 @@ FILES:${PN} += " \
     ${datadir}/qlogging-categories5 \
 "
 
-FILES:${PN}-dev += " \
+FILES:${PN}-dev:append = " \
     ${datadir}/dbus-1/interfaces/*.xml \
     ${datadir}/kdevappwizard/templates/*.tar.bz2 \
     ${libdir}/cmake/*/*.cmake \
