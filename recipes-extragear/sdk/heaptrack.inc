@@ -3,9 +3,9 @@
 # SPDX-License-Identifier: MIT
 
 DESCRIPTION = "Heaptrack"
-HOMEPAGE = "https://phabricator.kde.org/source/heaptrack/"
+HOMEPAGE = "https://invent.kde.org/sdk/heaptrack"
 LICENSE = "LGPL-2.1"
-LIC_FILES_CHKSUM = "file://COPYING;md5=4fbd65380cdd255951079008b364516c"
+LIC_FILES_CHKSUM = "file://LICENSES/LGPL-2.1-only.txt;md5=41890f71f740302b785c27661123bff5"
 PR = "r0"
 
 DEPENDS = "zlib boost libunwind elfutils"
