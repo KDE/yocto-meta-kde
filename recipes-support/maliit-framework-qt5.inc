@@ -22,6 +22,7 @@ DEPENDS += " \
 "
 
 inherit cmake_qt5
+inherit pkgconfig
 
 EXTRA_OECMAKE += " \
     -Denable-docs=OFF \
