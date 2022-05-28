@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 LICENSE = "GPL-2.0"
-LIC_FILES_CHKSUM = "file://COPYING;md5=94d55d512a9ba36caa9b7df079bae19f"
+LIC_FILES_CHKSUM = "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263"
 SUMMARY = "Qalculate! library and CLI"
 HOMEPAGE = "https://qalculate.github.io/"
 
@@ -24,6 +24,7 @@ DEPENDS = " \
 
 inherit autotools
 inherit gettext
+inherit pkgconfig
 
 do_configure:prepend() {
     ${S}/autogen.sh ${CONFIGUREOPTS}
