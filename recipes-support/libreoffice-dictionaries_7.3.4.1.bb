@@ -9,7 +9,8 @@ LIC_FILES_CHKSUM = " \
     file://de/COPYING_GPLv3;md5=d32239bcb673463ab874e80d47fae504 \
 "
 
-SRCREV = "libreoffice-${PV}"
+# tag libreoffice-7.3.4.1
+SRCREV = "b92a99281d240c70db591e78201ac0668092e936"
 SRC_URI = " \
     git://anongit.freedesktop.org/libreoffice/dictionaries;nobranch=1 \
 "
