@@ -2,8 +2,8 @@
 #
 # SPDX-License-Identifier: MIT
 
-LICENSE = "LGPL-3.0"
-LIC_FILES_CHKSUM = "file://COPYING;md5=6a6a8e020838b23406c81b19c1d46df6"
+LICENSE = "GPL-3.0"
+LIC_FILES_CHKSUM = "file://COPYING;md5=d32239bcb673463ab874e80d47fae504"
 
 SRC_URI = " \
     git://github.com/maliit/keyboard.git;nobranch=1;protocol=https \
@@ -23,11 +23,13 @@ DEPENDS += " \
 
 inherit cmake_qt5
 inherit gsettings
+inherit pkgconfig
 
 EXTRA_OECMAKE += "-Denable-presage=OFF"
 
 FILES:${PN} += " \
     ${datadir}/glib-2.0/schemas/org.maliit.keyboard.maliit.gschema.xml \
+    ${datadir}/metainfo/com.github.maliit.keyboard.metainfo.xml \
     ${datadir}/maliit/keyboard2/themes \
     ${datadir}/maliit/keyboard2/styles \
     ${datadir}/maliit/keyboard2/icons \
