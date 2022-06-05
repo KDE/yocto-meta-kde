@@ -1,4 +1,4 @@
-From b05dd7637478147a8ec42f79ea163d5c7983b227 Mon Sep 17 00:00:00 2001
+From 6669cda619e7adbf460de95dc792513e1ffb098b Mon Sep 17 00:00:00 2001
 From: Andreas Cord-Landwehr <cordlandwehr@kde.org>
 Date: Sun, 3 Jan 2021 18:18:34 +0100
 Subject: [PATCH 3/3] Add option to disable data generation
@@ -10,12 +10,12 @@ utilities are built.
  1 file changed, 4 insertions(+), 1 deletion(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 467c90c..9a3ee9c 100644
+index 7044fb2..8001e45 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -69,6 +69,7 @@ find_package(GLIB2 REQUIRED)
  
- option(INSTALL_UTILS "Install generator utilities" OFF)
+ option(INSTALL_UTILS "Build QtMultimedia sound backend" OFF)
  option(DOWNLOAD_MODEL_DATA_ARCHIVE "Update the model data archive while building" ON)
 +option(DISABLE_DATA_GENERATION OFF)
  
@@ -30,5 +30,5 @@ index 467c90c..9a3ee9c 100644
 +    add_subdirectory(data)
 +endif()
 -- 
-2.27.0
+2.34.1
 

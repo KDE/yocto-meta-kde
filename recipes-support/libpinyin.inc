@@ -12,14 +12,13 @@ SRC_URI = " \
     file://0000-Utilize-bitbake-download-and-use-tools-from-PATH.patch \
     file://0001-Optionally-install-utilities.patch \
     file://0002-Provide-option-to-use-pre-downloaded-archive.patch \
-    file://0004-Fix-header-installation-path.patch \
+    file://0003-Add-option-to-disable-data-generation.patch \
 "
 SRC_URI:class-native = " \
     git://github.com/libpinyin/libpinyin.git;nobranch=1;protocol=https \
     file://0001-Optionally-install-utilities.patch \
     file://0002-Provide-option-to-use-pre-downloaded-archive.patch \
     file://0003-Add-option-to-disable-data-generation.patch \
-    file://0004-Fix-header-installation-path.patch \
 "
 
 S = "${WORKDIR}/git"

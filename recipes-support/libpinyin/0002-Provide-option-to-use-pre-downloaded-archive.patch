@@ -1,7 +1,7 @@
-From e1d05a6c77ca2f206d53980f5d3de3958e86a3d7 Mon Sep 17 00:00:00 2001
+From f04de8c6465d2340a79c7fa4a433359b989c6ac7 Mon Sep 17 00:00:00 2001
 From: Andreas Cord-Landwehr <cordlandwehr@kde.org>
 Date: Sun, 3 Jan 2021 17:54:47 +0100
-Subject: [PATCH 2/2] Provide option to use pre-downloaded archive
+Subject: [PATCH 2/3] Provide option to use pre-downloaded archive
 
 Live-download is problematic when used in packaging systems, since
 those systems have their own download caches. Thus, provide an
@@ -13,13 +13,13 @@ reusing it in the build.
  2 files changed, 30 insertions(+), 13 deletions(-)
 
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index afb4249..467c90c 100644
+index e291186..7044fb2 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -68,6 +68,7 @@ find_package(GLIB2 REQUIRED)
  # Options
  
- option(INSTALL_UTILS "Install generator utilities" OFF)
+ option(INSTALL_UTILS "Build QtMultimedia sound backend" OFF)
 +option(DOWNLOAD_MODEL_DATA_ARCHIVE "Update the model data archive while building" ON)
  
  # DBM: BerkeleyDB
@@ -57,7 +57,7 @@ index d3df1d0..e5422ff 100644
 +        COMMAND
 +        wget -P ${CMAKE_SOURCE_DIR} http://downloads.sourceforge.net/libpinyin/models/model19.text.tar.gz
 +        COMMAND
-+        tar xvf ${CMAKE_SOURCE_DIR}/model19.text.tar.gz -C ${CMAKE_SOURCE_DIR}/data
++        tar xvf ${CMAKE_SOURCE_DIR}/model19.text.tar.gz -C ${CMAKE_SOURCE_DIR}/data --no-same-owner
 +    )
 +else()
 +    add_custom_command(
@@ -78,5 +78,5 @@ index d3df1d0..e5422ff 100644
  add_custom_command(
      OUTPUT
 -- 
-2.27.0
+2.34.1
 
