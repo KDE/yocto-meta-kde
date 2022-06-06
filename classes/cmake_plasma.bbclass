@@ -11,11 +11,11 @@ inherit kauth
 inherit kdoctools
 inherit pkgconfig
 
-EXTRA_OECMAKE += " \
+EXTRA_OECMAKE:append = " \
     -DBUILD_TESTING=OFF \
 "
 
-DEPENDS += " \
+DEPENDS:append = " \
     extra-cmake-modules \
     qtbase \
     kpackage-native \
@@ -26,7 +26,7 @@ do_configure:prepend() {
     export XDG_DATA_DIRS=${STAGING_DATADIR}:$XDG_DATA_DIRS
 }
 
-FILES:${PN} += " \
+FILES:${PN}:append = " \
     ${libdir}/libkdeinit5_*.so \
     ${libdir}/kconf_update_bin/* \
     ${libdir}/plugins/*.so \
@@ -49,7 +49,7 @@ FILES:${PN} += " \
     ${datadir}/polkit-1/actions/*.policy \
 "
 
-FILES:${PN}-dev += " \
+FILES:${PN}-dev:append = " \
     ${datadir}/dbus-1/interfaces/*.xml \
     ${datadir}/kdevappwizard/templates/*.tar.bz2 \
     ${datadir}/qlogging-categories5/* \
