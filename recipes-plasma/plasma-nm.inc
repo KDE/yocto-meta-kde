@@ -45,6 +45,7 @@ FILES_SOLIBSDEV = ""
 FILES:${PN} += " \
     ${libdir}/*.so \
     ${libdir}/plugins/plasma/network/vpn/*.so \
+    ${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_networkmanagement.so \
     ${libdir}/qml/org/kde/plasma/networkmanagement \
     ${datadir}/plasma/plasmoids/org.kde.plasma.networkmanagement \
     ${datadir}/kcm_networkmanagement/qml/*.qml \

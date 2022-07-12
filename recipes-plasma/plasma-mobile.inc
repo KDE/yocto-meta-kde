@@ -22,6 +22,7 @@ DEPENDS = " \
     libphonenumber \
     kwayland \
     plasma-framework \
+    plasma-workspace \
     kpeople \
     kwin \
     gstreamer1.0 \
@@ -32,22 +33,27 @@ DEPENDS = " \
 inherit cmake_plasma
 
 FILES:${PN} += " \
-    ${libdir}/qml/QtQuick/VirtualKeyboard/Styles/Plasma/* \
-    ${libdir}/qml/org/kde/plasma/private/mobileshell/* \
-    ${libdir}/qml/org/kde/plasma/private/kpeoplehelper/* \
-    ${libdir}/qml/org/kde/plasma/private/mobilehomescreencomponents/* \
-    ${libdir}/qml/org/kde/plasma/quicksetting/nightcolor/* \
-    ${libdir}/qml/org/kde/plasma/mm/* \
     ${datadir}/kpackage/genericqml/org.kde.phone.dialer/* \
-    ${datadir}/plasma/shells/org.kde.plasma.phone/* \
-    ${datadir}/plasma/shells/org.kde.plasma.phoneshell/* \
+    ${datadir}/kpackage/kcms/kcm_mobileshell/* \
+    ${datadir}/kwin/scripts/org.kde.phone.multitasking/* \
+    ${datadir}/plasma/look-and-feel/org.kde.plasma.phone/* \
     ${datadir}/plasma/plasmoids/* \
     ${datadir}/plasma/quicksettings/* \
-    ${datadir}/plasma/look-and-feel/org.kde.plasma.phone/* \
+    ${datadir}/plasma/shells/org.kde.plasma.phone/* \
+    ${datadir}/plasma/shells/org.kde.plasma.phoneshell/* \
     ${datadir}/telepathy/clients/Plasma.Dialer.client \
-    ${datadir}/kwin/scripts/org.kde.phone.multitasking/* \
     ${datadir}/wallpapers/org.kde.plasma.phone.lockers/* \
     ${datadir}/wayland-sessions/*.desktop \
+    ${libdir}/qml/QtQuick/VirtualKeyboard/Styles/Plasma/* \
+    ${libdir}/qml/org/kde/plasma/mm/* \
+    ${libdir}/qml/org/kde/plasma/private/kpeoplehelper/* \
+    ${libdir}/qml/org/kde/plasma/private/mobilehomescreencomponents/* \
+    ${libdir}/qml/org/kde/plasma/private/mobileshell/* \
+    ${libdir}/qml/org/kde/plasma/quicksetting/flashlight/* \
+    ${libdir}/qml/org/kde/plasma/quicksetting/nightcolor/* \
+    ${libdir}/qml/org/kde/plasma/quicksetting/powermenu/* \
+    ${libdir}/qml/org/kde/plasma/quicksetting/screenrotation/* \
+    ${libdir}/qml/org/kde/plasma/quicksetting/screenshot/* \
 "
 
 RDEPENDS:${PN} += " \

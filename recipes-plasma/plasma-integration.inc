@@ -12,6 +12,7 @@ PR = "r0"
 DEPENDS = " \
     qtx11extras \
     qtquickcontrols2 \
+    qtwayland-native \
     kconfig \
     kconfigwidgets \
     kiconthemes \

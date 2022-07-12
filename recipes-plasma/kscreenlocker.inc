@@ -42,6 +42,7 @@ do_install:append() {
 FILES:${PN} += " \
     ${datadir}/ksmserver/screenlocker/org.kde.passworddialog/*.desktop \
     ${datadir}/kpackage/kcms/kcm_screenlocker \
+    ${libdir}/plugins/plasma/kcms/systemsettings/kcm_screenlocker.so \
 "
 
 RDEPENDS:${PN} += "perl"
