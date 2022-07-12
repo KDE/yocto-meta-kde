@@ -10,9 +10,11 @@ LICENSE = "GPL-2.0"
 LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-only.txt;md5=93e64b4a83c7e441e48bbdeeea05c977"
 PR = "r0"
 
-DEPENDS = " \
+DEPENDS:class-target = " \
     qtdeclarative \
     qtsensors \
+    qtwayland-native \
+    kpackage-native \
     qtscript \
     kconfigwidgets \
     kcrash \
@@ -20,12 +22,14 @@ DEPENDS = " \
     kinit \
     knotifications \
     kpackage \
+    kwin-native \
+    wayland \
+    wayland-protocols \
     plasma-framework \
     kwindowsystem \
     kiconthemes \
     kidletime \
     kwayland \
-    kwayland-server \
     kcompletion \
     kdeclarative \
     kcmutils \
@@ -44,14 +48,32 @@ DEPENDS = " \
     libepoxy \
     libinput \
     pipewire \
+    libxcvt \
+    hwdata \
+"
+
+DEPENDS:class-native = " \
+    qtbase-native \
+    extra-cmake-modules-native \
 "
 
 SRC_URI:append = " \
-    file://0001-Use-a-python-script-to-strip-effect-metadata.patch \
     file://kwinrc \
 "
 
-inherit cmake_plasma kconfig
+SRC_URI:append:class-native = " \
+    file://0001-Add-install-operation-for-native-build.patch \
+"
+
+OECMAKE_SOURCEPATH:class-native = "${S}/src/wayland/tools"
+EXTRA_OECMAKE:append:class-target = " -DQTWAYLANDSCANNER_KDE_EXECUTABLE=${STAGING_DIR_NATIVE}/${bindir}/qtwaylandscanner_kde"
+
+inherit kauth
+inherit kconfig
+inherit kdoctools
+inherit cmake_qt5
+inherit pkgconfig
+# TODO skip inherit of cmake_plasma for now because to leads to build errors for native package
 
 do_install:append() {
     # dirty workaround for aurora crash on Wayland
@@ -64,26 +86,36 @@ do_install:append() {
 FILES_SOLIBSDEV = ""
 FILES:${PN} += " \
     ${datadir}/config.kcfg/*.kcfg \
+    ${datadir}/icons/hicolor \
+    ${datadir}/kconf_update/* \
     ${datadir}/knotifications5/*.notifyrc \
+    ${datadir}/knsrcfiles/* \
     ${datadir}/kpackage \
     ${datadir}/krunner/dbusplugins/*.desktop \
     ${datadir}/kservices5/*.desktop \
     ${datadir}/kservices5/kwin/*.desktop \
     ${datadir}/kservicetypes5/*.desktop \
     ${datadir}/kwincompositing/qml/*.qml \
+    ${datadir}/qlogging-categories5 \
     ${libdir}/kconf_update_bin/kwin5_update_default_rules \
     ${libdir}/plugins/*.so \
     ${libdir}/plugins/kf5/org.kde.kidletime.platforms/*.so \
     ${libdir}/plugins/kpackage/packagestructure/*.so \
     ${libdir}/plugins/kwin/effects/configs/*.so \
+    ${libdir}/plugins/kwin/plugins/*.so \
     ${libdir}/plugins/org.kde.kdecoration2/*.so \
     ${libdir}/plugins/org.kde.kglobalaccel5.platforms/*.so \
     ${libdir}/plugins/org.kde.kwin.platforms/*.so \
     ${libdir}/plugins/org.kde.kwin.scenes/*.so \
     ${libdir}/plugins/org.kde.kwin.waylandbackends/*.so \
+    ${libdir}/plugins/plasma/kcms/systemsettings/*.so \
+    ${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/*.so \
     ${libdir}/plugins/platforms/*.so \
+    ${libdir}/qml/org/kde/kwin.2/* \
     ${libdir}/qml/org/kde/kwin/decoration/* \
     ${libdir}/qml/org/kde/kwin/decorations/plastik/* \
+    ${libdir}/qml/org/kde/kwin/effects/* \
+    ${libdir}/qml/org/kde/kwin/private/effects/* \
     ${libdir}/qml/org/kde/kwin/private/kdecoration/* \
     ${libdir}/qml/org/kde/plasma/quicksetting/nightcolor/* \
     ${libdir}/systemd/user/*.service \
@@ -91,11 +123,14 @@ FILES:${PN} += " \
 
 FILES:${PN}-dev += " \
     ${libdir}/libkwin*.so \
+    ${datadir}/dbus-1/interfaces/*.xml \
 "
 
-RDEPENDS:${PN}:append = " \
+RDEPENDS:${PN}:append:class-target = " \
     maliit-keyboard-qt5 \
     qtwayland-plugins \
     xwayland \
     perl \
 "
+
+BBCLASSEXTEND = "native"
