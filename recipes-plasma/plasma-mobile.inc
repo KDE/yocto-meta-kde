@@ -60,5 +60,6 @@ RDEPENDS:${PN} += " \
     libqofono \
     kded \
     qtgraphicaleffects \
+    qtfeedback \
     plasma-nano \
 "
