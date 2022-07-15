@@ -18,3 +18,4 @@ DEPENDS = " \
 
 inherit cmake_kdeapp
 inherit kconfig
+inherit kcoreaddons

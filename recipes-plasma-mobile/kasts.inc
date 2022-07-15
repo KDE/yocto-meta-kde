@@ -18,6 +18,7 @@ DEPENDS = " \
     syndication \
     ki18n \
     taglib \
+    threadweaver \
     networkmanager-qt \
     qtkeychain \
 "
