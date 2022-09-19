@@ -12,7 +12,6 @@ PR = "r0"
 DEPENDS = " \
     attica \
     karchive \
-    kcmutils \
     kconfig \
     kcoreaddons \
     kcrash \
@@ -30,6 +29,7 @@ DEPENDS = " \
 
 inherit cmake_plasma
 inherit mime-xdg
+inherit kcmutils
 
 FILES:${PN} += " \
     ${libdir}/qml/org/kde/discovernotifier \

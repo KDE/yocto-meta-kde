@@ -32,7 +32,6 @@ DEPENDS:class-target = " \
     kwayland \
     kcompletion \
     kdeclarative \
-    kcmutils \
     kio \
     ktextwidgets \
     knewstuff \
@@ -69,6 +68,7 @@ OECMAKE_SOURCEPATH:class-native = "${S}/src/wayland/tools"
 EXTRA_OECMAKE:append:class-target = " -DQTWAYLANDSCANNER_KDE_EXECUTABLE=${STAGING_DIR_NATIVE}/${bindir}/qtwaylandscanner_kde"
 
 inherit kauth
+inherit kcmutils
 inherit kconfig
 inherit kdoctools
 inherit cmake_qt5

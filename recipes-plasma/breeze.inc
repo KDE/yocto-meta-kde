@@ -12,7 +12,6 @@ PR = "r0"
 
 DEPENDS = " \
     fftw \
-    kcmutils \
     kconfigwidgets \
     kcoreaddons \
     kdecoration \
@@ -24,6 +23,7 @@ DEPENDS = " \
 "
 
 inherit cmake_plasma
+inherit kcmutils
 
 FILES:${PN} += " \
     ${libdir}/qml/QtQuick/Controls/Styles \

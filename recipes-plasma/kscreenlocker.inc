@@ -10,7 +10,6 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263"
 PR = "r0"
 
 DEPENDS = " \
-    kcmutils \
     kcrash \
     kdeclarative \
     kglobalaccel \
@@ -33,6 +32,7 @@ SRC_URI:append = " \
 "
 
 inherit cmake_plasma
+inherit kcmutils
 
 do_install:append() {
     install -d ${D}${sysconfdir}/pam.d

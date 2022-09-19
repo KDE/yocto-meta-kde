@@ -31,6 +31,7 @@ DEPENDS = " \
 "
 
 inherit cmake_plasma
+inherit kcmutils
 
 FILES:${PN} += " \
     ${datadir}/kpackage/genericqml/org.kde.phone.dialer/* \
