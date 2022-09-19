@@ -49,6 +49,7 @@ SRC_URI:append = " \
 "
 
 inherit cmake_plasma kdoctools
+inherit kcmutils
 
 do_install:append() {
     # dirty workaround for aurora crash on Wayland

@@ -15,7 +15,6 @@ DEPENDS = " \
     breeze \
     kactivities \
     kactivitiesstats \
-    kcmutils \
     kcoreaddons \
     kcrash \
     kdbusaddons \
@@ -55,6 +54,7 @@ DEPENDS = " \
 
 inherit cmake_plasma
 inherit mime-xdg
+inherit kcmutils
 
 EXTRA_OECMAKE += " -DBUILD_xembed-sni-proxy=OFF"
 

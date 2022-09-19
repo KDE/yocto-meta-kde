@@ -29,6 +29,7 @@ DEPENDS = " \
 "
 
 inherit cmake_plasma
+inherit kcmutils
 
 FILES:${PN} += " \
     ${libdir}/qml/QtQuick/VirtualKeyboard/Styles/Plasma/* \

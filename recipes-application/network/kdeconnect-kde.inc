@@ -19,7 +19,6 @@ DEPENDS += " \
     kiconthemes \
     knotifications \
     kio \
-    kcmutils \
     kirigami \
     kpeople \
     kpeoplevcard \
@@ -32,6 +31,7 @@ inherit kcoreaddons
 inherit kconfig
 inherit kauth
 inherit mime-xdg
+inherit kcmutils
 
 EXTRA_OECMAKE += "-DEXPERIMENTALAPP_ENABLED=ON"
 EXTRA_OECMAKE += "-DSMSAPP_ENABLED=OFF"
