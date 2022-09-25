@@ -14,6 +14,7 @@ inherit pkgconfig
 
 EXTRA_OECMAKE:append = " \
     -DBUILD_TESTING=OFF \
+    -DOE_KF5_PATH_HOST_ROOT=${STAGING_DIR_HOST} \
 "
 
 DEPENDS:append = " \
