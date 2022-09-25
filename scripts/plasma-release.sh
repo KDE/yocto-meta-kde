@@ -23,16 +23,21 @@ base=`dirname $0`/../recipes-plasma
 
 case $command in
 add)
-    for recipe in `find $base -name "*.inc" | grep -v /staging/`; do
-        name=`echo $recipe | sed -e "s,\.inc,_${version}.bb,"`
+    for recipe in $(find $base -name "*.inc" | grep -v /staging/); do
+        name=$(echo $recipe | sed -e "s,\.inc,_${version}.bb,")
         app=$(echo $recipe | grep -P -o '[0-9a-zA-Z\-]+(?=\.inc)')
+        lsremote=$(git ls-remote --exit-code https://anongit.kde.org/${app} v${version})
+        if [ $? -eq 2 ]; then
+            echo "No remote tag found for ${app}, recipe will be invalid"
+        fi
+        revision=$(echo ${lsremote} | cut -d ' ' -f1)
 cat <<EOM > $name
 # SPDX-FileCopyrightText: none
 # SPDX-License-Identifier: CC0-1.0
 
 require \${PN}.inc
 SRC_URI = "git://anongit.kde.org/${app};nobranch=1;protocol=https"
-SRCREV = "v\${PV}"
+SRCREV = "${revision}"
 S = "\${WORKDIR}/git"
 EOM
         git add $name
