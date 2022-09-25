@@ -77,6 +77,7 @@ FILES:${PN} += " \
     ${datadir}/kstyle/themes/*.themerc \
     ${datadir}/plasma/look-and-feel \
     ${datadir}/plasma/avatars \
+    ${datadir}/plasma/nightcolor \
     ${datadir}/plasma/plasmoids \
     ${datadir}/plasma/services/*.operations \
     ${datadir}/plasma/shareprovider \
@@ -85,6 +86,7 @@ FILES:${PN} += " \
     ${datadir}/solid/actions/*.desktop \
     ${datadir}/wayland-sessions/*.desktop \
     ${datadir}/xsessions/*.desktop \
+    ${datadir}/kio/servicemenus \
     ${libdir}/libkrdb.so \
     ${libdir}/plugins/plasmacalendarplugins \
     ${libdir}/plugins/kf5/krunner/kcms/kcm_krunner_kill.so \

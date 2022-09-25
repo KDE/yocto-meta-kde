@@ -33,6 +33,7 @@ inherit kdoctools
 
 FILES:${PN} += " \
     ${libdir}/qml/org/kde/plasma/private/volume/* \
+    ${libdir}/plugins/plasma/kcms/systemsettings/kcm_pulseaudio.so \
     ${datadir}/kpackage/kcms/kcm_pulseaudio \
     ${datadir}/plasma/plasmoids/org.kde.plasma.volume \
     ${datadir}/kde4/apps/kconf_update/* \

@@ -9,16 +9,17 @@ LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-only.txt;md5=9e2385fe012386d34dcc5c9
 PR = "r0"
 
 DEPENDS = " \
-    qtdeclarative \
-    qtsensors \
-    qtwayland-native \
-    kdbusaddons \
-    plasma-framework \
     kconfigwidgets \
+    kdbusaddons \
     kglobalaccel \
     kwidgetsaddons \
     kxmlgui \
+    layer-shell-qt \
     libkscreen \
+    plasma-framework \
+    qtdeclarative \
+    qtsensors \
+    qtwayland-native \
 "
 
 inherit cmake_plasma
@@ -29,4 +30,5 @@ FILES:${PN} += " \
     ${datadir}/kcm_kscreen \
     ${datadir}/kpackage \
     ${datadir}/plasma/plasmoids/org.kde.kscreen \
+    ${libdir}/plugins/plasma/kcms/systemsettings/ \
 "

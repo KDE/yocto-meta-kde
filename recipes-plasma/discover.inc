@@ -24,7 +24,9 @@ DEPENDS = " \
     knewstuff \
     knotifications \
     kxmlgui \
+    purpose \
     qtdeclarative \
+    qtwebview \
 "
 
 inherit cmake_plasma

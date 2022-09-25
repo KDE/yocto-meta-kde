@@ -26,4 +26,7 @@ DEPENDS = " \
 "
 
 inherit cmake_plasma
-inherit kdoctools
+
+FILES:${PN} += " \
+    ${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/* \
+"

@@ -46,6 +46,7 @@ FILES:${PN} += " \
     ${datadir}/wallpapers/org.kde.plasma.phone.lockers/* \
     ${datadir}/wayland-sessions/*.desktop \
     ${libdir}/qml/QtQuick/VirtualKeyboard/Styles/Plasma/* \
+    ${libdir}/plugins/plasma/kcms/systemsettings/* \
     ${libdir}/qml/org/kde/plasma/mm/* \
     ${libdir}/qml/org/kde/plasma/private/kpeoplehelper/* \
     ${libdir}/qml/org/kde/plasma/private/mobilehomescreencomponents/* \
