@@ -31,7 +31,6 @@ DEPENDS = " \
 
 inherit cmake_plasma
 inherit mime-xdg
-inherit kcmutils
 
 FILES:${PN} += " \
     ${libdir}/qml/org/kde/discovernotifier \

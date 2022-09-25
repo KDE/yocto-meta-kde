@@ -36,8 +36,6 @@ DEPENDS = " \
 "
 
 inherit cmake_plasma
-inherit kdoctools
-inherit kcmutils
 inherit mime-xdg
 
 FILES:${PN} += " \

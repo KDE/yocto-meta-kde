@@ -32,7 +32,6 @@ SRC_URI:append = " \
 "
 
 inherit cmake_plasma
-inherit kcmutils
 
 do_install:append() {
     install -d ${D}${sysconfdir}/pam.d

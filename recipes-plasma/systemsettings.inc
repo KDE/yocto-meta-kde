@@ -29,7 +29,6 @@ DEPENDS += " \
 "
 
 inherit cmake_plasma
-inherit kdoctools
 
 FILES:${PN} += " \
     ${datadir}/kpackage/genericqml/org.kde.systemsettings.sidebar \
