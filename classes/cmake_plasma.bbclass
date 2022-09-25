@@ -8,6 +8,7 @@ inherit ki18n
 inherit kcoreaddons
 inherit kconfig
 inherit kauth
+inherit kcmutils
 inherit kdoctools
 
 EXTRA_OECMAKE += " \
