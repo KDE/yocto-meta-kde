@@ -65,7 +65,10 @@ SRC_URI:append:class-native = " \
 "
 
 OECMAKE_SOURCEPATH:class-native = "${S}/src/wayland/tools"
-EXTRA_OECMAKE:append:class-target = " -DQTWAYLANDSCANNER_KDE_EXECUTABLE=${STAGING_DIR_NATIVE}/${bindir}/qtwaylandscanner_kde"
+EXTRA_OECMAKE:append:class-target = " \
+    -DQTWAYLANDSCANNER_KDE_EXECUTABLE=${STAGING_DIR_NATIVE}/${bindir}/qtwaylandscanner_kde \
+    -DBUILD_TESTING=OFF \
+"
 
 inherit kauth
 inherit kcmutils
