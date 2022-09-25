@@ -13,6 +13,7 @@ inherit kdoctools
 
 EXTRA_OECMAKE += " \
     -DBUILD_TESTING=OFF \
+    -DOE_KF5_PATH_HOST_ROOT=${STAGING_DIR_HOST} \
 "
 
 DEPENDS += " \
