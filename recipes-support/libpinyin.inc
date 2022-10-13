@@ -8,7 +8,7 @@ SUMMARY = "Library to deal with pinyin."
 
 SRC_URI = " \
     git://github.com/libpinyin/libpinyin.git;nobranch=1;protocol=https \
-    https://deac-ams.dl.sourceforge.net/project/libpinyin/models/model19.text.tar.gz;sha256sum=56422a4ee5966c2c809dd065692590ee8def934e52edbbe249b8488daaa1f50b;subdir=git;unpack=0 \
+    https://downloads.sourceforge.net/project/libpinyin/models/model19.text.tar.gz;sha256sum=56422a4ee5966c2c809dd065692590ee8def934e52edbbe249b8488daaa1f50b;subdir=git;unpack=0 \
     file://0000-Utilize-bitbake-download-and-use-tools-from-PATH.patch \
     file://0001-Optionally-install-utilities.patch \
     file://0002-Provide-option-to-use-pre-downloaded-archive.patch \
