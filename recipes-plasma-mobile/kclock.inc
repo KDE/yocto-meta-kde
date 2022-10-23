@@ -5,7 +5,7 @@
 DESCRIPTION = "Clock app for Plasma Mobile"
 HOMEPAGE = ""
 LICENSE = "GPL-2.0 | GPL-3.0"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=b234ee4d69f5fce4486a80fdaf4a4263"
+LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-or-later.txt;md5=4cc91856b08b094b4f406a29dc61db21"
 PR = "r0"
 
 DEPENDS = " \

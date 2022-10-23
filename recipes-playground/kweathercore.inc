@@ -14,6 +14,7 @@ DEPENDS = " \
     qtbase \
     qtlocation \
     ki18n \
+    kholidays \
 "
 
 SRC_URI = "git://invent.kde.org/libraries/${BPN};nobranch=1;protocol=https"
