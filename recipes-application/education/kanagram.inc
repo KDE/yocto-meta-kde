@@ -29,3 +29,7 @@ inherit mime-xdg
 RDEPENDS:${PN} += " \
     kdeedu-data \
 "
+
+FILES:${PN} += " \
+    ${datadir}/knsrcfiles/ \
+"

@@ -27,4 +27,5 @@ inherit kauth
 FILES_SOLIBSDEV = ""
 FILES:${PN} += " \
     ${datadir}/knsrcfiles \
+    ${datadir}/kio/servicemenus \
 "

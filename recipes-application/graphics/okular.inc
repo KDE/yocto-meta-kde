@@ -80,6 +80,8 @@ FILES:${PN}-shared = " \
     ${datadir}/applications/org.kde.mobile.okular_dvi.desktop \
     ${datadir}/applications/org.kde.mobile.okular_plucker.desktop \
     ${datadir}/applications/okularApplication_pdf.desktop \
+    ${datadir}/applications/org.kde.mobile.okular_kimgio.desktop \
+    ${datadir}/applications/okularApplication_kimgio.desktop \
     ${libdir} \
 "
 
