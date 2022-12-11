@@ -51,6 +51,7 @@ FILES:${PN} = " \
 "
 
 FILES:${PN}-shared = " \
+    ${sysconfdir}/xdg/okular.categories \
     ${datadir}/okular/pics \
     ${datadir}/okular/icons \
     ${datadir}/qlogging-categories5 \
