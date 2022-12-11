@@ -14,6 +14,7 @@ DEPENDS = " \
     kinit \
     modemmanager-qt \
     networkmanager-qt \
+    kirigami-addons \
 "
 
 inherit cmake_plasma

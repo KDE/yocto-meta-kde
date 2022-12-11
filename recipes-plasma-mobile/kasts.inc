@@ -21,6 +21,7 @@ DEPENDS = " \
     threadweaver \
     networkmanager-qt \
     qtkeychain \
+    kirigami \
 "
 
 inherit cmake_kdeapp

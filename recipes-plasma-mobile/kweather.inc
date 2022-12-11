@@ -15,6 +15,7 @@ DEPENDS = " \
     qtquickcontrols2 \
     ki18n \
     kirigami \
+    kirigami-addons \
     knotifications \
     kquickcharts \
     plasma-framework \

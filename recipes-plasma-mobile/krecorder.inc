@@ -14,6 +14,8 @@ DEPENDS = " \
     qtsvg \
     qtmultimedia \
     kirigami \
+    kirigami-addons \
+    kwindowsystem \
 "
 
 inherit cmake_kdeapp

@@ -12,6 +12,7 @@ DEPENDS = " \
     qtdeclarative \
     syndication \
     kirigami \
+    kirigami-addons \
     ki18n \
     plasma-framework \
 "

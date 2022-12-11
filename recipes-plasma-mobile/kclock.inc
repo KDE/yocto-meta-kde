@@ -16,6 +16,7 @@ DEPENDS = " \
     kiconthemes \
     ki18n \
     kirigami \
+    kirigami-addons \
     knotifications \
     plasma-framework \
 "
