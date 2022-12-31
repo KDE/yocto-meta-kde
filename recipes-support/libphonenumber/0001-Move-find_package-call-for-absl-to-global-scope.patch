@@ -1,0 +1,29 @@
+From 00ccef439ff8c67e74019d3e55d6e10bd4d87a73 Mon Sep 17 00:00:00 2001
+From: Andreas Cord-Landwehr <cordlandwehr@kde.org>
+Date: Fri, 30 Dec 2022 23:36:00 +0100
+Subject: [PATCH] Move find_package call for absl to global scope
+
+absl is needed for compilation also with GEOCODER disabled.
+
+Signed-off-by: Andreas Cord-Landwehr <cordlandwehr@kde.org>
+---
+ cpp/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/cpp/CMakeLists.txt b/cpp/CMakeLists.txt
+index 4ba99c398..a2b33ce54 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -202,8 +202,8 @@ add_custom_command (
+   DEPENDS ${PROTOBUF_SOURCES}
+ )
+ 
++find_package(absl REQUIRED)
+ if (${BUILD_GEOCODER} STREQUAL "ON")
+-  find_package(absl)
+ 
+   # Geocoding data cpp file generation
+   set (TOOLS_DIR "${CMAKE_CURRENT_BINARY_DIR}/tools")
+-- 
+2.37.2
+
