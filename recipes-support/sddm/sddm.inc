@@ -25,7 +25,8 @@ DEPENDS = " \
 SRC_URI = " \
     git://github.com/sddm/${BPN};nobranch=1;protocol=https \
     file://0001-Workaround-missing-sessions.patch \
-    file://sddm.conf \
+    file://sddm.conf.plasma-mobile \
+    file://sddm.conf.plasma-bigscreen \
     file://sddm.pam \
     file://sddm-autologin.pam \
 "
@@ -50,7 +51,8 @@ do_configure:append() {
 
 do_install:append() {
     install -d ${D}/${sysconfdir}/sddm.conf.d
-    install -m 644 ${WORKDIR}/sddm.conf ${D}/${sysconfdir}/sddm.conf.d/00-default.conf
+    install -m 644 ${WORKDIR}/sddm.conf.plasma-mobile ${D}/${sysconfdir}/sddm.conf.d/01-plasma-mobile.conf
+    install -m 644 ${WORKDIR}/sddm.conf.plasma-bigscreen ${D}/${sysconfdir}/sddm.conf.d/02-plasma-bigscreen.conf
 
     install -d ${D}${sysconfdir}/pam.d
     install -m 644 ${WORKDIR}/sddm.pam ${D}${sysconfdir}/pam.d/sddm
@@ -64,7 +66,20 @@ do_install:append() {
     echo "WantedBy=multi-user.target" >> ${D}/${systemd_unitdir}/system/sddm.service
 }
 
+PACKAGES =+ " \
+    ${PN}-config-plasma-mobile \
+    ${PN}-config-plasma-bigscreen \
+"
+
 FILES:${PN} += "${OE_QMAKE_PATH_QML}"
+
+FILES:${PN}-config-plasma-mobile = " \
+    ${sysconfdir}/sddm.conf.d/01-plasma-mobile.conf \
+"
+
+FILES:${PN}-config-plasma-bigscreen = " \
+    ${sysconfdir}/sddm.conf.d/02-plasma-bigscreen.conf \
+"
 
 SYSTEMD_SERVICE:${PN} = "${BPN}.service"
 
@@ -87,4 +102,5 @@ RDEPENDS:${PN} += "\
 RRECOMMENDS:${PN} += " \
     qtvirtualkeyboard-plugins \
     qtvirtualkeyboard-qmlplugins \
+    ${PN}-config-plasma-mobile \
 "
