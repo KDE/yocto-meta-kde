@@ -58,6 +58,7 @@ DEPENDS:class-native = " \
 
 SRC_URI:append = " \
     file://kwinrc \
+    file://0001-Include-missing-cmath-header-for-std-round.patch \
 "
 
 SRC_URI:append:class-native = " \
