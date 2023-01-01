@@ -16,6 +16,7 @@ IMAGE_INSTALL = " \
                  ${CORE_IMAGE_BASE_INSTALL} \
                  wayland dbus \
                  sddm \
+                 sddm-config-plasma-mobile \
                  packagegroup-kde-frameworks5 \
                  packagegroup-plasma-mobile \
                  packagegroup-core-x11-xserver \
