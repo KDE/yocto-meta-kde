@@ -35,7 +35,6 @@ inherit kcmutils
 
 EXTRA_OECMAKE += "-DEXPERIMENTALAPP_ENABLED=ON"
 EXTRA_OECMAKE += "-DSMSAPP_ENABLED=OFF"
-EXTRA_OECMAKE += "-DOE_QCA_PATH_HOST_ROOT=${STAGING_DIR_HOST}"
 # workaround for missing variable, which is only used for Windows builds
 EXTRA_OECMAKE += "-DCMAKE_SYSTEM_VERSION=0.0.0"
 
