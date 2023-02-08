@@ -29,4 +29,5 @@ inherit mime-xdg
 
 RDEPENDS:${PN} += " \
     qtgraphicaleffects-qmlplugins \
+    purpose \
 "
