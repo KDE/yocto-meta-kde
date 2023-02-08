@@ -12,10 +12,15 @@ inherit packagegroup features_check
 
 REQUIRED_DISTRO_FEATURES = "wayland x11 kde"
 
+# Qt5's WebEngine requires Python2
+WEBENGINE_PACKAGES = " \
+    aura-browser \
+    discover \
+"
+
 RDEPENDS:${PN} = " \
     bluedevil \
     breeze \
-    discover \
     kactivitymanagerd \
     kde-cli-tools \
     kdecoration \
@@ -34,15 +39,12 @@ RDEPENDS:${PN} = " \
     polkit-kde-agent-1 \
     powerdevil \
     plasma-settings \
-    plasma-systemmonitor \
     xdg-desktop-portal-kde \
-    kclock \
-    kweather \
+    ${@bb.utils.contains('BBFILE_COLLECTIONS', 'python2-layer', '${WEBENGINE_PACKAGES}', '', d)} \
 "
 
 RDEPENDS:${PN} += " \
     plasma-bigscreen \
     plasma-remotecontrollers \
-    aura-browser \
     plank-player \
 "
