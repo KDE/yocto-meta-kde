@@ -1,6 +1,6 @@
 # SPDX-FileCopyrightText: 2017-2019 Volker Krause <vkrause@kde.org>
 # SPDX-FileCopyrightText: 2019 Alistair Francis <alistair.francis@wdc.com>
-# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+# SPDX-FileCopyrightText: 2022 Andreas Cord-Landwehr <cordlandwehr@kde.org>
 #
 # SPDX-License-Identifier: MIT
 
@@ -14,10 +14,14 @@ inherit packagegroup features_check
 
 REQUIRED_DISTRO_FEATURES = "wayland x11 kde"
 
+# Qt5's WebEngine requires Python2
+WEBENGINE_PACKAGES = " \
+    discover \
+"
+
 RDEPENDS:${PN} = " \
     bluedevil \
     breeze \
-    discover \
     kactivitymanagerd \
     kde-cli-tools \
     kdecoration \
@@ -41,4 +45,5 @@ RDEPENDS:${PN} = " \
     xdg-desktop-portal-kde \
     kclock \
     kweather \
+    ${@bb.utils.contains('BBFILE_COLLECTIONS', 'python2-layer', '${WEBENGINE_PACKAGES}', '', d)} \
 "
