@@ -10,6 +10,10 @@ LICENSE = "GPL-2.0"
 LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-only.txt;md5=9e2385fe012386d34dcc5c9863070881"
 PR = "r0"
 
+SRC_URI:append:visionfive2 = " \
+    file://0001-Use-VisionFive2-specific-MESA-Fork.patch \
+"
+
 DEPENDS = " \
     baloo \
     breeze \

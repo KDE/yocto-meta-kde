@@ -1,0 +1,25 @@
+From e223a805c589e0ffe7e209e719a98a94d590dedf Mon Sep 17 00:00:00 2001
+From: Andreas Cord-Landwehr <cordlandwehr@kde.org>
+Date: Wed, 8 Feb 2023 20:36:55 +0100
+Subject: [PATCH] Use VisionFive2 specific MESA Fork
+
+---
+ libtaskmanager/declarative/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/libtaskmanager/declarative/CMakeLists.txt b/libtaskmanager/declarative/CMakeLists.txt
+index 8041e2c24..89b0aceef 100644
+--- a/libtaskmanager/declarative/CMakeLists.txt
++++ b/libtaskmanager/declarative/CMakeLists.txt
+@@ -36,7 +36,7 @@ target_link_libraries(taskmanagerplugin Qt::Qml Qt::GuiPrivate
+                                         Qt::WaylandClient
+                                         Wayland::Client)
+ if (${Qt5Gui_OPENGL_IMPLEMENTATION} STREQUAL "GLESv2")
+-    target_link_libraries(taskmanagerplugin Qt5::Gui_GLESv2)
++    target_link_libraries(taskmanagerplugin Qt5::Gui_GLESv2_PVR_MESA)
+ elseif(TARGET Qt5::Gui_GL)
+     target_link_libraries(taskmanagerplugin Qt5::Gui_GL)
+ endif()
+-- 
+2.37.2
+
