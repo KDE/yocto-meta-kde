@@ -90,6 +90,7 @@ FILES:${PN} += " \
     ${datadir}/wayland-sessions/*.desktop \
     ${datadir}/xsessions/*.desktop \
     ${datadir}/kio/servicemenus \
+    ${datadir}/zsh/site-functions/* \
     ${libdir}/libkrdb.so \
     ${libdir}/plugins/plasmacalendarplugins \
     ${libdir}/plugins/kf5/krunner/kcms/kcm_krunner_kill.so \
