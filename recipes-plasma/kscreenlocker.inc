@@ -20,6 +20,7 @@ DEPENDS = " \
     kwindowsystem \
     kxmlgui \
     layer-shell-qt \
+    libkscreen \
     libpam \
     libxcb \
     qtdeclarative \
