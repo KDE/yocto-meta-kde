@@ -36,7 +36,7 @@ cat <<EOM > $name
 # SPDX-License-Identifier: CC0-1.0
 
 require \${PN}.inc
-SRC_URI = "git://anongit.kde.org/${app};nobranch=1;protocol=https"
+SRC_URI += "git://anongit.kde.org/${app};nobranch=1;protocol=https"
 SRCREV = "${revision}"
 S = "\${WORKDIR}/git"
 EOM
@@ -59,7 +59,7 @@ cat <<EOM > $name
 # SPDX-License-Identifier: CC0-1.0
 
 require \${PN}.inc
-SRC_URI = "${url}"
+SRC_URI += "${url}"
 SRC_URI[sha256sum] = "${sha256}"
 ${extraconfig}
 EOM
