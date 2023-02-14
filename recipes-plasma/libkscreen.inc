@@ -22,3 +22,7 @@ DEPENDS = " \
 "
 
 inherit cmake_plasma
+
+FILES:${PN} += " \
+    ${datadir}/zsh/site-functions/_kscreen-doctor \
+"
