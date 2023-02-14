@@ -34,6 +34,7 @@ FILES:${PN}:append = " \
     ${libdir}/plugins/*.so \
     ${libdir}/plugins/*/*.so \
     ${libdir}/plugins/*/*/*.so \
+    ${libdir}/plugins/plasma/kcms/*/*.so \
     ${libdir}/systemd/user \
     ${datadir}/config.kcfg/*.kcfg \
     ${datadir}/dbus-1/services/*.service \
