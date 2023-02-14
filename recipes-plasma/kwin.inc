@@ -58,11 +58,13 @@ DEPENDS:class-native = " \
 
 SRC_URI:append = " \
     file://kwinrc \
-    file://0001-Include-missing-cmath-header-for-std-round.patch \
+    file://0002-Include-missing-header-for-std-round.patch \
+    file://0003-Add-missing-cmath-include-for-std-ceil.patch \
 "
 
 SRC_URI:append:class-native = " \
     file://0001-Add-install-operation-for-native-build.patch \
+    file://0001-Set-CXX-standard-for-crossbuilding-utility.patch \
 "
 
 OECMAKE_SOURCEPATH:class-native = "${S}/src/wayland/tools"
@@ -77,7 +79,7 @@ inherit kconfig
 inherit kdoctools
 inherit cmake_qt5
 inherit pkgconfig
-# TODO skip inherit of cmake_plasma for now because to leads to build errors for native package
+# TODO skip inherit of cmake_plasma for now because it leads to build errors for native package
 
 do_install:append() {
     # dirty workaround for aurora crash on Wayland

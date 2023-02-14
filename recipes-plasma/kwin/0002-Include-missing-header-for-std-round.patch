@@ -1,0 +1,25 @@
+From 80b5deb0329b4fe01e8fc4c0e02ac51fd9591529 Mon Sep 17 00:00:00 2001
+From: Andreas Cord-Landwehr <cordlandwehr@kde.org>
+Date: Sun, 12 Feb 2023 12:00:37 +0100
+Subject: [PATCH] Include missing header for std::round
+
+---
+ src/wayland/fractionalscale_v1_interface.cpp | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/src/wayland/fractionalscale_v1_interface.cpp b/src/wayland/fractionalscale_v1_interface.cpp
+index ca4dbe1e1..77390fe07 100644
+--- a/src/wayland/fractionalscale_v1_interface.cpp
++++ b/src/wayland/fractionalscale_v1_interface.cpp
+@@ -10,6 +10,8 @@
+ #include "fractionalscale_v1_interface_p.h"
+ #include "surface_interface_p.h"
+ 
++#include <cmath>
++
+ static const int s_version = 1;
+ 
+ namespace KWaylandServer
+-- 
+2.37.2
+
