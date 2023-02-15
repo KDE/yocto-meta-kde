@@ -28,6 +28,7 @@ DEPENDS = " \
     gstreamer1.0 \
     modemmanager-qt \
     networkmanager-qt \
+    kirigami-addons \
 "
 
 inherit cmake_plasma
@@ -53,6 +54,7 @@ FILES:${PN} += " \
     ${libdir}/qml/org/kde/plasma/quicksetting/flashlight/* \
     ${libdir}/qml/org/kde/plasma/quicksetting/nightcolor/* \
     ${libdir}/qml/org/kde/plasma/quicksetting/powermenu/* \
+    ${libdir}/qml/org/kde/plasma/quicksetting/record/* \
     ${libdir}/qml/org/kde/plasma/quicksetting/screenrotation/* \
     ${libdir}/qml/org/kde/plasma/quicksetting/screenshot/* \
 "
