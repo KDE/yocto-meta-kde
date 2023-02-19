@@ -3,5 +3,5 @@
 
 require ${PN}.inc
 # use unreleased tag for fixing build with Qt 5.15.3
-SRCREV = "c257a40ba95f56b5f3830b923b1c56aa055cf8ea"
+SRCREV = "8f1e3df4768bd521034e02602c4410b06aaef7d5"
 PV = "0.19.0+git${SRCPV}"

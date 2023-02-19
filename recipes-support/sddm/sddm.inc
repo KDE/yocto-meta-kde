@@ -71,7 +71,11 @@ PACKAGES =+ " \
     ${PN}-config-plasma-bigscreen \
 "
 
-FILES:${PN} += "${OE_QMAKE_PATH_QML}"
+FILES:${PN} += " \
+    ${OE_QMAKE_PATH_QML} \
+    ${libdir}/sysusers.d/* \
+    ${libdir}/tmpfiles.d/* \
+"
 
 FILES:${PN}-config-plasma-mobile = " \
     ${sysconfdir}/sddm.conf.d/01-plasma-mobile.conf \
