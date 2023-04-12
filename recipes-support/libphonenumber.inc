@@ -20,7 +20,6 @@ DEPENDS = " \
 
 SRC_URI = " \
     git://github.com/googlei18n/${BPN}.git;nobranch=1;protocol=https \
-    file://0001-Move-find_package-call-for-absl-to-global-scope.patch \
 "
 S = "${WORKDIR}/git/cpp"
 
