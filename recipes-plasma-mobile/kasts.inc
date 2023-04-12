@@ -22,6 +22,7 @@ DEPENDS = " \
     networkmanager-qt \
     qtkeychain \
     kirigami \
+    kirigami-addons \
 "
 
 inherit cmake_kdeapp
@@ -32,4 +33,5 @@ FILES_SOLIBSDEV = ""
 
 FILES:${PN} += " \
     ${libdir}/libKastsSolidExtras.so \
+    ${libdir}/libKMediaSession.so \
 "
