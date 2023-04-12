@@ -64,7 +64,6 @@ SRC_URI:append = " \
 
 SRC_URI:append:class-native = " \
     file://0001-Add-install-operation-for-native-build.patch \
-    file://0001-Set-CXX-standard-for-crossbuilding-utility.patch \
 "
 
 OECMAKE_SOURCEPATH:class-native = "${S}/src/wayland/tools"
