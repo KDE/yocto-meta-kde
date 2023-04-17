@@ -21,7 +21,7 @@ DEPENDS = " \
 SRC_URI = "git://invent.kde.org/pim/${BPN};nobranch=1;protocol=https"
 S = "${WORKDIR}/git"
 
-inherit kconfig
-inherit kcoreaddons
+inherit kf6-kconfig
+inherit kf6-kcoreaddons
 inherit cmake_kdeapp
 inherit mime-xdg

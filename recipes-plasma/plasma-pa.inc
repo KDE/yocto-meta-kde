@@ -29,7 +29,7 @@ DEPENDS = " \
 "
 
 inherit cmake_plasma
-inherit kdoctools
+inherit kf6-kdoctools
 
 FILES:${PN} += " \
     ${libdir}/qml/org/kde/plasma/private/volume/* \

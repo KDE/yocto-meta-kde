@@ -21,7 +21,7 @@ DEPENDS += " \
     wayland \
 "
 
-inherit cmake_qt5
+inherit qt6-cmake
 inherit pkgconfig
 
 EXTRA_OECMAKE += " \

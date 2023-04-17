@@ -30,11 +30,11 @@ RDEPENDS:${PN} += " \
 SRC_URI = "git://invent.kde.org/education/${BPN};nobranch=1;protocol=https"
 S = "${WORKDIR}/git"
 
-inherit qmake5_base
+inherit qt6-qmake
 inherit cmake_kdeapp
-inherit kcoreaddons
-inherit kconfig
-inherit kauth
+inherit kf6-kcoreaddons
+inherit kf6-kconfig
+inherit kf6-kauth
 inherit mime-xdg
 
 FILES:${PN} += " \

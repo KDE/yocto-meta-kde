@@ -23,7 +23,7 @@ DEPENDS = " \
 "
 
 inherit cmake_plasma
-inherit kcmutils
+inherit kf6-kcmutils
 
 FILES:${PN} += " \
     ${datadir}/kded_kscreen \

@@ -26,8 +26,8 @@ DEPENDS = " \
 "
 
 inherit cmake_kdeapp
-inherit kconfig
-inherit kcoreaddons
+inherit kf6-kconfig
+inherit kf6-kcoreaddons
 
 FILES_SOLIBSDEV = ""
 

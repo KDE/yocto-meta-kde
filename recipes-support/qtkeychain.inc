@@ -18,7 +18,7 @@ DEPENDS = " \
 SRC_URI = "git://github.com/frankosterfeld/qtkeychain.git;nobranch=1;protocol=https"
 S = "${WORKDIR}/git"
 
-inherit cmake_qt5
+inherit qt6-cmake
 inherit pkgconfig
 
 FILES:${PN} += " \

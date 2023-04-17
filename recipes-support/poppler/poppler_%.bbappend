@@ -3,4 +3,4 @@
 # SPDX-License-Identifier: MIT
 
 PACKAGECONFIG:append = " qt5"
-inherit cmake_qt5
+inherit qt6-cmake

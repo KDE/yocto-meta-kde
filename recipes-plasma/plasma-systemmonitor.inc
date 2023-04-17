@@ -25,7 +25,7 @@ DEPENDS = " \
 "
 
 inherit cmake_plasma
-inherit kdoctools
+inherit kf6-kdoctools
 
 FILES:${PN} += " \
     ${datadir}/ksysguard/sensorfaces/ \

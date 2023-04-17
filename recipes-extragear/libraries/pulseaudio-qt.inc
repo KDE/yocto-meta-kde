@@ -15,4 +15,4 @@ DEPENDS = " \
 SRC_URI = "git://invent.kde.org/libraries/${BPN};nobranch=1;protocol=https"
 S = "${WORKDIR}/git"
 
-inherit cmake_kf5
+inherit kf6-cmake

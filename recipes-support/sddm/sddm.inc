@@ -32,7 +32,7 @@ SRC_URI = " \
 "
 S = "${WORKDIR}/git"
 
-inherit cmake_qt5
+inherit qt6-cmake
 inherit pkgconfig
 inherit systemd
 inherit useradd

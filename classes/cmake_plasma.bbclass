@@ -3,13 +3,13 @@
 #
 # SPDX-License-Identifier: MIT
 
-inherit cmake_qt5
-inherit ki18n
-inherit kcoreaddons
-inherit kconfig
-inherit kauth
-inherit kcmutils
-inherit kdoctools
+inherit qt6-cmake
+inherit kf6-ki18n
+inherit kf6-kcoreaddons
+inherit kf6-kconfig
+inherit kf6-kauth
+inherit kf6-kcmutils
+inherit kf6-kdoctools
 inherit pkgconfig
 
 EXTRA_OECMAKE:append = " \

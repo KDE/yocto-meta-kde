@@ -1,4 +1,4 @@
-inherit qmake5
+inherit qt6-qmake
 inherit pkgconfig
 
 DEPENDS += "qtbase qtdeclarative"

@@ -24,9 +24,9 @@ DEPENDS += " \
 "
 
 inherit cmake_kdeapp
-inherit kcoreaddons
-inherit kconfig
-inherit kauth
+inherit kf6-kcoreaddons
+inherit kf6-kconfig
+inherit kf6-kauth
 inherit mime-xdg
 
 EXTRA_OECMAKE += "-DBUILD_TOUCH=ON"

@@ -22,9 +22,9 @@ DEPENDS = " \
 "
 
 inherit cmake_kdeapp
-inherit kconfig
-inherit kcoreaddons
-inherit kauth
+inherit kf6-kconfig
+inherit kf6-kcoreaddons
+inherit kf6-kauth
 inherit mime-xdg
 
 RDEPENDS:${PN} += " \

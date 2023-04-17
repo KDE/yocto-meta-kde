@@ -16,5 +16,5 @@ DEPENDS += " \
 "
 
 inherit cmake_kdeapp
-inherit kconfig
-inherit kauth
+inherit kf6-kconfig
+inherit kf6-kauth

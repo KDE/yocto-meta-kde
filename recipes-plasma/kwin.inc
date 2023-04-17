@@ -72,11 +72,11 @@ EXTRA_OECMAKE:append:class-target = " \
     -DBUILD_TESTING=OFF \
 "
 
-inherit kauth
-inherit kcmutils
-inherit kconfig
-inherit kdoctools
-inherit cmake_qt5
+inherit kf6-kauth
+inherit kf6-kcmutils
+inherit kf6-kconfig
+inherit kf6-kdoctools
+inherit qt6-cmake
 inherit pkgconfig
 # TODO skip inherit of cmake_plasma for now because it leads to build errors for native package
 

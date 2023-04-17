@@ -32,9 +32,9 @@ do_install:append() {
 }
 
 inherit cmake_kdeapp
-inherit kcoreaddons
-inherit kconfig
-inherit kauth
+inherit kf6-kcoreaddons
+inherit kf6-kconfig
+inherit kf6-kauth
 inherit mime-xdg
 
 EXTRA_OECMAKE += " -DOE_QCA_PATH_HOST_ROOT=${STAGING_DIR_HOST} -DOKULAR_UI=both"

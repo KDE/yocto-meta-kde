@@ -27,11 +27,11 @@ DEPENDS += " \
 "
 
 inherit cmake_kdeapp
-inherit kcoreaddons
-inherit kconfig
-inherit kauth
+inherit kf6-kcoreaddons
+inherit kf6-kconfig
+inherit kf6-kauth
 inherit mime-xdg
-inherit kcmutils
+inherit kf6-kcmutils
 
 EXTRA_OECMAKE += "-DEXPERIMENTALAPP_ENABLED=ON"
 EXTRA_OECMAKE += "-DSMSAPP_ENABLED=OFF"

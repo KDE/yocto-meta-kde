@@ -17,5 +17,5 @@ DEPENDS = " \
 "
 
 inherit cmake_kdeapp
-inherit kconfig
+inherit kf6-kconfig
 inherit mime-xdg
