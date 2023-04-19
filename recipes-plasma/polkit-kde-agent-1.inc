@@ -21,5 +21,5 @@ DEPENDS = " \
 inherit cmake_plasma
 
 EXTRA_OECMAKE += " \
-    -DOE_KF5_PATH_HOST_ROOT=${STAGING_DIR_HOST} \
+    -DOE_KF6_PATH_HOST_ROOT=${STAGING_DIR_HOST} \
 "

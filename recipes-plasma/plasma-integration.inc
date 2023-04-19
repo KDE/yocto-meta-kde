@@ -10,8 +10,7 @@ LIC_FILES_CHKSUM = "file://LICENSES/LGPL-2.0-only.txt;md5=da48810c4ddf8e49efa031
 PR = "r0"
 
 DEPENDS = " \
-    qtx11extras \
-    qtquickcontrols2 \
+    qtdeclarative \
     qtwayland-native \
     kconfig \
     kconfigwidgets \
@@ -29,5 +28,4 @@ inherit cmake_plasma
 
 RDEPENDS:${PN} += " \
     perl \
-    qtquickcontrols \
 "

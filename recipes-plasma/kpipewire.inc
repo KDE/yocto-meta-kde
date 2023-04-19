@@ -17,6 +17,7 @@ SRC_URI:append:visionfive2 = " \
 "
 
 DEPENDS = " \
+    libepoxy \
     qtdeclarative \
     qtwayland-native \
     pipewire \

@@ -10,10 +10,9 @@ LIC_FILES_CHKSUM = " \
 "
 PR = "r0"
 
-DEPENDS = " \
+DEPENDS += " \
     kirigami \
     qtdeclarative \
-    qtquickcontrols2 \
     qtmultimedia \
 "
 

@@ -29,7 +29,6 @@ DEPENDS = " \
     knotifications \
     plasma-framework \
     kdeclarative \
-    kinit \
     kitemmodels \
     qca \
 "

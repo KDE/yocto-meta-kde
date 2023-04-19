@@ -15,11 +15,9 @@ DEPENDS:class-target = " \
     qtsensors \
     qtwayland-native \
     kpackage-native \
-    qtscript \
     kconfigwidgets \
     kcrash \
     kglobalaccel \
-    kinit \
     knotifications \
     kpackage \
     kwin-native \
@@ -58,8 +56,6 @@ DEPENDS:class-native = " \
 
 SRC_URI:append = " \
     file://kwinrc \
-    file://0002-Include-missing-header-for-std-round.patch \
-    file://0003-Add-missing-cmath-include-for-std-ceil.patch \
 "
 
 SRC_URI:append:class-native = " \

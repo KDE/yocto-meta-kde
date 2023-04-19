@@ -28,7 +28,6 @@ DEPENDS = " \
     kholidays \
     kidletime \
     kitemmodels \
-    kjsembed \
     knewstuff \
     knotifications \
     knotifyconfig \
@@ -113,7 +112,6 @@ FILES:${PN}-dev += " \
 INSANE_SKIP:${PN} = "dev-so"
 
 RDEPENDS:${PN} += " \
-    kinit \
     kquickcharts \
     milou \
     xprop \

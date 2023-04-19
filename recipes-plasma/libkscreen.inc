@@ -16,7 +16,6 @@ LIC_FILES_CHKSUM = " \
 PR = "r0"
 
 DEPENDS = " \
-    qtx11extras \
     qtwayland-native \
     kwayland \
 "

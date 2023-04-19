@@ -26,6 +26,7 @@ DEPENDS = " \
     qtdeclarative \
     solid \
     wayland-native \
+    plasma-framework \
 "
 
 SRC_URI:append = " \

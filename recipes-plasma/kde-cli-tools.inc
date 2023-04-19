@@ -24,7 +24,6 @@ DEPENDS = " \
     qtsvg \
     kconfig \
     kiconthemes \
-    kinit \
     kcmutils \
     kio \
     kservice \
