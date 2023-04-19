@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2018-2019 Volker Krause <vkrause@kde.org>
 # SPDX-FileCopyrightText: 2018 Alistair Francis <alistair.francis@wdc.com>
+# SPDX-FileCopyrightText: 2023 Andreas Cord-Landwehr <cordlandwehr@kde.org>
 #
 # SPDX-License-Identifier: MIT
 
@@ -14,7 +15,9 @@ inherit pkgconfig
 
 EXTRA_OECMAKE:append = " \
     -DBUILD_TESTING=OFF \
-    -DOE_KF5_PATH_HOST_ROOT=${STAGING_DIR_HOST} \
+    -DOE_KF6_PATH_HOST_ROOT=${STAGING_DIR_HOST} \
+    -DQT_MAJOR_VERSION=6 \
+    -DBUILD_WITH_QT6=ON \
 "
 
 DEPENDS:append = " \
@@ -24,12 +27,12 @@ DEPENDS:append = " \
 "
 
 do_configure:prepend() {
-    # kpackagetool5 needs to find installed service type files
+    # kpackagetool6 needs to find installed service type files
     export XDG_DATA_DIRS=${STAGING_DATADIR}:$XDG_DATA_DIRS
 }
 
 FILES:${PN}:append = " \
-    ${libdir}/libkdeinit5_*.so \
+    ${libdir}/libkdeinit6_*.so \
     ${libdir}/kconf_update_bin/* \
     ${libdir}/plugins/*.so \
     ${libdir}/plugins/*/*.so \
@@ -42,20 +45,20 @@ FILES:${PN}:append = " \
     ${datadir}/dbus-1/system.d/*.conf \
     ${datadir}/icons/hicolor \
     ${datadir}/kconf_update/* \
-    ${datadir}/knotifications5/*.notifyrc \
+    ${datadir}/knotifications6/*.notifyrc \
     ${datadir}/knsrcfiles \
-    ${datadir}/kservices5/*.desktop \
-    ${datadir}/kservices5/*.protocol \
-    ${datadir}/kservicetypes5/*.desktop \
-    ${datadir}/kxmlgui5/*/*.rc \
+    ${datadir}/kservices6/*.desktop \
+    ${datadir}/kservices6/*.protocol \
+    ${datadir}/kservicetypes6/*.desktop \
+    ${datadir}/kxmlgui6/*/*.rc \
     ${datadir}/metainfo/*.xml \
     ${datadir}/polkit-1/actions/*.policy \
+    ${datadir}/qlogging-categories6/* \
 "
 
 FILES:${PN}-dev:append = " \
     ${datadir}/dbus-1/interfaces/*.xml \
     ${datadir}/kdevappwizard/templates/*.tar.bz2 \
-    ${datadir}/qlogging-categories5/* \
     ${libdir}/cmake/*/*.cmake \
     ${prefix}/mkspecs/modules/qt_*.pri \
 "
