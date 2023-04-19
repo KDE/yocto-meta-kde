@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2019 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2023 Andreas Cord-Landwehr <cordlandwehr@kde.org>
 #
 # SPDX-License-Identifier: MIT
 
@@ -10,6 +11,8 @@ inherit pkgconfig
 EXTRA_OECMAKE:append = " \
     -DBUILD_TESTING=OFF \
     -DOE_KF5_PATH_HOST_ROOT=${STAGING_DIR_HOST} \
+    -DQT_MAJOR_VERSION=6 \
+    -DBUILD_WITH_QT6=ON \
 "
 
 DEPENDS:append = " \
@@ -25,7 +28,7 @@ do_configure:prepend() {
 }
 
 FILES:${PN}:append = " \
-    ${libdir}/libkdeinit5_*.so \
+    ${libdir}/libkdeinit6_*.so \
     ${libdir}/kconf_update_bin/* \
     ${libdir}/plugins/*.so \
     ${libdir}/plugins/*/*.so \
@@ -37,15 +40,15 @@ FILES:${PN}:append = " \
     ${datadir}/icons/hicolor \
     ${datadir}/kconf_update/* \
     ${datadir}/khotkeys/*.khotkeys \
-    ${datadir}/knotifications5/*.notifyrc \
-    ${datadir}/kservices5/*.desktop \
-    ${datadir}/kservices5/*.protocol \
-    ${datadir}/kservices5/ServiceMenus/*.desktop \
-    ${datadir}/kservicetypes5/*.desktop \
-    ${datadir}/kxmlgui5/*/*.rc \
+    ${datadir}/knotifications6/*.notifyrc \
+    ${datadir}/kservices6/*.desktop \
+    ${datadir}/kservices6/*.protocol \
+    ${datadir}/kservices6/ServiceMenus/*.desktop \
+    ${datadir}/kservicetypes6/*.desktop \
+    ${datadir}/kxmlgui6/*/*.rc \
     ${datadir}/metainfo/*.xml \
     ${datadir}/polkit-1/actions/*.policy \
-    ${datadir}/qlogging-categories5 \
+    ${datadir}/qlogging-categories6 \
 "
 
 FILES:${PN}-dev:append = " \
