@@ -9,7 +9,7 @@
 
 function usage()
 {
-    echo "$1 [add|add-tarball|remove|update <version> [<new version>]"
+    echo "$1 [add|add-tarball|remove|add-gitmaster] <version>"
     exit 1
 }
 
@@ -43,6 +43,30 @@ EOM
         git add $name
     done
     ;;
+add-gitmaster)
+    # porting aid for Plasma KF6/Qt6 staging
+    # search for all non-staging inc files without underlines
+    for recipe in $(find $base -regex ".*/[0-9a-zA-Z\-]+\.inc" | grep -v /staging/); do
+        name=$(echo $recipe | sed -e "s,\.inc,_${version}.bb,")
+        package=$(echo $recipe | grep -P -o '[0-9a-zA-Z\-]+(?=\.inc)')
+        invent_project="plasma"
+        if [ ${package} = "plasma-remotecontrollers" ] || [ ${package} = "plank-player" ] || [ ${package} = "aura-browser" ]; then
+            invent_project="plasma-bigscreen"
+        fi
+        echo "update ${package}"
+        SRCREV=$(git ls-remote https://invent.kde.org/${invent_project}/${package}.git/ HEAD | awk '{ print $1}')
+cat <<EOM > $name
+# SPDX-FileCopyrightText: none
+# SPDX-License-Identifier: CC0-1.0
+
+require \${PN}.inc
+SRCREV = "${SRCREV}"
+SRC_URI = "git://invent.kde.org/${invent_project}/\${BPN};nobranch=1;protocol=https"
+S = "\${WORKDIR}/git"
+EOM
+        git add $name
+    done
+    ;;
 add-tarball)
     # search for all non-staging inc files without underlines
     for recipe in $(find $base -regex ".*/[0-9a-zA-Z\-]+\.inc" | grep -v /staging/); do
@@ -69,13 +93,6 @@ EOM
 remove)
     for recipe in `find $base -name "*_$version.bb"`; do
         git rm -f $recipe
-    done
-    ;;
-update)
-    new_version=$3
-    for recipe in `find $base -name "*_$version.bb"`; do
-        new_recipe=`echo $recipe | sed -e "s,$version,$new_version,"`
-        git mv $recipe $new_recipe
     done
     ;;
 *)
