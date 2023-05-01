@@ -43,7 +43,5 @@ RDEPENDS:${PN} = " \
     plasma-settings \
     plasma-systemmonitor \
     xdg-desktop-portal-kde \
-    kclock \
-    kweather \
     ${@bb.utils.contains('BBFILE_COLLECTIONS', 'python2-layer', '${WEBENGINE_PACKAGES}', '', d)} \
 "
