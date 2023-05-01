@@ -18,6 +18,7 @@ DEPENDS:class-target = " \
     kconfigwidgets \
     kcrash \
     kglobalaccel \
+    kglobalacceld \
     knotifications \
     kpackage \
     kwin-native \
@@ -42,7 +43,6 @@ DEPENDS:class-target = " \
     xcb-util-cursor \
     fontconfig \
     lcms \
-    libepoxy \
     libinput \
     pipewire \
     libxcvt \
@@ -89,23 +89,24 @@ FILES:${PN} += " \
     ${datadir}/config.kcfg/*.kcfg \
     ${datadir}/icons/hicolor \
     ${datadir}/kconf_update/* \
-    ${datadir}/knotifications5/*.notifyrc \
+    ${datadir}/knotifications6/*.notifyrc \
     ${datadir}/knsrcfiles/* \
     ${datadir}/kpackage \
     ${datadir}/krunner/dbusplugins/*.desktop \
-    ${datadir}/kservices5/*.desktop \
-    ${datadir}/kservices5/kwin/*.desktop \
-    ${datadir}/kservicetypes5/*.desktop \
+    ${datadir}/kservices6/*.desktop \
+    ${datadir}/kservices6/kwin/*.desktop \
+    ${datadir}/kservicetypes6/*.desktop \
     ${datadir}/kwincompositing/qml/*.qml \
-    ${datadir}/qlogging-categories5 \
+    ${datadir}/qlogging-categories6 \
     ${libdir}/kconf_update_bin/kwin5_update_default_rules \
     ${libdir}/plugins/*.so \
-    ${libdir}/plugins/kf5/org.kde.kidletime.platforms/*.so \
+    ${libdir}/plugins/kf6/packagestructure/*.so \
+    ${libdir}/plugins/kf6/org.kde.kidletime.platforms/*.so \
     ${libdir}/plugins/kpackage/packagestructure/*.so \
     ${libdir}/plugins/kwin/effects/configs/*.so \
     ${libdir}/plugins/kwin/plugins/*.so \
     ${libdir}/plugins/org.kde.kdecoration2/*.so \
-    ${libdir}/plugins/org.kde.kglobalaccel5.platforms/*.so \
+    ${libdir}/plugins/org.kde.kglobalaccel6.platforms/*.so \
     ${libdir}/plugins/org.kde.kwin.platforms/*.so \
     ${libdir}/plugins/org.kde.kwin.scenes/*.so \
     ${libdir}/plugins/org.kde.kwin.waylandbackends/*.so \
@@ -128,10 +129,14 @@ FILES:${PN}-dev += " \
 "
 
 RDEPENDS:${PN}:append:class-target = " \
-    maliit-keyboard-qt5 \
     qtwayland-plugins \
     xwayland \
     perl \
+"
+
+# TODO QT6 porting missing
+RRECOMMENDS:${PN}:append:class-target = " \
+    ${@bb.utils.contains('BBFILE_COLLECTIONS', 'meta-qt5r', 'maliit-keyboard-qt5', '', d)} \
 "
 
 BBCLASSEXTEND = "native"
