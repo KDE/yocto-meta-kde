@@ -30,7 +30,9 @@ DEPENDS = " \
     plasma-framework \
     kdeclarative \
     kitemmodels \
+    prison \
     qca \
+    qcoro \
 "
 
 inherit cmake_plasma
