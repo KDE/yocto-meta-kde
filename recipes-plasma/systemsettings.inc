@@ -32,8 +32,6 @@ inherit cmake_plasma
 
 FILES:${PN} += " \
     ${datadir}/kpackage/genericqml/org.kde.systemsettings.sidebar \
-"
-
-RDEPENDS:${PN} += " \
-    qtquickcontrols-qmlplugins \
+    ${datadir}/kglobalaccel/systemsettings.desktop \
+    ${datadir}/zsh/site-functions/_systemsettings \
 "
