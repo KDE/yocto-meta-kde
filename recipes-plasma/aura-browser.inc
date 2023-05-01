@@ -14,7 +14,6 @@ PR = "r0"
 DEPENDS = " \
     kirigami \
     qtdeclarative \
-    qtquickcontrols2 \
     qtmultimedia \
     qtwebengine \
 "
