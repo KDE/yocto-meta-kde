@@ -51,6 +51,7 @@ DEPENDS = " \
     networkmanager-qt \
     phonon \
     plasma-framework \
+    plasma5support \
     prison \
     qtdeclarative \
     qtwayland-native \
@@ -73,7 +74,7 @@ FILES:${PN} += " \
     ${datadir}/konqsidebartng \
     ${datadir}/kpackage \
     ${datadir}/krunner \
-    ${datadir}/kservices5 \
+    ${datadir}/kservices6 \
     ${datadir}/ksmserver/themes \
     ${datadir}/ksplash/Themes \
     ${datadir}/kstyle/themes/*.themerc \
@@ -90,9 +91,10 @@ FILES:${PN} += " \
     ${datadir}/xsessions/*.desktop \
     ${datadir}/kio/servicemenus \
     ${datadir}/zsh/site-functions/* \
+    ${datadir}/plasma5support/services/* \
     ${libdir}/libkrdb.so \
     ${libdir}/plugins/plasmacalendarplugins \
-    ${libdir}/plugins/kf5/krunner/kcms/kcm_krunner_kill.so \
+    ${libdir}/plugins/kf6/krunner/kcms/kcm_krunner_kill.so \
     ${libdir}/plugins/plasma/kcms/systemsettings/*.so \
     ${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_fontinst.so \
     ${libdir}/qml/org/kde \
