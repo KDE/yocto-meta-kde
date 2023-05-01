@@ -23,6 +23,7 @@ DEPENDS = " \
     pipewire \
     kwayland \
     ffmpeg \
+    libva \
 "
 
 inherit cmake_plasma
