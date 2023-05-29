@@ -16,5 +16,12 @@ DEPENDS += " \
     qtmultimedia \
 "
 
+RDEPENDS:${PN} += " \
+    qtmultimedia \
+    qtmultimedia-plugins \
+    qtmultimedia-qmlplugins \
+    qqc2-desktop-style \
+"
+
 inherit cmake_plasma
 inherit mime-xdg
