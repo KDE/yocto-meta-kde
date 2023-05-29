@@ -44,6 +44,7 @@ DEPENDS:class-target = " \
     fontconfig \
     lcms \
     libinput \
+    libdisplay-info \
     pipewire \
     libxcvt \
     hwdata \
