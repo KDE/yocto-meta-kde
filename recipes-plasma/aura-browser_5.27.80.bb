@@ -2,6 +2,6 @@
 # SPDX-License-Identifier: CC0-1.0
 
 require ${PN}.inc
-SRCREV = "ae0f4d573796bbb97ed7cd35a975251ce62c3500"
+SRCREV = "b18bbb1868a13e5a0a389a1ee922a7977b5e4332"
 SRC_URI = "git://invent.kde.org/plasma-bigscreen/${BPN};nobranch=1;protocol=https"
 S = "${WORKDIR}/git"
