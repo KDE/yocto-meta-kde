@@ -40,8 +40,9 @@ inherit features_check
 
 EXTRA_OECMAKE += " \
     -DLOGIN_DEFS_PATH=${STAGING_DIR_HOST}${sysconfdir}/login.defs \
-    -DQML_INSTALL_DIR=${OE_QMAKE_PATH_QML} \
+    -DQML_INSTALL_DIR=${QT6_INSTALL_QMLDIR} \
     -DSYSTEMD_SYSTEM_UNIT_DIR=${systemd_unitdir}/system \
+    -DBUILD_WITH_QT6=ON \
 "
 
 do_configure:append() {
@@ -72,7 +73,7 @@ PACKAGES =+ " \
 "
 
 FILES:${PN} += " \
-    ${OE_QMAKE_PATH_QML} \
+    ${libdir}/qml/* \
     ${libdir}/sysusers.d/* \
     ${libdir}/tmpfiles.d/* \
 "
