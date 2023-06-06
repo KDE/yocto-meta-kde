@@ -17,15 +17,10 @@ LIC_FILES_CHKSUM = " \
 "
 PR = "r0"
 
-DEPENDS = " \
-    telepathy-qt \
-    libphonenumber \
+DEPENDS += " \
     kwayland \
     plasma-framework \
     plasma-workspace \
-    kpeople \
-    kwin \
-    gstreamer1.0 \
     modemmanager-qt \
     networkmanager-qt \
     kirigami-addons \
@@ -36,8 +31,10 @@ inherit cmake_plasma
 FILES:${PN} += " \
     ${datadir}/kpackage/genericqml/org.kde.phone.dialer/* \
     ${datadir}/kpackage/kcms/kcm_mobileshell/* \
-    ${datadir}/kwin/scripts/org.kde.phone.multitasking/* \
-    ${datadir}/plasma/look-and-feel/org.kde.plasma.phone/* \
+    ${datadir}/kwin/effects/* \
+    ${datadir}/kwin/scripts/* \
+    ${datadir}/plasma/look-and-feel/* \
+    ${datadir}/plasma/mobileinitialstart \
     ${datadir}/plasma/plasmoids/* \
     ${datadir}/plasma/quicksettings/* \
     ${datadir}/plasma/shells/org.kde.plasma.phone/* \
@@ -45,9 +42,11 @@ FILES:${PN} += " \
     ${datadir}/telepathy/clients/Plasma.Dialer.client \
     ${datadir}/wallpapers/org.kde.plasma.phone.lockers/* \
     ${datadir}/wayland-sessions/*.desktop \
-    ${libdir}/qml/QtQuick/VirtualKeyboard/Styles/Plasma/* \
+    ${libdir}/plugins/kwin/effects/plugins/* \
     ${libdir}/plugins/plasma/kcms/systemsettings/* \
+    ${libdir}/qml/QtQuick/VirtualKeyboard/Styles/Plasma/* \
     ${libdir}/qml/org/kde/plasma/mm/* \
+    ${libdir}/qml/org/kde/plasma/mobileinitialstart/* \
     ${libdir}/qml/org/kde/plasma/private/kpeoplehelper/* \
     ${libdir}/qml/org/kde/plasma/private/mobilehomescreencomponents/* \
     ${libdir}/qml/org/kde/plasma/private/mobileshell/* \
@@ -57,12 +56,10 @@ FILES:${PN} += " \
     ${libdir}/qml/org/kde/plasma/quicksetting/record/* \
     ${libdir}/qml/org/kde/plasma/quicksetting/screenrotation/* \
     ${libdir}/qml/org/kde/plasma/quicksetting/screenshot/* \
+    ${libdir}/qml/org/kde/private/mobile/homescreen/* \
 "
 
 RDEPENDS:${PN} += " \
-    libqofono \
     kded \
-    qtgraphicaleffects \
-    qtfeedback \
     plasma-nano \
 "
