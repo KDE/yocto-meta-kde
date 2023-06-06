@@ -28,6 +28,6 @@ inherit kf6-kauth
 inherit mime-xdg
 
 RDEPENDS:${PN} += " \
-    qtgraphicaleffects-qmlplugins \
+    qtdeclarative-qmlplugins \
     purpose \
 "
