@@ -29,7 +29,6 @@ inherit mime-xdg
 
 RDEPENDS:${PN} += " \
     qtdeclarative-qmlplugins \
-    qtquickcontrols2-qmlplugins \
 "
 
 FILES:${PN} += " \
