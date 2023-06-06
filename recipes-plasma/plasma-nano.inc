@@ -31,4 +31,6 @@ FILES:${PN} += " \
 RDEPENDS:${PN} += " \
     qtdeclarative \
     plasma-workspace \
+    breeze \
+    qqc2-desktop-style \
 "
