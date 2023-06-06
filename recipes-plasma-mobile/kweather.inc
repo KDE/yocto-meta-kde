@@ -12,7 +12,6 @@ DEPENDS = " \
     qtbase \
     qtdeclarative \
     qtcharts \
-    qtquickcontrols2 \
     ki18n \
     kirigami \
     kirigami-addons \
@@ -30,7 +29,6 @@ inherit mime-xdg
 
 RDEPENDS:${PN} += " \
     qtdeclarative-qmlplugins \
-    qtquickcontrols2-qmlplugins \
     qtcharts-qmlplugins \
 "
 
