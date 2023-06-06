@@ -12,7 +12,6 @@ PR = "r0"
 DEPENDS = " \
     qtbase \
     qtdeclarative \
-    qtquickcontrols2 \
     qtsvg \
     qtmultimedia \
     syndication \
