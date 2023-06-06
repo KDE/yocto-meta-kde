@@ -11,7 +11,6 @@ PR = "r0"
 DEPENDS = " \
     plasma-framework \
     kitemmodels \
-    kinit \
     modemmanager-qt \
     networkmanager-qt \
     kirigami-addons \
