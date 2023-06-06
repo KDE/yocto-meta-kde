@@ -9,7 +9,7 @@
 
 function usage()
 {
-    echo "$1 [add|add-tarball|remove|update <version> [<new version>]"
+    echo "$1 [add|add-tarball|remove|update|add-gitmaster] <version>"
     exit 1
 }
 
@@ -33,6 +33,27 @@ cat <<EOM > $name
 require \${PN}.inc
 SRC_URI = "git://anongit.kde.org/${app};nobranch=1;protocol=https"
 SRCREV = "v\${PV}"
+S = "\${WORKDIR}/git"
+EOM
+        git add $name
+    done
+    ;;
+add-gitmaster)
+    # porting aid for KF6/Qt6 staging
+    # search for all non-staging inc files without underlines
+    for recipe in $(find $base -regex ".*/[0-9a-zA-Z\-]+\.inc" | grep -v /staging/); do
+        name=$(echo $recipe | sed -e "s,\.inc,_${version}.bb,")
+        package=$(echo $recipe | grep -P -o '[0-9a-zA-Z\-]+(?=\.inc)')
+        invent_project="plasma-mobile"
+        echo "update ${package}"
+        SRCREV=$(git ls-remote https://commits.kde.org/${package}.git/ HEAD | awk '{ print $1}')
+cat <<EOM > $name
+# SPDX-FileCopyrightText: none
+# SPDX-License-Identifier: CC0-1.0
+
+require \${PN}.inc
+SRCREV = "${SRCREV}"
+SRC_URI = "git://commits.kde.org/\${BPN};nobranch=1;protocol=https"
 S = "\${WORKDIR}/git"
 EOM
         git add $name
