@@ -10,7 +10,6 @@ PR = "r0"
 
 DEPENDS = " \
     qtdeclarative \
-    qtquickcontrols2 \
     qtsvg \
     kcalendarcore \
     kdbusaddons \
