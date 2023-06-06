@@ -20,6 +20,7 @@ DEPENDS = " \
     kpackage \
     kwayland \
     kwindowsystem \
+    frameworkintegration \
 "
 
 inherit cmake_plasma
