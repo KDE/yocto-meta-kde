@@ -11,7 +11,6 @@ PR = "r0"
 DEPENDS = " \
     qqc2-desktop-style \
     qtdeclarative \
-    qtquickcontrols2 \
     ki18n \
     kitemmodels \
     kcontacts \
