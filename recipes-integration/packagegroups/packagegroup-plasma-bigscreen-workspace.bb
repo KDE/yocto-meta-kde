@@ -40,8 +40,8 @@ RDEPENDS:${PN} += " \
     plasma-bigscreen \
     plasma-remotecontrollers \
     plank-player \
-    aura-browser \
 "
 
 # TODO currently excluded because of high appstream dependency
 # discover
+# aura-browser
