@@ -17,6 +17,7 @@ DEPENDS = " \
     kiconthemes \
     kio \
     knotifications \
+    ksvg \
     kwidgetsaddons \
     kwindowsystem \
     plasma-framework \

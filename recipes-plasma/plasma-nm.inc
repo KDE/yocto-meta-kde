@@ -30,6 +30,7 @@ DEPENDS = " \
     plasma-framework \
     kdeclarative \
     kitemmodels \
+    ksvg \
     prison \
     qca \
     qcoro \

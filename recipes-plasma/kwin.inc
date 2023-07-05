@@ -107,6 +107,7 @@ FILES:${PN} += " \
     ${libdir}/plugins/kwin/effects/configs/*.so \
     ${libdir}/plugins/kwin/plugins/*.so \
     ${libdir}/plugins/org.kde.kdecoration2/*.so \
+    ${libdir}/plugins/org.kde.kdecoration2.kcm/kcm_auroraedecoration.so \
     ${libdir}/plugins/org.kde.kglobalaccel6.platforms/*.so \
     ${libdir}/plugins/org.kde.kwin.platforms/*.so \
     ${libdir}/plugins/org.kde.kwin.scenes/*.so \

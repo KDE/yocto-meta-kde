@@ -39,6 +39,7 @@ DEPENDS = " \
     kwallet \
     kwayland \
     kwin \
+    ksvg \
     kpipewire \
     libkscreen \
     libksysguard \

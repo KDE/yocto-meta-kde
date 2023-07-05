@@ -18,11 +18,12 @@ LIC_FILES_CHKSUM = " \
 "
 PR = "r0"
 
-DEPENDS = " \
+DEPENDS += " \
     qtdeclarative \
     kcoreaddons \
     kdeclarative \
     kglobalaccel \
+    ksvg \
     plasma-framework \
     pulseaudio \
     libcanberra \

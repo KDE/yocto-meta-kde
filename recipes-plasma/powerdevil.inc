@@ -28,4 +28,5 @@ inherit cmake_plasma
 
 FILES:${PN} += " \
     ${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/* \
+    ${libdir}/plugins/powerdevil/action/kcm/* \
 "
