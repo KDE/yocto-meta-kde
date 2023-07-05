@@ -12,10 +12,6 @@ LIC_FILES_CHKSUM = " \
 "
 PR = "r0"
 
-SRC_URI:append:visionfive2 = " \
-    file://0001-Use-VisionFive2-specific-MESA-Fork.patch \
-"
-
 DEPENDS = " \
     libepoxy \
     qtdeclarative \
