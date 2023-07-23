@@ -1,9 +1,10 @@
 # SPDX-FileCopyrightText: 2019 Alistair Francis <alistair.francis@wdc.com>
 # SPDX-FileCopyrightText: 2019-2020 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2023 Andreas Cord-Landwehr <cordlandwehr@kde.org>
 #
 # SPDX-License-Identifier: MIT
 
-DESCRIPTION = "QML based X11 and Wayland display manager"
+DESCRIPTION = "QML based Display Manager"
 HOMEPAGE = "https://github.com/sddm/sddm"
 LICENSE = "GPLv2 & CC-BY-3.0"
 LIC_FILES_CHKSUM = " \
@@ -11,7 +12,7 @@ LIC_FILES_CHKSUM = " \
     file://LICENSE.CC-BY-3.0;md5=36b7342d5619a3a0d3b581e89803ec25 \
 "
 
-REQUIRED_DISTRO_FEATURES = "x11"
+REQUIRED_DISTRO_FEATURES = "wayland"
 
 DEPENDS = " \
     qtdeclarative \
@@ -30,7 +31,9 @@ SRC_URI = " \
     file://sddm.conf.plasma-bigscreen \
     file://sddm.pam \
     file://sddm-autologin.pam \
+    file://50-wayland.conf \
 "
+
 S = "${WORKDIR}/git"
 
 inherit qt6-cmake
@@ -53,6 +56,11 @@ do_configure:append() {
 
 do_install:append() {
     install -d ${D}/${sysconfdir}/sddm.conf.d
+
+    # set SDDM to use Wayland
+    install -m 644 ${WORKDIR}/50-wayland.conf ${D}/${sysconfdir}/sddm.conf.d/
+
+    # autologin configurations
     install -m 644 ${WORKDIR}/sddm.conf.plasma-desktop ${D}/${sysconfdir}/sddm.conf.d/00-plasma-desktop.conf
     install -m 644 ${WORKDIR}/sddm.conf.plasma-mobile ${D}/${sysconfdir}/sddm.conf.d/01-plasma-mobile.conf
     install -m 644 ${WORKDIR}/sddm.conf.plasma-bigscreen ${D}/${sysconfdir}/sddm.conf.d/02-plasma-bigscreen.conf
@@ -95,12 +103,8 @@ USERADD_PARAM:${PN} = "--system --home ${localstatedir}/lib/sddm --shell /bin/fa
 
 RDEPENDS:${PN} += "\
     bash \
-    packagegroup-core-x11-xserver \
+    weston \
     xcb-util \
-    xauth \
-    xinit \
-    xmessage \
-    xrdb \
     qtbase-plugins \
     qtdeclarative-plugins \
     qtdeclarative-qmlplugins \
