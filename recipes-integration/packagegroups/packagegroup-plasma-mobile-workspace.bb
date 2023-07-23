@@ -11,8 +11,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 inherit packagegroup features_check
-
-REQUIRED_DISTRO_FEATURES = "wayland x11 kde"
+require plasma-workspace-common.inc
 
 # Qt5's WebEngine requires Python2
 WEBENGINE_PACKAGES = " \
@@ -20,28 +19,6 @@ WEBENGINE_PACKAGES = " \
 "
 
 RDEPENDS:${PN} = " \
-    bluedevil \
-    breeze \
-    kactivitymanagerd \
-    kde-cli-tools \
-    kdecoration \
-    kscreen \
-    kscreenlocker \
-    kwayland-integration \
-    kwin \
-    libkscreen \
-    libksysguard \
-    milou \
-    plasma-integration \
-    plasma-nano \
-    plasma-nm \
-    plasma-pa \
     plasma-mobile \
-    plasma-workspace \
-    polkit-kde-agent-1 \
-    powerdevil \
-    plasma-settings \
-    plasma-systemmonitor \
-    xdg-desktop-portal-kde \
     ${@bb.utils.contains('BBFILE_COLLECTIONS', 'python2-layer', '${WEBENGINE_PACKAGES}', '', d)} \
 "
