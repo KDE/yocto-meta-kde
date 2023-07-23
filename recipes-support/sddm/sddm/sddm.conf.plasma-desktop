@@ -1,0 +1,6 @@
+[Theme]
+Current=breeze
+
+[Autologin]
+User=kde
+Session=plasmawayland

@@ -25,6 +25,7 @@ DEPENDS = " \
 SRC_URI = " \
     git://github.com/sddm/${BPN};nobranch=1;protocol=https \
     file://0001-Workaround-missing-sessions.patch \
+    file://sddm.conf.plasma-desktop \
     file://sddm.conf.plasma-mobile \
     file://sddm.conf.plasma-bigscreen \
     file://sddm.pam \
@@ -52,6 +53,7 @@ do_configure:append() {
 
 do_install:append() {
     install -d ${D}/${sysconfdir}/sddm.conf.d
+    install -m 644 ${WORKDIR}/sddm.conf.plasma-desktop ${D}/${sysconfdir}/sddm.conf.d/00-plasma-desktop.conf
     install -m 644 ${WORKDIR}/sddm.conf.plasma-mobile ${D}/${sysconfdir}/sddm.conf.d/01-plasma-mobile.conf
     install -m 644 ${WORKDIR}/sddm.conf.plasma-bigscreen ${D}/${sysconfdir}/sddm.conf.d/02-plasma-bigscreen.conf
 
@@ -107,5 +109,4 @@ RDEPENDS:${PN} += "\
 RRECOMMENDS:${PN} += " \
     qtvirtualkeyboard-plugins \
     qtvirtualkeyboard-qmlplugins \
-    ${PN}-config-plasma-mobile \
 "
