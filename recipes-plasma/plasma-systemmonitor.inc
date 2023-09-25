@@ -22,14 +22,18 @@ DEPENDS = " \
     kdbusaddons \
     knewstuff \
     libksysguard \
+    kirigami-addons \
 "
 
 inherit cmake_plasma
 inherit kf6-kdoctools
 
+FILES_SOLIBSDEV = ""
 FILES:${PN} += " \
     ${datadir}/ksysguard/sensorfaces/ \
     ${datadir}/plasma/kinfocenter/externalmodules/ \
     ${libdir}/qml/org/kde/ksysguard/table/ \
     ${libdir}/qml/org/kde/ksysguard/page/ \
+    ${libdir}/libPlasmaSystemMonitorTable.so \
+    ${libdir}/libPlasmaSystemMonitorPage.so \
 "
