@@ -23,6 +23,7 @@ DEPENDS += " \
     kcoreaddons \
     kdeclarative \
     kglobalaccel \
+    kstatusnotifieritem \
     ksvg \
     plasma-framework \
     pulseaudio \
