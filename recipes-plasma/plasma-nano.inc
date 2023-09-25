@@ -16,6 +16,7 @@ PR = "r0"
 DEPENDS = " \
     qtdeclarative \
     kwayland \
+    kitemmodels \
     kwindowsystem \
     plasma-framework \
 "
