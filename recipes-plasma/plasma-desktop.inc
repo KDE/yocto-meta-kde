@@ -13,7 +13,6 @@ LIC_FILES_CHKSUM = " \
     file://LICENSES/LGPL-3.0-only.txt;md5=8d51f5b5fd447f7a1040c3dc9f0a8de6 \
     file://LICENSES/LicenseRef-KDE-Accepted-GPL.txt;md5=b4c280013bbbadfbe92219498dc5228c \
 "
-PR = "r0"
 
 DEPENDS += " \
     kwayland \
@@ -25,15 +24,23 @@ DEPENDS += " \
 
 inherit cmake_plasma
 
+EXTRA_OECMAKE += " \
+    -DBUILD_KCM_MOUSE_X11=OFF \
+    -DBUILD_KCM_TOUCHPAD_X11=OFF \
+"
+
 FILES:${PN} += " \
+    ${datadir}/plasma/desktoptheme/* \
     ${datadir}/plasma/emoji/* \
     ${datadir}/plasma/plasmoids/* \
     ${datadir}/plasma/packages/* \
+    ${datadir}/plasma/services/* \
     ${datadir}/plasma/layout-templates/* \
     ${datadir}/plasma/shells/org.kde.plasma.desktop/* \
     ${datadir}/solid/devices/* \
     ${datadir}/kglobalaccel/* \
     ${datadir}/kcmkeys/* \
+    ${datadir}/kcmmouse/* \
     ${datadir}/kcmsolidactions/* \
     ${datadir}/kcm_recentFiles/* \
     ${libdir}/qml/org/kde/plasma/activityswitcher/* \
@@ -47,9 +54,13 @@ FILES:${PN} += " \
     ${libdir}/qml/org/kde/private/desktopcontainment/* \
 "
 
+INSANE_SKIP:${PN} = "dev-so"
+
 RDEPENDS:${PN} += " \
     gawk \
     kded \
     plasma-nano \
+    kirigami \
+    kirigami-addons \
     qqc2-desktop-style \
 "
