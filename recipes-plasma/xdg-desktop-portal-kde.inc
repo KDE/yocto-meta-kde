@@ -23,6 +23,7 @@ DEPENDS += " \
     kirigami \
     kio \
     kdeclarative \
+    kstatusnotifieritem \
     plasma-framework \
     pipewire \
     qtwayland-native \
