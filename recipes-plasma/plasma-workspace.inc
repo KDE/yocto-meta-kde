@@ -33,6 +33,7 @@ DEPENDS = " \
     krunner \
     kscreen \
     kscreenlocker \
+    kstatusnotifieritem \
     ktexteditor \
     kunitconversion \
     kuserfeedback \
@@ -67,6 +68,7 @@ FILES:${PN} += " \
     ${datadir}/kdisplay \
     ${datadir}/kfontinst \
     ${datadir}/kglobalaccel \
+    ${datadir}/kio/servicemenus \
     ${datadir}/kio_desktop \
     ${datadir}/konqsidebartng \
     ${datadir}/kpackage \
@@ -75,36 +77,37 @@ FILES:${PN} += " \
     ${datadir}/ksmserver/themes \
     ${datadir}/ksplash/Themes \
     ${datadir}/kstyle/themes/*.themerc \
-    ${datadir}/plasma/look-and-feel \
+    ${datadir}/kxmlgui5/kfontview/* \
     ${datadir}/plasma/avatars \
+    ${datadir}/plasma/look-and-feel \
     ${datadir}/plasma/nightcolor \
     ${datadir}/plasma/plasmoids \
     ${datadir}/plasma/services/*.operations \
     ${datadir}/plasma/shareprovider \
     ${datadir}/plasma/wallpapers \
+    ${datadir}/plasma5support/services/* \
     ${datadir}/sddm/themes \
     ${datadir}/solid/actions/*.desktop \
     ${datadir}/wayland-sessions/*.desktop \
     ${datadir}/xsessions/*.desktop \
-    ${datadir}/kio/servicemenus \
     ${datadir}/zsh/site-functions/* \
-    ${datadir}/plasma5support/services/* \
     ${libdir}/libkrdb.so \
-    ${libdir}/plugins/plasmacalendarplugins \
     ${libdir}/plugins/kf6/krunner/kcms/kcm_krunner_kill.so \
     ${libdir}/plugins/plasma/kcms/systemsettings/*.so \
     ${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_fontinst.so \
+    ${libdir}/plugins/plasmacalendarplugins \
     ${libdir}/qml/org/kde \
 "
 
 FILES:${PN}-dev += " \
     ${libdir}/libcolorcorrect.so \
-    ${libdir}/libnotificationmanager.so \
     ${libdir}/libkfontinst.so \
     ${libdir}/libkfontinstui.so \
-    ${libdir}/libtaskmanager.so \
+    ${libdir}/libkmpris.so \
     ${libdir}/libkworkspace5.so \
+    ${libdir}/libnotificationmanager.so \
     ${libdir}/libplasma-geolocation-interface.so \
+    ${libdir}/libtaskmanager.so \
     ${libdir}/libweather_ion.so \
 "
 
