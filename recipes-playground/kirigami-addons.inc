@@ -11,6 +11,8 @@ PR = "r0"
 DEPENDS = " \
     kirigami \
     ki18n \
+    qt5compat \
+    qtdeclarative \
 "
 
 SRC_URI = "git://invent.kde.org/libraries/${BPN};nobranch=1;protocol=https"
