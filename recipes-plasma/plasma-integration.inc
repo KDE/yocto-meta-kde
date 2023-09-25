@@ -17,6 +17,7 @@ DEPENDS = " \
     kiconthemes \
     kio \
     knotifications \
+    kstatusnotifieritem \
     kwayland \
     kwidgetsaddons \
     kwindowsystem \
