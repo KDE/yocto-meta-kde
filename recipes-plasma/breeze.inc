@@ -25,6 +25,10 @@ DEPENDS = " \
 
 inherit cmake_plasma
 
+EXTRA_OECMAKE += " \
+    -DBUILD_QT5:BOOL=OFF \
+"
+
 FILES:${PN} += " \
     ${libdir}/qml/QtQuick/Controls/Styles \
     ${datadir}/kstyle/themes \
