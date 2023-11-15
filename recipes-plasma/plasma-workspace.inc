@@ -116,6 +116,7 @@ INSANE_SKIP:${PN} = "dev-so"
 RDEPENDS:${PN} += " \
     kquickcharts \
     milou \
+    ocean-sound-theme \
     xprop \
     xset \
     qttools-tools \
