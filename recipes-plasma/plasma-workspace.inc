@@ -92,6 +92,7 @@ FILES:${PN} += " \
     ${datadir}/xsessions/*.desktop \
     ${datadir}/zsh/site-functions/* \
     ${libdir}/libkrdb.so \
+    ${libdir}/libkworkspace6.so \
     ${libdir}/plugins/kf6/krunner/kcms/kcm_krunner_kill.so \
     ${libdir}/plugins/plasma/kcms/systemsettings/*.so \
     ${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_fontinst.so \
