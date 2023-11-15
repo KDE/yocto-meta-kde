@@ -2,6 +2,6 @@
 # SPDX-License-Identifier: CC0-1.0
 
 require ${PN}.inc
-SRCREV = "60cc0fce6f6d10dc785fd65e51c0337bf41257ef"
-SRC_URI = "git://invent.kde.org/plasma/${BPN};nobranch=1;protocol=https"
-S = "${WORKDIR}/git"
+SRC_URI += "https://download.kde.org/unstable/plasma/5.27.80/kscreen-5.27.80.tar.xz"
+SRC_URI[sha256sum] = "cf4c476663d09a3d592c73510329b45a6e9023a017a558c09dfb3b044cbeb644"
+

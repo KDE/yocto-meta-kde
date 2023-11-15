@@ -2,6 +2,6 @@
 # SPDX-License-Identifier: CC0-1.0
 
 require ${PN}.inc
-SRCREV = "825d9d9aa0821d91468052d237ce9bb985db01bd"
-SRC_URI = "git://invent.kde.org/plasma/${BPN};nobranch=1;protocol=https"
-S = "${WORKDIR}/git"
+SRC_URI += "https://download.kde.org/unstable/plasma/5.27.80/plasma-mobile-5.27.80.tar.xz"
+SRC_URI[sha256sum] = "a4f2c0f444a8ea9005e05f704416aab6694bf9477be470bdbdbe786036c5e994"
+

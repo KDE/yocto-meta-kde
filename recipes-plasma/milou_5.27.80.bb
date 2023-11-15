@@ -2,6 +2,6 @@
 # SPDX-License-Identifier: CC0-1.0
 
 require ${PN}.inc
-SRCREV = "f9abb2bf17e63d66103fd0a5645c0e04c18de70f"
-SRC_URI = "git://invent.kde.org/plasma/${BPN};nobranch=1;protocol=https"
-S = "${WORKDIR}/git"
+SRC_URI += "https://download.kde.org/unstable/plasma/5.27.80/milou-5.27.80.tar.xz"
+SRC_URI[sha256sum] = "fab4cd50d0b535879427c377c165a2f4c701a763e82865bb0bbd8c8ad9cfb727"
+

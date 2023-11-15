@@ -2,6 +2,6 @@
 # SPDX-License-Identifier: CC0-1.0
 
 require ${PN}.inc
-SRCREV = "aef3cfa76b1bd0a3573140abd4fde020e4ddf80c"
-SRC_URI = "git://invent.kde.org/plasma/${BPN};nobranch=1;protocol=https"
-S = "${WORKDIR}/git"
+SRC_URI += "https://download.kde.org/unstable/plasma/5.27.80/libksysguard-5.27.80.tar.xz"
+SRC_URI[sha256sum] = "be3be48c13c92ff65a68ad42f792f3f4685a568b3d6c73b2f0550ba28778f15b"
+

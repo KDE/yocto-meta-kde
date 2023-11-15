@@ -2,6 +2,6 @@
 # SPDX-License-Identifier: CC0-1.0
 
 require ${PN}.inc
-SRCREV = "d6cd66cb923f1d3f7dbe65c2bf70b78a45af5116"
-SRC_URI = "git://invent.kde.org/plasma/${BPN};nobranch=1;protocol=https"
-S = "${WORKDIR}/git"
+SRC_URI += "https://download.kde.org/unstable/plasma/5.27.80/discover-5.27.80.tar.xz"
+SRC_URI[sha256sum] = "6d8da50ca360d783d6c42a76bd98d54e478d21a533ea6a63e87eaeccd67e48c2"
+

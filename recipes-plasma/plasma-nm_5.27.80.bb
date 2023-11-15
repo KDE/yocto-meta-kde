@@ -2,6 +2,6 @@
 # SPDX-License-Identifier: CC0-1.0
 
 require ${PN}.inc
-SRCREV = "8122a7ec22d93ec4f0358e15016558df9d3ae21b"
-SRC_URI = "git://invent.kde.org/plasma/${BPN};nobranch=1;protocol=https"
-S = "${WORKDIR}/git"
+SRC_URI += "https://download.kde.org/unstable/plasma/5.27.80/plasma-nm-5.27.80.tar.xz"
+SRC_URI[sha256sum] = "5e23d4b6f47ea3f0e6feec11d56767c20e37c6eea5cd8b54e62637f372f6c751"
+
