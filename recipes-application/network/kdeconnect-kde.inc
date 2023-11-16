@@ -14,16 +14,20 @@ DEPENDS += " \
     qtmultimedia \
     qtwayland-native \
     qca \
+    libfakekey \
     kconfigwidgets \
     kdbusaddons \
     kiconthemes \
     knotifications \
     kio \
     kirigami \
+    kirigami-addons \
     kpeople \
     kpeoplevcard \
     kwayland \
+    pulseaudio-qt \
     qqc2-desktop-style \
+    kstatusnotifieritem \
 "
 
 inherit cmake_kdeapp
@@ -46,6 +50,7 @@ FILES:${PN} += " \
     ${datadir}/nautilus-python \
     ${datadir}/plasma \
     ${datadir}/zsh \
+    ${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_kdeconnect.so \
 "
 
 RDEPENDS:${PN} += " \
