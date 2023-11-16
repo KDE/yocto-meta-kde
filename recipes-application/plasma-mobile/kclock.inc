@@ -18,6 +18,7 @@ DEPENDS = " \
     kirigami \
     kirigami-addons \
     knotifications \
+    kstatusnotifieritem \
     plasma-framework \
 "
 
