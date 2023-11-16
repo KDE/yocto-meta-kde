@@ -15,6 +15,7 @@ DEPENDS = " \
     kitemmodels \
     kcontacts \
     kirigami \
+    kirigami-addons \
     kpublictransport \
 "
 
