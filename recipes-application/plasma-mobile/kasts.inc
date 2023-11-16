@@ -20,6 +20,7 @@ DEPENDS = " \
     threadweaver \
     networkmanager-qt \
     qtkeychain \
+    kcolorscheme \
     kirigami \
     kirigami-addons \
 "
