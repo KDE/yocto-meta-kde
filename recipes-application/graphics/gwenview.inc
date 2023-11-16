@@ -5,7 +5,7 @@
 SUMMARY = "Gwenview - Image Viewer"
 DESCRIPTION = "Gwenview is a fast and easy to use image viewer by KDE, ideal for browsing and displaying a collection of images."
 HOMEPAGE = "https://apps.kde.org/de/gwenview"
-LICENSE = "GPL-2.0"
+LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://COPYING;md5=5a3169a2d39a757efd8b7aa66a69d97b"
 PR = "r0"
 
@@ -25,6 +25,8 @@ DEPENDS += " \
     kactivities \
     phonon \
     purpose \
+    qtwayland \
+    qtwayland-native \
 "
 
 inherit cmake_kdeapp
