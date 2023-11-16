@@ -9,7 +9,6 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=5c213a7de3f013310bd272cdb6eb7a24"
 PR = "r0"
 
 DEPENDS += " \
-    kinit \
     kio \
     knewstuff \
     knotifications \
@@ -28,4 +27,6 @@ FILES_SOLIBSDEV = ""
 FILES:${PN} += " \
     ${datadir}/knsrcfiles \
     ${datadir}/kio/servicemenus \
+    ${datadir}/kglobalaccel/* \
+    ${datadir}/zsh/* \
 "
