@@ -9,20 +9,36 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 inherit packagegroup
 
 RDEPENDS:${PN} = " \
-    kdialog \
-    kirigami-gallery \
-    konsole \
-    \
-    gwenview \
-    okular \
-    \
     blinken \
-    marble \
     kanagram \
     khangman \
-    gcompris \
+    \
+    gwenview \
     \
     elisa \
     \
-    kjournald-browser \
+    kdeconnect-kde \
+    \
+    alligator \
+    calindori \
+    kasts \
+    koko \
+    kongress \
+    ktrip \
+    kweather \
+    \
+    kjournald \
+    \
+    kdialog \
+    konsole \
 "
+
+# FTBFS
+# kclock
+
+# not ported to Qt6 yet
+# krecorder
+# gcompris
+# okular
+# marble
+# kirigami-gallery
