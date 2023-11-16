@@ -5,7 +5,7 @@
 SUMMARY = "Elisa"
 DESCRIPTION = "Elisa music player"
 HOMEPAGE = "https://apps.kde.org/de/elisa"
-LICENSE = "LGPL-3.0"
+LICENSE = "LGPL-3.0-only"
 LIC_FILES_CHKSUM = "file://LICENSES/LGPL-3.0-only.txt;md5=c51d3eef3be114124d11349ca0d7e117"
 PR = "r0"
 
@@ -22,6 +22,7 @@ DEPENDS += " \
     kconfigwidgets \
     kcrash \
     kdbusaddons \
+    qqc2-desktop-style \
 "
 
 inherit cmake_kdeapp
