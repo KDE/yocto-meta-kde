@@ -21,8 +21,13 @@ S = "${WORKDIR}/git"
 inherit qt6-cmake
 inherit pkgconfig
 
+EXTRA_OECMAKE += " \
+    -DBUILD_WITH_QT6=ON \
+"
+
+
 FILES:${PN} += " \
-    ${datadir}/qt5keychain/translations \
+    ${datadir}/qt6keychain/translations \
 "
 
 FILES:${PN}-dev += " \
