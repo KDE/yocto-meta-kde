@@ -44,7 +44,7 @@ add-tarball)
     for recipe in $(find $base -regex ".*/[0-9a-zA-Z\-]+\.inc" | grep -v /staging/); do
         name=$(echo $recipe | sed -e "s,\.inc,_${version}.bb,")
         app=$(echo $recipe | grep -P -o '[0-9a-zA-Z\-]+(?=\.inc)')
-        url="https://download.kde.org/stable/release-service/${version}/src/${app}-${version}.tar.xz"
+        url="https://download.kde.org/unstable/release-service/${version}/src/${app}-${version}.tar.xz"
         sha256=$(curl -s "${url}.sha256" | cut -d" " -f1)
         echo "${url} : ${sha256}"
 # examples:
