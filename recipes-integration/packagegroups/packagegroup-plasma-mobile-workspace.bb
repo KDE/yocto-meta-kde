@@ -18,7 +18,7 @@ WEBENGINE_PACKAGES = " \
     discover \
 "
 
-RDEPENDS:${PN} = " \
+RDEPENDS:${PN}:append = " \
     plasma-mobile \
     ${@bb.utils.contains('BBFILE_COLLECTIONS', 'python2-layer', '${WEBENGINE_PACKAGES}', '', d)} \
 "
