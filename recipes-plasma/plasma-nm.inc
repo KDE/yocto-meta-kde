@@ -4,36 +4,33 @@
 
 DESCRIPTION = "Plasma NM"
 HOMEPAGE = ""
-LICENSE = "GPL-2.0"
+LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-only.txt;md5=9e2385fe012386d34dcc5c9863070881"
 PR = "r0"
 
 DEPENDS = " \
-    qtdeclarative \
-    qttools \
-    networkmanager-qt \
-    modemmanager-qt \
-    kwindowsystem \
-    kservice \
     kcompletion \
-    kwidgetsaddons \
-    kio \
-    kcoreaddons \
-    kwallet \
-    kitemviews \
-    kxmlgui \
     kconfigwidgets \
-    kiconthemes \
-    solid \
+    kcoreaddons \
     kdbusaddons \
-    knotifications \
-    libplasma \
     kdeclarative \
-    kitemmodels \
+    kiconthemes \
+    kio \
+    knotifications \
+    kservice \
     ksvg \
+    kwallet \
+    kwidgetsaddons \
+    kwindowsystem \
+    libplasma \
+    modemmanager-qt \
+    networkmanager-qt \
     prison \
     qca \
     qcoro \
+    qtdeclarative \
+    qttools \
+    solid \
 "
 
 inherit cmake_plasma
