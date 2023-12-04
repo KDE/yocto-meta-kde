@@ -24,7 +24,7 @@ DEPENDS:class-target = " \
     kwin-native \
     wayland \
     wayland-protocols \
-    plasma-framework \
+    libplasma \
     kwindowsystem \
     kiconthemes \
     kidletime \

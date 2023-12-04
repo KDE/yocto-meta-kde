@@ -16,7 +16,7 @@ LIC_FILES_CHKSUM = " \
 
 DEPENDS += " \
     kwayland \
-    plasma-framework \
+    libplasma \
     plasma-workspace \
     qtwayland-native \
     libxkbfile \

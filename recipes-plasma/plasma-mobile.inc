@@ -19,7 +19,7 @@ PR = "r0"
 
 DEPENDS += " \
     kwayland \
-    plasma-framework \
+    libplasma \
     plasma-workspace \
     modemmanager-qt \
     networkmanager-qt \

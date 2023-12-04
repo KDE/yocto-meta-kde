@@ -24,7 +24,7 @@ DEPENDS = " \
     kitemmodels \
     kdeclarative \
     kservice \
-    plasma-framework \
+    libplasma \
     krunner \
 "
 

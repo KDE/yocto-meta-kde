@@ -24,7 +24,7 @@ DEPENDS = " \
     kwidgetsaddons \
     kwindowsystem \
     networkmanager-qt \
-    plasma-framework \
+    libplasma \
     qtwebchannel \
 "
 

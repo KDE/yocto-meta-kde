@@ -48,7 +48,7 @@ DEPENDS = " \
     libxft \
     networkmanager-qt \
     phonon \
-    plasma-framework \
+    libplasma \
     plasma5support \
     prison \
     qtdeclarative \

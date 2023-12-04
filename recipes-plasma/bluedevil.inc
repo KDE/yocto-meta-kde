@@ -20,7 +20,7 @@ DEPENDS = " \
     ksvg \
     kwidgetsaddons \
     kwindowsystem \
-    plasma-framework \
+    libplasma \
     qtdeclarative \
     shared-mime-info \
     shared-mime-info-native \

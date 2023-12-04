@@ -25,7 +25,7 @@ DEPENDS += " \
     kglobalaccel \
     kstatusnotifieritem \
     ksvg \
-    plasma-framework \
+    libplasma \
     pulseaudio \
     libcanberra \
 "

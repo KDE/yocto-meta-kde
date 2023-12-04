@@ -27,7 +27,7 @@ DEPENDS = " \
     solid \
     kdbusaddons \
     knotifications \
-    plasma-framework \
+    libplasma \
     kdeclarative \
     kitemmodels \
     ksvg \

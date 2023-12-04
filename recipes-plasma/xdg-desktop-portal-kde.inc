@@ -24,7 +24,7 @@ DEPENDS += " \
     kio \
     kdeclarative \
     kstatusnotifieritem \
-    plasma-framework \
+    libplasma \
     pipewire \
     qtwayland-native \
 "

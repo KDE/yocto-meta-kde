@@ -18,7 +18,7 @@ DEPENDS = " \
     kwayland \
     kitemmodels \
     kwindowsystem \
-    plasma-framework \
+    libplasma \
 "
 
 inherit cmake_plasma

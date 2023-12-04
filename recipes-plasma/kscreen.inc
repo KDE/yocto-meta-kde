@@ -16,7 +16,7 @@ DEPENDS = " \
     kxmlgui \
     layer-shell-qt \
     libkscreen \
-    plasma-framework \
+    libplasma \
     qtdeclarative \
     qtsensors \
     qtwayland-native \
