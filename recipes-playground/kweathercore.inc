@@ -4,7 +4,7 @@
 
 DESCRIPTION = "Library to facilitate retrieval of weather information including forecasts and alerts"
 HOMEPAGE = "https://invent.kde.org/libraries/kweathercore"
-LICENSE = "LGPL-2.0+"
+LICENSE = "LGPL-2.0-or-later"
 LIC_FILES_CHKSUM = " \
     file://LICENSES/LGPL-2.0-or-later.txt;md5=6d2d9952d88b50a51a5c73dc431d06c7 \
 "
@@ -16,8 +16,5 @@ DEPENDS = " \
     ki18n \
     kholidays \
 "
-
-SRC_URI = "git://invent.kde.org/libraries/${BPN};nobranch=1;protocol=https"
-S = "${WORKDIR}/git"
 
 inherit cmake_kdeapp
