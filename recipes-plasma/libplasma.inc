@@ -12,7 +12,7 @@ PR = "r0"
 
 DEPENDS = " \
     qtbase \
-    kactivities \
+    plasma-activities \
     karchive \
     kcmutils \
     kcmutils-native \

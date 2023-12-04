@@ -12,7 +12,7 @@ PR = "r0"
 DEPENDS = " \
     qtbase \
     kconfig \
-    kactivities \
+    plasma-activities \
     kcoreaddons-native \
     kconfig-native \
     kauth-native \

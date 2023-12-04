@@ -28,9 +28,8 @@ DEPENDS = " \
     kio \
     kservice \
     kwindowsystem \
-    kactivities \
+    plasma-activities \
     kdesu \
-    \
     plasma-workspace \
 "
 

@@ -13,8 +13,8 @@ PR = "r0"
 DEPENDS = " \
     baloo \
     breeze \
-    kactivities \
-    kactivitiesstats \
+    plasma-activities \
+    plasma-activities-stats \
     kcoreaddons \
     kcrash \
     kdbusaddons \

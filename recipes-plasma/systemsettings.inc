@@ -21,8 +21,8 @@ DEPENDS += " \
     kconfig \
     kpackage \
     kdeclarative \
-    kactivities \
-    kactivitiesstats \
+    plasma-activities \
+    plasma-activities-stats \
     kirigami \
     \
     plasma-workspace \
