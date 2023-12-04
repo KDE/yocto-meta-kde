@@ -10,7 +10,6 @@ RDEPENDS:${PN} += " \
     kactivitymanagerd \
     kde-cli-tools \
     kdecoration \
-    kscreen \
     kscreenlocker \
     kwin \
     libkscreen \

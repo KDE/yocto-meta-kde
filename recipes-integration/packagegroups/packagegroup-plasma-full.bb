@@ -19,7 +19,6 @@ RDEPENDS:${PN} = " \
     kdecoration \
     kglobalacceld \
     kpipewire \
-    kscreen \
     kscreenlocker \
     kwayland \
     kwin \

@@ -31,7 +31,6 @@ DEPENDS = " \
     kpeople \
     kquickcharts \
     krunner \
-    kscreen \
     kscreenlocker \
     kstatusnotifieritem \
     ktexteditor \
