@@ -13,8 +13,8 @@ LIC_FILES_CHKSUM = " \
 PR = "r0"
 
 DEPENDS = " \
-    kactivities \
-    kactivities-stats \
+    plasma-activities \
+    plasma-activities-stats \
     plasma-workspace \
     kirigami \
     kdeclarative \
