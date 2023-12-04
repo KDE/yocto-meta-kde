@@ -1,9 +1,12 @@
 # SPDX-FileCopyrightText: 2017-2020 Volker Krause <vkrause@kde.org>
-# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+# SPDX-FileCopyrightText: 2020-2023 Andreas Cord-Landwehr <cordlandwehr@kde.org>
 #
 # SPDX-License-Identifier: MIT
 
+SUMMARY = "Core components for the KDE's Activities System"
+HOMEPAGE = "https://invent.kde.org/plasma/plasma-activities"
 LICENSE = "LGPL-2.1-only"
+LIC_FILES_CHKSUM = "file://LICENSES/LGPL-2.1-only.txt;md5=fabba2a3bfeb22a6483d44e9ae824d3f"
 PR = "r0"
 
 DEPENDS = " \
@@ -17,9 +20,7 @@ DEPENDS = " \
     boost \
 "
 
-require kactivities_metainfo.inc
-inherit kf6-cmake
-inherit reuse_license_checksums
+inherit cmake_plasma
 
 FILES:${PN} += " \
     ${libdir}/qml/org/kde/activities/* \
