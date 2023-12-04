@@ -1,10 +1,13 @@
 # SPDX-FileCopyrightText: 2017-2020 Volker Krause <vkrause@kde.org>
 # SPDX-FileCopyrightText: 2018 Alistair Francis <alistair.francis@wdc.com>
-# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+# SPDX-FileCopyrightText: 2020-2023 Andreas Cord-Landwehr <cordlandwehr@kde.org>
 #
 # SPDX-License-Identifier: MIT
 
+SUMMARY = "Plasma library and runtime components"
+HOMEPAGE = "https://invent.kde.org/plasma/libplasma"
 LICENSE = "LGPL-2.1-only"
+LIC_FILES_CHKSUM = "file://LICENSES/LGPL-2.1-only.txt;md5=fabba2a3bfeb22a6483d44e9ae824d3f"
 PR = "r0"
 
 DEPENDS = " \
@@ -37,11 +40,9 @@ DEPENDS = " \
     qtwayland-native \
 "
 
-require plasma-framework_metainfo.inc
-inherit kf6-cmake
+inherit cmake_plasma
 inherit kf6-ki18n
 inherit kf6-kdoctools
-inherit reuse_license_checksums
 
 FILES:${PN} += " \
     ${libdir}/plugins/*.so \
