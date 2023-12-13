@@ -14,7 +14,7 @@ DEPENDS = " \
     kirigami \
     kirigami-addons \
     ki18n \
-    plasma-framework \
+    libplasma \
 "
 
 inherit cmake_kdeapp
