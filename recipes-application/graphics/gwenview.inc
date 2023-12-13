@@ -22,7 +22,7 @@ DEPENDS += " \
     kiconthemes \
     knotifications \
     kwidgetsaddons \
-    kactivities \
+    plasma-activities \
     phonon \
     purpose \
     qtwayland \
