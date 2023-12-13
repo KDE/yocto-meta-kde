@@ -13,7 +13,7 @@ DEPENDS = " \
     kcalendarcore \
     kirigami \
     kpeople \
-    plasma-framework \
+    libplasma \
 "
 
 inherit cmake_kdeapp
