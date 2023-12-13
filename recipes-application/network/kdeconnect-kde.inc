@@ -13,6 +13,7 @@ DEPENDS += " \
     qtdeclarative \
     qtmultimedia \
     qtwayland-native \
+    qtconnectivity \
     qca \
     libfakekey \
     kconfigwidgets \
