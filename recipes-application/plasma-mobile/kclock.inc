@@ -13,13 +13,13 @@ DEPENDS = " \
     qtdeclarative \
     qtmultimedia \
     kdeclarative \
+    libplasma \
     kiconthemes \
     ki18n \
     kirigami \
     kirigami-addons \
     knotifications \
     kstatusnotifieritem \
-    plasma-framework \
 "
 
 inherit cmake_kdeapp
