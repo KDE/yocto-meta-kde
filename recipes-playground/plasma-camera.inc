@@ -3,14 +3,17 @@
 # SPDX-License-Identifier: MIT
 
 DESCRIPTION = "Plasma Camera"
-HOMEPAGE = ""
-LICENSE = "GPLv3+"
-LIC_FILES_CHKSUM = "file://COPYING;md5=1ebbd3e34237af26da5dc08a4e440464"
+HOMEPAGE = "https://invent.kde.org/plasma-mobile/plasma-camera"
+LICENSE = "GPL-3.0-or-later"
+LIC_FILES_CHKSUM = "file://LICENSES/GPL-3.0-or-later.txt;md5=1c76c4cc354acaac30ed4d5eefea7245"
 PR = "r0"
 
 DEPENDS = " \
     kcoreaddons \
     kirigami \
+    libplasma \
+    kconfig \
+    kconfig-native \
 "
 
 SRC_URI = "git://invent.kde.org/plasma-mobile/${BPN};nobranch=1;protocol=https"
