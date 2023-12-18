@@ -70,5 +70,5 @@ RDEPENDS:${PN} += " \
     kirigami \
     kirigami-addons \
     plasma-nano \
-    qqc2-desktop-style \
+    qqc2-breeze-style \
 "
