@@ -3,6 +3,6 @@
 
 require ${PN}.inc
 # arbitrary selected hash to make it built with Qt6, no release yet
-SRCREV = "f580e9401f73da3367d763908d2239d2c2c8f312"
+SRCREV = "7034b7e09d3c817d0d6d496fcd1c11feabeb221d"
 SRC_URI = "git://commits.kde.org/${BPN};nobranch=1;protocol=https"
 S = "${WORKDIR}/git"
