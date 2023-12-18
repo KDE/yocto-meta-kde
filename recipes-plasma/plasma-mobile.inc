@@ -1,11 +1,11 @@
 # SPDX-FileCopyrightText: 2017-2020 Volker Krause <vkrause@kde.org>
 # SPDX-FileCopyrightText: 2019 Alistair Francis <alistair.francis@wdc.com>
-# SPDX-FileCopyrightText: 2020-2022 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+# SPDX-FileCopyrightText: 2020-2023 Andreas Cord-Landwehr <cordlandwehr@kde.org>
 #
 # SPDX-License-Identifier: MIT
 
-DESCRIPTION = "Plasma Phone Components"
-HOMEPAGE = "https://community.kde.org/Plasma/Mobile/Code"
+DESCRIPTION = "Plasma shell for mobile devices"
+HOMEPAGE = "https://invent.kde.org/plasma/plasma-mobile"
 LICENSE = "(LGPL-2.1 | LGPL-3.0 | LicenseRef-KDE-Accepted-LGPL) & (GPL-2.0 | GPL-3.0 | LicenseRef-KDE-Accepted-GPL)"
 LIC_FILES_CHKSUM = " \
     file://LICENSES/GPL-2.0-only.txt;md5=9e2385fe012386d34dcc5c9863070881 \
@@ -18,12 +18,18 @@ LIC_FILES_CHKSUM = " \
 PR = "r0"
 
 DEPENDS += " \
+    kdbusaddons \
+    kglobalaccel \
+    kio \
+    kirigami-addons \
+    kjobwidgets \
+    knotifications \
+    kpackage \
     kwayland \
     libplasma \
-    plasma-workspace \
     modemmanager-qt \
     networkmanager-qt \
-    kirigami-addons \
+    plasma-workspace \
 "
 
 inherit cmake_plasma
@@ -37,8 +43,7 @@ FILES:${PN} += " \
     ${datadir}/plasma/mobileinitialstart \
     ${datadir}/plasma/plasmoids/* \
     ${datadir}/plasma/quicksettings/* \
-    ${datadir}/plasma/shells/org.kde.plasma.phone/* \
-    ${datadir}/plasma/shells/org.kde.plasma.phoneshell/* \
+    ${datadir}/plasma/shells/org.kde.plasma.mobileshell/* \
     ${datadir}/telepathy/clients/Plasma.Dialer.client \
     ${datadir}/wallpapers/org.kde.plasma.phone.lockers/* \
     ${datadir}/wayland-sessions/*.desktop \
@@ -60,6 +65,10 @@ FILES:${PN} += " \
 "
 
 RDEPENDS:${PN} += " \
+    breeze \
     kded \
+    kirigami \
+    kirigami-addons \
     plasma-nano \
+    qqc2-desktop-style \
 "
