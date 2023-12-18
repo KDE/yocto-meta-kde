@@ -17,7 +17,7 @@ DEPENDS = " \
     kirigami-addons \
     knotifications \
     kquickcharts \
-    plasma-framework \
+    libplasma \
     kweathercore \
 "
 
