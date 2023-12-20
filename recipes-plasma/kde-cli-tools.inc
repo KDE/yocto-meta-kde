@@ -38,6 +38,7 @@ inherit mime-xdg
 
 FILES:${PN} += " \
     ${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_filetypes.so \
+    ${datadir}/zsh/site-functions/_kde-inhibit \
 "
 
 FILES_SOLIBSDEV = ""
