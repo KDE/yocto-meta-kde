@@ -30,6 +30,7 @@ DEPENDS += " \
     modemmanager-qt \
     networkmanager-qt \
     plasma-workspace \
+    qcoro \
 "
 
 inherit cmake_plasma
