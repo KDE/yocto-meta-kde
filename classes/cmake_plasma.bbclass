@@ -33,6 +33,13 @@ do_configure:prepend() {
     export XDG_DATA_DIRS=${STAGING_DATADIR}:$XDG_DATA_DIRS
 }
 
+do_install:append() {
+    # imported targets may leak full paths to system targets
+    find ${D} \( -name "*.cmake" \) -exec \
+    sed -i -e 's|${RECIPE_SYSROOT}/usr|\$\{_IMPORT_PREFIX\}|g' \
+        {} \;
+}
+
 FILES:${PN}:append = " \
     ${libdir}/libkdeinit6_*.so \
     ${libdir}/kconf_update_bin/* \
