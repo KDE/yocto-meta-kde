@@ -4,22 +4,19 @@
 
 SUMMARY = "A basic KDE Plasma Mobile image"
 
-IMAGE_FEATURES += "splash package-management hwcodecs x11"
+IMAGE_FEATURES += "splash hwcodecs"
 
 LICENSE = "MIT"
 
 inherit features_check
 
-REQUIRED_DISTRO_FEATURES = "wayland x11 kde"
+REQUIRED_DISTRO_FEATURES = "wayland"
 
 IMAGE_INSTALL = " \
                  ${CORE_IMAGE_BASE_INSTALL} \
                  wayland dbus \
                  sddm \
                  sddm-config-plasma-mobile \
-                 packagegroup-kde-frameworks5 \
                  packagegroup-plasma-mobile \
-                 packagegroup-core-x11-xserver \
-                 packagegroup-core-x11-utils \
                 "
 inherit core-image
