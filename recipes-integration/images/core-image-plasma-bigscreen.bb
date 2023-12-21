@@ -4,14 +4,14 @@
 
 SUMMARY = "A basic KDE Plasma Bigscreen image"
 
-IMAGE_FEATURES += "splash package-management hwcodecs x11"
+IMAGE_FEATURES += "splash hwcodecs"
 
 LICENSE = "MIT"
 
 inherit features_check
 inherit core-image
 
-REQUIRED_DISTRO_FEATURES += "wayland x11 kde"
+REQUIRED_DISTRO_FEATURES += "wayland kde"
 
 IMAGE_INSTALL += " \
     ${CORE_IMAGE_BASE_INSTALL} \
@@ -20,5 +20,4 @@ IMAGE_INSTALL += " \
     sddm \
     sddm-config-plasma-bigscreen \
     packagegroup-plasma-bigscreen-workspace \
-    packagegroup-core-x11-utils \
 "
