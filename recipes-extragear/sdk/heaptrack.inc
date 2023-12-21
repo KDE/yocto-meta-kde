@@ -4,7 +4,7 @@
 
 DESCRIPTION = "Heaptrack"
 HOMEPAGE = "https://invent.kde.org/sdk/heaptrack"
-LICENSE = "LGPL-2.1"
+LICENSE = "LGPL-2.1-only"
 LIC_FILES_CHKSUM = "file://LICENSES/LGPL-2.1-only.txt;md5=41890f71f740302b785c27661123bff5"
 PR = "r0"
 

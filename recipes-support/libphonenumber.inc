@@ -5,7 +5,7 @@
 
 DESCRIPTION = "libphonenumber"
 HOMEPAGE = "https://github.com/googlei18n/libphonenumber"
-LICENSE = "Apache-2"
+LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=363822a4d0f7a74c43ecdc2a4c11ae64"
 PR = "r0"
 

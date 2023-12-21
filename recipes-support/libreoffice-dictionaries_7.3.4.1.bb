@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 DESCRIPTION = "LibreOffice Dictionaries"
-LICENSE = "GPL-2.0 & GPL-3.0"
+LICENSE = "GPL-2.0-only & GPL-3.0-only"
 LIC_FILES_CHKSUM = " \
     file://en/license.txt;md5=686e6cb566fd6382c9fcc7a557bf4544 \
     file://de/COPYING_GPLv3;md5=d32239bcb673463ab874e80d47fae504 \

@@ -5,7 +5,7 @@
 
 DESCRIPTION = "XDG Desktop Portal KDE"
 HOMEPAGE = ""
-LICENSE = "LGPL-2.1 & GPL-2.0+"
+LICENSE = "LGPL-2.1-only & GPL-2.0-or-later"
 LIC_FILES_CHKSUM = " \
     file://LICENSES/GPL-2.0-or-later.txt;md5=9e2385fe012386d34dcc5c9863070881 \
     file://LICENSES/LGPL-2.0-or-later.txt;md5=da48810c4ddf8e49efa031294a26b98c \

@@ -5,7 +5,7 @@
 
 DESCRIPTION = "KDE Cli Tools"
 HOMEPAGE = ""
-LICENSE = "GPL-2.0+ & LGPL-2.0+ & (LGPL-2.1 | LGPL-3.0 | LicenseRef-KDE-Accepted-LGPL) & (GPL-2.0 | GPL-3.0 | LicenseRef-KDE-Accepted-GPL) & LGPL-2.0 & Artistic-2.0"
+LICENSE = "GPL-2.0-or-later & LGPL-2.0-or-later & (LGPL-2.1-only | LGPL-3.0-only | LicenseRef-KDE-Accepted-LGPL) & (GPL-2.0-only | GPL-3.0-only | LicenseRef-KDE-Accepted-GPL) & LGPL-2.0-only & Artistic-2.0"
 LIC_FILES_CHKSUM = " \
     file://LICENSES/Artistic-2.0.txt;md5=7f086b1df814d268c59965d8db41f13c \
     file://LICENSES/GPL-2.0-only.txt;md5=9e2385fe012386d34dcc5c9863070881 \

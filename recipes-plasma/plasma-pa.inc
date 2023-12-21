@@ -5,7 +5,7 @@
 
 DESCRIPTION = "Plasma PA"
 HOMEPAGE = ""
-LICENSE = "BSD-3-Clause & GPL-2"
+LICENSE = "BSD-3-Clause & GPL-2.0-only"
 LIC_FILES_CHKSUM = " \
     file://LICENSES/BSD-3-Clause.txt;md5=954f4d71a37096249f837652a7f586c0 \
     file://LICENSES/GPL-2.0-only.txt;md5=9e2385fe012386d34dcc5c9863070881 \

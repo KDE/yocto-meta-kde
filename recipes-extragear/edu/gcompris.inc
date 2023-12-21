@@ -6,7 +6,7 @@ SUMMARY = "GCompris"
 DESCRIPTION = "GCompris is a high quality educational software suite, \
     including a large number of activities for children aged 2 to 10."
 HOMEPAGE = "https://gcompris.net"
-LICENSE = "GPL-3.0"
+LICENSE = "GPL-3.0-only"
 LIC_FILES_CHKSUM = "file://LICENSES/GPL-3.0-only.txt;md5=49fc03046e56a282c0c743b5d3a55b7c"
 PR = "r0"
 

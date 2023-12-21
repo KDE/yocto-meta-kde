@@ -5,7 +5,7 @@
 SUMMARY = "Plasma System Monitor"
 DESCRIPTION = "An interface for monitoring system sensors, process information and other system resources"
 HOMEPAGE = "https://invent.kde.org/plasma/plasma-systemmonitor"
-LICENSE = "GPL-2.0 | GPL-3.0"
+LICENSE = "GPL-2.0-only | GPL-3.0-only"
 LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-only.txt;md5=93e64b4a83c7e441e48bbdeeea05c977"
 PR = "r0"
 

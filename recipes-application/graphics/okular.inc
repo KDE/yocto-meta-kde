@@ -4,7 +4,7 @@
 
 DESCRIPTION = "Okular"
 HOMEPAGE = "https://okular.kde.org/"
-LICENSE = "GPL-2.0+ & GPL-3.0"
+LICENSE = "GPL-2.0-or-later & GPL-3.0-only"
 LIC_FILES_CHKSUM = " \
     file://LICENSES/GPL-2.0-or-later.txt;md5=9e2385fe012386d34dcc5c9863070881 \
     file://LICENSES/GPL-3.0-or-later.txt;md5=49fc03046e56a282c0c743b5d3a55b7c \

@@ -4,7 +4,7 @@
 
 DESCRIPTION = "KPipeWire"
 HOMEPAGE = "https://invent.kde.org/plasma/kpipewire"
-LICENSE = "LGPL-2.1 | LGPL-3.0 | LicenseRef-KDE-Accepted-LGPL"
+LICENSE = "LGPL-2.1-only | LGPL-3.0-only | LicenseRef-KDE-Accepted-LGPL"
 LIC_FILES_CHKSUM = " \
     file://LICENSES/LGPL-2.1-only.txt;md5=41890f71f740302b785c27661123bff5 \
     file://LICENSES/LGPL-3.0-only.txt;md5=852ecadc0ac7e6f4d7144d5544a3815b \
