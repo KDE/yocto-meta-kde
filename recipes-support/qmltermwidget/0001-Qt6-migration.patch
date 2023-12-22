@@ -1,0 +1,851 @@
+From 1e7ab36e9894f9d7c5b7d82267faba1e60efd635 Mon Sep 17 00:00:00 2001
+From: Christophe Chapuis <chris.chapuis@gmail.com>
+Date: Sat, 4 Mar 2023 09:57:24 +0000
+Subject: [PATCH 1/2] Qt6 migration
+
+Signed-off-by: Christophe Chapuis <chris.chapuis@gmail.com>
+---
+ lib/Character.h            |  2 +-
+ lib/ColorScheme.cpp        | 28 ++++++++---------
+ lib/ColorScheme.h          |  4 +--
+ lib/Emulation.cpp          |  3 +-
+ lib/Emulation.h            |  2 +-
+ lib/Filter.h               |  2 +-
+ lib/HistorySearch.cpp      |  7 +++--
+ lib/HistorySearch.h        |  7 +++--
+ lib/KeyboardTranslator.cpp | 13 +++++---
+ lib/ProcessInfo.cpp        |  2 +-
+ lib/Pty.cpp                |  4 +--
+ lib/Pty.h                  |  2 +-
+ lib/SearchBar.cpp          |  2 +-
+ lib/SearchBar.h            |  3 +-
+ lib/Session.cpp            |  5 ++-
+ lib/TerminalDisplay.cpp    | 64 ++++++++++++++++++--------------------
+ lib/TerminalDisplay.h      | 11 ++++---
+ lib/Vt102Emulation.cpp     |  9 +++---
+ lib/kprocess.h             |  2 --
+ lib/kpty.cpp               |  3 +-
+ lib/kptyprocess.cpp        |  8 +++--
+ lib/kptyprocess.h          |  5 +--
+ lib/qtermwidget.cpp        | 11 ++++---
+ qmltermwidget.pro          |  2 +-
+ src/ksession.cpp           |  5 +--
+ 25 files changed, 106 insertions(+), 100 deletions(-)
+
+diff --git a/lib/Character.h b/lib/Character.h
+index 9c9fae2..7b932f1 100644
+--- a/lib/Character.h
++++ b/lib/Character.h
+@@ -78,7 +78,7 @@ public:
+   union
+   {
+     /** The unicode character value for this character. */
+-    wchar_t character;
++    char16_t character;
+     /**
+      * Experimental addition which allows a single Character instance to contain more than
+      * one unicode character.
+diff --git a/lib/ColorScheme.cpp b/lib/ColorScheme.cpp
+index f7b9af2..0f63a49 100644
+--- a/lib/ColorScheme.cpp
++++ b/lib/ColorScheme.cpp
+@@ -31,7 +31,8 @@
+ #include <QSettings>
+ #include <QDir>
+ #include <QRegularExpression>
+-
++#include <QRandomGenerator>
++#include <QStringView>
+ 
+ // KDE
+ //#include <KColorScheme>
+@@ -175,25 +176,22 @@ void ColorScheme::setColorTableEntry(int index , const ColorEntry& entry)
+ 
+     _table[index] = entry;
+ }
+-ColorEntry ColorScheme::colorEntry(int index , uint randomSeed) const
++ColorEntry ColorScheme::colorEntry(int index) const
+ {
+     Q_ASSERT( index >= 0 && index < TABLE_COLORS );
+ 
+-    if ( randomSeed != 0 )
+-        qsrand(randomSeed);
+ 
+     ColorEntry entry = colorTable()[index];
+ 
+-    if ( randomSeed != 0 &&
+-        _randomTable != nullptr &&
++    if ( _randomTable != nullptr &&
+         !_randomTable[index].isNull() )
+     {
+         const RandomizationRange& range = _randomTable[index];
+ 
+ 
+-        int hueDifference = range.hue ? (qrand() % range.hue) - range.hue/2 : 0;
+-        int saturationDifference = range.saturation ? (qrand() % range.saturation) - range.saturation/2 : 0;
+-        int  valueDifference = range.value ? (qrand() % range.value) - range.value/2 : 0;
++        int hueDifference = range.hue ? QRandomGenerator::global()->bounded(range.hue) - range.hue/2 : 0;
++        int saturationDifference = range.saturation ? QRandomGenerator::global()->bounded(range.saturation) - range.saturation/2 : 0;
++        int valueDifference = range.value ? QRandomGenerator::global()->bounded(range.value) - range.value/2 : 0;
+ 
+         QColor& color = entry.color;
+ 
+@@ -206,10 +204,10 @@ ColorEntry ColorScheme::colorEntry(int index , uint randomSeed) const
+ 
+     return entry;
+ }
+-void ColorScheme::getColorTable(ColorEntry* table , uint randomSeed) const
++void ColorScheme::getColorTable(ColorEntry* table) const
+ {
+     for ( int i = 0 ; i < TABLE_COLORS ; i++ )
+-        table[i] = colorEntry(i,randomSeed);
++        table[i] = colorEntry(i);
+ }
+ bool ColorScheme::randomizedBackgroundColor() const
+ {
+@@ -342,7 +340,7 @@ void ColorScheme::readColorEntry(QSettings * s , int index)
+     bool ok = false;
+     // XXX: Undocumented(?) QSettings behavior: values with commas are parsed
+     // as QStringList and others QString
+-    if (colorValue.type() == QVariant::StringList)
++    if (colorValue.typeId() == QMetaType::QStringList)
+     {
+         QStringList rgbList = colorValue.toStringList();
+         colorStr = rgbList.join(QLatin1Char(','));
+@@ -367,9 +365,9 @@ void ColorScheme::readColorEntry(QSettings * s , int index)
+         if (hexColorPattern.match(colorStr).hasMatch())
+         {
+             // Parsing is always ok as already matched by the regexp
+-            r = colorStr.midRef(1, 2).toInt(nullptr, 16);
+-            g = colorStr.midRef(3, 2).toInt(nullptr, 16);
+-            b = colorStr.midRef(5, 2).toInt(nullptr, 16);
++            r = QStringView{colorStr}.mid(1, 2).toInt(nullptr, 16);
++            g = QStringView{colorStr}.mid(3, 2).toInt(nullptr, 16);
++            b = QStringView{colorStr}.mid(5, 2).toInt(nullptr, 16);
+             ok = true;
+         }
+     }
+diff --git a/lib/ColorScheme.h b/lib/ColorScheme.h
+index 416fe25..15ceb4d 100644
+--- a/lib/ColorScheme.h
++++ b/lib/ColorScheme.h
+@@ -87,14 +87,14 @@ public:
+      * @param randomSeed Color schemes may allow certain colors in their
+      * palette to be randomized.  The seed is used to pick the random color.
+      */
+-    void getColorTable(ColorEntry* table, uint randomSeed = 0) const;
++    void getColorTable(ColorEntry* table) const;
+ 
+     /**
+      * Retrieves a single color entry from the table.
+      *
+      * See getColorTable()
+      */
+-    ColorEntry colorEntry(int index , uint randomSeed = 0) const;
++    ColorEntry colorEntry(int index) const;
+ 
+     /**
+      * Convenience method.  Returns the
+diff --git a/lib/Emulation.cpp b/lib/Emulation.cpp
+index 5d5251d..2455f42 100644
+--- a/lib/Emulation.cpp
++++ b/lib/Emulation.cpp
+@@ -33,7 +33,8 @@
+ #include <QClipboard>
+ #include <QHash>
+ #include <QKeyEvent>
+-#include <QRegExp>
++#include <QRegularExpression>
++#include <QtCore5Compat/QTextDecoder>
+ #include <QTextStream>
+ #include <QThread>
+ 
+diff --git a/lib/Emulation.h b/lib/Emulation.h
+index 9e7ea54..a43f5e0 100644
+--- a/lib/Emulation.h
++++ b/lib/Emulation.h
+@@ -29,7 +29,7 @@
+ // Qt
+ #include <QKeyEvent>
+ //#include <QPointer>
+-#include <QTextCodec>
++#include <QtCore5Compat/QTextCodec>
+ #include <QTextStream>
+ #include <QTimer>
+ 
+diff --git a/lib/Filter.h b/lib/Filter.h
+index f788ae2..624f5d1 100644
+--- a/lib/Filter.h
++++ b/lib/Filter.h
+@@ -26,7 +26,7 @@
+ #include <QObject>
+ #include <QStringList>
+ #include <QHash>
+-#include <QRegExp>
++#include <QtCore5Compat/QRegExp>
+ 
+ namespace Konsole
+ {
+diff --git a/lib/HistorySearch.cpp b/lib/HistorySearch.cpp
+index 33c6f4e..76988a6 100644
+--- a/lib/HistorySearch.cpp
++++ b/lib/HistorySearch.cpp
+@@ -24,7 +24,7 @@
+ #include "Emulation.h"
+ #include "HistorySearch.h"
+ 
+-HistorySearch::HistorySearch(EmulationPtr emulation, const QRegExp& regExp,
++HistorySearch::HistorySearch(EmulationPtr emulation, const QRegularExpression& regExp,
+         bool forwards, int startColumn, int startLine,
+         QObject* parent) :
+ QObject(parent),
+@@ -41,7 +41,7 @@ HistorySearch::~HistorySearch() {
+ void HistorySearch::search() {
+     bool found = false;
+ 
+-    if (! m_regExp.isEmpty())
++    if( ! m_regExp.isValid())
+     {
+         if (m_forwards) {
+             found = search(m_startColumn, m_startLine, -1, m_emulation->lineCount()) || search(0, 0, m_startColumn, m_startLine);
+@@ -119,7 +119,8 @@ bool HistorySearch::search(int startColumn, int startLine, int endColumn, int en
+ 
+         if (matchStart > -1)
+         {
+-            int matchEnd = matchStart + m_regExp.matchedLength() - 1;
++            auto match = m_regExp.match(string);
++            int matchEnd = matchStart + match.capturedLength() - 1;
+             qDebug() << "Found in string from" << matchStart << "to" << matchEnd;
+ 
+             // Translate startPos and endPos to startColum, startLine, endColumn and endLine in history.
+diff --git a/lib/HistorySearch.h b/lib/HistorySearch.h
+index ad5ac87..0c0b8ca 100644
+--- a/lib/HistorySearch.h
++++ b/lib/HistorySearch.h
+@@ -29,6 +29,9 @@
+ #include "Emulation.h"
+ #include "TerminalCharacterDecoder.h"
+ 
++#include <QRegularExpression>
++#include <QtCore5Compat/QRegExp>
++
+ using namespace Konsole;
+ 
+ typedef QPointer<Emulation> EmulationPtr;
+@@ -38,7 +41,7 @@ class HistorySearch : public QObject
+     Q_OBJECT
+ 
+ public:
+-    explicit HistorySearch(EmulationPtr emulation, const QRegExp& regExp, bool forwards,
++    explicit HistorySearch(EmulationPtr emulation, const QRegularExpression& regExp, bool forwards,
+                            int startColumn, int startLine, QObject* parent);
+ 
+     ~HistorySearch() override;
+@@ -55,7 +58,7 @@ private:
+ 
+ 
+     EmulationPtr m_emulation;
+-    QRegExp m_regExp;
++    QRegularExpression m_regExp;
+     bool m_forwards;
+     int m_startColumn;
+     int m_startLine;
+diff --git a/lib/KeyboardTranslator.cpp b/lib/KeyboardTranslator.cpp
+index 4487480..28d11fc 100644
+--- a/lib/KeyboardTranslator.cpp
++++ b/lib/KeyboardTranslator.cpp
+@@ -35,6 +35,9 @@
+ #include <QDir>
+ #include <QtDebug>
+ 
++#include <QtCore5Compat/QRegExp>
++#include <QtCore5Compat/QStringRef>
++
+ #include "tools.h"
+ 
+ // KDE
+@@ -453,8 +456,7 @@ bool KeyboardTranslatorReader::parseAsKeyCode(const QString& item , int& keyCode
+     QKeySequence sequence = QKeySequence::fromString(item);
+     if ( !sequence.isEmpty() )
+     {
+-        keyCode = sequence[0];
+-
++        keyCode = sequence[0].toCombined();
+         if ( sequence.count() > 1 )
+         {
+             qDebug() << "Unhandled key codes in sequence: " << item;
+@@ -676,7 +678,8 @@ QByteArray KeyboardTranslator::Entry::escapedText(bool expandWildCards,Qt::Keybo
+ 
+         if ( replacement == 'x' )
+         {
+-            result.replace(i,1,"\\x"+QByteArray(1,ch).toHex());
++            QByteArray data = "\\x"+QByteArray(1,ch).toHex();
++            result.replace(i,1,data);
+         } else if ( replacement != 0 )
+         {
+             result.remove(i,1);
+@@ -694,7 +697,7 @@ QByteArray KeyboardTranslator::Entry::unescape(const QByteArray& input) const
+     for ( int i = 0 ; i < result.count()-1 ; i++ )
+     {
+ 
+-        QByteRef ch = result[i];
++        auto ch = result[i];
+         if ( ch == '\\' )
+         {
+            char replacement[2] = {0,0};
+@@ -733,7 +736,7 @@ QByteArray KeyboardTranslator::Entry::unescape(const QByteArray& input) const
+            }
+ 
+            if ( escapedChar )
+-               result.replace(i,charsToRemove,replacement,1);
++               result.replace(i,charsToRemove,replacement);
+         }
+     }
+ 
+diff --git a/lib/ProcessInfo.cpp b/lib/ProcessInfo.cpp
+index f06a3c9..af15d33 100644
+--- a/lib/ProcessInfo.cpp
++++ b/lib/ProcessInfo.cpp
+@@ -442,7 +442,7 @@ private:
+                     uidLine = statusLine;
+             } while (!statusLine.isNull() && uidLine.isNull());
+ 
+-            uidStrings << uidLine.split('\t', QString::SkipEmptyParts);
++            uidStrings << uidLine.split('\t', Qt::SkipEmptyParts);
+             // Must be 5 entries: 'Uid: %d %d %d %d' and
+             // uid string must be less than 5 chars (uint)
+             if (uidStrings.size() == 5)
+diff --git a/lib/Pty.cpp b/lib/Pty.cpp
+index 821517a..8acc196 100644
+--- a/lib/Pty.cpp
++++ b/lib/Pty.cpp
+@@ -318,9 +318,9 @@ int Pty::foregroundProcessGroup() const
+     return 0;
+ }
+ 
+-void Pty::setupChildProcess()
++void Pty::setupKtyChildProcess()
+ {
+-    KPtyProcess::setupChildProcess();
++    KPtyProcess::setupKtyChildProcess();
+ 
+     // reset all signal handlers
+     // this ensures that terminal applications respond to
+diff --git a/lib/Pty.h b/lib/Pty.h
+index f427a53..e31c528 100644
+--- a/lib/Pty.h
++++ b/lib/Pty.h
+@@ -189,7 +189,7 @@ Q_OBJECT
+     void receivedData(const char* buffer, int length);
+ 
+   protected:
+-      void setupChildProcess() override;
++      void setupKtyChildProcess() override;
+ 
+   private slots:
+     // called when data is received from the terminal process
+diff --git a/lib/SearchBar.cpp b/lib/SearchBar.cpp
+index 1f69dcc..25f204d 100644
+--- a/lib/SearchBar.cpp
++++ b/lib/SearchBar.cpp
+@@ -18,7 +18,7 @@
+ */
+ #include <QMenu>
+ #include <QAction>
+-#include <QRegExp>
++#include <QRegularExpression>
+ #include <QDebug>
+ 
+ #include "SearchBar.h"
+diff --git a/lib/SearchBar.h b/lib/SearchBar.h
+index 0f4299b..98dea01 100644
+--- a/lib/SearchBar.h
++++ b/lib/SearchBar.h
+@@ -19,11 +19,12 @@
+ #ifndef _SEARCHBAR_H
+ #define	_SEARCHBAR_H
+ 
+-#include <QRegExp>
+ 
+ #include "ui_SearchBar.h"
+ #include "HistorySearch.h"
+ 
++#include <QRegularExpression>
++
+ class SearchBar : public QWidget {
+     Q_OBJECT
+ public:
+diff --git a/lib/Session.cpp b/lib/Session.cpp
+index bf255ee..7bfdeeb 100644
+--- a/lib/Session.cpp
++++ b/lib/Session.cpp
+@@ -30,10 +30,9 @@
+ 
+ // Qt
+ #include <QApplication>
+-#include <QByteRef>
++#include <QRegularExpression>
+ #include <QDir>
+ #include <QFile>
+-#include <QRegExp>
+ #include <QStringList>
+ #include <QFile>
+ #include <QtDebug>
+@@ -386,7 +385,7 @@ void Session::setUserTitle( int what, const QString & caption )
+ 
+     if (what == 31) {
+         QString cwd=caption;
+-        cwd=cwd.replace( QRegExp(QLatin1String("^~")), QDir::homePath() );
++        cwd=cwd.replace( QRegularExpression(QLatin1String("^~")), QDir::homePath() );
+         emit openUrlRequest(cwd);
+     }
+ 
+diff --git a/lib/TerminalDisplay.cpp b/lib/TerminalDisplay.cpp
+index d84cb87..c6d5d1f 100644
+--- a/lib/TerminalDisplay.cpp
++++ b/lib/TerminalDisplay.cpp
+@@ -170,6 +170,12 @@ void TerminalDisplay::setForegroundColor(const QColor& color)
+ 
+     update();
+ }
++void TerminalDisplay::setColorTableColor(const int colorId, const QColor &color)
++{
++    _colorTable[colorId].color = color;
++    update();
++}
++
+ void TerminalDisplay::setColorTable(const ColorEntry table[])
+ {
+   for (int i = 0; i < TABLE_COLORS; i++)
+@@ -224,14 +230,14 @@ void TerminalDisplay::fontChange(const QFont&)
+   // "Base character width on widest ASCII character. This prevents too wide
+   //  characters in the presence of double wide (e.g. Japanese) characters."
+   // Get the width from representative normal width characters
+-  _fontWidth = qRound((double)fm.width(QLatin1String(REPCHAR))/(double)qstrlen(REPCHAR));
++  _fontWidth = qRound((double)fm.horizontalAdvance(QLatin1String(REPCHAR))/(double)qstrlen(REPCHAR));
+ 
+   _fixedFont = true;
+ 
+-  int fw = fm.width(QLatin1Char(REPCHAR[0]));
++  int fw = fm.horizontalAdvance(QLatin1Char(REPCHAR[0]));
+   for(unsigned int i=1; i< qstrlen(REPCHAR); i++)
+   {
+-    if (fw != fm.width(QLatin1Char(REPCHAR[i])))
++    if (fw != fm.horizontalAdvance(QLatin1Char(REPCHAR[i])))
+     {
+       _fixedFont = false;
+       break;
+@@ -267,14 +273,6 @@ void TerminalDisplay::fontChange(const QFont&)
+ void TerminalDisplay::setVTFont(const QFont& f)
+ {
+   QFont font = f;
+-
+-    // This was originally set for OS X only:
+-    //     mac uses floats for font width specification.
+-    //     this ensures the same handling for all platforms
+-    // but then there was revealed that various Linux distros
+-    // have this problem too...
+-    font.setStyleStrategy(QFont::ForceIntegerMetrics);
+-
+   QFontMetrics metrics(font);
+ 
+   if ( !QFontInfo(font).fixedPitch() )
+@@ -369,7 +367,7 @@ TerminalDisplay::TerminalDisplay(QQuickItem *parent)
+ ,_cursorShape(Emulation::KeyboardCursorShape::BlockCursor)
+ ,mMotionAfterPasting(NoMoveScreenWindow)
+ ,m_font("Monospace", 12)
+-,m_color_role(QPalette::Background)
++,m_color_role(QPalette::Window)
+ ,m_full_cursor_height(false)
+ ,_leftBaseMargin(1)
+ ,_topBaseMargin(1)
+@@ -892,7 +890,7 @@ void TerminalDisplay::drawTextFragment(QPainter& painter ,
+     const QColor backgroundColor = style->backgroundColor.color(_colorTable);
+ 
+     // draw background if different from the display's background color
+-    if ( backgroundColor != palette().background().color() )
++    if ( backgroundColor != palette().window().color() )
+         drawBackground(painter,rect,backgroundColor,
+                        false /* do not use transparency */);
+ 
+@@ -1655,7 +1653,7 @@ int TerminalDisplay::textWidth(const int startColumn, const int length, const in
+   QFontMetrics fm(font());
+   int result = 0;
+   for (int column = 0; column < length; column++) {
+-    result += fm.width(_image[loc(startColumn + column, line)].character);
++    result += fm.horizontalAdvance(_image[loc(startColumn + column, line)].character);
+   }
+   return result;
+ }
+@@ -2056,7 +2054,7 @@ void TerminalDisplay::mousePressEvent(QMouseEvent* ev)
+           spot->activate(QLatin1String("click-action"));
+     }
+   }
+-  else if ( ev->button() == Qt::MidButton )
++  else if ( ev->button() == Qt::MiddleButton )
+   {
+     if ( _mouseMarks || (ev->modifiers() & Qt::ShiftModifier) )
+       emitSelection(true,ev->modifiers() & Qt::ControlModifier);
+@@ -2146,7 +2144,7 @@ void TerminalDisplay::mouseMoveEvent(QMouseEvent* ev)
+     int button = 3;
+     if (ev->buttons() & Qt::LeftButton)
+         button = 0;
+-    if (ev->buttons() & Qt::MidButton)
++    if (ev->buttons() & Qt::MiddleButton)
+         button = 1;
+     if (ev->buttons() & Qt::RightButton)
+         button = 2;
+@@ -2167,8 +2165,8 @@ void TerminalDisplay::mouseMoveEvent(QMouseEvent* ev)
+ 
+ //   int distance = KGlobalSettings::dndEventDelay();
+    int distance = QApplication::startDragDistance();
+-   if ( ev->x() > dragInfo.start.x() + distance || ev->x() < dragInfo.start.x() - distance ||
+-        ev->y() > dragInfo.start.y() + distance || ev->y() < dragInfo.start.y() - distance)
++   if ( ev->position().x() > dragInfo.start.x() + distance || ev->position().x() < dragInfo.start.x() - distance ||
++        ev->position().y() > dragInfo.start.y() + distance || ev->position().y() < dragInfo.start.y() - distance)
+    {
+       // we've left the drag square, we can start a real drag operation now
+       emit isBusySelecting(false); // Ok.. we can breath again.
+@@ -2188,7 +2186,7 @@ void TerminalDisplay::mouseMoveEvent(QMouseEvent* ev)
+   if (_actSel == 0) return;
+ 
+  // don't extend selection while pasting
+-  if (ev->buttons() & Qt::MidButton) return;
++  if (ev->buttons() & Qt::MiddleButton) return;
+ 
+   extendSelection( ev->pos() );
+ }
+@@ -2443,16 +2441,16 @@ void TerminalDisplay::mouseReleaseEvent(QMouseEvent* ev)
+ 
+   if ( !_mouseMarks &&
+        ((ev->button() == Qt::RightButton && !(ev->modifiers() & Qt::ShiftModifier))
+-                        || ev->button() == Qt::MidButton) )
++                        || ev->button() == Qt::MiddleButton) )
+   {
+-    emit mouseSignal( ev->button() == Qt::MidButton ? 1 : 2,
++    emit mouseSignal( ev->button() == Qt::MiddleButton ? 1 : 2,
+                       charColumn + 1,
+                       charLine + 1 +_scrollBar->value() -_scrollBar->maximum() ,
+                       2);
+   }
+ }
+ 
+-void TerminalDisplay::getCharacterPosition(const QPoint& widgetPoint,int& line,int& column) const
++void TerminalDisplay::getCharacterPosition(const QPointF& widgetPoint,int& line,int& column) const
+ {
+     line = (widgetPoint.y()-contentsRect().top()-_topMargin) / _fontHeight;
+     if (line < 0)
+@@ -2590,7 +2588,7 @@ void TerminalDisplay::mouseDoubleClickEvent(QMouseEvent* ev)
+ 
+ void TerminalDisplay::wheelEvent( QWheelEvent* ev )
+ {
+-  if (ev->orientation() != Qt::Vertical)
++  if (ev->angleDelta().y() == 0)
+     return;
+ 
+   // if the terminal program is not interested mouse events
+@@ -2610,10 +2608,10 @@ void TerminalDisplay::wheelEvent( QWheelEvent* ev )
+         // to get a reasonable scrolling speed, scroll by one line for every 5 degrees
+         // of mouse wheel rotation.  Mouse wheels typically move in steps of 15 degrees,
+         // giving a scroll of 3 lines
+-        int key = ev->delta() > 0 ? Qt::Key_Up : Qt::Key_Down;
++        int key = ev->angleDelta().y() > 0 ? Qt::Key_Up : Qt::Key_Down;
+ 
+-        // QWheelEvent::delta() gives rotation in eighths of a degree
+-        int wheelDegrees = ev->delta() / 8;
++        // QWheelEvent::angleDelta().y() gives rotation in eighths of a degree
++        int wheelDegrees = ev->angleDelta().y() / 8;
+         int linesToScroll = abs(wheelDegrees) / 5;
+ 
+         QKeyEvent keyScrollEvent(QEvent::KeyPress,key,Qt::NoModifier);
+@@ -2628,9 +2626,9 @@ void TerminalDisplay::wheelEvent( QWheelEvent* ev )
+ 
+     int charLine;
+     int charColumn;
+-    getCharacterPosition( ev->pos() , charLine , charColumn );
++    getCharacterPosition( ev->position() , charLine , charColumn );
+ 
+-    emit mouseSignal( ev->delta() > 0 ? 4 : 5,
++    emit mouseSignal( ev->angleDelta().y() > 0 ? 4 : 5,
+                       charColumn + 1,
+                       charLine + 1 +_scrollBar->value() -_scrollBar->maximum() ,
+                       0);
+@@ -2944,7 +2942,7 @@ QVariant TerminalDisplay::inputMethodQuery( Qt::InputMethodQuery query ) const
+     const QPoint cursorPos = _screenWindow ? _screenWindow->cursorPosition() : QPoint(0,0);
+     switch ( query )
+     {
+-        case Qt::ImMicroFocus:
++        case Qt::ImCursorRectangle:
+                 return imageToWidget(QRect(cursorPos.x(),cursorPos.y(),1,1));
+             break;
+         case Qt::ImFont:
+@@ -3276,7 +3274,7 @@ void TerminalDisplay::doDrag()
+   QMimeData *mimeData = new QMimeData;
+   mimeData->setText(QApplication::clipboard()->text(QClipboard::Selection));
+   dragInfo.dragObject->setMimeData(mimeData);
+-  dragInfo.dragObject->start(Qt::CopyAction);
++  dragInfo.dragObject->exec(Qt::CopyAction);
+   // Don't delete the QTextDrag object.  Qt will delete it when it's done with it.
+ }
+ 
+@@ -3406,14 +3404,14 @@ bool AutoScrollHandler::eventFilter(QObject* watched,QEvent* event)
+ 
+ // QMLTermWidget specific functions ///////////////////////////////////////////
+ 
+-void TerminalDisplay::geometryChanged(const QRectF &newGeometry, const QRectF &oldGeometry)
++void TerminalDisplay::geometryChange(const QRectF &newGeometry, const QRectF &oldGeometry)
+ {
+     if (newGeometry != oldGeometry) {
+         resizeEvent(NULL);
+         update();
+     }
+ 
+-    QQuickPaintedItem::geometryChanged(newGeometry,oldGeometry);
++    QQuickPaintedItem::geometryChange(newGeometry,oldGeometry);
+ }
+ 
+ void TerminalDisplay::update(const QRegion &region)
+@@ -3533,7 +3531,7 @@ void TerminalDisplay::simulateKeySequence(const QKeySequence &keySequence)
+ }
+ 
+ void TerminalDisplay::simulateWheel(int x, int y, int buttons, int modifiers, QPointF angleDelta){
+-    QWheelEvent event(QPointF(x,y), angleDelta.y(), (Qt::MouseButton) buttons, (Qt::KeyboardModifier) modifiers);
++    QWheelEvent event(QPointF(x,y), QPointF(x,y), angleDelta.toPoint(), angleDelta.toPoint(), (Qt::MouseButton) buttons, (Qt::KeyboardModifier) modifiers, Qt::NoScrollPhase, false);
+     wheelEvent(&event);
+ }
+ 
+diff --git a/lib/TerminalDisplay.h b/lib/TerminalDisplay.h
+index 8e97a5d..7d8f346 100644
+--- a/lib/TerminalDisplay.h
++++ b/lib/TerminalDisplay.h
+@@ -145,7 +145,7 @@ public:
+         /** Show the scroll bar on the right side of the display. */
+         ScrollBarRight=2 
+     };
+-    /** 
++    /**/
+ 
+     /** Sets the background image of the terminal display. */
+     void setBackgroundImage(const QString& backgroundImage);
+@@ -466,7 +466,7 @@ public:
+     // maps a point on the widget to the position ( ie. line and column )
+     // of the character at that point.
+ 
+-    void getCharacterPosition(const QPoint& widgetPoint,int& line,int& column) const;
++    void getCharacterPosition(const QPointF& widgetPoint,int& line,int& column) const;
+ 
+     void disableBracketedPasteMode(bool disable) { _disabledBracketedPasteMode = disable; }
+     bool bracketedPasteModeIsDisabled() const { return _disabledBracketedPasteMode; }
+@@ -564,6 +564,7 @@ public slots:
+      */
+     void setForegroundColor(const QColor& color);
+ 
++    void setColorTableColor(const int colorId, const QColor &color);
+     void selectionChanged();
+ 
+     // QMLTermWidget
+@@ -690,10 +691,10 @@ protected:
+     QVariant inputMethodQuery( Qt::InputMethodQuery query ) const override;
+ 
+     // QMLTermWidget
+-    void paint(QPainter * painter);
+-    virtual void geometryChanged(const QRectF & newGeometry, const QRectF & oldGeometry);
++    void paint(QPainter * painter) override;
++    virtual void geometryChange(const QRectF & newGeometry, const QRectF & oldGeometry) override;
+     void inputMethodQuery(QInputMethodQueryEvent *event);
+-    void itemChange(ItemChange change, const ItemChangeData & value);
++    void itemChange(ItemChange change, const ItemChangeData & value) override;
+ 
+ protected slots:
+ 
+diff --git a/lib/Vt102Emulation.cpp b/lib/Vt102Emulation.cpp
+index b1843f7..802e9ad 100644
+--- a/lib/Vt102Emulation.cpp
++++ b/lib/Vt102Emulation.cpp
+@@ -47,7 +47,8 @@
+ // Qt
+ #include <QEvent>
+ #include <QKeyEvent>
+-#include <QByteRef>
++#include <QByteArrayView>
++#include <QtCore5Compat/QTextCodec>
+ #include <QDebug>
+ 
+ // KDE
+@@ -975,8 +976,8 @@ void Vt102Emulation::sendMouseEvent( int cb, int cx, int cy , int eventType )
+             // coordinate+32, no matter what the locale is. We could easily
+             // convert manually, but QString can also do it for us.
+             QChar coords[2];
+-            coords[0] = cx + 0x20;
+-            coords[1] = cy + 0x20;
++            coords[0] = QChar(cx + 0x20);
++            coords[1] = QChar(cy + 0x20);
+             QString coordsStr = QString(coords, 2);
+             QByteArray utf8 = coordsStr.toUtf8();
+             snprintf(command, sizeof(command), "\033[M%c%s", cb + 0x20, utf8.constData());
+@@ -1128,7 +1129,7 @@ void Vt102Emulation::sendKeyEvent(QKeyEvent* origEvent, bool fromPaste)
+         }
+         else if ( !entry.text().isEmpty() )
+         {
+-            textToSend += entry.text(true,modifiers);
++            textToSend += _codec->fromUnicode(QString::fromUtf8(entry.text(true,modifiers)));
+         }
+         else if((modifiers & KeyboardTranslator::CTRL_MOD) && event->key() >= 0x40 && event->key() < 0x5f) {
+             textToSend += (event->key() & 0x1f);
+diff --git a/lib/kprocess.h b/lib/kprocess.h
+index ad2f05e..5fcb63e 100644
+--- a/lib/kprocess.h
++++ b/lib/kprocess.h
+@@ -324,8 +324,6 @@ protected:
+ 
+ private:
+     // hide those
+-    using QProcess::setReadChannelMode;
+-    using QProcess::readChannelMode;
+     using QProcess::setProcessChannelMode;
+     using QProcess::processChannelMode;
+ 
+diff --git a/lib/kpty.cpp b/lib/kpty.cpp
+index 5234b5f..55bd834 100644
+--- a/lib/kpty.cpp
++++ b/lib/kpty.cpp
+@@ -336,7 +336,8 @@ gotpty:
+             !d->chownpty(true)) {
+         qWarning()
+         << "chownpty failed for device " << ptyName << "::" << d->ttyName
+-        << "\nThis means the communication can be eavesdropped.\n";
++        << "\nThis means the communication can be eavesdropped."
++        << Qt::endl;
+     }
+ 
+ #if defined (HAVE__GETPTY) || defined (HAVE_GRANTPT)
+diff --git a/lib/kptyprocess.cpp b/lib/kptyprocess.cpp
+index 5c829fd..3135e4b 100644
+--- a/lib/kptyprocess.cpp
++++ b/lib/kptyprocess.cpp
+@@ -46,6 +46,10 @@ KPtyProcess::KPtyProcess(QObject *parent) :
+     d->pty->open();
+     connect(this, SIGNAL(stateChanged(QProcess::ProcessState)),
+             SLOT(_k_onStateChanged(QProcess::ProcessState)));
++
++    setChildProcessModifier([this] {
++        setupKtyChildProcess();
++    });
+ }
+ 
+ KPtyProcess::KPtyProcess(int ptyMasterFd, QObject *parent) :
+@@ -119,7 +123,7 @@ KPtyDevice *KPtyProcess::pty() const
+     return d->pty;
+ }
+ 
+-void KPtyProcess::setupChildProcess()
++void KPtyProcess::setupKtyChildProcess()
+ {
+     Q_D(KPtyProcess);
+ 
+@@ -137,8 +141,6 @@ void KPtyProcess::setupChildProcess()
+ 
+     if (d->ptyChannels & StderrChannel)
+         dup2(d->pty->slaveFd(), 2);
+-
+-    KProcess::setupChildProcess();
+ }
+ 
+ //#include "kptyprocess.moc"
+diff --git a/lib/kptyprocess.h b/lib/kptyprocess.h
+index 3491b35..c36062b 100644
+--- a/lib/kptyprocess.h
++++ b/lib/kptyprocess.h
+@@ -141,10 +141,7 @@ public:
+     KPtyDevice *pty() const;
+ 
+ protected:
+-    /**
+-     * @reimp
+-     */
+-    void setupChildProcess() override;
++    virtual void setupKtyChildProcess();
+ 
+ private:
+     Q_PRIVATE_SLOT(d_func(), void _k_onStateChanged(QProcess::ProcessState))
+diff --git a/lib/qtermwidget.cpp b/lib/qtermwidget.cpp
+index e5c58a5..da9e87b 100644
+--- a/lib/qtermwidget.cpp
++++ b/lib/qtermwidget.cpp
+@@ -21,6 +21,7 @@
+ #include <QtDebug>
+ #include <QDir>
+ #include <QMessageBox>
++#include <QRegularExpression>
+ 
+ #include "ColorTables.h"
+ #include "Session.h"
+@@ -167,10 +168,10 @@ void QTermWidget::search(bool forwards, bool next)
+     //qDebug() << "current selection starts at: " << startColumn << startLine;
+     //qDebug() << "current cursor position: " << m_impl->m_terminalDisplay->screenWindow()->cursorPosition();
+ 
+-    QRegExp regExp(m_searchBar->searchText());
+-    regExp.setPatternSyntax(m_searchBar->useRegularExpression() ? QRegExp::RegExp : QRegExp::FixedString);
+-    regExp.setCaseSensitivity(m_searchBar->matchCase() ? Qt::CaseSensitive : Qt::CaseInsensitive);
+-
++    QRegularExpression regExp(m_searchBar->searchText(),
++                              m_searchBar->matchCase() ? QRegularExpression::CaseInsensitiveOption|
++                                                         QRegularExpression::UseUnicodePropertiesOption
++                                                       : QRegularExpression::UseUnicodePropertiesOption);
+     HistorySearch *historySearch =
+             new HistorySearch(m_impl->m_session->emulation(), regExp, forwards, startColumn, startLine, this);
+     connect(historySearch, SIGNAL(matchFound(int, int, int, int)), this, SLOT(matchFound(int, int, int, int)));
+@@ -261,7 +262,7 @@ void QTermWidget::startTerminalTeletype()
+ void QTermWidget::init(int startnow)
+ {
+     m_layout = new QVBoxLayout();
+-    m_layout->setMargin(0);
++    m_layout->setContentsMargins(0,0,0,0);
+     setLayout(m_layout);
+ 
+     // translations
+diff --git a/qmltermwidget.pro b/qmltermwidget.pro
+index c9594a9..ba7591b 100644
+--- a/qmltermwidget.pro
++++ b/qmltermwidget.pro
+@@ -1,6 +1,6 @@
+ TEMPLATE = lib
+ TARGET = qmltermwidget
+-QT += qml quick widgets
++QT += qml quick widgets core5compat
+ CONFIG += qt plugin
+ 
+ include(lib.pri)
+diff --git a/src/ksession.cpp b/src/ksession.cpp
+index 204a9eb..16513ba 100644
+--- a/src/ksession.cpp
++++ b/src/ksession.cpp
+@@ -29,6 +29,7 @@
+ // Konsole
+ #include "KeyboardTranslator.h"
+ #include "HistorySearch.h"
++#include "qapplication.h"
+ 
+ KSession::KSession(QObject *parent) :
+     QObject(parent), m_session(createSession(""))
+@@ -70,7 +71,7 @@ Session *KSession::createSession(QString name)
+     //cool-old-term: There is another check in the code. Not sure if useful.
+ 
+     QString envshell = getenv("SHELL");
+-    QString shellProg = envshell != NULL ? envshell : "/bin/bash";
++    QString shellProg = envshell.isEmpty() ? envshell : "/bin/bash";
+     session->setProgram(shellProg);
+ 
+     setenv("TERM", "xterm", 1);
+@@ -256,7 +257,7 @@ void KSession::clearScreen()
+ 
+ void KSession::search(const QString &regexp, int startLine, int startColumn, bool forwards)
+ {
+-    HistorySearch *history = new HistorySearch( QPointer<Emulation>(m_session->emulation()), QRegExp(regexp), forwards, startColumn, startLine, this);
++    HistorySearch *history = new HistorySearch( QPointer<Emulation>(m_session->emulation()), QRegularExpression(regexp), forwards, startColumn, startLine, this);
+     connect( history, SIGNAL(matchFound(int,int,int,int)), this, SIGNAL(matchFound(int,int,int,int)));
+     connect( history, SIGNAL(noMatchFound()), this, SIGNAL(noMatchFound()));
+     history->search();
+-- 
+2.40.1
+

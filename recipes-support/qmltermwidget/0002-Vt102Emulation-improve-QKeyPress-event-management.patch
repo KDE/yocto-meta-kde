@@ -1,0 +1,40 @@
+From 32da270eb832c4f42215c499d3d225a14be8af91 Mon Sep 17 00:00:00 2001
+From: Christophe Chapuis <chris.chapuis@gmail.com>
+Date: Fri, 28 Apr 2023 14:21:46 +0000
+Subject: [PATCH 2/2] Vt102Emulation: improve QKeyPress event management
+
+If the QKeyEvent as no text and only a key code, the text should contain
+that character.
+
+Signed-off-by: Christophe Chapuis <chris.chapuis@gmail.com>
+---
+ lib/Vt102Emulation.cpp | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+diff --git a/lib/Vt102Emulation.cpp b/lib/Vt102Emulation.cpp
+index 802e9ad..91b6e93 100644
+--- a/lib/Vt102Emulation.cpp
++++ b/lib/Vt102Emulation.cpp
+@@ -1143,9 +1143,18 @@ void Vt102Emulation::sendKeyEvent(QKeyEvent* origEvent, bool fromPaste)
+         else if (event->key() == Qt::Key_PageDown) {
+             textToSend += "\033[6~";
+         }
+-        else {
++        else if (event->text().length() > 0) {
+             textToSend += _codec->fromUnicode(event->text());
+         }
++        else if (event->key() <= 0xFFFF) {
++            QChar c(event->key());
++
++            if (c.isLetter()) {
++                c = ((modifiers & Qt::ShiftModifier) != 0) ? c.toUpper() : c.toLower();
++            }
++
++            textToSend += _codec->fromUnicode(QString(c));
++        }
+ 
+         if (!fromPaste && textToSend.length()) {
+             Q_EMIT outputFromKeypressEvent();
+-- 
+2.40.1
+
