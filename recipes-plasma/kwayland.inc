@@ -18,5 +18,5 @@ DEPENDS = " \
 "
 
 require kwayland_metainfo.inc
-inherit kf6-cmake
+inherit cmake_plasma
 inherit reuse_license_checksums
