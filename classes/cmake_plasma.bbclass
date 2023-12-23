@@ -4,7 +4,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-inherit qt6-cmake
+inherit kf6-cmake
 inherit kf6-ki18n
 inherit kf6-kcoreaddons
 inherit kf6-kconfig
@@ -31,13 +31,6 @@ DEPENDS:append = " \
 do_configure:prepend() {
     # kpackagetool6 needs to find installed service type files
     export XDG_DATA_DIRS=${STAGING_DATADIR}:$XDG_DATA_DIRS
-}
-
-do_install:append() {
-    # imported targets may leak full paths to system targets
-    find ${D} \( -name "*.cmake" \) -exec \
-    sed -i -e 's|${RECIPE_SYSROOT}/usr|\$\{_IMPORT_PREFIX\}|g' \
-        {} \;
 }
 
 FILES:${PN}:append = " \
