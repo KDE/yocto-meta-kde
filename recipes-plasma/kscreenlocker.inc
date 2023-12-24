@@ -32,13 +32,18 @@ DEPENDS = " \
 
 SRC_URI:append = " \
     file://kde.pam \
+    file://kscreenlockerrc \
+    file://kscreensaverrc \
 "
 
 inherit cmake_plasma
 
 do_install:append() {
-    install -d ${D}${sysconfdir}/pam.d
+    install -d 0755 ${D}${sysconfdir}/pam.d
     install -m 0644 ${WORKDIR}/kde.pam ${D}${sysconfdir}/pam.d/kde
+    install -d 0755 ${D}{sysconfdir}/xdg
+    install -m 0644 ${WORKDIR}/kscreenlockerrc ${D}{sysconfdir}/xdg/
+    install -m 0644 ${WORKDIR}/kscreensaverrc ${D}{sysconfdir}/xdg/
 }
 
 FILES:${PN} += " \
