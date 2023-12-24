@@ -1,32 +1,33 @@
 # SPDX-FileCopyrightText: 2018-2020 Volker Krause <vkrause@kde.org>
-# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+# SPDX-FileCopyrightText: 2020-2023 Andreas Cord-Landwehr <cordlandwehr@kde.org>
 #
 # SPDX-License-Identifier: MIT
 
 DESCRIPTION = "KScreenLocker"
-HOMEPAGE = ""
+HOMEPAGE = "https://invent.kde.org/plasma/kscreenlocker"
 LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263"
 PR = "r0"
 
 DEPENDS = " \
+    qtdeclarative \
+    \
     kcrash \
-    kdeclarative \
     kglobalaccel \
     kidletime \
     knotifications \
-    ktextwidgets \
-    kwayland \
+    ksvg \
     kwindowsystem \
     kxmlgui \
-    layer-shell-qt \
+    solid \
+    \
+    libplasma \
     libkscreen \
+    layer-shell-qt \
+    \
     libpam \
     libxcb \
-    qtdeclarative \
-    solid \
     wayland-native \
-    libplasma \
 "
 
 SRC_URI:append = " \
