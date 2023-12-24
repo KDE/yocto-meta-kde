@@ -11,48 +11,51 @@ LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-only.txt;md5=9e2385fe012386d34dcc5c9
 PR = "r0"
 
 DEPENDS = " \
-    baloo \
-    breeze \
-    plasma-activities \
-    plasma-activities-stats \
+    qtdeclarative \
+    qtwayland-native \
+    \
     kcoreaddons \
     kcrash \
     kdbusaddons \
-    kdeclarative \
-    kded \
-    kdesu \
     kholidays \
     kidletime \
     kitemmodels \
     knewstuff \
     knotifications \
-    knotifyconfig \
     kpackage \
     kpeople \
     kquickcharts \
     krunner \
-    kscreenlocker \
     kstatusnotifieritem \
+    ksvg \
     ktexteditor \
     kunitconversion \
     kuserfeedback \
     kwallet \
-    kwayland \
-    kwin \
-    ksvg \
-    kpipewire \
-    libkscreen \
-    libksysguard \
-    libqalculate \
-    libxft \
+    kwallet \
     networkmanager-qt \
-    phonon \
-    libplasma \
     plasma5support \
     prison \
-    qtdeclarative \
-    qtwayland-native \
     solid \
+    \
+    baloo \
+    breeze \
+    kded \
+    kdesu \
+    kpipewire \
+    kscreenlocker \
+    kwayland \
+    kwin \
+    libkscreen \
+    libksysguard \
+    libplasma \
+    plasma-activities \
+    plasma-activities-stats \
+    \
+    knotifyconfig \
+    libqalculate \
+    libxft \
+    phonon \
 "
 
 inherit cmake_plasma
