@@ -1,0 +1,39 @@
+From 4177f3b5829ab1cfc91d359084602d7caa426dda Mon Sep 17 00:00:00 2001
+From: Andreas Cord-Landwehr <cordlandwehr@kde.org>
+Date: Sun, 24 Dec 2023 09:06:40 +0100
+Subject: [PATCH] Fix systemd service file generation for cross-compiling
+
+In case of cross-compiling, the qdbus version reported from qpath only
+provides the path to the host's qdbus executable. For the binary that is
+provided on the target, no path is available with the present
+information.
+For simplicity hardcode the qdbus path for this case. If every a
+cross-compiled system emerges with non-standard /usr/bin/qtdbus making
+this path settible via a build parameter might make sense.
+
+Upstream-Status: Submitted [https://invent.kde.org/plasma/plasma-workspace/-/merge_requests/3720]
+
+Signed-off-by: Andreas Cord-Landwehr <cordlandwehr@kde.org>
+---
+ CMakeLists.txt | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 7626983..fab30e7 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -382,6 +382,11 @@ add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
+ 
+ # locate qdbus in the Qt path because not every distro makes a symlink at /usr/bin/qdbus
+ ecm_query_qt(QtBinariesDir QT_INSTALL_BINS)
++# in case of cross-compiling use a hard-coded target path because no querying is possible
++if (CMAKE_CROSSCOMPILING)
++    set(QtBinariesDir "/usr/bin")
++endif()
++message(STATUS "qdbus path for generated service files: ${QtBinariesDir}")
+ 
+ if(KF6DocTools_FOUND)
+   add_subdirectory(doc)
+-- 
+2.40.1
+
