@@ -26,12 +26,10 @@ DEPENDS:class-target = " \
     wayland-protocols \
     libplasma \
     kwindowsystem \
-    kiconthemes \
     kidletime \
     kwayland \
     kcompletion \
     kdeclarative \
-    kio \
     ktextwidgets \
     knewstuff \
     kservice \
