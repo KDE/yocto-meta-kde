@@ -3,29 +3,28 @@
 # SPDX-License-Identifier: MIT
 
 DESCRIPTION = "System Settings"
-HOMEPAGE = ""
+HOMEPAGE = "https://invent.kde.org/plasma/systemsettings"
 LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-only.txt;md5=9e2385fe012386d34dcc5c9863070881"
 PR = "r0"
 
 DEPENDS += " \
-    kitemviews \
     kcmutils \
-    kio \
-    kservice \
+    kconfig \
+    kdbusaddons \
     kiconthemes \
+    kio \
+    kirigami \
+    kitemviews \
+    kitemmodels \
+    kjobwidgets \
+    krunner \
+    kservice \
     kwidgetsaddons \
     kwindowsystem \
     kxmlgui \
-    kdbusaddons \
-    kconfig \
-    kpackage \
-    kdeclarative \
-    plasma-activities \
-    plasma-activities-stats \
-    kirigami \
     \
-    plasma-workspace \
+    plasma-activities \
 "
 
 inherit cmake_plasma
