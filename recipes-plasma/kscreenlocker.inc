@@ -52,4 +52,7 @@ FILES:${PN} += " \
     ${libdir}/plugins/plasma/kcms/systemsettings/kcm_screenlocker.so \
 "
 
-RDEPENDS:${PN} += "perl"
+RDEPENDS:${PN} += " \
+    perl \
+    qqc2-breeze-style \
+"
