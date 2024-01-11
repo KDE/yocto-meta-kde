@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-inherit qt6-cmake
+inherit kf6-cmake
 inherit kf6-ki18n
 inherit kf6-kdoctools
 inherit pkgconfig
