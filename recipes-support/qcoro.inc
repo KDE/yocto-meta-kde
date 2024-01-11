@@ -22,6 +22,7 @@ inherit qt6-cmake
 
 EXTRA_OECMAKE += " \
     -DQCORO_WITH_QTWEBSOCKETS=OFF \
+    -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
 "
 
 FILES:${PN}-dev += " \
