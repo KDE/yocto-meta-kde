@@ -16,6 +16,7 @@ DEPENDS = " \
     ki18n \
     qt5compat \
     qtdeclarative \
+    plasma-activities \
 "
 
 SRC_URI = "git://invent.kde.org/libraries/${BPN};nobranch=1;protocol=https"
