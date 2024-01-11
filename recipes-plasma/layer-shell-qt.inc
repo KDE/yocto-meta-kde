@@ -22,3 +22,7 @@ DEPENDS = " \
 "
 
 inherit cmake_plasma
+
+FILES:${PN} += " \
+    ${libdir}/qml/org/kde/layershell/* \
+"
