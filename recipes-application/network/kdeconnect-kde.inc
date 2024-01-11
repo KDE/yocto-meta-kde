@@ -24,7 +24,6 @@ DEPENDS += " \
     kirigami \
     kirigami-addons \
     kpeople \
-    kpeoplevcard \
     kwayland \
     pulseaudio-qt \
     qqc2-desktop-style \
@@ -55,5 +54,5 @@ FILES:${PN} += " \
 "
 
 RDEPENDS:${PN} += " \
-    kpeoplevcard \
+    kpeople \
 "
