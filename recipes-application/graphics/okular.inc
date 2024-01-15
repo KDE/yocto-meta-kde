@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2019-2020 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2024 Andreas Cord-Landwehr <cordlandwehr@kde.org>
 #
 # SPDX-License-Identifier: MIT
 
@@ -11,14 +12,21 @@ LIC_FILES_CHKSUM = " \
 "
 PR = "r0"
 
+inherit cmake_kdeapp
+inherit kf6-kcoreaddons
+inherit kf6-kconfig
+inherit kf6-kauth
+inherit mime-xdg
+
 DEPENDS += " \
-    exiv2 \
+    qtbase \
+    libkexiv2 \
+    libzip \
     kirigami \
     kparts \
     threadweaver \
     kwallet \
-    kjs \
-    kactivities \
+    plasma-activities \
     kpty \
     phonon \
     poppler \
@@ -26,18 +34,15 @@ DEPENDS += " \
     qca \
 "
 
+EXTRA_OECMAKE += " \
+    -DOKULAR_UI=both \
+    -DFORCE_NOT_REQUIRED_DEPENDENCIES='KExiv2Qt6;LibSpectre;DjVuLibre;EPub;Discount' \
+"
+
 # dirty hack to force the mobile version and hide the desktop one
 do_install:append() {
     sed -i 's/Exec=okular %U$/Exec=okularkirigami %U/g' ${D}${datadir}/applications/org.kde.okular.desktop
 }
-
-inherit cmake_kdeapp
-inherit kf6-kcoreaddons
-inherit kf6-kconfig
-inherit kf6-kauth
-inherit mime-xdg
-
-EXTRA_OECMAKE += " -DOE_QCA_PATH_HOST_ROOT=${STAGING_DIR_HOST} -DOKULAR_UI=both"
 
 # note: okularkirigami is the dedicated mobile version
 PACKAGES += " \
@@ -54,13 +59,9 @@ FILES:${PN}-shared = " \
     ${sysconfdir}/xdg/okular.categories \
     ${datadir}/okular/pics \
     ${datadir}/okular/icons \
-    ${datadir}/qlogging-categories5 \
     ${datadir}/config.kcfg \
     ${datadir}/icons \
     ${datadir}/kconf_update \
-    ${datadir}/kservicetypes5 \
-    ${datadir}/kservices5 \
-    ${datadir}/kxmlgui5 \
     ${datadir}/metainfo \
     ${datadir}/okular \
     ${datadir}/applications/org.kde.mobile.okular_xps.desktop \
@@ -93,6 +94,7 @@ FILES:${PN}-desktop = " \
 
 RDEPENDS:${PN} += " \
     ${PN}-shared \
+    kirigami-addons \
 "
 
 RDEPENDS:${PN}-desktop += " \
