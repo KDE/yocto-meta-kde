@@ -19,3 +19,8 @@ DEPENDS = " \
 inherit cmake_kdeapp
 inherit kf6-kconfig
 inherit mime-xdg
+
+RDEPENDS:${PN} += " \
+    kirigami \
+    qtdeclarative-qmlplugins \
+"
