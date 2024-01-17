@@ -13,5 +13,6 @@ require plasma-workspace-common.inc
 
 RDEPENDS:${PN} += " \
     plasma-desktop \
+    plasma-welcome \
     systemsettings \
 "
