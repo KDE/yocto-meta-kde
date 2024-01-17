@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-REQUIRED_DISTRO_FEATURES = "wayland kde"
+REQUIRED_DISTRO_FEATURES = "wayland"
 
 RDEPENDS:${PN} += " \
     bluedevil \
@@ -15,6 +15,8 @@ RDEPENDS:${PN} += " \
     libkscreen \
     libksysguard \
     milou \
+    plasma-disks \
+    plasma-firewall \
     plasma-integration \
     plasma-nano \
     plasma-nm \
