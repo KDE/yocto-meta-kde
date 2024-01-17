@@ -14,21 +14,27 @@ RDEPENDS:${PN} = " \
     blinken \
     kanagram \
     khangman \
+    kwordquiz \
     \
     gwenview \
+    okular \
     \
+    dragon \
     elisa \
     \
     kdeconnect-kde \
     \
+    itinerary \
+    \
     alligator \
     calindori \
     kasts \
+    kclock \
     koko \
     kongress \
+    krecorder \
     ktrip \
     kweather \
-    kclock \
     \
     kjournald \
     \
@@ -39,8 +45,6 @@ RDEPENDS:${PN} = " \
 "
 
 # not ported to Qt6 yet
-# krecorder
 # gcompris
-# okular
 # marble
 # kirigami-gallery
