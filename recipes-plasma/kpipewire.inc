@@ -28,3 +28,7 @@ FILES:${PN} += " \
     ${libdir}/qml/org/kde/pipewire/* \
     ${datadir}/zsh/site-functions/* \
 "
+
+RDEPENDS:${PN} += " \
+    pipewire \
+"
