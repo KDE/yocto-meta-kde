@@ -34,3 +34,7 @@ inherit cmake_plasma
 FILES:${PN} += " \
     ${datadir}/xdg-desktop-portal \
 "
+
+RDEPENDS:${PN} += " \
+    xdg-desktop-portal \
+"
