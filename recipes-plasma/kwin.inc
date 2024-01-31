@@ -97,15 +97,16 @@ FILES:${PN} += " \
     ${datadir}/kservicetypes6/*.desktop \
     ${datadir}/kwincompositing/qml/*.qml \
     ${datadir}/qlogging-categories6 \
+    ${libdir}/kconf_update_bin/kwin-6.0-delete-desktop-switching-shortcuts \
     ${libdir}/kconf_update_bin/kwin5_update_default_rules \
     ${libdir}/plugins/*.so \
-    ${libdir}/plugins/kf6/packagestructure/*.so \
     ${libdir}/plugins/kf6/org.kde.kidletime.platforms/*.so \
+    ${libdir}/plugins/kf6/packagestructure/*.so \
     ${libdir}/plugins/kpackage/packagestructure/*.so \
     ${libdir}/plugins/kwin/effects/configs/*.so \
     ${libdir}/plugins/kwin/plugins/*.so \
-    ${libdir}/plugins/org.kde.kdecoration2/*.so \
     ${libdir}/plugins/org.kde.kdecoration2.kcm/kcm_auroraedecoration.so \
+    ${libdir}/plugins/org.kde.kdecoration2/*.so \
     ${libdir}/plugins/org.kde.kglobalaccel6.platforms/*.so \
     ${libdir}/plugins/org.kde.kwin.platforms/*.so \
     ${libdir}/plugins/org.kde.kwin.scenes/*.so \
