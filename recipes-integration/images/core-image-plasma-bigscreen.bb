@@ -11,7 +11,7 @@ LICENSE = "MIT"
 inherit features_check
 inherit core-image
 
-REQUIRED_DISTRO_FEATURES += "wayland kde"
+REQUIRED_DISTRO_FEATURES += "wayland"
 
 IMAGE_INSTALL += " \
     ${CORE_IMAGE_BASE_INSTALL} \
