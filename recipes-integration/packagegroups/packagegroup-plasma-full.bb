@@ -12,8 +12,8 @@ RDEPENDS:${PN} = " \
     bluedevil \
     breeze \
     discover \
-    kactivities \
-    kactivities-stats \
+    plasma-activities \
+    plasma-activities-stats \
     kactivitymanagerd \
     kde-cli-tools \
     kdecoration \
@@ -26,7 +26,7 @@ RDEPENDS:${PN} = " \
     libkscreen \
     libksysguard \
     milou \
-    plasma-framework \
+    libplasma \
     plasma-integration \
     plasma-mobile \
     plasma-nano \
