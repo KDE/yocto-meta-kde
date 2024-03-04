@@ -20,6 +20,7 @@ DEPENDS += " \
     kparts \
     kwindowsystem \
     kiconthemes \
+    kimageannotator \
     knotifications \
     kwidgetsaddons \
     plasma-activities \
