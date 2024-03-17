@@ -13,12 +13,7 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 inherit packagegroup features_check
 require plasma-workspace-common.inc
 
-# Qt5's WebEngine requires Python2
-WEBENGINE_PACKAGES = " \
-    discover \
-"
-
 RDEPENDS:${PN}:append = " \
     plasma-mobile \
-    ${@bb.utils.contains('BBFILE_COLLECTIONS', 'python2-layer', '${WEBENGINE_PACKAGES}', '', d)} \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'desktop-portal', 'discover', '', d)} \
 "
