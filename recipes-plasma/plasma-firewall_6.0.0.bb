@@ -1,7 +1,0 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
-
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.0.0/plasma-firewall-6.0.0.tar.xz"
-SRC_URI[sha256sum] = "32b0b4e241e67d7aab2ade5ea345670f0945850e220d65aba3c6e55f60185796"
-
