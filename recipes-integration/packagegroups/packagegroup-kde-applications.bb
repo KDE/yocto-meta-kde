@@ -27,7 +27,6 @@ RDEPENDS:${PN} = " \
     itinerary \
     \
     alligator \
-    calindori \
     kasts \
     kclock \
     koko \

@@ -10,7 +10,6 @@ inherit packagegroup
 
 RDEPENDS:${PN} = " \
     alligator \
-    calindori \
     kasts \
     kclock \
     koko \
