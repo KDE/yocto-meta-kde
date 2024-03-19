@@ -29,6 +29,7 @@ FILES:${PN} += " \
     ${datadir}/kded_kscreen \
     ${datadir}/kcm_kscreen \
     ${datadir}/kpackage \
+    ${datadir}/kglobalaccel \
     ${datadir}/plasma/plasmoids/org.kde.kscreen \
     ${libdir}/plugins/plasma/kcms/systemsettings/ \
 "
