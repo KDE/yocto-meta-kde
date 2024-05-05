@@ -86,6 +86,7 @@ FILES:${PN} += " \
     ${libdir}/qml/* \
     ${libdir}/sysusers.d/* \
     ${libdir}/tmpfiles.d/* \
+    ${datadir}/dbus-1/system.d/* \
 "
 
 FILES:${PN}-config-plasma-mobile = " \
