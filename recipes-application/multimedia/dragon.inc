@@ -21,6 +21,7 @@ DEPENDS += " \
 
 inherit cmake_kdeapp
 inherit kf6-kcoreaddons
+inherit kf6-kdoctools
 inherit kf6-kconfig
 inherit mime-xdg
 

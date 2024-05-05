@@ -1,0 +1,23 @@
+From 00082cc0fd090ae61424d89bd339e0d78cf4ea22 Mon Sep 17 00:00:00 2001
+From: "Friedrich W. H. Kossebau" <kossebau@kde.org>
+Date: Sun, 24 Mar 2024 18:31:53 +0100
+Subject: [PATCH] Fix broken man page installation due to defunc variable
+
+Deprecated MAN_INSTALL_DIR is no longer set with KF6-builds.
+kdoctools_create_manpage though will just silently skip installing
+if INSTALL_DESTINATION is an empty arg, and no-one noticed.
+---
+ doc/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/doc/CMakeLists.txt b/doc/CMakeLists.txt
+index 6665610..67b1c6c 100644
+--- a/doc/CMakeLists.txt
++++ b/doc/CMakeLists.txt
+@@ -1,2 +1,2 @@
+ kdoctools_create_handbook(index.docbook INSTALL_DESTINATION ${KDE_INSTALL_DOCBUNDLEDIR}/en/ SUBDIR dragonplayer)
+-kdoctools_create_manpage(man-dragon.1.docbook 1 INSTALL_DESTINATION ${MAN_INSTALL_DIR})
++kdoctools_create_manpage(man-dragon.1.docbook 1 INSTALL_DESTINATION ${KDE_INSTALL_MANDIR})
+-- 
+2.40.1
+
