@@ -15,6 +15,7 @@ DEPENDS += " \
     qtdeclarative \
     qtmultimedia \
     kirigami \
+    kirigami-addons \
     ki18n \
     kdeclarative \
     kfilemetadata \
