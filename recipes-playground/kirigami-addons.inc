@@ -23,3 +23,4 @@ SRC_URI = "git://invent.kde.org/libraries/${BPN};nobranch=1;protocol=https"
 S = "${WORKDIR}/git"
 
 inherit cmake_kdeapp
+inherit kf6-kconfig
