@@ -1,18 +1,23 @@
 # SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+# SPDX-FileCopyrightText: 2024 Maxime Roussin-Bélanger <maxime.roussinbelanger@gmail.com>
 #
 # SPDX-License-Identifier: MIT
 
 LICENSE = "GPL-3.0-only"
 LIC_FILES_CHKSUM = "file://COPYING;md5=d32239bcb673463ab874e80d47fae504"
 
-SRC_URI = " \
-    git://github.com/maliit/keyboard.git;nobranch=1;protocol=https \
-"
+SRC_URI = "git://github.com/maliit/keyboard.git;nobranch=1;protocol=https \
+           file://0001-qml-Fix-for-qt6.patch \
+           file://0001-cmake-add-Qt6-support.patch \
+           "
 S = "${WORKDIR}/git"
 
 DEPENDS += " \
-    maliit-framework-qt5 \
+    maliit-framework-qt6 \
     qtbase \
+    qtdeclarative \
+    qtdeclarative-native \
+    qt5compat \
     qtmultimedia \
     glibc \
     hunspell \
@@ -25,7 +30,11 @@ inherit qt6-cmake
 inherit gsettings
 inherit pkgconfig
 
-EXTRA_OECMAKE += "-Denable-presage=OFF"
+EXTRA_OECMAKE += " \
+    -Denable-tests=OFF \
+    -Denable-presage=OFF \
+    -Dwith-qt6=ON \
+"
 
 FILES:${PN} += " \
     ${datadir}/glib-2.0/schemas/org.maliit.keyboard.maliit.gschema.xml \

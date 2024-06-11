@@ -1,0 +1,35 @@
+From 546bba3179f76d18131b6d9feae93ffac6f1605c Mon Sep 17 00:00:00 2001
+From: Maxime Roussin-Belanger <maxime.roussinbelanger@gmail.com>
+Date: Tue, 11 Jun 2024 13:06:12 -0400
+Subject: [PATCH] qml: Fix for qt6
+
+---
+ qml/Keyboard.qml                  | 2 +-
+ qml/keys/ActionsToolbarButton.qml | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/qml/Keyboard.qml b/qml/Keyboard.qml
+index e5a8a008..a603e285 100644
+--- a/qml/Keyboard.qml
++++ b/qml/Keyboard.qml
+@@ -30,7 +30,7 @@
+ 
+ import QtQuick 2.4
+ import QtQuick.Controls 2.4
+-import QtGraphicalEffects 1.0
++import Qt5Compat.GraphicalEffects
+ 
+ import MaliitKeyboard 2.0
+ 
+diff --git a/qml/keys/ActionsToolbarButton.qml b/qml/keys/ActionsToolbarButton.qml
+index dbec6d03..e2a79171 100644
+--- a/qml/keys/ActionsToolbarButton.qml
++++ b/qml/keys/ActionsToolbarButton.qml
+@@ -1,6 +1,6 @@
+ import QtQuick 2.9
+ import QtQuick.Controls 2.9
+-import QtGraphicalEffects 1.0
++import Qt5Compat.GraphicalEffects
+ 
+ import MaliitKeyboard 2.0
+ 
