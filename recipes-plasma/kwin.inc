@@ -137,9 +137,8 @@ RDEPENDS:${PN}:append:class-target = " \
     perl \
 "
 
-# TODO QT6 porting missing
 RRECOMMENDS:${PN}:append:class-target = " \
-    ${@bb.utils.contains('BBFILE_COLLECTIONS', 'meta-qt5r', 'maliit-keyboard-qt5', '', d)} \
+    maliit-keyboard-qt6 \
 "
 
 BBCLASSEXTEND = "native"
