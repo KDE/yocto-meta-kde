@@ -29,9 +29,6 @@ DEPENDS = " \
     qtwayland-native \
 "
 
-SRC_URI = "git://invent.kde.org/network/${BPN};nobranch=1;protocol=https"
-S = "${WORKDIR}/git"
-
 inherit cmake_kdeapp
 
 RDEPENDS:${PN} += " \
