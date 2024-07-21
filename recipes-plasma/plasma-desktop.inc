@@ -43,6 +43,7 @@ FILES:${PN} += " \
     ${datadir}/kcmmouse/* \
     ${datadir}/kcmsolidactions/* \
     ${datadir}/kcm_recentFiles/* \
+    ${datadir}/sddm/themes/breeze/* \
     ${libdir}/qml/org/kde/plasma/activityswitcher/* \
     ${libdir}/qml/org/kde/plasma/emoji/* \
     ${libdir}/qml/org/kde/plasma/private/pager/* \
