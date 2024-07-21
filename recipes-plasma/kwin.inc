@@ -100,6 +100,7 @@ FILES:${PN} += " \
     ${libdir}/kconf_update_bin/kwin-6.0-delete-desktop-switching-shortcuts \
     ${libdir}/kconf_update_bin/kwin-6.0-remove-breeze-tabbox-default \
     ${libdir}/kconf_update_bin/kwin-6.0-reset-active-mouse-screen \
+    ${libdir}/kconf_update_bin/kwin-6.1-remove-gridview-expose-shortcuts \
     ${libdir}/kconf_update_bin/kwin5_update_default_rules \
     ${libdir}/plugins/*.so \
     ${libdir}/plugins/kf6/org.kde.kidletime.platforms/*.so \
