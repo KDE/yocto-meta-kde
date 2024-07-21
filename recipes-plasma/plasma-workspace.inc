@@ -56,6 +56,7 @@ DEPENDS = " \
     libqalculate \
     libxft \
     phonon \
+    qcoro \
 "
 
 inherit cmake_plasma
@@ -87,6 +88,7 @@ FILES:${PN} += " \
     ${datadir}/plasma/services/*.operations \
     ${datadir}/plasma/shareprovider \
     ${datadir}/plasma/wallpapers \
+    ${datadir}/plasma/weather \
     ${datadir}/plasma5support/services/* \
     ${datadir}/sddm/themes \
     ${datadir}/solid/actions/*.desktop \
@@ -103,6 +105,7 @@ FILES:${PN} += " \
 "
 
 FILES:${PN}-dev += " \
+    ${libdir}/libbatterycontrol.so \
     ${libdir}/libcolorcorrect.so \
     ${libdir}/libkfontinst.so \
     ${libdir}/libkfontinstui.so \
