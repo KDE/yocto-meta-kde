@@ -27,6 +27,7 @@ DEPENDS += " \
     ksvg \
     libplasma \
     pulseaudio \
+    pulseaudio-qt \
     libcanberra \
 "
 
