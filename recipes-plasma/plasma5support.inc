@@ -15,6 +15,7 @@ DEPENDS = " \
     kio \
     kservice \
     kxmlgui \
+    libksysguard \
 "
 
 inherit cmake_plasma
