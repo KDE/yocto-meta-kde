@@ -34,6 +34,7 @@ EXTRA_OECMAKE += " \
     -Denable-tests=OFF \
     -Denable-presage=OFF \
     -Dwith-qt6=ON \
+    -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
 "
 
 FILES:${PN} += " \
