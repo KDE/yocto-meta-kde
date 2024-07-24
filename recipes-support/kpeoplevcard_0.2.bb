@@ -3,5 +3,5 @@
 
 require ${PN}.inc
 #NOTE this is an arbitrary hash supporting Qt6
-PV = "0.1.1"
-SRCREV = "5bf333027ab0e434dabdd7e6c734758eaae80c1c"
+PV = "0.2"
+SRCREV = "13db8a52125ec8abd830b3ffcd02691880e15c38"
