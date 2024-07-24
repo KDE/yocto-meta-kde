@@ -24,8 +24,7 @@ inherit cmake_kdeapp
 inherit mime-xdg
 
 RDEPENDS:${PN} += " \
-    qtdeclarative-qmlplugins \
-    qtquickcontrols2-qmlplugins \
+    qtdeclarative \
 "
 
 FILES:${PN} += "\
