@@ -17,7 +17,9 @@ DEPENDS = " \
     qtbase \
     qtwayland \
     qtwayland-native \
+    qtkeychain \
     kpipewire \
+    kstatusnotifieritem \
     libxkbcommon \
     plasma-wayland-protocols \
 "
@@ -25,8 +27,14 @@ DEPENDS = " \
 SRC_URI = "git://invent.kde.org/plasma/${BPN};nobranch=1;protocol=https"
 S = "${WORKDIR}/git"
 
-inherit cmake_kdeapp
+inherit cmake_kdeapp kf6-kconfig kf6-kcmutils systemd
 
 RDEPENDS:${PN} += " \
     xdg-desktop-portal \
+"
+
+SYSTEMD_SERVICE:${PN} = "plasma-krdp_server.service"
+
+FILES:${PN} += " \
+    ${libdir}/plugins/plasma/kcms/systemsettings/* \
 "

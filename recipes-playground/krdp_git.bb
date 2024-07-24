@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: none
 # SPDX-License-Identifier: CC0-1.0
 
-# arbitrary git version
-PV = "5.27.80"
+PV = "6.1.3"
 require ${BPN}.inc
-SRCREV = "7e09c4f8db9b2821297f974ecd499eb1ad9ce058"
+SRCREV = "2d95ca34ac465936f274a54e733a93589cef14d7"
