@@ -24,9 +24,6 @@ DEPENDS = " \
     plasma-wayland-protocols \
 "
 
-SRC_URI = "git://invent.kde.org/plasma/${BPN};nobranch=1;protocol=https"
-S = "${WORKDIR}/git"
-
 inherit cmake_kdeapp kf6-kconfig kf6-kcmutils systemd
 
 RDEPENDS:${PN} += " \
