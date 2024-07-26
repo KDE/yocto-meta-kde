@@ -48,6 +48,7 @@ FILES:${PN} += " \
     ${datadir}/telepathy/clients/Plasma.Dialer.client \
     ${datadir}/wallpapers/org.kde.plasma.phone.lockers/* \
     ${datadir}/wayland-sessions/*.desktop \
+    ${datadir}/plasma-mobile-apn-info \
     ${libdir}/plugins/kwin/effects/plugins/* \
     ${libdir}/plugins/plasma/kcms/systemsettings/* \
     ${libdir}/qml/QtQuick/VirtualKeyboard/Styles/Plasma/* \
