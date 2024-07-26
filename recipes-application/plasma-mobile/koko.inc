@@ -30,4 +30,5 @@ inherit mime-xdg
 RDEPENDS:${PN} += " \
     qtdeclarative-qmlplugins \
     purpose \
+    kirigami \
 "
