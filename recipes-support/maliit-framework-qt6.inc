@@ -22,10 +22,12 @@ DEPENDS += " \
     glibc \
     glib-2.0-native \
     wayland \
+    python3-packaging-native \
 "
 
 inherit qt6-cmake
 inherit pkgconfig
+inherit python3native
 
 EXTRA_OECMAKE += " \
     -Dwith-qt6=ON \
