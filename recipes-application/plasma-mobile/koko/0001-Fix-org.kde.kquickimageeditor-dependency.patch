@@ -1,0 +1,35 @@
+From e42f8eb9e1119d579382a5fd265eca4f2cbeefe6 Mon Sep 17 00:00:00 2001
+From: Marc Ferland <marc.ferland@sonatest.com>
+Date: Fri, 26 Jul 2024 13:49:26 -0400
+Subject: [PATCH] Fix org.kde.kquickimageeditor dependency
+
+I noticed the following build message during a Yocto build:
+
+| -- Could NOT find org.kde.kquickimageeditor-QMLModule (missing: org.kde.kquickimageeditor-QMLModule_FOUND) (found version "0.3.0")
+
+since the version is optional for Qt6 builds, remove the 'version'
+argument.
+
+Upstream-Status: Submitted [https://invent.kde.org/graphics/koko/-/merge_requests/142]
+
+Signed-off-by: Marc Ferland <marc.ferland@sonatest.com>
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 3f4bac6..2a33335 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -45,7 +45,7 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS I18n Declarative Config C
+ 
+ find_package(LibExiv2 0.21 REQUIRED)
+ 
+-ecm_find_qmlmodule(org.kde.kquickimageeditor 1.0)
++ecm_find_qmlmodule(org.kde.kquickimageeditor)
+ find_package(KQuickImageEditor COMPONENTS)
+ set_package_properties(KQuickImageEditor PROPERTIES
+     TYPE REQUIRED
+-- 
+2.34.1
+
