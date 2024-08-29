@@ -104,7 +104,6 @@ USERADD_PARAM:${PN} = "--system --home ${localstatedir}/lib/sddm --shell /bin/fa
 
 RDEPENDS:${PN} += "\
     bash \
-    weston \
     xcb-util \
     qtbase-plugins \
     qtdeclarative-plugins \
