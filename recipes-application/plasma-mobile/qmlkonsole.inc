@@ -5,7 +5,7 @@
 DESCRIPTION = "Terminal app for Plasma Mobile"
 HOMEPAGE = "https://invent.kde.org/plasma-mobile/qmlkonsole"
 LICENSE = "GPL-2.0-or-later"
-LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-or-later.txt;md5=fed54355545ffd980b814dab4a3b312c"
+LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-or-later.txt;md5=9e2385fe012386d34dcc5c9863070881"
 PR = "r0"
 
 DEPENDS = " \
@@ -17,6 +17,7 @@ DEPENDS = " \
     kirigami \
     kirigami-addons \
     kwindowsystem \
+    kpty \
 "
 
 inherit cmake_kdeapp

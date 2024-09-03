@@ -40,12 +40,11 @@ KOKO_ADMIN2CODES="admin2Codes.txt"
 SRC_URI += "http://download.geonames.org/export/dump/${KOKO_CITIES1000};name=cities1000;unpack=0 \
 http://download.geonames.org/export/dump/${KOKO_ADMIN1CODES};name=admin1Codes \
 http://download.geonames.org/export/dump/${KOKO_ADMIN2CODES};name=admin2Codes \
-file://0001-Fix-org.kde.kquickimageeditor-dependency.patch \
 "
 
-SRC_URI[cities1000.sha256sum] = "9fff9632d97a9ec05beddcf8764be6df43b16dfa2625bd4fe1bb3dc39cbe15a7"
-SRC_URI[admin1Codes.sha256sum] = "499a7be16c4e91ebac33850c1af1d7baa1d055d5b95e6256f45e4bf2899b0987"
-SRC_URI[admin2Codes.sha256sum] = "08cd19d53ee962b060710e35ed6e753c180c4260acb5ffe13c8e2feacde94432"
+SRC_URI[cities1000.sha256sum] = "9bbcb6afac88aad44b2193536af1dee85ded7401096727e0a4b91e794ef1f562"
+SRC_URI[admin1Codes.sha256sum] = "e127215f6a359887a7975faba1d7657f684a5edacc76f84cc7960400b72cbea1"
+SRC_URI[admin2Codes.sha256sum] = "f961cc6f82383a9e2ac370713bd02e4e5bf0dd21779f4483fa4ab47e30a7ce2d"
 
 # To build Koko, it is required to import a few files from outside
 # this repository. These files are licensed under the CC-BY-4.0 and
