@@ -31,6 +31,11 @@ DEPENDS += " \
     libcanberra \
 "
 
+RDEPENDS:${PN} += " \
+    libcanberra-alsa \
+    libcanberra-pulse \
+"
+
 inherit cmake_plasma
 inherit kf6-kdoctools
 
