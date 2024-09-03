@@ -22,6 +22,7 @@ DEPENDS = " \
     kitemmodels \
     plasma-workspace \
     bluez-qt \
+    ddcutil \
 "
 
 inherit cmake_plasma
