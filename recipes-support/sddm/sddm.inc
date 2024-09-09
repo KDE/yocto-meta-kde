@@ -69,9 +69,6 @@ do_install:append() {
     install -d ${D}${localstatedir}/lib/sddm
     chown -R sddm:sddm ${D}${localstatedir}/lib/sddm
     chmod 0750 ${D}${localstatedir}/lib/sddm
-
-    # make SDDM actually auto-start
-    echo "WantedBy=multi-user.target" >> ${D}/${systemd_unitdir}/system/sddm.service
 }
 
 PACKAGES =+ " \

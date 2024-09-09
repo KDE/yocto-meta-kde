@@ -19,4 +19,7 @@ IMAGE_INSTALL = " \
                  sddm-config-plasma-mobile \
                  packagegroup-plasma-mobile \
                 "
+
+SYSTEMD_DEFAULT_TARGET="graphical.target"
+
 inherit core-image

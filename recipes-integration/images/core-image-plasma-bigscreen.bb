@@ -21,3 +21,5 @@ IMAGE_INSTALL += " \
     sddm-config-plasma-bigscreen \
     packagegroup-plasma-bigscreen-workspace \
 "
+
+SYSTEMD_DEFAULT_TARGET="graphical.target"
