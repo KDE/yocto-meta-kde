@@ -77,6 +77,7 @@ do_install:append() {
 PACKAGES =+ " \
     ${PN}-config-plasma-mobile \
     ${PN}-config-plasma-bigscreen \
+    ${PN}-config-plasma-desktop \
 "
 
 FILES:${PN} += " \
@@ -84,6 +85,10 @@ FILES:${PN} += " \
     ${libdir}/sysusers.d/* \
     ${libdir}/tmpfiles.d/* \
     ${datadir}/dbus-1/system.d/* \
+"
+
+FILES:${PN}-config-plasma-desktop = " \
+    ${sysconfdir}/sddm.conf.d/00-plasma-desktop.conf \
 "
 
 FILES:${PN}-config-plasma-mobile = " \
