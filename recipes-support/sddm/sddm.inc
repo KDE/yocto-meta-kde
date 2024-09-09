@@ -31,7 +31,7 @@ SRC_URI = " \
     file://sddm.conf.plasma-bigscreen \
     file://sddm.pam \
     file://sddm-autologin.pam \
-    file://50-wayland.conf \
+    file://sddm-greeter.pam \
 "
 
 S = "${WORKDIR}/git"
@@ -56,9 +56,6 @@ do_configure:append() {
 
 do_install:append() {
     install -d ${D}/${sysconfdir}/sddm.conf.d
-
-    # set SDDM to use Wayland
-    install -m 644 ${WORKDIR}/50-wayland.conf ${D}/${sysconfdir}/sddm.conf.d/
 
     # autologin configurations
     install -m 644 ${WORKDIR}/sddm.conf.plasma-desktop ${D}/${sysconfdir}/sddm.conf.d/00-plasma-desktop.conf

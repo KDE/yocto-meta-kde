@@ -61,8 +61,9 @@ DEPENDS = " \
 
 inherit cmake_plasma
 inherit mime-xdg
+inherit systemd
 
-EXTRA_OECMAKE += " -DBUILD_xembed-sni-proxy=OFF"
+EXTRA_OECMAKE += " -DBUILD_xembed-sni-proxy=OFF -DINSTALL_SDDM_WAYLAND_SESSION=ON"
 
 FILES_SOLIBSDEV = ""
 FILES:${PN} += " \
@@ -127,3 +128,9 @@ RDEPENDS:${PN} += " \
     xset \
     qttools-tools \
 "
+
+do_install:append() {
+    sed -i 's:${RECIPE_SYSROOT_NATIVE}::g' ${D}${systemd_user_unitdir}/plasma-ksplash-ready.service
+    sed -i 's:${RECIPE_SYSROOT_NATIVE}::g' ${D}${systemd_user_unitdir}/plasma-kcminit-phase1.service
+    sed -i 's:${RECIPE_SYSROOT_NATIVE}::g' ${D}${systemd_user_unitdir}/plasma-restoresession.service
+}
