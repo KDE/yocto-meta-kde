@@ -25,7 +25,6 @@ DEPENDS = " \
 
 SRC_URI = " \
     git://github.com/sddm/${BPN};nobranch=1;protocol=https \
-    file://0001-Workaround-missing-sessions.patch \
     file://sddm.conf.plasma-desktop \
     file://sddm.conf.plasma-mobile \
     file://sddm.conf.plasma-bigscreen \
@@ -65,6 +64,7 @@ do_install:append() {
     install -d ${D}${sysconfdir}/pam.d
     install -m 644 ${WORKDIR}/sddm.pam ${D}${sysconfdir}/pam.d/sddm
     install -m 644 ${WORKDIR}/sddm-autologin.pam ${D}${sysconfdir}/pam.d/sddm-autologin
+    install -m 644 ${WORKDIR}/sddm-greeter.pam ${D}${sysconfdir}/pam.d/sddm-greeter
 
     install -d ${D}${localstatedir}/lib/sddm
     chown -R sddm:sddm ${D}${localstatedir}/lib/sddm
