@@ -18,6 +18,7 @@ IMAGE_INSTALL = " \
                  sddm \
                  sddm-config-plasma-mobile \
                  packagegroup-plasma-mobile \
+                 ttf-noto \
                 "
 
 SYSTEMD_DEFAULT_TARGET="graphical.target"
