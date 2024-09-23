@@ -37,7 +37,7 @@ KOKO_CITIES1000="cities1000.zip"
 KOKO_ADMIN1CODES="admin1CodesASCII.txt"
 KOKO_ADMIN2CODES="admin2Codes.txt"
 
-SRC_URI += "http://download.geonames.org/export/dump/${KOKO_CITIES1000};name=cities1000;unpack=0 \
+SRC_URI:append = " http://download.geonames.org/export/dump/${KOKO_CITIES1000};name=cities1000;unpack=0 \
 http://download.geonames.org/export/dump/${KOKO_ADMIN1CODES};name=admin1Codes \
 http://download.geonames.org/export/dump/${KOKO_ADMIN2CODES};name=admin2Codes \
 "
