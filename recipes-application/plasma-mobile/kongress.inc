@@ -14,7 +14,9 @@ DEPENDS = " \
     kcalendarcore \
     kdbusaddons \
     kirigami \
+    kirigami-addons \
     knotifications \
+    kosmindoormap \
 "
 
 inherit cmake_kdeapp
