@@ -42,9 +42,9 @@ http://download.geonames.org/export/dump/${KOKO_ADMIN1CODES};name=admin1Codes \
 http://download.geonames.org/export/dump/${KOKO_ADMIN2CODES};name=admin2Codes \
 "
 
-SRC_URI[cities1000.sha256sum] = "9bbcb6afac88aad44b2193536af1dee85ded7401096727e0a4b91e794ef1f562"
-SRC_URI[admin1Codes.sha256sum] = "e127215f6a359887a7975faba1d7657f684a5edacc76f84cc7960400b72cbea1"
-SRC_URI[admin2Codes.sha256sum] = "f961cc6f82383a9e2ac370713bd02e4e5bf0dd21779f4483fa4ab47e30a7ce2d"
+SRC_URI[cities1000.sha256sum] = "9a355b83ab7d6e188e5e3f32d2ae0324100cb94822ca2b972a02ca0e3279b590"
+SRC_URI[admin1Codes.sha256sum] = "4fd9666062869d462f6beaebdc35467601b05becc48d5914a333bfa9e584bb24"
+SRC_URI[admin2Codes.sha256sum] = "e7f41100cdd4154bf8e1217e5200c65e9386fb92adf8662a8117845c347908c3"
 
 # To build Koko, it is required to import a few files from outside
 # this repository. These files are licensed under the CC-BY-4.0 and
