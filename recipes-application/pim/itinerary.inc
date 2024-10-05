@@ -13,6 +13,7 @@ DEPENDS += " \
     qtbase \
     qtdeclarative \
     qtpositioning \
+    qtkeychain \
     kirigami \
     kirigami-addons \
     kcontacts \
