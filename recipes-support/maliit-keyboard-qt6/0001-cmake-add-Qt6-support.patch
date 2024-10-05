@@ -3,6 +3,8 @@ From: Maxime Roussin-Belanger <maxime.roussinbelanger@gmail.com>
 Date: Sun, 16 Jun 2024 22:52:25 -0400
 Subject: [PATCH] cmake: add Qt6 support
 
+Upstream-Status: Pending
+Signed-off-by: Andreas Cord-Landwehr <cordlandwehr@kde.org>
 ---
  CMakeLists.txt                                | 47 ++++++++++++-------
  plugins/pinyin/src/pinyinadapter.cpp          |  3 +-
