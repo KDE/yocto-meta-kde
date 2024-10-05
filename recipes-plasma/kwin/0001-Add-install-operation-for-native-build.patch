@@ -3,6 +3,9 @@ From: Andreas Cord-Landwehr <cordlandwehr@kde.org>
 Date: Sun, 26 Jun 2022 19:55:01 +0200
 Subject: [PATCH] Add install operation for native build
 
+Upstream-Status: Pending
+Signed-Off-by: Andreas Cord-Landwehr <cordlandwehr@kde.org>
+
 ---
  src/wayland/tools/CMakeLists.txt | 1 +
  1 file changed, 1 insertion(+)
