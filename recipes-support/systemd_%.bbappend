@@ -13,7 +13,9 @@
 #
 # cgroupv2
 # --------
-# Enable cgroupv2 (aka: unified hierarchy). Since task T11914, support
-# for systemd and slices was added.
+# cgroupv2 (aka: unified hierarchy) is required since https://phabricator.kde.org/T11914
+# enable it explicitly for Yocto < Scarthgap; it is on unconditionally enabled
+# in later versions
 #
-PACKAGECONFIG:append = " xdg-autostart cgroupv2"
+CONFIG_CGROUPS = "${@bb.utils.contains('PV', '255.4', 'cgroupv2', '', d)}"
+PACKAGECONFIG:append = " xdg-autostart ${CONFIG_CGROUPS}"
