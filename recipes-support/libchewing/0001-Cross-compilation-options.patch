@@ -3,6 +3,7 @@ From: Andreas Cord-Landwehr <cordlandwehr@kde.org>
 Date: Mon, 4 Jan 2021 20:17:32 +0100
 Subject: [PATCH] Cross-compilation options
 
+Upstream-Status: Pending
 ---
  CMakeLists.txt | 17 +++++++++++++++--
  1 file changed, 15 insertions(+), 2 deletions(-)

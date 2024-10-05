@@ -5,6 +5,8 @@ Subject: [PATCH 2/2] Disable genkeystroke testapp
 
 Hard comment out problematic test app instead of fixing the
 find module for libcurses.
+
+Upstream-Status: Pending
 ---
  CMakeLists.txt | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
