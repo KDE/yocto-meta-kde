@@ -6,6 +6,7 @@ Subject: [PATCH 2/2] Vt102Emulation: improve QKeyPress event management
 If the QKeyEvent as no text and only a key code, the text should contain
 that character.
 
+Upstream-Status: Submitted [https://github.com/Swordfish90/qmltermwidget/pull/41]
 Signed-off-by: Christophe Chapuis <chris.chapuis@gmail.com>
 ---
  lib/Vt102Emulation.cpp | 11 ++++++++++-

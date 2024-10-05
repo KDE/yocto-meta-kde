@@ -7,6 +7,7 @@ Apparently newer qmake does not like multiple installation of same
 files. Remove separate installs where parent directory already contains
 the files.
 
+Upstream-Status: Pending
 Signed-off-by: Andreas Cord-Landwehr <cordlandwehr@kde.org>
 ---
  qmltermwidget.pro | 8 ++------
