@@ -1,6 +1,6 @@
 # SPDX-FileCopyrightText: 2019 Alistair Francis <alistair.francis@wdc.com>
 # SPDX-FileCopyrightText: 2019-2020 Volker Krause <vkrause@kde.org>
-# SPDX-FileCopyrightText: 2023 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+# SPDX-FileCopyrightText: 2023-2024 Andreas Cord-Landwehr <cordlandwehr@kde.org>
 #
 # SPDX-License-Identifier: MIT
 
@@ -54,17 +54,20 @@ do_configure:append() {
 }
 
 do_install:append() {
+    # compatibility workaround for Yocto versions older than Styhead
+    [ -z ${UNPACKDIR+x} ] && UNPACKDIR=${WORKDIR}
+
     install -d ${D}/${sysconfdir}/sddm.conf.d
 
     # autologin configurations
-    install -m 644 ${WORKDIR}/sddm.conf.plasma-desktop ${D}/${sysconfdir}/sddm.conf.d/00-plasma-desktop.conf
-    install -m 644 ${WORKDIR}/sddm.conf.plasma-mobile ${D}/${sysconfdir}/sddm.conf.d/01-plasma-mobile.conf
-    install -m 644 ${WORKDIR}/sddm.conf.plasma-bigscreen ${D}/${sysconfdir}/sddm.conf.d/02-plasma-bigscreen.conf
+    install -m 644 ${UNPACKDIR}/sddm.conf.plasma-desktop ${D}/${sysconfdir}/sddm.conf.d/00-plasma-desktop.conf
+    install -m 644 ${UNPACKDIR}/sddm.conf.plasma-mobile ${D}/${sysconfdir}/sddm.conf.d/01-plasma-mobile.conf
+    install -m 644 ${UNPACKDIR}/sddm.conf.plasma-bigscreen ${D}/${sysconfdir}/sddm.conf.d/02-plasma-bigscreen.conf
 
     install -d ${D}${sysconfdir}/pam.d
-    install -m 644 ${WORKDIR}/sddm.pam ${D}${sysconfdir}/pam.d/sddm
-    install -m 644 ${WORKDIR}/sddm-autologin.pam ${D}${sysconfdir}/pam.d/sddm-autologin
-    install -m 644 ${WORKDIR}/sddm-greeter.pam ${D}${sysconfdir}/pam.d/sddm-greeter
+    install -m 644 ${UNPACKDIR}/sddm.pam ${D}${sysconfdir}/pam.d/sddm
+    install -m 644 ${UNPACKDIR}/sddm-autologin.pam ${D}${sysconfdir}/pam.d/sddm-autologin
+    install -m 644 ${UNPACKDIR}/sddm-greeter.pam ${D}${sysconfdir}/pam.d/sddm-greeter
 
     install -d ${D}${localstatedir}/lib/sddm
     chown -R sddm:sddm ${D}${localstatedir}/lib/sddm
