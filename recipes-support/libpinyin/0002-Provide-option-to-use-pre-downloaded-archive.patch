@@ -7,6 +7,8 @@ Live-download is problematic when used in packaging systems, since
 those systems have their own download caches. Thus, provide an
 option to allow separately downloading the model data and then
 reusing it in the build.
+
+Upstream-Status: Pending
 ---
  CMakeLists.txt      |  1 +
  data/CMakeLists.txt | 42 +++++++++++++++++++++++++++++-------------

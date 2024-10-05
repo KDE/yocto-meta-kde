@@ -3,6 +3,7 @@ From: Andreas Cord-Landwehr <cordlandwehr@kde.org>
 Date: Sun, 3 Jan 2021 11:22:47 +0100
 Subject: [PATCH] Utilize bitbake download and use tools from PATH
 
+Upstream-Status: Pending
 ---
  data/CMakeLists.txt | 10 ++++------
  1 file changed, 4 insertions(+), 6 deletions(-)

@@ -5,6 +5,8 @@ Subject: [PATCH 3/3] Add option to disable data generation
 
 The data generation is not needed when only the library and the
 utilities are built.
+
+Upstream-Status: Pending
 ---
  CMakeLists.txt | 5 ++++-
  1 file changed, 4 insertions(+), 1 deletion(-)
