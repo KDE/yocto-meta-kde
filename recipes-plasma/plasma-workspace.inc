@@ -13,6 +13,7 @@ PR = "r0"
 DEPENDS = " \
     qtdeclarative \
     qtwayland-native \
+    qtpositioning \
     \
     kcoreaddons \
     kcrash \
@@ -94,6 +95,7 @@ FILES:${PN} += " \
     ${datadir}/sddm/themes \
     ${datadir}/solid/actions/*.desktop \
     ${datadir}/wayland-sessions/*.desktop \
+    ${datadir}/xdg-desktop-portal/* \
     ${datadir}/xsessions/*.desktop \
     ${datadir}/zsh/site-functions/* \
     ${libdir}/libkrdb.so \
@@ -110,6 +112,7 @@ FILES:${PN}-dev += " \
     ${libdir}/libcolorcorrect.so \
     ${libdir}/libkfontinst.so \
     ${libdir}/libkfontinstui.so \
+    ${libdir}/libklipper.so \
     ${libdir}/libkmpris.so \
     ${libdir}/libkworkspace5.so \
     ${libdir}/libnotificationmanager.so \
