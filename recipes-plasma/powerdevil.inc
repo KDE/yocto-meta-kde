@@ -9,6 +9,7 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=5c213a7de3f013310bd272cdb6eb7a24"
 PR = "r0"
 
 DEPENDS = " \
+    qtwayland-native \
     plasma-activities \
     kidletime \
     kconfig \
@@ -30,4 +31,6 @@ inherit cmake_plasma
 FILES:${PN} += " \
     ${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/* \
     ${libdir}/plugins/powerdevil/action/kcm/* \
+    ${libdir}/qml/org/kde/plasma/private/* \
+    ${datadir}/plasma/plasmoids/* \
 "
