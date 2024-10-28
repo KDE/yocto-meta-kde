@@ -36,6 +36,7 @@ DEPENDS = " \
 "
 
 inherit cmake_plasma
+inherit mime-xdg
 
 EXTRA_OECMAKE += " \
     -DOE_QCA_PATH_HOST_ROOT=${STAGING_DIR_HOST} \
