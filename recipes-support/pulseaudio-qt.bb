@@ -2,5 +2,5 @@
 # SPDX-License-Identifier: CC0-1.0
 
 require ${PN}.inc
-PV = "1.6.0"
-SRCREV = "18dbf1ccd6a7182cf0577e526d6bb7ff98886dd2"
+PV = "1.6.1"
+SRCREV = "a751c6cf3939c6184b4c8580230d5d8d88877ea8"
