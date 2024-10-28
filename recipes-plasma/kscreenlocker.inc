@@ -39,11 +39,14 @@ SRC_URI:append = " \
 inherit cmake_plasma
 
 do_install:append() {
+    # compatibility workaround for Yocto versions older than Styhead
+    [ -z ${UNPACKDIR+x} ] && UNPACKDIR=${WORKDIR}
+
     install -d 0755 ${D}${sysconfdir}/pam.d
-    install -m 0644 ${WORKDIR}/kde.pam ${D}${sysconfdir}/pam.d/kde
+    install -m 0644 ${UNPACKDIR}/kde.pam ${D}${sysconfdir}/pam.d/kde
     install -d 0755 ${D}{sysconfdir}/xdg
-    install -m 0644 ${WORKDIR}/kscreenlockerrc ${D}{sysconfdir}/xdg/
-    install -m 0644 ${WORKDIR}/kscreensaverrc ${D}{sysconfdir}/xdg/
+    install -m 0644 ${UNPACKDIR}/kscreenlockerrc ${D}{sysconfdir}/xdg/
+    install -m 0644 ${UNPACKDIR}/kscreensaverrc ${D}{sysconfdir}/xdg/
 }
 
 FILES:${PN} += " \
