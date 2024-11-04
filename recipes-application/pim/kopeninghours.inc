@@ -9,6 +9,8 @@ LICENSE = "LGPL-2.0-or-later"
 LIC_FILES_CHKSUM = "file://LICENSES/LGPL-2.0-or-later.txt;md5=6d2d9952d88b50a51a5c73dc431d06c7"
 PR = "r0"
 
+SRC_URI:append = " file://0001-Fix-reproducible-builds.patch"
+
 DEPENDS += " \
     qtbase \
     kholidays \
