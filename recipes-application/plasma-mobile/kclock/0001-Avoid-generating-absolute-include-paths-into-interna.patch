@@ -1,0 +1,50 @@
+From cbca0e2a00f1d2563e9c10444ceb66008c535623 Mon Sep 17 00:00:00 2001
+From: Andreas Cord-Landwehr <cordlandwehr@kde.org>
+Date: Mon, 4 Nov 2024 19:49:02 +0100
+Subject: [PATCH] Avoid generating absolute include paths into (internal)
+ headers
+
+Do not generate an absolute build path with host system paths into
+internal headers, because that causes problems for debug symbol
+unfolding.
+
+Upstream-Status: Submitted [https://invent.kde.org/utilities/kclock/-/merge_requests/140]
+
+SPDX-FileCopyrightText: Andreas Cord-Landwehr <cordlandwehr@kde.org>
+SPDX-License-Identifier: MIT
+Signed-off-by: Andreas Cord-Landwehr <cordlandwehr@kde.org>
+---
+ src/kclockd/CMakeLists.txt | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/src/kclockd/CMakeLists.txt b/src/kclockd/CMakeLists.txt
+index 03e1ee2..e880f26 100644
+--- a/src/kclockd/CMakeLists.txt
++++ b/src/kclockd/CMakeLists.txt
+@@ -71,17 +71,17 @@ qt_generate_dbus_interface(
+ )
+ # use generated DBus adapator xml to generate adaptor source code
+ qt_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.KClockSettings.xml
+-                     ${CMAKE_CURRENT_BINARY_DIR}/kclockdsettings.h KClockSettings)
++                     kclockdsettings.h KClockSettings)
+ qt_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Alarm.xml
+-                     ${CMAKE_CURRENT_SOURCE_DIR}/alarm.h Alarm)
++                     alarm.h Alarm)
+ qt_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.AlarmModel.xml
+-                     ${CMAKE_CURRENT_SOURCE_DIR}/alarmmodel.h AlarmModel)
++                     alarmmodel.h AlarmModel)
+ qt_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.TimerModel.xml
+-                     ${CMAKE_CURRENT_SOURCE_DIR}/timermodel.h TimerModel)
++                     timermodel.h TimerModel)
+ qt_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Timer.xml
+-                     ${CMAKE_CURRENT_SOURCE_DIR}/timer.h Timer)
++                     timer.h Timer)
+ qt_add_dbus_adaptor(kclockd_SRCS ${CMAKE_CURRENT_BINARY_DIR}/org.kde.kclockd.Utility.xml
+-                     ${CMAKE_CURRENT_SOURCE_DIR}/utilities.h Utilities)
++                     utilities.h Utilities)
+ 
+ qt_add_dbus_interface(kclockd_SRCS systeminterfaces/org.mpris.MediaPlayer2.Player.xml generated/systeminterfaces/mprisplayer)
+ 
+-- 
+2.43.0
+
