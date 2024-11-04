@@ -9,6 +9,8 @@ LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-only.txt;md5=93e64b4a83c7e441e48bbdeeea05c977"
 PR = "r0"
 
+SRC_URI:append = " file://0001-Avoid-absolute-build-path-in-private-header.patch"
+
 DEPENDS = " \
     bluez-qt \
     kcoreaddons \
