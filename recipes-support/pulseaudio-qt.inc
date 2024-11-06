@@ -15,6 +15,10 @@ DEPENDS = " \
     pulseaudio \
 "
 
+RDEPENDS:${PN} += " \
+    pulseaudio-module-gsettings \
+"
+
 EXTRA_OECMAKE:append = " \
     -DBUILD_TESTING=OFF \
     -DQT_MAJOR_VERSION=6 \
