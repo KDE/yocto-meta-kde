@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+# SPDX-FileCopyrightText: 2020-2024 Andreas Cord-Landwehr <cordlandwehr@kde.org>
 # SPDX-FileCopyrightText: 2024 Maxime Roussin-Bélanger <maxime.roussinbelanger@gmail.com>
 #
 # SPDX-License-Identifier: MIT
@@ -39,6 +39,22 @@ EXTRA_OECMAKE += " \
     -DQT_MKSPECS_INSTALL_DIR=${QT6_INSTALL_MKSPECSDIR} \
     -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
 "
+
+# workaround for leaked host paths by glib-genmarshal
+do_compile:prepend() {
+    sed -i 's:${S}::g' ${B}/maliitmarshallers.c
+    sed -i 's:${S}::g' ${B}/maliitmarshallers.h
+}
+
+# workaround for leaked host paths to CMake imports
+do_install:append() {
+    if [ "0" -ne $(find ${D} \( -name "*.cmake" \) | wc -l) ]; then
+        find ${D} \( -name "*.cmake" \) -exec \
+            sed -i -e 's|${RECIPE_SYSROOT}/usr|\$\{_IMPORT_PREFIX\}|g' \
+                {} \;
+    fi
+}
+
 
 FILES:${PN} += " \
     ${libdir}/plugins \
