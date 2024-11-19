@@ -10,6 +10,8 @@ LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-only.txt;md5=9e2385fe012386d34dcc5c9863070881"
 PR = "r0"
 
+SRC_URI:append = " file://0001-Fix-absolute-path-generation-into-not-installed-head.patch"
+
 DEPENDS = " \
     qtdeclarative \
     qtwayland-native \
@@ -136,4 +138,5 @@ do_install:append() {
     sed -i 's:${RECIPE_SYSROOT_NATIVE}::g' ${D}${systemd_user_unitdir}/plasma-ksplash-ready.service
     sed -i 's:${RECIPE_SYSROOT_NATIVE}::g' ${D}${systemd_user_unitdir}/plasma-kcminit-phase1.service
     sed -i 's:${RECIPE_SYSROOT_NATIVE}::g' ${D}${systemd_user_unitdir}/plasma-restoresession.service
+    sed -i 's:${RECIPE_SYSROOT_NATIVE}::g' ${D}${datadir}/kconf_update/migrate-calendar-to-plugin-id.py
 }
