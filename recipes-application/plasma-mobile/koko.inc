@@ -19,6 +19,7 @@ DEPENDS = " \
     knotifications \
     kquickimageeditor \
     exiv2 \
+    purpose \
 "
 
 inherit cmake_kdeapp
