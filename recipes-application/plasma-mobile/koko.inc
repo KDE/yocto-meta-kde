@@ -32,6 +32,7 @@ RDEPENDS:${PN} += " \
     qtdeclarative-qmlplugins \
     purpose \
     kirigami \
+    kirigami-addons \
     kquickimageeditor \
 "
 
