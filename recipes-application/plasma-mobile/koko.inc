@@ -32,6 +32,7 @@ RDEPENDS:${PN} += " \
     qtdeclarative-qmlplugins \
     purpose \
     kirigami \
+    kquickimageeditor \
 "
 
 KOKO_CITIES1000="cities1000.zip"
