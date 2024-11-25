@@ -41,7 +41,8 @@ EXTRA_OECMAKE += " \
 "
 
 # workaround for leaked host paths by glib-genmarshal
-do_compile:prepend() {
+# both are generated at compile time
+do_compile:append() {
     sed -i 's:${S}::g' ${B}/maliitmarshallers.c
     sed -i 's:${S}::g' ${B}/maliitmarshallers.h
 }
