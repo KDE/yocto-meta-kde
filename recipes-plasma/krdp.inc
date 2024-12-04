@@ -31,6 +31,7 @@ RDEPENDS:${PN} += " \
 "
 
 SYSTEMD_SERVICE:${PN} = "plasma-krdp_server.service"
+SYSTEMD_AUTO_ENABLE:${PN} = "disable"
 
 FILES:${PN} += " \
     ${libdir}/plugins/plasma/kcms/systemsettings/* \
