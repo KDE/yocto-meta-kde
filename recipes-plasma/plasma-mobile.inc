@@ -31,6 +31,8 @@ DEPENDS += " \
     networkmanager-qt \
     plasma-workspace \
     qcoro \
+    qtwayland \
+    qtwayland-native \
 "
 
 inherit cmake_plasma
