@@ -42,6 +42,7 @@ FILES:${PN} += " \
     ${datadir}/kpackage/kcms/kcm_mobileshell/* \
     ${datadir}/kwin/effects/* \
     ${datadir}/kwin/scripts/* \
+    ${datadir}/plasma/layout-templates \
     ${datadir}/plasma/look-and-feel/* \
     ${datadir}/plasma/mobileinitialstart \
     ${datadir}/plasma/plasmoids/* \
