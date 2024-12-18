@@ -76,4 +76,5 @@ RDEPENDS:${PN} += " \
     kirigami-addons \
     plasma-nano \
     qqc2-breeze-style \
+    kde-cli-tools \
 "
