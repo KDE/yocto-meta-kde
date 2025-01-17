@@ -10,8 +10,6 @@ LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-only.txt;md5=9e2385fe012386d34dcc5c9863070881"
 PR = "r0"
 
-SRC_URI:append = " file://0001-Fix-absolute-path-generation-into-not-installed-head.patch"
-
 DEPENDS = " \
     qtdeclarative \
     qtwayland-native \
