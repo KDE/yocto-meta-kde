@@ -27,6 +27,7 @@ inherit cmake_plasma
 EXTRA_OECMAKE += " \
     -DBUILD_KCM_MOUSE_X11=OFF \
     -DBUILD_KCM_TOUCHPAD_X11=OFF \
+    -DBUILD_KCM_TABLET=OFF \
 "
 
 FILES:${PN} += " \
