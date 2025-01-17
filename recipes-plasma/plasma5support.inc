@@ -13,6 +13,7 @@ DEPENDS = " \
     kcoreaddons \
     ki18n \
     kio \
+    kidletime \
     kservice \
     kxmlgui \
     libksysguard \
