@@ -59,7 +59,6 @@ SRC_URI:append = " \
 
 SRC_URI:append:class-native = " \
     file://0001-Add-install-operation-for-native-build.patch \
-    file://0002-qtwaylandscanner-don-t-track-source-location.patch \
 "
 
 OECMAKE_SOURCEPATH:class-native = "${S}/src/wayland/tools"
@@ -112,8 +111,8 @@ FILES:${PN} += " \
     ${libdir}/plugins/kpackage/packagestructure/*.so \
     ${libdir}/plugins/kwin/effects/configs/*.so \
     ${libdir}/plugins/kwin/plugins/*.so \
-    ${libdir}/plugins/org.kde.kdecoration2.kcm/kcm_auroraedecoration.so \
-    ${libdir}/plugins/org.kde.kdecoration2/*.so \
+    ${libdir}/plugins/org.kde.kdecoration3.kcm/kcm_auroraedecoration.so \
+    ${libdir}/plugins/org.kde.kdecoration3/org.kde.kwin.aurorae.so \
     ${libdir}/plugins/org.kde.kglobalaccel6.platforms/*.so \
     ${libdir}/plugins/org.kde.kwin.platforms/*.so \
     ${libdir}/plugins/org.kde.kwin.scenes/*.so \
@@ -130,6 +129,7 @@ FILES:${PN} += " \
     ${libdir}/qml/org/kde/plasma/quicksetting/nightcolor/* \
     ${libdir}/systemd/user/*.service \
 "
+
 
 FILES:${PN}-dev += " \
     ${libdir}/libkwin*.so \
