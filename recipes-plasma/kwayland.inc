@@ -3,6 +3,8 @@
 #
 # SPDX-License-Identifier: MIT
 
+SUMMARY = "Qt-style API to interact with the wayland-client and wayland-server API"
+HOMEPAGE = "https://api.kde.org/frameworks/kwayland/html/index.html"
 LICENSE = "MIT & MIT-CMU & BSD-3-Clause & (LGPL-2.1-only | LGPL-3.0-only | LicenseRef-KDE-Accepted-LGPL)"
 PR = "r0"
 
@@ -17,6 +19,5 @@ DEPENDS = " \
     virtual/egl \
 "
 
-require kwayland_metainfo.inc
 inherit cmake_plasma
 inherit reuse_license_checksums
