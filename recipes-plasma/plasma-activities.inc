@@ -9,8 +9,6 @@ LICENSE = "LGPL-2.1-only"
 LIC_FILES_CHKSUM = "file://LICENSES/LGPL-2.1-only.txt;md5=fabba2a3bfeb22a6483d44e9ae824d3f"
 PR = "r0"
 
-SRC_URI:append = " file://0001-Avoid-absolute-build-path-in-private-header.patch"
-
 DEPENDS = " \
     qtbase \
     qtdeclarative \
