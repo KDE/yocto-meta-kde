@@ -15,6 +15,7 @@ DEPENDS = " \
     kiconthemes \
     kio \
     kirigami \
+    kirigami-addons \
     kfilemetadata \
     knotifications \
     kquickimageeditor \
