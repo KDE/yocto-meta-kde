@@ -12,9 +12,11 @@ inherit packagegroup
 
 RDEPENDS:${PN} = " \
     blinken \
+    gcompris \
     kanagram \
     khangman \
     kwordquiz \
+    marble \
     \
     gwenview \
     okular \
@@ -34,6 +36,7 @@ RDEPENDS:${PN} = " \
     krecorder \
     ktrip \
     kweather \
+    washipad \
     \
     kjournald \
     \
@@ -44,6 +47,4 @@ RDEPENDS:${PN} = " \
 "
 
 # not ported to Qt6 yet
-# gcompris
-# marble
 # kirigami-gallery
