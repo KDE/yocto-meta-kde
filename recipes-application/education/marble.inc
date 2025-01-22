@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+# SPDX-FileCopyrightText: 2020-2025 Andreas Cord-Landwehr <cordlandwehr@kde.org>
 #
 # SPDX-License-Identifier: MIT
 
@@ -27,6 +27,7 @@ inherit cmake_kdeapp
 inherit kf6-kcoreaddons
 inherit kf6-kconfig
 inherit kf6-kauth
+inherit mime
 inherit mime-xdg
 
 EXTRA_OECMAKE += "-DBUILD_TOUCH=ON"
@@ -40,30 +41,31 @@ PACKAGES += " \
 FILES_SOLIBSDEV = ""
 FILES:${PN} = " \
     ${bindir}/marble-maps \
-    ${datadir}/applications/org.kde.marble-maps.desktop \
+    ${datadir}/applications/org.kde.marble.maps.desktop \
 "
 
+INSANE_SKIP:${PN}-shared = "dev-so"
 FILES:${PN}-shared = " \
     ${datadir}/knsrcfiles \
     ${libdir}/libmarbledeclarative.so \
     ${libdir} \
     ${datadir}/marble/data/ \
     ${datadir}/icons \
-    ${datadir} \
+    ${datadir}/kxmlgui5 \
+    ${datadir}/mime/packages/*.xml \
 "
 
 FILES:${PN}-desktop = " \
     ${bindir}/marble \
-    ${bindir}/marble-qt \
+    ${bindir}/marble-behaim \
     ${datadir}/applications/org.kde.marble.desktop \
-    ${datadir}/applications/org.kde.marble-qt.desktop \
-    ${datdair}/kxmlgui5 \
+    ${datadir}/applications/org.kde.marble.behaim.desktop \
+    ${datadir}/applications/marble_*.desktop \
 "
 
 FILES:${PN}-dev += " \
     ${datadir}/knsrcfiles \
     ${libdir}/libastro.so \
-    ${libdir}/libmarblewidget-qt5.so \
 "
 
 RDEPENDS:${PN} += " \
