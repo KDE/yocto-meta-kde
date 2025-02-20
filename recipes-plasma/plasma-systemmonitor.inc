@@ -25,6 +25,8 @@ DEPENDS = " \
     kirigami-addons \
 "
 
+RDEPENDS:${PN} = "ksystemstats"
+
 inherit cmake_plasma
 inherit kf6-kdoctools
 
@@ -37,4 +39,10 @@ FILES:${PN} += " \
     ${libdir}/qml/org/kde/ksysguard/page/ \
     ${libdir}/libPlasmaSystemMonitorTable.so \
     ${libdir}/libPlasmaSystemMonitorPage.so \
+"
+
+# Do not try to detect the ksystemstats runtime at configure, hardcode
+# a value to skip detection.
+EXTRA_OECMAKE:append = " \
+    -Dksystemstats_EXE=/usr/bin/ksystemstats \
 "
