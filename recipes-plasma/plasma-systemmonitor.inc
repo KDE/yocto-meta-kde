@@ -30,6 +30,7 @@ inherit kf6-kdoctools
 
 FILES_SOLIBSDEV = ""
 FILES:${PN} += " \
+    ${datadir}/kglobalaccel/ \
     ${datadir}/ksysguard/sensorfaces/ \
     ${datadir}/plasma/kinfocenter/externalmodules/ \
     ${libdir}/qml/org/kde/ksysguard/table/ \
