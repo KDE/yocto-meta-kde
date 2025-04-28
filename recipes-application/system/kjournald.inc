@@ -15,6 +15,7 @@ DEPENDS = " \
     qtbase \
     qtdeclarative \
     systemd \
+    kcrash \
 "
 
 inherit cmake_kdeapp
