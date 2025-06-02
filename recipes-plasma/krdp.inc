@@ -30,7 +30,7 @@ RDEPENDS:${PN} += " \
     xdg-desktop-portal \
 "
 
-SYSTEMD_SERVICE:${PN} = "plasma-krdp_server.service"
+SYSTEMD_SERVICE:${PN} = "app-org.kde.krdpserver.service"
 SYSTEMD_AUTO_ENABLE:${PN} = "disable"
 
 FILES:${PN} += " \
