@@ -11,41 +11,41 @@ LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-only.txt;md5=93e64b4a83c7e441e48bbde
 PR = "r0"
 
 DEPENDS:class-target = " \
+    fontconfig \
+    hwdata \
+    kcompletion \
+    kconfigwidgets \
+    kcrash \
+    kdeclarative \
+    kdecoration \
+    kglobalaccel \
+    kglobalacceld \
+    kidletime \
+    knewstuff \
+    knotifications \
+    kpackage \
+    kpackage-native \
+    krunner \
+    kscreenlocker \
+    kservice \
+    ktextwidgets \
+    kwayland \
+    kwin-native \
+    kwindowsystem \
+    kxmlgui \
+    lcms \
+    libdisplay-info \
+    libinput \
+    libplasma \
+    libxcb \
+    libxcvt \
+    pipewire \
     qtdeclarative \
     qtsensors \
     qtwayland-native \
-    kpackage-native \
-    kconfigwidgets \
-    kcrash \
-    kglobalaccel \
-    kglobalacceld \
-    knotifications \
-    kpackage \
-    kwin-native \
     wayland \
     wayland-protocols \
-    libplasma \
-    kwindowsystem \
-    kidletime \
-    kwayland \
-    kcompletion \
-    kdeclarative \
-    ktextwidgets \
-    knewstuff \
-    kservice \
-    kxmlgui \
-    kdecoration \
-    krunner \
-    kscreenlocker \
-    libxcb \
     xcb-util-cursor \
-    fontconfig \
-    lcms \
-    libinput \
-    libdisplay-info \
-    pipewire \
-    libxcvt \
-    hwdata \
 "
 
 DEPENDS:class-native = " \
