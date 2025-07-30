@@ -78,3 +78,7 @@ RDEPENDS:${PN} += " \
     qqc2-breeze-style \
     kde-cli-tools \
 "
+
+do_compile:append() {
+    sed -i -e 's,${S}/components/mobileshellstate/,,g' ${B}/components/mobileshellstate/mobileadaptor.h
+}
