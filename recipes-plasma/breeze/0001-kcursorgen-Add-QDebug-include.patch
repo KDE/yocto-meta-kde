@@ -8,7 +8,7 @@ It failed to build for me because of qCritical.
 (cherry picked from commit 663da19b8ba6b9849b81bc57f7f8ff4944f6976a)
 
 SPDX-License-Identifier: GPL-2.0-or-later
-Upstream-Status: Backported
+Upstream-Status: Backport [https://invent.kde.org/plasma/breeze/-/commit/663da19b8ba6b9849b81bc57f7f8ff4944f6976a]
 ---
  cursors/src/kcursorgen/kcursorgen.cpp | 1 +
  1 file changed, 1 insertion(+)
