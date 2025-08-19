@@ -1,0 +1,7 @@
+# SPDX-FileCopyrightText: none
+# SPDX-License-Identifier: CC0-1.0
+
+require ${PN}.inc
+SRC_URI += "https://download.kde.org/stable/plasma/6.4.4/libplasma-6.4.4.tar.xz"
+SRC_URI[sha256sum] = "ab0f4b426829821e0abf479052f326a5ce01c3b604e890c9f79949c3eb5fdebe"
+
