@@ -100,6 +100,7 @@ FILES:${PN} += " \
     ${datadir}/kservices6/kwin/*.desktop \
     ${datadir}/kservicetypes6/*.desktop \
     ${datadir}/kwincompositing/qml/*.qml \
+    ${datadir}/kwin-wayland \
     ${datadir}/qlogging-categories6 \
     ${libdir}/kconf_update_bin/kwin-6.0-delete-desktop-switching-shortcuts \
     ${libdir}/kconf_update_bin/kwin-6.0-remove-breeze-tabbox-default \
