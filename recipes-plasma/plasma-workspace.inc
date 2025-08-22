@@ -14,6 +14,7 @@ DEPENDS = " \
     qtdeclarative \
     qtwayland-native \
     qtpositioning \
+    qtlocation \
     \
     kcoreaddons \
     kcrash \
@@ -94,6 +95,7 @@ FILES:${PN} += " \
     ${datadir}/plasma5support/services/* \
     ${datadir}/sddm/themes \
     ${datadir}/solid/actions/*.desktop \
+    ${datadir}/timezonefiles \
     ${datadir}/wayland-sessions/*.desktop \
     ${datadir}/xdg-desktop-portal/* \
     ${datadir}/xsessions/*.desktop \
