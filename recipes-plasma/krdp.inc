@@ -13,7 +13,7 @@ LIC_FILES_CHKSUM = " \
 PR = "r0"
 
 DEPENDS = " \
-    freerdp \
+    freerdp3 \
     qtbase \
     qtwayland \
     qtwayland-native \
