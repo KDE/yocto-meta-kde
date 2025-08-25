@@ -16,11 +16,13 @@ DEPENDS = " \
     qtdeclarative \
     systemd \
     kcrash \
+    kirigami \
+    kirigami-addons \
 "
 
 inherit cmake_kdeapp
 inherit pkgconfig
-
+inherit kf6-kconfig
 
 RDEPENDS:${PN} += " \
     qtdeclarative-qmlplugins \
