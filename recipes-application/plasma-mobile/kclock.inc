@@ -34,4 +34,5 @@ RDEPENDS:${PN} += " \
 
 FILES:${PN} += " \
     ${datadir}/plasma/plasmoids/ \
+    ${datadir}/krunner/ \
 "
