@@ -19,6 +19,8 @@ inherit autotools pkgconfig
 
 CFLAGS += "-Wno-unused-but-set-variable"
 
+EXTRA_OECONF += "--enable-build-timestamp=no"
+
 PACKAGECONFIG ??= "${@bb.utils.filter('DISTRO_FEATURES', 'x11 systemd', d)} drm"
 
 PACKAGECONFIG[drm] = "--enable-drm=yes,--enable-drm=no,libdrm"
