@@ -1,0 +1,41 @@
+From 6baf2e5647a419c83a1c209738b47f778465cad4 Mon Sep 17 00:00:00 2001
+From: Marc Ferland <marc.ferland@sonatest.com>
+Date: Fri, 29 Aug 2025 10:12:52 -0400
+Subject: [PATCH] Fix out-of-tree build
+
+Building ddcutil with an out-of-tree configuration currently fails
+because of a missing include file:
+
+| ../../../git/src/base/build_timestamp.c:11:10: fatal error: base/build_details.h: No such file or directory
+|    11 | #include "base/build_details.h"       // created by Makefile
+|       |          ^~~~~~~~~~~~~~~~~~~~~~
+| compilation terminated.
+
+I observed this while upgrading the ddcutil yocto recipe [1] from
+2.1.4 to 2.2.1. A simple fix is to add the $(top_builddir)/src include
+directory.
+
+1: https://github.com/KDE/yocto-meta-kde/blob/master/recipes-support/ddcutil_git.bb
+
+Upstream-Status: Submitted [https://github.com/rockowitz/ddcutil/pull/544]
+
+Signed-off-by: Marc Ferland <marc.ferland@sonatest.com>
+---
+ src/base/Makefile.am | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/base/Makefile.am b/src/base/Makefile.am
+index 48f2d25e..445c7c4c 100644
+--- a/src/base/Makefile.am
++++ b/src/base/Makefile.am
+@@ -4,6 +4,7 @@ AM_CPPFLAGS =         \
+   $(LIBDRM_CFLAGS)    \
+   $(GLIB_CFLAGS)      \
+   -I$(top_srcdir)/src \
++  -I$(top_builddir)/src \
+   -I$(top_srcdir)/src/public
+ 
+ AM_CFLAGS = $(AM_CFLAGS_STD)
+-- 
+2.34.1
+

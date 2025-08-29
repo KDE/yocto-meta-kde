@@ -4,13 +4,16 @@ SECTION = "libs"
 LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263"
 
-SRC_URI = "git://github.com/rockowitz/ddcutil.git;protocol=https;branch=master"
+SRC_URI = " \
+    git://github.com/rockowitz/ddcutil.git;protocol=https;branch=master \
+    file://0001-Fix-out-of-tree-build.patch \
+"
 
 DEPENDS = "i2c-tools glib-2.0 kmod jansson"
 
 S = "${WORKDIR}/git"
-PV = "2.1.4"
-SRCREV = "ca610f91d5483e19bfdae88bb0094973cc81fc95"
+PV = "2.2.1"
+SRCREV = "0b26bbec67b09b5ab594a06de8bbbdea621e8628"
 
 inherit autotools pkgconfig
 
