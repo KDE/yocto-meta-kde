@@ -18,3 +18,4 @@ DEPENDS += " \
 "
 
 inherit cmake_kdeapp
+inherit kf6-kconfig
