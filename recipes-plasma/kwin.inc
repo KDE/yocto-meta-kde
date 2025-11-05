@@ -139,6 +139,7 @@ FILES:${PN}-dev += " \
 "
 
 RDEPENDS:${PN}:append:class-target = " \
+    aurorae \
     qtwayland-plugins \
     xwayland \
     perl \
