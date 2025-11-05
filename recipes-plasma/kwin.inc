@@ -36,6 +36,7 @@ DEPENDS:class-target = " \
     kxmlgui \
     lcms \
     libdisplay-info \
+    libcap \
     libei \
     libinput \
     libplasma \
@@ -87,6 +88,11 @@ do_install:append() {
     install -d ${D}/${sysconfdir}/xdg
     install -m 644 ${UNPACKDIR}/kwinrc ${D}/${sysconfdir}/xdg/kwinrc
 }
+
+pkg_postinst:${PN} () {
+	setcap cap_sys_nice+ep "$D/${bindir}/kwin_wayland"
+}
+PACKAGE_WRITE_DEPS += "libcap-native"
 
 FILES_SOLIBSDEV = ""
 FILES:${PN} += " \
