@@ -36,6 +36,7 @@ DEPENDS:class-target = " \
     kxmlgui \
     lcms \
     libdisplay-info \
+    libei \
     libinput \
     libplasma \
     libxcb \
