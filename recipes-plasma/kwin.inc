@@ -155,7 +155,7 @@ RDEPENDS:${PN}:append:class-target = " \
 "
 
 RRECOMMENDS:${PN}:append:class-target = " \
-    maliit-keyboard-qt6 \
+    plasma-keyboard \
 "
 
 BBCLASSEXTEND = "native"
