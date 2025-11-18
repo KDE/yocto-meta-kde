@@ -23,6 +23,7 @@ DEPENDS:class-target = " \
     kglobalacceld \
     kidletime \
     knewstuff \
+    knighttime \
     knotifications \
     kpackage \
     kpackage-native \
