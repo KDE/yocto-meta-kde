@@ -1,0 +1,7 @@
+# SPDX-FileCopyrightText: none
+# SPDX-License-Identifier: CC0-1.0
+
+require ${PN}.inc
+SRC_URI += "https://download.kde.org/stable/plasma/6.5.2/kglobalacceld-6.5.2.tar.xz"
+SRC_URI[sha256sum] = "8954c7b754e22affd7f79ef4061f5ae0c71798f7bc5531eac8c778936ba4f5f6"
+
