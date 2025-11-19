@@ -135,7 +135,6 @@ RDEPENDS:${PN} += " \
 "
 
 do_install:append() {
-    sed -i 's:${RECIPE_SYSROOT_NATIVE}::g' ${D}${systemd_user_unitdir}/plasma-ksplash-ready.service
     sed -i 's:${RECIPE_SYSROOT_NATIVE}::g' ${D}${systemd_user_unitdir}/plasma-kcminit-phase1.service
     sed -i 's:${RECIPE_SYSROOT_NATIVE}::g' ${D}${systemd_user_unitdir}/plasma-restoresession.service
     sed -i 's:${RECIPE_SYSROOT_NATIVE}::g' ${D}${datadir}/kconf_update/migrate-calendar-to-plugin-id.py
