@@ -61,6 +61,7 @@ FILES:${PN} += " \
     ${libdir}/qml/org/kde/plasma/private/mobilehomescreencomponents/* \
     ${libdir}/qml/org/kde/plasma/private/mobileshell/* \
     ${libdir}/qml/org/kde/plasma/quicksetting/flashlight/* \
+    ${libdir}/qml/org/kde/plasma/quicksetting/kscreenosd/* \
     ${libdir}/qml/org/kde/plasma/quicksetting/nightcolor/* \
     ${libdir}/qml/org/kde/plasma/quicksetting/powermenu/* \
     ${libdir}/qml/org/kde/plasma/quicksetting/record/* \
