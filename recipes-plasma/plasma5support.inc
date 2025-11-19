@@ -17,10 +17,13 @@ DEPENDS = " \
     kservice \
     kxmlgui \
     libksysguard \
+    kunitconversion \
+    kholidays \
 "
 
 inherit cmake_plasma
 
 FILES:${PN} += " \
     ${libdir}/qml/org/kde/plasma/plasma5support/* \
+    ${datadir}/plasma/weather_legacy \
 "
