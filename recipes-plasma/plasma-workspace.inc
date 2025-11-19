@@ -84,6 +84,7 @@ FILES:${PN} += " \
     ${datadir}/ksplash/Themes \
     ${datadir}/kstyle/themes/*.themerc \
     ${datadir}/kxmlgui5/kfontview/* \
+    ${datadir}/kxmlgui5/kfontviewpart \
     ${datadir}/plasma/avatars \
     ${datadir}/plasma/look-and-feel \
     ${datadir}/plasma/nightcolor \
@@ -121,6 +122,7 @@ FILES:${PN}-dev += " \
     ${libdir}/libplasma-geolocation-interface.so \
     ${libdir}/libtaskmanager.so \
     ${libdir}/libweather_ion.so \
+    ${libdir}/libklookandfeel.so \
 "
 
 INSANE_SKIP:${PN} = "dev-so"
