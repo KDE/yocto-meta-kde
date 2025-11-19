@@ -3,5 +3,5 @@
 
 require ${BPN}.inc
 SRC_URI = "git://github.com/PackageKit/PackageKit-Qt.git;protocol=https;branch=main"
-SRCREV = "c888e1c7be5f8a7868c7728ab18d878376fb61b8"
+SRCREV = "72708dbbe4ae8ca56b9eb4d8dee72cc1ec0534b5"
 S="${WORKDIR}/git"
