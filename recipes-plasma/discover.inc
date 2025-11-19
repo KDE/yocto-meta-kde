@@ -27,6 +27,8 @@ DEPENDS = " \
     purpose \
     qtdeclarative \
     qtwebview \
+    kstatusnotifieritem \
+    kuserfeedback \
 "
 
 inherit cmake_plasma
