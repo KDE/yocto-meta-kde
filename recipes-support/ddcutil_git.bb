@@ -6,14 +6,13 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263"
 
 SRC_URI = " \
     git://github.com/rockowitz/ddcutil.git;protocol=https;branch=master \
-    file://0001-Fix-out-of-tree-build.patch \
 "
 
 DEPENDS = "i2c-tools glib-2.0 kmod jansson"
 
 S = "${WORKDIR}/git"
-PV = "2.2.1"
-SRCREV = "0b26bbec67b09b5ab594a06de8bbbdea621e8628"
+PV = "2.2.3"
+SRCREV = "8660f29c0370ca093d45ea6c91277edd00d51301"
 
 inherit autotools pkgconfig
 
