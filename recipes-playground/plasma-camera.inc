@@ -14,6 +14,9 @@ DEPENDS = " \
     libplasma \
     kconfig \
     kconfig-native \
+    qtsensors \
+    libkexiv2 \
+    libcamera \
 "
 
 SRC_URI = "git://invent.kde.org/plasma-mobile/${BPN};nobranch=1;protocol=https"
