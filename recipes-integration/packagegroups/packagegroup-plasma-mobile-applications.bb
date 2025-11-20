@@ -17,4 +17,5 @@ RDEPENDS:${PN} = " \
     krecorder \
     ktrip \
     kweather \
+    plasma-settings \
 "
