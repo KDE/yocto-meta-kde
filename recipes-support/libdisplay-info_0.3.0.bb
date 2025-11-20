@@ -8,6 +8,6 @@ SRC_URI = "git://gitlab.freedesktop.org/emersion/libdisplay-info.git;branch=main
 DEPENDS = "hwdata-native"
 
 S = "${WORKDIR}/git"
-SRCREV = "66b802d05b374cd8f388dc6ad1e7ae4f08cb3300"
+SRCREV = "47a5590e9c4eb35d67651b8c05a55f1a48259329"
 
 inherit meson pkgconfig
