@@ -26,6 +26,9 @@ DEPENDS += " \
     kwindowsystem \
     phonon \
     solid \
+    baloo \
+    baloo-widgets \
+    kfilemetadata \
 "
 
 inherit cmake_kdeapp
