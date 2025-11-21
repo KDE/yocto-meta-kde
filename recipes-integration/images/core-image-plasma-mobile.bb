@@ -19,7 +19,7 @@ IMAGE_INSTALL = " \
                  sddm-config-plasma-mobile \
                  packagegroup-plasma-mobile \
                  ttf-noto \
-                 ttf-noto-emoji \
+                 ttf-noto-emoji-color \
                 "
 
 SYSTEMD_DEFAULT_TARGET="graphical.target"
