@@ -35,4 +35,5 @@ SYSTEMD_AUTO_ENABLE:${PN} = "disable"
 
 FILES:${PN} += " \
     ${libdir}/plugins/plasma/kcms/systemsettings/* \
+    ${libdir}/systemd/user-preset/00-krdp.preset \
 "
