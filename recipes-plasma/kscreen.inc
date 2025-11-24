@@ -22,6 +22,10 @@ DEPENDS = " \
     qtwayland-native \
 "
 
+RDEPENDS:${PN} += " \
+    kimageformats \
+"
+
 inherit cmake_plasma
 inherit kf6-kcmutils
 
