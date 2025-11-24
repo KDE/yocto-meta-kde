@@ -34,6 +34,9 @@ DEPENDS += " \
 RDEPENDS:${PN} += " \
     libcanberra-alsa \
     libcanberra-pulse \
+    kirigami-addons \
+    kitemmodels \
+    sound-theme-freedesktop \
 "
 
 inherit cmake_plasma
