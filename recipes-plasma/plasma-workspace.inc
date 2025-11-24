@@ -22,6 +22,7 @@ DEPENDS = " \
     kholidays \
     kidletime \
     kitemmodels \
+    kirigami-addons \
     knewstuff \
     knotifications \
     kpackage \
