@@ -20,6 +20,9 @@ DEPENDS += " \
     plasma-workspace \
     qtwayland-native \
     libxkbfile \
+    libaccounts-qt \
+    kaccounts-integration \
+    intltool-native \
 "
 
 inherit cmake_plasma
@@ -45,6 +48,7 @@ FILES:${PN} += " \
     ${datadir}/kcmsolidactions/* \
     ${datadir}/kcm_recentFiles/* \
     ${datadir}/sddm/themes/breeze/* \
+    ${datadir}/accounts/* \
     ${libdir}/qml/org/kde/plasma/activityswitcher/* \
     ${libdir}/qml/org/kde/plasma/emoji/* \
     ${libdir}/qml/org/kde/plasma/private/pager/* \
