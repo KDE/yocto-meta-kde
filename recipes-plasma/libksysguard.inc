@@ -26,6 +26,8 @@ DEPENDS = " \
     networkmanager-qt \
     libplasma \
     qtwebchannel \
+    libpcap \
+    libcap \
 "
 
 inherit cmake_plasma
