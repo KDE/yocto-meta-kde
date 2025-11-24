@@ -29,4 +29,7 @@ inherit cmake_plasma
 
 RDEPENDS:${PN} += " \
     perl \
+    ttf-noto \
+    ttf-noto-emoji-color \
+    hack-font \
 "
