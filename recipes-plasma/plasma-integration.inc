@@ -32,4 +32,5 @@ RDEPENDS:${PN} += " \
     ttf-noto \
     ttf-noto-emoji-color \
     hack-font \
+    xdg-desktop-portal-kde \
 "
