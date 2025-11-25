@@ -66,7 +66,12 @@ inherit cmake_plasma
 inherit mime-xdg
 inherit systemd
 
-EXTRA_OECMAKE += " -DBUILD_xembed-sni-proxy=OFF -DINSTALL_SDDM_WAYLAND_SESSION=ON"
+EXTRA_OECMAKE += " \
+    -DBUILD_xembed-sni-proxy=OFF \
+    -DINSTALL_SDDM_WAYLAND_SESSION=ON \
+    -DGLIBC_LOCALE_PREGENERATED=ON \
+    -DGLIBC_LOCALE_GEN=OFF \
+"
 
 FILES_SOLIBSDEV = ""
 FILES:${PN} += " \
