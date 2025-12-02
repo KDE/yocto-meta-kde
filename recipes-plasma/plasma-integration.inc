@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2018-2020 Volker Krause <vkrause@kde.org>
 # SPDX-FileCopyrightText: 2019 Alistair Francis <alistair.francis@wdc.com>
+# SPDX-FileCopyrightText: 2025 Marc Ferland <marc.ferland@sonatest.com>
 #
 # SPDX-License-Identifier: MIT
 
@@ -33,4 +34,11 @@ RDEPENDS:${PN} += " \
     ttf-noto-emoji-color \
     hack-font \
     xdg-desktop-portal-kde \
+"
+
+EXTRA_OECMAKE:append = " \
+    -DCMAKE_DISABLE_FIND_PACKAGE_FontNotoSans=true \
+    -DCMAKE_DISABLE_FIND_PACKAGE_FontNotoColorEmoji=true \
+    -DCMAKE_DISABLE_FIND_PACKAGE_FontHack=true \
+    -DCMAKE_DISABLE_FIND_PACKAGE_XDGDesktopPortalKDE=true \
 "
