@@ -14,6 +14,7 @@ PR = "r0"
 DEPENDS = " \
     qtdeclarative \
     kirigami-addons \
+    qtlocation \
 "
 
 inherit cmake_kdeapp
