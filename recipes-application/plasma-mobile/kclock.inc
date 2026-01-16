@@ -20,6 +20,8 @@ DEPENDS = " \
     kirigami-addons \
     knotifications \
     kstatusnotifieritem \
+    qtwayland \
+    qtwayland-native \
 "
 
 inherit cmake_kdeapp
