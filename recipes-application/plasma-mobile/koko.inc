@@ -30,11 +30,11 @@ inherit kf6-kauth
 inherit mime-xdg
 
 RDEPENDS:${PN} += " \
-    qtdeclarative-qmlplugins \
-    purpose \
     kirigami \
     kirigami-addons \
     kquickimageeditor \
+    purpose \
+    qtdeclarative-qmlplugins \
 "
 
 KOKO_CITIES1000="cities1000.zip"
