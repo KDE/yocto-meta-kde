@@ -57,10 +57,6 @@ DEPENDS:class-native = " \
     extra-cmake-modules-native \
 "
 
-SRC_URI:append = " \
-    file://kwinrc \
-"
-
 SRC_URI:append:class-native = " \
     file://0001-Add-install-operation-for-native-build.patch \
 "
@@ -78,17 +74,6 @@ inherit kf6-kdoctools
 inherit qt6-cmake
 inherit pkgconfig
 # TODO skip inherit of cmake_plasma for now because it leads to build errors for native package
-
-do_install:append() {
-    # compatibility workaround for Yocto versions older than Styhead
-    [ -z ${UNPACKDIR+x} ] && UNPACKDIR=${WORKDIR}
-
-    # dirty workaround for aurora crash on Wayland
-    rm -rf ${D}/${libdir}/plugins/org.kde.kdecoration2/
-
-    install -d ${D}/${sysconfdir}/xdg
-    install -m 644 ${UNPACKDIR}/kwinrc ${D}/${sysconfdir}/xdg/kwinrc
-}
 
 pkg_postinst:${PN} () {
 	setcap cap_sys_nice+ep "$D/${bindir}/kwin_wayland"
