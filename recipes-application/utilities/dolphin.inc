@@ -31,6 +31,12 @@ DEPENDS += " \
     kfilemetadata \
 "
 
+RDEPENDS:${PN} += " \
+    kio-extras \
+    ffmpegthumbs \
+    kdegraphics-thumbnailers \
+"
+
 inherit cmake_kdeapp
 inherit kf6-kcmutils
 inherit kf6-kconfig
