@@ -4,5 +4,5 @@
 require ${PN}.inc
 # v25.12.0
 SRCREV = "21edd39cce3cedc884b9c0a7c3b45b84618e8219"
-SRC_URI = "git://commits.kde.org/${BPN};nobranch=1;protocol=https"
+SRC_URI = "git://invent.kde.org/plasma-mobile/${BPN};nobranch=1;protocol=https"
 S = "${WORKDIR}/git"
