@@ -4,8 +4,7 @@
 
 DESCRIPTION = "Companion application for conferences"
 HOMEPAGE = "https://invent.kde.org/utilities/kongress"
-LICENSE = "GPL-3.0-only"
-LIC_FILES_CHKSUM = "file://LICENSES/GPL-3.0-or-later.txt;md5=1c76c4cc354acaac30ed4d5eefea7245"
+LICENSE = "BSD-2-Clause | BSD-3-Clause | GPL-3.0-or-later | LGPL-3.0-or-later"
 PR = "r0"
 
 DEPENDS = " \
@@ -21,3 +20,4 @@ DEPENDS = " \
 
 inherit cmake_kdeapp
 inherit kf6-kconfig
+inherit reuse_license_checksums

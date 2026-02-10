@@ -4,8 +4,7 @@
 
 DESCRIPTION = "KRecorder"
 HOMEPAGE = "https://invent.kde.org/plasma-mobile/krecorder"
-LICENSE = "GPL-3.0-only"
-LIC_FILES_CHKSUM = "file://LICENSES/GPL-3.0-or-later.txt;md5=8da5784ab1c72e63ac74971f88658166"
+LICENSE = "BSD-3-Clause | GPL-3.0-or-later"
 PR = "r0"
 
 DEPENDS = " \
@@ -20,3 +19,4 @@ DEPENDS = " \
 inherit cmake_kdeapp
 inherit kf6-kconfig
 inherit kf6-kcoreaddons
+inherit reuse_license_checksums

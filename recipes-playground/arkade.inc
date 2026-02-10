@@ -5,7 +5,6 @@
 DESCRIPTION = "Collection of Arcade games developed in Kirigami"
 HOMEPAGE = ""
 LICENSE = "GPL-3.0-or-later"
-LIC_FILES_CHKSUM = "file://LICENSES/GPL-3.0-or-later.txt;md5=1c76c4cc354acaac30ed4d5eefea7245"
 PR = "r0"
 
 DEPENDS = " \
@@ -22,6 +21,7 @@ S = "${WORKDIR}/git"
 
 inherit cmake_kdeapp
 inherit mime-xdg
+inherit reuse_license_checksums
 
 RDEPENDS:${PN} += " \
     qtdeclarative \

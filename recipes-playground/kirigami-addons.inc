@@ -5,10 +5,6 @@
 DESCRIPTION = "Add-ons for the Kirigami framework"
 HOMEPAGE = "https://invent.kde.org/libraries/kirigami-addons"
 LICENSE = "LGPL-2.1-or-later & BSD-2-Clause"
-LIC_FILES_CHKSUM = " \
-    file://LICENSES/LGPL-2.1-or-later.txt;md5=41890f71f740302b785c27661123bff5 \
-    file://LICENSES/BSD-2-Clause.txt;md5=534956ece1a160a65f088a8f82672ef9 \
-"
 PR = "r0"
 
 DEPENDS = " \
@@ -24,3 +20,4 @@ S = "${WORKDIR}/git"
 
 inherit cmake_kdeapp
 inherit kf6-kconfig
+inherit reuse_license_checksums

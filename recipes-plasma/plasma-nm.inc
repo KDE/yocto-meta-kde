@@ -5,7 +5,6 @@
 DESCRIPTION = "Plasma NM"
 HOMEPAGE = "https://invent.kde.org/plasma/plasma-nm"
 LICENSE = "GPL-2.0-only"
-LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-only.txt;md5=9e2385fe012386d34dcc5c9863070881"
 PR = "r0"
 
 DEPENDS = " \
@@ -37,6 +36,7 @@ DEPENDS = " \
 
 inherit cmake_plasma
 inherit mime-xdg
+inherit reuse_license_checksums
 
 EXTRA_OECMAKE += " \
     -DOE_QCA_PATH_HOST_ROOT=${STAGING_DIR_HOST} \

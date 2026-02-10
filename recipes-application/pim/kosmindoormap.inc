@@ -6,7 +6,6 @@ DESCRIPTION = "KOSMIndoorMap"
 SUMMARY = "OSM multi-floor indoor map renderer"
 HOMEPAGE = "https://invent.kde.org/libraries/kosmindoormap"
 LICENSE = "LGPL-2.0-or-later"
-LIC_FILES_CHKSUM = "file://LICENSES/LGPL-2.0-or-later.txt;md5=6d2d9952d88b50a51a5c73dc431d06c7"
 PR = "r0"
 
 DEPENDS += " \
@@ -19,3 +18,4 @@ DEPENDS += " \
 
 inherit cmake_kdeapp
 inherit kf6-kconfig
+inherit reuse_license_checksums

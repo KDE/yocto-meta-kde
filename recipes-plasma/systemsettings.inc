@@ -5,7 +5,6 @@
 DESCRIPTION = "System Settings"
 HOMEPAGE = "https://invent.kde.org/plasma/systemsettings"
 LICENSE = "GPL-2.0-only"
-LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-only.txt;md5=9e2385fe012386d34dcc5c9863070881"
 PR = "r0"
 
 DEPENDS += " \
@@ -28,6 +27,7 @@ DEPENDS += " \
 "
 
 inherit cmake_plasma
+inherit reuse_license_checksums
 
 FILES:${PN} += " \
     ${datadir}/kpackage/genericqml/org.kde.systemsettings.sidebar \

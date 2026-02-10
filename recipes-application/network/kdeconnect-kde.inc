@@ -6,7 +6,6 @@
 DESCRIPTION = "KDE Connect"
 HOMEPAGE = "https://community.kde.org/KDEConnect"
 LICENSE = "GPL-2.0-only"
-LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-or-later.txt;md5=fed54355545ffd980b814dab4a3b312c"
 PR = "r0"
 
 DEPENDS += " \
@@ -37,6 +36,7 @@ inherit kf6-kconfig
 inherit kf6-kauth
 inherit mime-xdg
 inherit kf6-kcmutils
+inherit reuse_license_checksums
 
 EXTRA_OECMAKE += "-DEXPERIMENTALAPP_ENABLED=ON"
 EXTRA_OECMAKE += "-DSMSAPP_ENABLED=OFF"

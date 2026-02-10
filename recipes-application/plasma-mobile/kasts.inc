@@ -6,7 +6,6 @@ SUMMARY = "Kasts"
 DESCRIPTION = "Kasts is a convergent podcast application."
 HOMEPAGE = "https://invent.kde.org/plasma-mobile/kasts"
 LICENSE = "GPL-3.0-only"
-LIC_FILES_CHKSUM = "file://LICENSES/GPL-3.0-or-later.txt;md5=8da5784ab1c72e63ac74971f88658166"
 PR = "r0"
 
 DEPENDS = " \
@@ -28,6 +27,7 @@ DEPENDS = " \
 inherit cmake_kdeapp
 inherit kf6-kconfig
 inherit kf6-kcoreaddons
+inherit reuse_license_checksums
 
 FILES_SOLIBSDEV = ""
 

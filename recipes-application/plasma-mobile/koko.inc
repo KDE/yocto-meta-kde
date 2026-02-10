@@ -6,7 +6,6 @@
 DESCRIPTION = "KoKo Gallery Application"
 HOMEPAGE = "https://invent.kde.org/graphics/koko/-"
 LICENSE = "LGPL-2.1-only"
-LIC_FILES_CHKSUM = "file://LICENSES/LGPL-2.1-only.txt;md5=fabba2a3bfeb22a6483d44e9ae824d3f"
 PR = "r0"
 
 DEPENDS = " \
@@ -28,6 +27,7 @@ inherit kf6-kconfig
 inherit kf6-kcoreaddons
 inherit kf6-kauth
 inherit mime-xdg
+inherit reuse_license_checksums
 
 RDEPENDS:${PN} += " \
     kirigami \

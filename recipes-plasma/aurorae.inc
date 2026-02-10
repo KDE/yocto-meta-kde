@@ -6,10 +6,6 @@ SUMMARY = "Aurorae Theme"
 DESCRIPTION = "Aurorae is a themeable window decoration for KWin"
 HOMEPAGE = "https://invent.kde.org/plasma/aurorae"
 LICENSE = "GPL-2.0-or-later & MIT"
-LIC_FILES_CHKSUM = " \
-    file://LICENSES/GPL-2.0-or-later.txt;md5=fed54355545ffd980b814dab4a3b312c \
-    file://LICENSES/MIT.txt;md5=e267b5203c8a34cf7f21e5a2102df564 \
-"
 
 DEPENDS = " \
     kcmutils \
@@ -24,6 +20,7 @@ DEPENDS = " \
 RDEPENDS:${PN} += "ksvg bash"
 
 inherit cmake_plasma
+inherit reuse_license_checksums
 
 FILES:${PN} += " \
     ${libdir}/qml/org/kde/kwin/decoration \

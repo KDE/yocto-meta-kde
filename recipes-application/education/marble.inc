@@ -6,7 +6,6 @@ SUMMARY = "Marble"
 DESCRIPTION = "Marble is a virtual globe and world atlas."
 HOMEPAGE = "https://marble.kde.org/"
 LICENSE = "LGPL-2.1-only"
-LIC_FILES_CHKSUM = "file://LICENSES/LGPL-2.1-only.txt;md5=41890f71f740302b785c27661123bff5"
 PR = "r0"
 
 DEPENDS += " \
@@ -29,6 +28,7 @@ inherit kf6-kconfig
 inherit kf6-kauth
 inherit mime
 inherit mime-xdg
+inherit reuse_license_checksums
 
 EXTRA_OECMAKE += "-DBUILD_TOUCH=ON"
 

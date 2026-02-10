@@ -5,7 +5,6 @@
 DESCRIPTION = "Kirigami-based RSS reader"
 HOMEPAGE = "https://invent.kde.org/plasma-mobile/alligator"
 LICENSE = "GPL-3.0-only"
-LIC_FILES_CHKSUM = "file://LICENSES/GPL-3.0-only.txt;md5=1c76c4cc354acaac30ed4d5eefea7245"
 PR = "r0"
 
 DEPENDS = " \
@@ -20,3 +19,4 @@ DEPENDS = " \
 inherit cmake_kdeapp
 inherit kf6-kconfig
 inherit kf6-kcoreaddons
+inherit reuse_license_checksums

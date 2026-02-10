@@ -5,7 +5,6 @@
 DESCRIPTION = "Public Transport Assistance for Mobile Devices"
 HOMEPAGE = "https://invent.kde.org/utilities/ktrip"
 LICENSE = "GPL-2.0-only"
-LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-only.txt;md5=93e64b4a83c7e441e48bbdeeea05c977"
 PR = "r0"
 
 DEPENDS = " \
@@ -22,6 +21,7 @@ DEPENDS = " \
 inherit cmake_kdeapp
 inherit kf6-kconfig
 inherit kf6-kcoreaddons
+inherit reuse_license_checksums
 
 RDEPENDS:${PN} += " \
     kirigami-addons \

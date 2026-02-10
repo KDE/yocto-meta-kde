@@ -6,7 +6,6 @@
 DESCRIPTION = "KGlobalAccelD"
 HOMEPAGE = ""
 LICENSE = "LGPL-2.1-only | LGPL-3.0-only"
-LIC_FILES_CHKSUM = "file://LICENSES/LGPL-2.1-only.txt;md5=41890f71f740302b785c27661123bff5"
 PR = "r0"
 
 DEPENDS = " \
@@ -21,3 +20,4 @@ DEPENDS = " \
 "
 
 inherit cmake_plasma
+inherit reuse_license_checksums
