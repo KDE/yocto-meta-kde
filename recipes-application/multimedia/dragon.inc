@@ -17,6 +17,7 @@ DEPENDS += " \
     phonon \
     qtbase \
     solid \
+    kirigami \
 "
 
 inherit cmake_kdeapp
