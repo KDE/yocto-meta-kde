@@ -28,6 +28,7 @@ DEPENDS += " \
     pulseaudio-qt \
     qqc2-desktop-style \
     kstatusnotifieritem \
+    kitemmodels \
 "
 
 inherit cmake_kdeapp
