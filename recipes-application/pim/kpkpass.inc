@@ -17,5 +17,8 @@ DEPENDS = " \
     karchive \
 "
 
+FILES:${PN} += "${datadir}/mime"
+
 inherit cmake_kdeapp
 inherit mime-xdg
+inherit mime
