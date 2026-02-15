@@ -11,6 +11,3 @@ LIC_FILES_CHKSUM = " \
 "
 
 inherit cmake_plasma
-
-FILES:${PN} += " \
-"
