@@ -21,6 +21,10 @@ RDEPENDS:${PN} += "socat"
 
 inherit cmake_plasma systemd
 
+EXTRA_OECMAKE += " \
+    -DKWALLETD_BIN_PATH=/usr/bin/ksecretd \
+"
+
 FILES:${PN} += "${libdir}/security/pam_kwallet5.so"
 
 SYSTEMD_SERVICE:${PN} = "plasma-kwallet-pam.service"
