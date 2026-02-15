@@ -29,3 +29,7 @@ DEPENDS = " \
 
 inherit cmake_plasma
 inherit mime-xdg
+
+FILES:${PN} += " \
+    ${libdir}/qml/org/kde/plasma/welcome \
+"
