@@ -29,6 +29,7 @@ DEPENDS = " \
     solid \
     syntax-highlighting \
     libkexiv2 \
+    qcoro \
 "
 
 RDEPENDS:${PN} += "perl"
