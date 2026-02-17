@@ -6,9 +6,6 @@ DESCRIPTION = "KRfb"
 SUMMARY = "Small server for the RFB protocol (vnc)"
 HOMEPAGE = "https://invent.kde.org/network/krfb"
 LICENSE = "GPL-2.0-only"
-LIC_FILES_CHKSUM = " \
-    file://COPYING;md5=3c8ea28d12b8a786603a5394fc50096d \
-"
 PR = "r0"
 
 DEPENDS = " \
@@ -30,6 +27,7 @@ DEPENDS = " \
 "
 
 inherit cmake_kdeapp
+inherit reuse_license_checksums
 
 RDEPENDS:${PN} += " \
     xdg-desktop-portal \
