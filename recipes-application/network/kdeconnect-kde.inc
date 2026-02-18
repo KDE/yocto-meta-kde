@@ -3,31 +3,31 @@
 #
 # SPDX-License-Identifier: MIT
 
-DESCRIPTION = "KDE Connect"
-HOMEPAGE = "https://community.kde.org/KDEConnect"
+SUMMARY = "KDE Connect"
+DESCRIPTION = "Multi-platform app that allows your devices to communicate"
+HOMEPAGE = "https://invent.kde.org/network/kdeconnect-kde"
 LICENSE = "GPL-2.0-only"
 PR = "r0"
 
-DEPENDS += " \
-    qtdeclarative \
-    qtmultimedia \
-    qtwayland-native \
-    qtconnectivity \
-    qca \
-    libfakekey \
-    kconfigwidgets \
-    kdbusaddons \
-    kiconthemes \
-    knotifications \
-    kio \
-    kirigami \
-    kirigami-addons \
-    kpeople \
-    kwayland \
-    pulseaudio-qt \
-    qqc2-desktop-style \
-    kstatusnotifieritem \
-    kitemmodels \
+DEPENDS += "kconfigwidgets \
+            kdbusaddons \
+            kiconthemes \
+            kio \
+            kirigami \
+            kirigami-addons \
+            kitemmodels \
+            knotifications \
+            kpeople \
+            kstatusnotifieritem \
+            kwayland \
+            libfakekey \
+            pulseaudio-qt \
+            qca \
+            qqc2-desktop-style \
+            qtconnectivity \
+            qtdeclarative \
+            qtmultimedia \
+            qtwayland-native \
 "
 
 inherit cmake_kdeapp
@@ -43,17 +43,14 @@ EXTRA_OECMAKE += "-DSMSAPP_ENABLED=OFF"
 # workaround for missing variable, which is only used for Windows builds
 EXTRA_OECMAKE += "-DCMAKE_SYSTEM_VERSION=0.0.0"
 
-FILES:${PN} += " \
-    ${datadir}/Thunar \
-    ${datadir}/contractor \
-    ${datadir}/kdeconnect \
-    ${datadir}/deepin \
-    ${datadir}/nautilus-python \
-    ${datadir}/plasma \
-    ${datadir}/zsh \
-    ${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_kdeconnect.so \
+FILES:${PN} += "${datadir}/Thunar \
+                ${datadir}/contractor \
+                ${datadir}/kdeconnect \
+                ${datadir}/deepin \
+                ${datadir}/nautilus-python \
+                ${datadir}/plasma \
+                ${datadir}/zsh \
+                ${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_kdeconnect.so \
 "
 
-RDEPENDS:${PN} += " \
-    kpeople \
-"
+RDEPENDS:${PN} += "kpeople"
