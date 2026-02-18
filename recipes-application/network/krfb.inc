@@ -5,7 +5,7 @@
 DESCRIPTION = "KRfb"
 SUMMARY = "Small server for the RFB protocol (vnc)"
 HOMEPAGE = "https://invent.kde.org/network/krfb"
-LICENSE = "GPL-2.0-only"
+LICENSE = "GPL-2.0-or-later"
 PR = "r0"
 
 DEPENDS = " \
