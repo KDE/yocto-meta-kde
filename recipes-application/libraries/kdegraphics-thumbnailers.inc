@@ -5,17 +5,13 @@
 SUMMARY = "Thumbnailers"
 DESCRIPTION = "Thumbnailers for various graphics file formats"
 HOMEPAGE = "https://invent.kde.org/graphics/kdegraphics-thumbnailers"
-LICENSE = " \
-    GPL-2.0-or-later & \
-    LGPL-2.0-or-later & \
-    LGPL-2.1-only & \
-    LGPL-3.0-only & \
-    LicenseRef-KDE-Accepted-LGPL"
+LICENSE = "GPL-2.0-or-later & \
+           LGPL-2.0-or-later & \
+           LGPL-2.1-only & \
+           LGPL-3.0-only & \
+           LicenseRef-KDE-Accepted-LGPL"
 
-DEPENDS += " \
-    kio \
-    libkexiv2 \
-"
+DEPENDS += "kio libkexiv2"
 
 inherit cmake_kdeapp
 inherit kf6-kconfig
