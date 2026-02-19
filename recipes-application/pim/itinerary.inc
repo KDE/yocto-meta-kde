@@ -2,29 +2,27 @@
 #
 # SPDX-License-Identifier: MIT
 
-DESCRIPTION = "Itinerary"
-SUMMARY = "Itinerary and boarding pass management application"
+SUMMARY = "Itinerary"
+DESCRIPTION = "Itinerary and boarding pass management application"
 HOMEPAGE = "https://invent.kde.org/pim/itinerary"
 LICENSE = "LGPL-2.0-or-later"
 LIC_FILES_CHKSUM = "file://LICENSES/LGPL-2.0-or-later.txt;md5=6d2d9952d88b50a51a5c73dc431d06c7"
 PR = "r0"
 
-DEPENDS += " \
-    qtbase \
-    qtdeclarative \
-    qtpositioning \
-    qtkeychain \
-    kirigami \
-    kirigami-addons \
-    kcontacts \
-    kcalendarcore \
-    kholidays \
-    kunitconversion \
-    kpkpass \
-    kitinerary \
-    kosmindoormap \
-    kpublictransport \
-    qqc2-desktop-style \
+DEPENDS += "kcalendarcore \
+            kcontacts \
+            kholidays \
+            kirigami \
+            kirigami-addons \
+            kitinerary \
+            kosmindoormap \
+            kpkpass \
+            kpublictransport \
+            kunitconversion \
+            qqc2-desktop-style \
+            qtdeclarative \
+            qtkeychain \
+            qtpositioning \
 "
 
 inherit cmake_kdeapp
@@ -33,14 +31,11 @@ inherit mime
 inherit kf6-kconfig
 
 INSANE_SKIP:${PN} = "dev-so"
-FILES:${PN} += " \
-    ${libdir}/libSolidExtras.so \
-"
+FILES:${PN} += "${libdir}/libSolidExtras.so"
 FILES_SOLIBSDEV = ""
 
-RDEPENDS:${PN} += " \
-    prison \
-    solid \
-    qtlocation-qmlplugins \
-    qtmultimedia-qmlplugins \
+RDEPENDS:${PN} += "prison \
+                   qtlocation-qmlplugins \
+                   qtmultimedia-qmlplugins \
+                   solid \
 "
