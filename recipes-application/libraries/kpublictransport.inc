@@ -8,10 +8,9 @@ HOMEPAGE = "https://invent.kde.org/libraries/kpublictransport"
 LICENSE = "MIT & BSD-3-Clause & LGPL-2.0-or-later"
 PR = "r0"
 
-DEPENDS = " \
-    qtdeclarative \
-    kirigami-addons \
-    qtlocation \
+DEPENDS += "kirigami-addons \
+            qtdeclarative \
+            qtlocation \
 "
 
 inherit cmake_kdeapp
