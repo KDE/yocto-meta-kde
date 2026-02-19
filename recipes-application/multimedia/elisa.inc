@@ -8,21 +8,19 @@ HOMEPAGE = "https://apps.kde.org/de/elisa"
 LICENSE = "LGPL-3.0-only"
 PR = "r0"
 
-DEPENDS += " \
-    baloo \
-    qtbase \
-    qtdeclarative \
-    qtmultimedia \
-    kirigami \
-    kirigami-addons \
-    ki18n \
-    kdeclarative \
-    kfilemetadata \
-    kxmlgui \
-    kconfigwidgets \
-    kcrash \
-    kdbusaddons \
-    qqc2-desktop-style \
+DEPENDS += "baloo \
+            kconfigwidgets \
+            kcrash \
+            kdbusaddons \
+            kdeclarative \
+            kfilemetadata \
+            ki18n \
+            kirigami \
+            kirigami-addons \
+            kxmlgui \
+            qqc2-desktop-style \
+            qtdeclarative \
+            qtmultimedia \
 "
 
 inherit cmake_kdeapp
