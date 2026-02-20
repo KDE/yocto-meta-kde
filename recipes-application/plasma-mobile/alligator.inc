@@ -2,18 +2,18 @@
 #
 # SPDX-License-Identifier: MIT
 
+SUMMARY = "Alligator"
 DESCRIPTION = "Kirigami-based RSS reader"
 HOMEPAGE = "https://invent.kde.org/plasma-mobile/alligator"
 LICENSE = "GPL-3.0-only"
 PR = "r0"
 
-DEPENDS = " \
-    qtdeclarative \
-    syndication \
-    kirigami \
-    kirigami-addons \
-    ki18n \
-    libplasma \
+DEPENDS += "ki18n \
+            kirigami \
+            kirigami-addons \
+            libplasma \
+            qtdeclarative \
+            syndication \
 "
 
 inherit cmake_kdeapp
