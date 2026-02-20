@@ -2,18 +2,17 @@
 #
 # SPDX-License-Identifier: MIT
 
-DESCRIPTION = "KOSMIndoorMap"
-SUMMARY = "OSM multi-floor indoor map renderer"
+SUMMARY = "KOSMIndoorMap"
+DESCRIPTION = "OSM multi-floor indoor map renderer"
 HOMEPAGE = "https://invent.kde.org/libraries/kosmindoormap"
 LICENSE = "LGPL-2.0-or-later"
 PR = "r0"
 
-DEPENDS += " \
-    qtdeclarative \
-    ki18n \
-    kopeninghours \
-    kpublictransport \
-    bison-native \
+DEPENDS += "bison-native \
+            ki18n \
+            kopeninghours \
+            kpublictransport \
+            qtdeclarative \
 "
 
 inherit cmake_kdeapp
