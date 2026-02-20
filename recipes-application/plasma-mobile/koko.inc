@@ -3,23 +3,23 @@
 #
 # SPDX-License-Identifier: MIT
 
+SUMMARY = "KoKo"
 DESCRIPTION = "KoKo Gallery Application"
-HOMEPAGE = "https://invent.kde.org/graphics/koko/-"
+HOMEPAGE = "https://invent.kde.org/graphics/koko"
 LICENSE = "LGPL-2.1-only"
 PR = "r0"
 
-DEPENDS = " \
-    qtlocation \
-    kdeclarative \
-    kiconthemes \
-    kio \
-    kirigami \
-    kirigami-addons \
-    kfilemetadata \
-    knotifications \
-    kquickimageeditor \
-    exiv2 \
-    purpose \
+DEPENDS += "exiv2 \
+            kdeclarative \
+            kfilemetadata \
+            kiconthemes \
+            kio \
+            kirigami \
+            kirigami-addons \
+            knotifications \
+            kquickimageeditor \
+            purpose \
+            qtlocation \
 "
 
 inherit cmake_kdeapp
@@ -29,19 +29,18 @@ inherit kf6-kauth
 inherit mime-xdg
 inherit reuse_license_checksums
 
-RDEPENDS:${PN} += " \
-    kirigami \
-    kirigami-addons \
-    kquickimageeditor \
-    purpose \
-    qtdeclarative-qmlplugins \
+SRC_URI:append = " git://invent.kde.org/packaging/geonames-data.git;protocol=https;name=geodata;nobranch=1;destsuffix=geonames-data;rev=608af80ddf04265496eccd0c63b2945042cdccdc"
+
+RDEPENDS:${PN} += "kirigami \
+                   kirigami-addons \
+                   kquickimageeditor \
+                   purpose \
+                   qtdeclarative-qmlplugins \
 "
 
-KOKO_CITIES1000="cities1000.zip"
-KOKO_ADMIN1CODES="admin1CodesASCII.txt"
-KOKO_ADMIN2CODES="admin2Codes.txt"
-
-SRC_URI:append = " git://invent.kde.org/packaging/geonames-data.git;prototol=https;name=geodata;nobranch=1;destsuffix=geonames-data;rev=608af80ddf04265496eccd0c63b2945042cdccdc"
+KOKO_CITIES1000 = "cities1000.zip"
+KOKO_ADMIN1CODES = "admin1CodesASCII.txt"
+KOKO_ADMIN2CODES = "admin2Codes.txt"
 
 # To build Koko, it is required to import a few files from outside
 # this repository. These files are licensed under the CC-BY-4.0 and
