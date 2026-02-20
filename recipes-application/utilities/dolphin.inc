@@ -5,8 +5,18 @@
 SUMMARY = "Dolphin"
 DESCRIPTION = "File manager by KDE"
 HOMEPAGE = "https://invent.kde.org/system/dolphin"
-LICENSE = "GPL-2.0-or-later"
-LIC_FILES_CHKSUM = "file://COPYING;md5=5c213a7de3f013310bd272cdb6eb7a24"
+LICENSE = "BSD-2-Clause & \
+           BSD-3-Clause & \
+           GPL-2.0-only & \
+           GPL-2.0-or-later & \
+           GPL-2.0-or-later & \
+           GPL-3.0-only & \
+           LGPL-2.0-only & \
+           LGPL-2.0-or-later & \
+           LGPL-2.1-only & \
+           LGPL-3.0-only & \
+           LicenseRef-KDE-Accepted-GPL \
+"
 
 DEPENDS += "baloo \
             baloo-widgets \
@@ -47,6 +57,7 @@ inherit kf6-kconfig
 inherit kf6-kcoreaddons
 inherit mime-xdg
 inherit systemd
+inherit reuse_license_checksums
 
 SYSTEMD_SERVICE:${PN} = "plasma-dolphin.service"
 
