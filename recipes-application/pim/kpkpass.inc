@@ -8,10 +8,7 @@ HOMEPAGE = "https://invent.kde.org/pim/kpkpass"
 LICENSE = "BSD-3-Clause & LGPL-2.0-or-later"
 PR = "r0"
 
-DEPENDS = " \
-    qtbase \
-    karchive \
-"
+DEPENDS += "karchive"
 
 FILES:${PN} += "${datadir}/mime"
 
