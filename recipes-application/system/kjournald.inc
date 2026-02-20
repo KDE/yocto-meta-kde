@@ -2,25 +2,21 @@
 #
 # SPDX-License-Identifier: MIT
 
+SUMMARY = "KJournald"
 DESCRIPTION = "Framework for interacting with systemd-journald"
-HOMEPAGE = ""
+HOMEPAGE = "https://invent.kde.org/system/kjournald"
 LICENSE = "MIT | LGPL-2.1-or-later"
 
-DEPENDS = " \
-    kcoreaddons \
-    qtbase \
-    qtdeclarative \
-    systemd \
-    kcrash \
-    kirigami \
-    kirigami-addons \
+DEPENDS += "kcoreaddons \
+            kcrash \
+            kirigami \
+            kirigami-addons \
+            qtdeclarative \
+            systemd \
 "
 
 inherit cmake_kdeapp
-inherit pkgconfig
 inherit kf6-kconfig
 inherit reuse_license_checksums
 
-RDEPENDS:${PN} += " \
-    qtdeclarative-qmlplugins \
-"
+RDEPENDS:${PN} += "qtdeclarative-qmlplugins"
