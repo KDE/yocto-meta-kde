@@ -2,18 +2,18 @@
 #
 # SPDX-License-Identifier: MIT
 
-DESCRIPTION = "KRecorder"
+SUMMARY = "KRecorder"
+DESCRIPTION = "Audio recorder for Plasma Mobile and other platforms"
 HOMEPAGE = "https://invent.kde.org/plasma-mobile/krecorder"
 LICENSE = "BSD-3-Clause | GPL-3.0-or-later"
 PR = "r0"
 
-DEPENDS = " \
-    qtdeclarative \
-    qtsvg \
-    qtmultimedia \
-    kirigami \
-    kirigami-addons \
-    kwindowsystem \
+DEPENDS += "kirigami \
+            kirigami-addons \
+            kwindowsystem \
+            qtdeclarative \
+            qtmultimedia \
+            qtsvg \
 "
 
 inherit cmake_kdeapp
