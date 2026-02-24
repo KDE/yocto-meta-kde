@@ -2,20 +2,20 @@
 #
 # SPDX-License-Identifier: MIT
 
-DESCRIPTION = "Konsole"
+SUMMARY = "Konsole"
+DESCRIPTION = "Terminal emulator by KDE"
 HOMEPAGE = "https://konsole.kde.org/"
 LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://COPYING;md5=5c213a7de3f013310bd272cdb6eb7a24"
 PR = "r0"
 
-DEPENDS += " \
-    kio \
-    knewstuff \
-    knotifications \
-    knotifyconfig \
-    kparts \
-    kpty \
-    kxmlgui \
+DEPENDS += "kio \
+            knewstuff \
+            knotifications \
+            knotifyconfig \
+            kparts \
+            kpty \
+            kxmlgui \
 "
 
 inherit cmake_kdeapp
@@ -24,9 +24,8 @@ inherit kf6-kconfig
 inherit kf6-kauth
 
 FILES_SOLIBSDEV = ""
-FILES:${PN} += " \
-    ${datadir}/knsrcfiles \
-    ${datadir}/kio/servicemenus \
-    ${datadir}/kglobalaccel/* \
-    ${datadir}/zsh/* \
+FILES:${PN} += "${datadir}/knsrcfiles \
+                ${datadir}/kio/servicemenus \
+                ${datadir}/kglobalaccel/* \
+                ${datadir}/zsh/* \
 "
