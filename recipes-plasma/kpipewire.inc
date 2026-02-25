@@ -2,29 +2,26 @@
 #
 # SPDX-License-Identifier: MIT
 
-DESCRIPTION = "KPipeWire"
+SUMMARY = "KPipeWire"
+DESCRIPTION = "Components relating to Flatpak 'pipewire' use in Plasma"
 HOMEPAGE = "https://invent.kde.org/plasma/kpipewire"
 LICENSE = "LGPL-2.1-only | LGPL-3.0-only | LicenseRef-KDE-Accepted-LGPL"
 PR = "r0"
 
-DEPENDS = " \
-    libepoxy \
-    qtdeclarative \
-    qtwayland-native \
-    pipewire \
-    kwayland \
-    ffmpeg \
-    libva \
+DEPENDS += "ffmpeg \
+            kwayland \
+            libepoxy \
+            libva \
+            pipewire \
+            qtdeclarative \
+            qtwayland-native \
 "
 
 inherit cmake_plasma
 inherit reuse_license_checksums
 
-FILES:${PN} += " \
-    ${libdir}/qml/org/kde/pipewire/* \
-    ${datadir}/zsh/site-functions/* \
+FILES:${PN} += "${libdir}/qml/org/kde/pipewire/* \
+                ${datadir}/zsh/site-functions/* \
 "
 
-RDEPENDS:${PN} += " \
-    pipewire \
-"
+RDEPENDS:${PN} += "pipewire"
