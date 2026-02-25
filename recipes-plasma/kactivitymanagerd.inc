@@ -4,20 +4,20 @@
 #
 # SPDX-License-Identifier: MIT
 
-DESCRIPTION = "KActivity Manager Daemon"
-HOMEPAGE = ""
+SUMMARY = "Activity manager service"
+DESCRIPTION = "System service to manage user's activities, track the usage patterns etc."
+HOMEPAGE = "https://invent.kde.org/plasma/kactivitymanagerd"
 LICENSE = "GPL-2.0-only"
 PR = "r0"
 
-DEPENDS = " \
-    boost \
-    kconfig \
-    kcoreaddons \
-    kdbusaddons \
-    kglobalaccel \
-    kio \
-    kwindowsystem \
-    kxmlgui \
+DEPENDS += "boost \
+            kconfig \
+            kcoreaddons \
+            kdbusaddons \
+            kglobalaccel \
+            kio \
+            kwindowsystem \
+            kxmlgui \
 "
 
 inherit cmake_plasma
@@ -26,21 +26,17 @@ inherit reuse_license_checksums
 CXXFLAGS += "-DBOOST_DISABLE_ASSERTS"
 
 # the cmake checks for those use try_run(), which fails when cross-compiling
-EXTRA_OECMAKE += " \
-    -DHAVE_CXX11_AUTO=ON \
-    -DHAVE_CXX11_NULLPTR=ON \
-    -DHAVE_CXX11_LAMBDA=ON \
-    -DHAVE_CXX11_OVERRIDE=ON \
-    -DHAVE_CXX11_UNIQUE_PTR=ON \
-    -DHAVE_CXX11_VARIADIC_TEMPLATES=ON \
-    -DHAVE_CXX11_INITIALIZER_LISTS=ON \
+EXTRA_OECMAKE += "-DHAVE_CXX11_AUTO=ON \
+                  -DHAVE_CXX11_NULLPTR=ON \
+                  -DHAVE_CXX11_LAMBDA=ON \
+                  -DHAVE_CXX11_OVERRIDE=ON \
+                  -DHAVE_CXX11_UNIQUE_PTR=ON \
+                  -DHAVE_CXX11_VARIADIC_TEMPLATES=ON \
+                  -DHAVE_CXX11_INITIALIZER_LISTS=ON \
 "
 
-FILES:${PN} += " \
-    ${libdir}/*.so \
-    ${datadir}/krunner/dbusplugins/plasma-runnners-activities.desktop \
+FILES:${PN} += "${libdir}/*.so \
+                ${datadir}/krunner/dbusplugins/plasma-runnners-activities.desktop \
 "
 
-FILES:${PN}-dev = " \
-    ${datadir}/qlogging-categories5 \
-"
+FILES:${PN}-dev = "${datadir}/qlogging-categories5"
