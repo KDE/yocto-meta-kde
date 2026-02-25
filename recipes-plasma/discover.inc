@@ -3,40 +3,39 @@
 #
 # SPDX-License-Identifier: MIT
 
-DESCRIPTION = "Discover"
-HOMEPAGE = ""
+SUMMARY = "Discover"
+DESCRIPTION = "Helps you find and install applications, games, and tools"
+HOMEPAGE = "https://invent.kde.org/plasma/discover"
 LICENSE = "GPL-3.0-only"
 LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-only.txt;md5=93e64b4a83c7e441e48bbdeeea05c977"
 PR = "r0"
 
-DEPENDS = " \
-    attica \
-    karchive \
-    kconfig \
-    kcoreaddons \
-    kcrash \
-    kdbusaddons \
-    kdeclarative \
-    kidletime \
-    kio \
-    kirigami \
-    kitemmodels \
-    knewstuff \
-    knotifications \
-    kxmlgui \
-    purpose \
-    qtdeclarative \
-    qtwebview \
-    kstatusnotifieritem \
-    kuserfeedback \
+DEPENDS += "attica \
+            karchive \
+            kconfig \
+            kcoreaddons \
+            kcrash \
+            kdbusaddons \
+            kdeclarative \
+            kidletime \
+            kio \
+            kirigami \
+            kitemmodels \
+            knewstuff \
+            knotifications \
+            kstatusnotifieritem \
+            kuserfeedback \
+            kxmlgui \
+            purpose \
+            qtdeclarative \
+            qtwebview \
 "
 
 inherit cmake_plasma
 inherit mime-xdg
 
-FILES:${PN} += " \
-    ${libdir}/qml/org/kde/discovernotifier \
-    ${libdir}/plasma-discover \
-    ${libdir}/plugins/plasma/kcms/systemsettings/* \
-    ${datadir}/kpackage/kcms/kcm_updates \
+FILES:${PN} += "${libdir}/qml/org/kde/discovernotifier \
+                ${libdir}/plasma-discover \
+                ${libdir}/plugins/plasma/kcms/systemsettings/* \
+                ${datadir}/kpackage/kcms/kcm_updates \
 "
