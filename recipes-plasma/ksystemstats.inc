@@ -8,13 +8,12 @@ HOMEPAGE = "https://invent.kde.org/plasma/ksystemstats"
 LICENSE = "BSD-2-Clause | BSD-3-Clause | GPL-2.0-only | GPL-3.0-only | LicenseRef-KDE-Accepted-GPL"
 PR = "r0"
 
-DEPENDS = " \
-    kcoreaddons \
-    solid \
-    kio \
-    kcrash \
-    libksysguard \
-    networkmanager-qt \
+DEPENDS += "kcoreaddons \
+            kcrash \
+            kio \
+            libksysguard \
+            networkmanager-qt \
+            solid \
 "
 
 inherit cmake_plasma
