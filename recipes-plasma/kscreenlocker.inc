@@ -3,31 +3,28 @@
 #
 # SPDX-License-Identifier: MIT
 
-DESCRIPTION = "KScreenLocker"
+SUMMARY = "KScreenLocker"
+DESCRIPTION = "Library and components for secure lock screen architecture"
 HOMEPAGE = "https://invent.kde.org/plasma/kscreenlocker"
 LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263"
 PR = "r0"
 
-DEPENDS = " \
-    qtdeclarative \
-    \
-    kcrash \
-    kglobalaccel \
-    kidletime \
-    knotifications \
-    ksvg \
-    kwindowsystem \
-    kxmlgui \
-    solid \
-    \
-    libplasma \
-    libkscreen \
-    layer-shell-qt \
-    \
-    libpam \
-    libxcb \
-    wayland-native \
+DEPENDS += "kcrash \
+            kglobalaccel \
+            kidletime \
+            knotifications \
+            ksvg \
+            kwindowsystem \
+            kxmlgui \
+            layer-shell-qt \
+            libkscreen \
+            libpam \
+            libplasma \
+            libxcb \
+            qtdeclarative \
+            solid \
+            wayland-native \
 "
 
 SRC_URI:append = " \
@@ -46,13 +43,9 @@ do_install:append() {
     install -m 0644 ${UNPACKDIR}/kscreensaverrc ${D}${sysconfdir}/xdg/
 }
 
-FILES:${PN} += " \
-    ${datadir}/ksmserver/screenlocker/org.kde.passworddialog/*.desktop \
-    ${datadir}/kpackage/kcms/kcm_screenlocker \
-    ${libdir}/plugins/plasma/kcms/systemsettings/kcm_screenlocker.so \
+FILES:${PN} += "${datadir}/ksmserver/screenlocker/org.kde.passworddialog/*.desktop \
+                ${datadir}/kpackage/kcms/kcm_screenlocker \
+                ${libdir}/plugins/plasma/kcms/systemsettings/kcm_screenlocker.so \
 "
 
-RDEPENDS:${PN} += " \
-    perl \
-    qqc2-breeze-style \
-"
+RDEPENDS:${PN} += "perl qqc2-breeze-style"
