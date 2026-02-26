@@ -3,20 +3,19 @@
 #
 # SPDX-License-Identifier: MIT
 
-SUMMARY = "Qt-style API to interact with the wayland-client and wayland-server API"
-HOMEPAGE = "https://api.kde.org/frameworks/kwayland/html/index.html"
+SUMMARY = "KWayland"
+DESCRIPTION = "KWayland provides a Qt-style Client and Server library wrapper for the Wayland libraries"
+HOMEPAGE = "https://invent.kde.org/plasma/kwayland"
 LICENSE = "MIT & MIT-CMU & BSD-3-Clause & (LGPL-2.1-only | LGPL-3.0-only | LicenseRef-KDE-Accepted-LGPL)"
 PR = "r0"
 
-DEPENDS = " \
-    plasma-wayland-protocols \
-    qtbase \
-    qtwayland \
-    qtwayland-native \
-    wayland-native \
-    wayland \
-    wayland-protocols \
-    virtual/egl \
+DEPENDS += "plasma-wayland-protocols \
+            qtwayland \
+            qtwayland-native \
+            virtual/egl \
+            wayland \
+            wayland-native \
+            wayland-protocols \
 "
 
 inherit cmake_plasma
