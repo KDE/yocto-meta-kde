@@ -3,19 +3,18 @@
 #
 # SPDX-License-Identifier: MIT
 
-SUMMARY = "A library for accessing the usage data collected by the activities system"
+SUMMARY = "Plasma Activities Statistics Library"
+DESCRIPTION = "A library for accessing the usage data collected by the activities system"
 HOMEPAGE = "https://invent.kde.org/plasma/plasma-activities-stats"
 LICENSE = "LGPL-2.0-or-later & (LGPL-2.1-only | LGPL-3.0-only | LicenseRef-KDE-Accepted-LGPL) & (GPL-2.0-only | GPL-3.0-only | LicenseRef-KDE-Accepted-GPL)"
 PR = "r0"
 
-DEPENDS = " \
-    qtbase \
-    kconfig \
-    plasma-activities \
-    kcoreaddons-native \
-    kconfig-native \
-    kauth-native \
-    boost \
+DEPENDS += "boost \
+            kauth-native \
+            kconfig \
+            kconfig-native \
+            kcoreaddons-native \
+            plasma-activities \
 "
 
 inherit cmake_plasma
