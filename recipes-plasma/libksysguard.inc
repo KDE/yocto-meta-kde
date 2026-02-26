@@ -3,36 +3,33 @@
 #
 # SPDX-License-Identifier: MIT
 
-DESCRIPTION = "KSysGuard library"
-HOMEPAGE = ""
+SUMMARY = "libksysguard"
+DESCRIPTION = "Library to retrieve information on the current status of computer hardware"
+HOMEPAGE = "https://invent.kde.org/plasma/libksysguard"
 LICENSE = "LGPL-2.1-only"
 PR = "r0"
 
-DEPENDS = " \
-    libnl \
-    libcap \
-    libpcap \
-    lmsensors \
-    kcompletion \
-    kconfig \
-    kconfigwidgets \
-    kcoreaddons \
-    kiconthemes \
-    knewstuff \
-    kservice \
-    kwidgetsaddons \
-    kwindowsystem \
-    networkmanager-qt \
-    libplasma \
-    qtwebchannel \
-    libpcap \
-    libcap \
+DEPENDS += "kcompletion \
+            kconfig \
+            kconfigwidgets \
+            kcoreaddons \
+            kiconthemes \
+            knewstuff \
+            kservice \
+            kwidgetsaddons \
+            kwindowsystem \
+            libcap \
+            libnl \
+            libpcap \
+            libplasma \
+            lmsensors \
+            networkmanager-qt \
+            qtwebchannel \
 "
 
 inherit cmake_plasma
 inherit reuse_license_checksums
 
-FILES:${PN} += " \
-    ${datadir}/ksysguard \
-    ${libdir}/qml \
+FILES:${PN} += "${datadir}/ksysguard \
+                ${libdir}/qml \
 "
