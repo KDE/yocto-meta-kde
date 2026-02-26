@@ -4,67 +4,62 @@
 #
 # SPDX-License-Identifier: MIT
 
-DESCRIPTION = "KWin"
-HOMEPAGE = ""
+SUMMARY = "KWin"
+DESCRIPTION = "Easy to use, but flexible, Wayland Compositor"
+HOMEPAGE = "https://invent.kde.org/plasma/kwin"
 LICENSE = "GPL-2.0-only"
 PR = "r0"
 
-DEPENDS:class-target = " \
-    breeze \
-    fontconfig \
-    hwdata \
-    kcompletion \
-    kconfigwidgets \
-    kcrash \
-    kdeclarative \
-    kdecoration \
-    kglobalaccel \
-    kglobalacceld \
-    kidletime \
-    knewstuff \
-    knighttime \
-    knotifications \
-    kpackage \
-    kpackage-native \
-    krunner \
-    kscreenlocker \
-    kservice \
-    ktextwidgets \
-    kwayland \
-    kwin-native \
-    kwindowsystem \
-    kxmlgui \
-    lcms \
-    libdisplay-info \
-    libcap \
-    libei \
-    libinput \
-    libplasma \
-    libxcb \
-    libxcvt \
-    pipewire \
-    qtdeclarative \
-    qtsensors \
-    qtwayland-native \
-    wayland \
-    wayland-protocols \
-    xcb-util-cursor \
+DEPENDS:class-target += "breeze \
+                         fontconfig \
+                         hwdata \
+                         kcompletion \
+                         kconfigwidgets \
+                         kcrash \
+                         kdeclarative \
+                         kdecoration \
+                         kglobalaccel \
+                         kglobalacceld \
+                         kidletime \
+                         knewstuff \
+                         knighttime \
+                         knotifications \
+                         kpackage \
+                         kpackage-native \
+                         krunner \
+                         kscreenlocker \
+                         kservice \
+                         ktextwidgets \
+                         kwayland \
+                         kwin-native \
+                         kwindowsystem \
+                         kxmlgui \
+                         lcms \
+                         libcap \
+                         libdisplay-info \
+                         libei \
+                         libinput \
+                         libplasma \
+                         libxcb \
+                         libxcvt \
+                         pipewire \
+                         qtdeclarative \
+                         qtsensors \
+                         qtwayland-native \
+                         wayland \
+                         wayland-protocols \
+                         xcb-util-cursor \
 "
 
-DEPENDS:class-native = " \
-    qtbase-native \
-    extra-cmake-modules-native \
+DEPENDS:class-native += "extra-cmake-modules-native \
+                         qtbase-native \
 "
 
-SRC_URI:append:class-native = " \
-    file://0001-Add-install-operation-for-native-build.patch \
-"
+SRC_URI:append:class-native = " file://0001-Add-install-operation-for-native-build.patch"
 
 OECMAKE_SOURCEPATH:class-native = "${S}/src/wayland/tools"
-EXTRA_OECMAKE:append:class-target = " \
-    -DQTWAYLANDSCANNER_KDE_EXECUTABLE=${STAGING_DIR_NATIVE}/${bindir}/qtwaylandscanner_kde \
-    -DBUILD_TESTING=OFF \
-"
+EXTRA_OECMAKE:append:class-target = " -DQTWAYLANDSCANNER_KDE_EXECUTABLE=${STAGING_DIR_NATIVE}${bindir}/qtwaylandscanner_kde"
+EXTRA_OECMAKE:append:class-target = " -DBUILD_TESTING=OFF"
 
 inherit kf6-kauth
 inherit kf6-kcmutils
@@ -77,71 +72,61 @@ inherit reuse_license_checksums
 # TODO skip inherit of cmake_plasma for now because it leads to build errors for native package
 
 pkg_postinst:${PN} () {
-	setcap cap_sys_nice+ep "$D/${bindir}/kwin_wayland"
+    setcap cap_sys_nice+ep "$D/${bindir}/kwin_wayland"
 }
 PACKAGE_WRITE_DEPS += "libcap-native"
 
 FILES_SOLIBSDEV = ""
-FILES:${PN} += " \
-    ${datadir}/config.kcfg/*.kcfg \
-    ${datadir}/icons/hicolor \
-    ${datadir}/kconf_update/* \
-    ${datadir}/knotifications6/*.notifyrc \
-    ${datadir}/knsrcfiles/* \
-    ${datadir}/kpackage \
-    ${datadir}/krunner/dbusplugins/*.desktop \
-    ${datadir}/kservices6/*.desktop \
-    ${datadir}/kservices6/kwin/*.desktop \
-    ${datadir}/kservicetypes6/*.desktop \
-    ${datadir}/kwincompositing/qml/*.qml \
-    ${datadir}/kwin-wayland \
-    ${datadir}/qlogging-categories6 \
-    ${libdir}/kconf_update_bin/kwin-6.0-delete-desktop-switching-shortcuts \
-    ${libdir}/kconf_update_bin/kwin-6.0-remove-breeze-tabbox-default \
-    ${libdir}/kconf_update_bin/kwin-6.0-reset-active-mouse-screen \
-    ${libdir}/kconf_update_bin/kwin-6.1-remove-gridview-expose-shortcuts \
-    ${libdir}/kconf_update_bin/kwin5_update_default_rules \
-    ${libdir}/kconf_update_bin/kwin-6.5-showpaint-changes \
-    ${libdir}/plugins/*.so \
-    ${libdir}/plugins/kf6/org.kde.kidletime.platforms/*.so \
-    ${libdir}/plugins/kf6/packagestructure/*.so \
-    ${libdir}/plugins/kpackage/packagestructure/*.so \
-    ${libdir}/plugins/kwin/effects/configs/*.so \
-    ${libdir}/plugins/kwin/plugins/*.so \
-    ${libdir}/plugins/org.kde.kdecoration3.kcm/kcm_auroraedecoration.so \
-    ${libdir}/plugins/org.kde.kdecoration3/org.kde.kwin.aurorae.so \
-    ${libdir}/plugins/org.kde.kglobalaccel6.platforms/*.so \
-    ${libdir}/plugins/org.kde.kwin.platforms/*.so \
-    ${libdir}/plugins/org.kde.kwin.scenes/*.so \
-    ${libdir}/plugins/org.kde.kwin.waylandbackends/*.so \
-    ${libdir}/plugins/plasma/kcms/systemsettings/*.so \
-    ${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/*.so \
-    ${libdir}/plugins/platforms/*.so \
-    ${libdir}/qml/org/kde/kwin.2/* \
-    ${libdir}/qml/org/kde/kwin/decoration/* \
-    ${libdir}/qml/org/kde/kwin/decorations/plastik/* \
-    ${libdir}/qml/org/kde/kwin/effects/* \
-    ${libdir}/qml/org/kde/kwin/private/effects/* \
-    ${libdir}/qml/org/kde/kwin/private/kdecoration/* \
-    ${libdir}/qml/org/kde/plasma/quicksetting/nightcolor/* \
-    ${libdir}/systemd/user/*.service \
+FILES:${PN} += "${datadir}/config.kcfg/*.kcfg \
+                ${datadir}/icons/hicolor \
+                ${datadir}/kconf_update/* \
+                ${datadir}/knotifications6/*.notifyrc \
+                ${datadir}/knsrcfiles/* \
+                ${datadir}/kpackage \
+                ${datadir}/krunner/dbusplugins/*.desktop \
+                ${datadir}/kservices6/*.desktop \
+                ${datadir}/kservices6/kwin/*.desktop \
+                ${datadir}/kservicetypes6/*.desktop \
+                ${datadir}/kwincompositing/qml/*.qml \
+                ${datadir}/kwin-wayland \
+                ${datadir}/qlogging-categories6 \
+                ${libdir}/kconf_update_bin/kwin-6.0-delete-desktop-switching-shortcuts \
+                ${libdir}/kconf_update_bin/kwin-6.0-remove-breeze-tabbox-default \
+                ${libdir}/kconf_update_bin/kwin-6.0-reset-active-mouse-screen \
+                ${libdir}/kconf_update_bin/kwin-6.1-remove-gridview-expose-shortcuts \
+                ${libdir}/kconf_update_bin/kwin5_update_default_rules \
+                ${libdir}/kconf_update_bin/kwin-6.5-showpaint-changes \
+                ${libdir}/plugins/*.so \
+                ${libdir}/plugins/kf6/org.kde.kidletime.platforms/*.so \
+                ${libdir}/plugins/kf6/packagestructure/*.so \
+                ${libdir}/plugins/kpackage/packagestructure/*.so \
+                ${libdir}/plugins/kwin/effects/configs/*.so \
+                ${libdir}/plugins/kwin/plugins/*.so \
+                ${libdir}/plugins/org.kde.kdecoration3.kcm/kcm_auroraedecoration.so \
+                ${libdir}/plugins/org.kde.kdecoration3/org.kde.kwin.aurorae.so \
+                ${libdir}/plugins/org.kde.kglobalaccel6.platforms/*.so \
+                ${libdir}/plugins/org.kde.kwin.platforms/*.so \
+                ${libdir}/plugins/org.kde.kwin.scenes/*.so \
+                ${libdir}/plugins/org.kde.kwin.waylandbackends/*.so \
+                ${libdir}/plugins/plasma/kcms/systemsettings/*.so \
+                ${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/*.so \
+                ${libdir}/plugins/platforms/*.so \
+                ${libdir}/qml/org/kde/kwin.2/* \
+                ${libdir}/qml/org/kde/kwin/decoration/* \
+                ${libdir}/qml/org/kde/kwin/decorations/plastik/* \
+                ${libdir}/qml/org/kde/kwin/effects/* \
+                ${libdir}/qml/org/kde/kwin/private/effects/* \
+                ${libdir}/qml/org/kde/kwin/private/kdecoration/* \
+                ${libdir}/qml/org/kde/plasma/quicksetting/nightcolor/* \
+                ${libdir}/systemd/user/*.service \
 "
 
-
-FILES:${PN}-dev += " \
-    ${libdir}/libkwin*.so \
-    ${datadir}/dbus-1/interfaces/*.xml \
+FILES:${PN}-dev += "${libdir}/libkwin*.so \
+                    ${datadir}/dbus-1/interfaces/*.xml \
 "
 
-RDEPENDS:${PN}:append:class-target = " \
-    aurorae \
-    qtwayland-plugins \
-    xwayland \
-    perl \
-"
+RDEPENDS:${PN}:append:class-target = " aurorae perl qtwayland-plugins xwayland"
 
-RRECOMMENDS:${PN}:append:class-target = " \
-    plasma-keyboard \
-"
+RRECOMMENDS:${PN}:append:class-target = " plasma-keyboard"
 
 BBCLASSEXTEND = "native"
