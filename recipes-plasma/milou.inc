@@ -4,25 +4,24 @@
 #
 # SPDX-License-Identifier: MIT
 
-DESCRIPTION = "Milou"
-HOMEPAGE = ""
+SUMMARY = "Milou"
+DESCRIPTION = "A dedicated search application built on top of Baloo"
+HOMEPAGE = "https://invent.kde.org/plasma/milou"
 LICENSE = "(LGPL-2.1-only | LGPL-3.0-only | LicenseRef-KDE-Accepted-LGPL) & (GPL-2.0-only | GPL-3.0-only | LicenseRef-KDE-Accepted-GPL) & GPL-2.0-or-later"
 PR = "r0"
 
-DEPENDS = " \
-    qtdeclarative \
-    kcoreaddons \
-    kitemmodels \
-    kdeclarative \
-    kservice \
-    libplasma \
-    krunner \
+DEPENDS += "kcoreaddons \
+            kdeclarative \
+            kitemmodels \
+            krunner \
+            kservice \
+            libplasma \
+            qtdeclarative \
 "
 
 inherit cmake_plasma
 inherit reuse_license_checksums
 
-FILES:${PN} += " \
-    ${libdir}/qml/org/kde/milou/* \
-    ${datadir}/plasma/plasmoids/org.kde.milou \
+FILES:${PN} += "${libdir}/qml/org/kde/milou/* \
+                ${datadir}/plasma/plasmoids/org.kde.milou \
 "
