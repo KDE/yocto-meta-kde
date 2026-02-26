@@ -8,17 +8,14 @@ HOMEPAGE = "https://invent.kde.org/plasma/layer-shell-qt"
 LICENSE = "BSD-3-Clause & MIT & LGPL-3.0-or-later"
 PR = "r0"
 
-DEPENDS = " \
-    qtwayland \
-    qtwayland-native \
-    wayland-native \
-    wayland \
-    wayland-protocols \
+DEPENDS += "qtwayland \
+            qtwayland-native \
+            wayland \
+            wayland-native \
+            wayland-protocols \
 "
 
 inherit cmake_plasma
 inherit reuse_license_checksums
 
-FILES:${PN} += " \
-    ${libdir}/qml/org/kde/layershell/* \
-"
+FILES:${PN} += "${libdir}/qml/org/kde/layershell/*"
