@@ -3,25 +3,22 @@
 #
 # SPDX-License-Identifier: MIT
 
-SUMMARY = "Core components for the KDE's Activities System"
+SUMMARY = "Plasma Activities"
+DESCRIPTION = "Core components for the KDE's Activities System"
 HOMEPAGE = "https://invent.kde.org/plasma/plasma-activities"
 LICENSE = "LGPL-2.1-only"
 PR = "r0"
 
-DEPENDS = " \
-    qtbase \
-    qtdeclarative \
-    kcoreaddons \
-    kcoreaddons-native \
-    kconfig \
-    kconfig-native \
-    kwindowsystem \
-    boost \
+DEPENDS += "boost \
+            kconfig \
+            kconfig-native \
+            kcoreaddons \
+            kcoreaddons-native \
+            kwindowsystem \
+            qtdeclarative \
 "
 
 inherit cmake_plasma
 inherit reuse_license_checksums
 
-FILES:${PN} += " \
-    ${libdir}/qml/org/kde/activities/* \
-"
+FILES:${PN} += "${libdir}/qml/org/kde/activities/*"
