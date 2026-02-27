@@ -3,42 +3,38 @@
 #
 # SPDX-License-Identifier: MIT
 
-DESCRIPTION = "Plasma PA"
-HOMEPAGE = ""
+SUMMARY = "Plasma PA"
+DESCRIPTION = "Plasma applet for audio volume management using PulseAudio"
+HOMEPAGE = "https://invent.kde.org/plasma/plasma-pa"
 LICENSE = "BSD-3-Clause & GPL-2.0-only"
 PR = "r0"
 
-DEPENDS += " \
-    qtdeclarative \
-    kcoreaddons \
-    kdeclarative \
-    kglobalaccel \
-    kstatusnotifieritem \
-    ksvg \
-    libplasma \
-    pulseaudio \
-    pulseaudio-qt \
-    libcanberra \
+DEPENDS += "kcoreaddons \
+            kdeclarative \
+            kglobalaccel \
+            kstatusnotifieritem \
+            ksvg \
+            libcanberra \
+            libplasma \
+            pulseaudio \
+            pulseaudio-qt \
+            qtdeclarative \
 "
 
-RDEPENDS:${PN} += " \
-    libcanberra-alsa \
-    libcanberra-pulse \
-    kirigami-addons \
-    kitemmodels \
-    sound-theme-freedesktop \
+FILES:${PN} += "${libdir}/qml/org/kde/plasma/private/volume/* \
+                ${libdir}/plugins/plasma/kcms/systemsettings/kcm_pulseaudio.so \
+                ${datadir}/kpackage/kcms/kcm_pulseaudio \
+                ${datadir}/plasma/plasmoids/org.kde.plasma.volume \
+                ${datadir}/kde4/apps/kconf_update/* \
+"
+
+RDEPENDS:${PN} += "kirigami-addons \
+                   kitemmodels \
+                   libcanberra-alsa \
+                   libcanberra-pulse \
+                   perl \
+                   sound-theme-freedesktop \
 "
 
 inherit cmake_plasma
-inherit kf6-kdoctools
 inherit reuse_license_checksums
-
-FILES:${PN} += " \
-    ${libdir}/qml/org/kde/plasma/private/volume/* \
-    ${libdir}/plugins/plasma/kcms/systemsettings/kcm_pulseaudio.so \
-    ${datadir}/kpackage/kcms/kcm_pulseaudio \
-    ${datadir}/plasma/plasmoids/org.kde.plasma.volume \
-    ${datadir}/kde4/apps/kconf_update/* \
-"
-
-RDEPENDS:${PN} += "perl"
