@@ -2,54 +2,49 @@
 #
 # SPDX-License-Identifier: MIT
 
-DESCRIPTION = "Plasma NM"
+SUMMARY = "Plasma NM"
+DESCRIPTION = "Plasma applet written in QML for managing network connections"
 HOMEPAGE = "https://invent.kde.org/plasma/plasma-nm"
 LICENSE = "GPL-2.0-only"
 PR = "r0"
 
-DEPENDS = " \
-    qtdeclarative \
-    qttools \
-    \
-    kcompletion \
-    kconfigwidgets \
-    kcoreaddons \
-    kdbusaddons \
-    kiconthemes \
-    kio \
-    knotifications \
-    kservice \
-    ksvg \
-    kwallet \
-    kwidgetsaddons \
-    kwindowsystem \
-    modemmanager-qt \
-    networkmanager-qt \
-    prison \
-    solid \
-    \
-    libplasma \
-    \
-    qca \
-    qcoro \
+DEPENDS += "kcompletion \
+            kconfigwidgets \
+            kcoreaddons \
+            kdbusaddons \
+            kiconthemes \
+            kio \
+            knotifications \
+            kservice \
+            ksvg \
+            kwallet \
+            kwidgetsaddons \
+            kwindowsystem \
+            libplasma \
+            modemmanager-qt \
+            networkmanager-qt \
+            prison \
+            qca \
+            qcoro \
+            qtdeclarative \
+            qttools \
+            solid \
 "
 
 inherit cmake_plasma
 inherit mime-xdg
 inherit reuse_license_checksums
 
-EXTRA_OECMAKE += " \
-    -DOE_QCA_PATH_HOST_ROOT=${STAGING_DIR_HOST} \
-    -DBUILD_MOBILE=ON \
+EXTRA_OECMAKE += "-DOE_QCA_PATH_HOST_ROOT=${STAGING_DIR_HOST} \
+                  -DBUILD_MOBILE=ON \
 "
 
 FILES_SOLIBSDEV = ""
-FILES:${PN} += " \
-    ${libdir}/*.so \
-    ${libdir}/plugins/plasma/network/vpn/*.so \
-    ${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_networkmanagement.so \
-    ${libdir}/qml/org/kde/plasma/networkmanagement \
-    ${datadir}/plasma/plasmoids/org.kde.plasma.networkmanagement \
-    ${datadir}/kcm_networkmanagement/qml/*.qml \
-    ${datadir}/kpackage \
+FILES:${PN} += "${libdir}/*.so \
+                ${libdir}/plugins/plasma/network/vpn/*.so \
+                ${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_networkmanagement.so \
+                ${libdir}/qml/org/kde/plasma/networkmanagement \
+                ${datadir}/plasma/plasmoids/org.kde.plasma.networkmanagement \
+                ${datadir}/kcm_networkmanagement/qml/*.qml \
+                ${datadir}/kpackage \
 "
