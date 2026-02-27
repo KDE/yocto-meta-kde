@@ -4,73 +4,71 @@
 #
 # SPDX-License-Identifier: MIT
 
+SUMMARY = "Plasma Mobile"
 DESCRIPTION = "Plasma shell for mobile devices"
 HOMEPAGE = "https://invent.kde.org/plasma/plasma-mobile"
 LICENSE = "(LGPL-2.1-only | LGPL-3.0-only | LicenseRef-KDE-Accepted-LGPL) & (GPL-2.0-only | GPL-3.0-only | LicenseRef-KDE-Accepted-GPL)"
 PR = "r0"
 
-DEPENDS += " \
-    kdbusaddons \
-    kglobalaccel \
-    kio \
-    kirigami-addons \
-    kjobwidgets \
-    knotifications \
-    kpackage \
-    kwayland \
-    libplasma \
-    modemmanager-qt \
-    networkmanager-qt \
-    plasma-workspace \
-    qcoro \
-    qtwayland \
-    qtwayland-native \
+DEPENDS += "kdbusaddons \
+            kglobalaccel \
+            kio \
+            kirigami-addons \
+            kjobwidgets \
+            knotifications \
+            kpackage \
+            kwayland \
+            libplasma \
+            modemmanager-qt \
+            networkmanager-qt \
+            plasma-workspace \
+            qcoro \
+            qtwayland \
+            qtwayland-native \
 "
 
 inherit cmake_plasma
 inherit reuse_license_checksums
 
-FILES:${PN} += " \
-    ${datadir}/kpackage/genericqml/org.kde.phone.dialer/* \
-    ${datadir}/kpackage/kcms/kcm_mobileshell/* \
-    ${datadir}/kwin/effects/* \
-    ${datadir}/kwin/scripts/* \
-    ${datadir}/plasma/layout-templates \
-    ${datadir}/plasma/look-and-feel/* \
-    ${datadir}/plasma/mobileinitialstart \
-    ${datadir}/plasma/plasmoids/* \
-    ${datadir}/plasma/quicksettings/* \
-    ${datadir}/plasma/shells/org.kde.plasma.mobileshell/* \
-    ${datadir}/telepathy/clients/Plasma.Dialer.client \
-    ${datadir}/wallpapers/org.kde.plasma.phone.lockers/* \
-    ${datadir}/wayland-sessions/*.desktop \
-    ${datadir}/plasma-mobile-apn-info \
-    ${libdir}/plugins/kwin/effects/plugins/* \
-    ${libdir}/plugins/plasma/kcms/systemsettings/* \
-    ${libdir}/qml/QtQuick/VirtualKeyboard/Styles/Plasma/* \
-    ${libdir}/qml/org/kde/plasma/mm/* \
-    ${libdir}/qml/org/kde/plasma/mobileinitialstart/* \
-    ${libdir}/qml/org/kde/plasma/private/kpeoplehelper/* \
-    ${libdir}/qml/org/kde/plasma/private/mobilehomescreencomponents/* \
-    ${libdir}/qml/org/kde/plasma/private/mobileshell/* \
-    ${libdir}/qml/org/kde/plasma/quicksetting/flashlight/* \
-    ${libdir}/qml/org/kde/plasma/quicksetting/kscreenosd/* \
-    ${libdir}/qml/org/kde/plasma/quicksetting/nightcolor/* \
-    ${libdir}/qml/org/kde/plasma/quicksetting/powermenu/* \
-    ${libdir}/qml/org/kde/plasma/quicksetting/record/* \
-    ${libdir}/qml/org/kde/plasma/quicksetting/screenrotation/* \
-    ${libdir}/qml/org/kde/plasma/quicksetting/screenshot/* \
-    ${libdir}/qml/org/kde/private/mobile/homescreen/* \
+FILES:${PN} += "${datadir}/kpackage/genericqml/org.kde.phone.dialer/* \
+                ${datadir}/kpackage/kcms/kcm_mobileshell/* \
+                ${datadir}/kwin/effects/* \
+                ${datadir}/kwin/scripts/* \
+                ${datadir}/plasma/layout-templates \
+                ${datadir}/plasma/look-and-feel/* \
+                ${datadir}/plasma/mobileinitialstart \
+                ${datadir}/plasma/plasmoids/* \
+                ${datadir}/plasma/quicksettings/* \
+                ${datadir}/plasma/shells/org.kde.plasma.mobileshell/* \
+                ${datadir}/telepathy/clients/Plasma.Dialer.client \
+                ${datadir}/wallpapers/org.kde.plasma.phone.lockers/* \
+                ${datadir}/wayland-sessions/*.desktop \
+                ${datadir}/plasma-mobile-apn-info \
+                ${libdir}/plugins/kwin/effects/plugins/* \
+                ${libdir}/plugins/plasma/kcms/systemsettings/* \
+                ${libdir}/qml/QtQuick/VirtualKeyboard/Styles/Plasma/* \
+                ${libdir}/qml/org/kde/plasma/mm/* \
+                ${libdir}/qml/org/kde/plasma/mobileinitialstart/* \
+                ${libdir}/qml/org/kde/plasma/private/kpeoplehelper/* \
+                ${libdir}/qml/org/kde/plasma/private/mobilehomescreencomponents/* \
+                ${libdir}/qml/org/kde/plasma/private/mobileshell/* \
+                ${libdir}/qml/org/kde/plasma/quicksetting/flashlight/* \
+                ${libdir}/qml/org/kde/plasma/quicksetting/kscreenosd/* \
+                ${libdir}/qml/org/kde/plasma/quicksetting/nightcolor/* \
+                ${libdir}/qml/org/kde/plasma/quicksetting/powermenu/* \
+                ${libdir}/qml/org/kde/plasma/quicksetting/record/* \
+                ${libdir}/qml/org/kde/plasma/quicksetting/screenrotation/* \
+                ${libdir}/qml/org/kde/plasma/quicksetting/screenshot/* \
+                ${libdir}/qml/org/kde/private/mobile/homescreen/* \
 "
 
-RDEPENDS:${PN} += " \
-    breeze \
-    kded \
-    kirigami \
-    kirigami-addons \
-    plasma-nano \
-    qqc2-breeze-style \
-    kde-cli-tools \
+RDEPENDS:${PN} += "breeze \
+                   kde-cli-tools \
+                   kded \
+                   kirigami \
+                   kirigami-addons \
+                   plasma-nano \
+                   qqc2-breeze-style \
 "
 
 do_compile:append() {
