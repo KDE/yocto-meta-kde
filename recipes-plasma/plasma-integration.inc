@@ -4,36 +4,35 @@
 #
 # SPDX-License-Identifier: MIT
 
-DESCRIPTION = "Plasma Integration"
-HOMEPAGE = ""
+SUMMARY = "Plasma Integration"
+DESCRIPTION = "Qt Platform Theme integration plugins for Plasma Workspaces"
+HOMEPAGE = "https://invent.kde.org/plasma/plasma-integration"
 LICENSE = "LGPL-2.0-only"
 PR = "r0"
 
-DEPENDS = " \
-    qtdeclarative \
-    qtwayland-native \
-    kconfig \
-    kconfigwidgets \
-    kiconthemes \
-    kio \
-    knotifications \
-    kstatusnotifieritem \
-    kwayland \
-    kwidgetsaddons \
-    kwindowsystem \
-    breeze \
-    libxcursor \
+DEPENDS += "breeze \
+            kconfig \
+            kconfigwidgets \
+            kiconthemes \
+            kio \
+            knotifications \
+            kstatusnotifieritem \
+            kwayland \
+            kwidgetsaddons \
+            kwindowsystem \
+            libxcursor \
+            qtdeclarative \
+            qtwayland-native \
 "
 
 inherit cmake_plasma
 inherit reuse_license_checksums
 
-RDEPENDS:${PN} += " \
-    perl \
-    ttf-noto \
-    ttf-noto-emoji-color \
-    hack-font \
-    xdg-desktop-portal-kde \
+RDEPENDS:${PN} += "hack-font \
+                   perl \
+                   ttf-noto \
+                   ttf-noto-emoji-color \
+                   xdg-desktop-portal-kde \
 "
 
 EXTRA_OECMAKE:append = " \
