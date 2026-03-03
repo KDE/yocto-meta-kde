@@ -4,61 +4,57 @@
 #
 # SPDX-License-Identifier: MIT
 
-DESCRIPTION = "Plasma Workspace"
-HOMEPAGE = ""
+SUMMARY = "Plasma Workspace"
+DESCRIPTION = "Various components needed to run a Plasma-based environment"
+HOMEPAGE = "https://invent.kde.org/plasma/plasma-workspace/"
 LICENSE = "GPL-2.0-only"
 PR = "r0"
 
-DEPENDS = " \
-    qtdeclarative \
-    qtwayland-native \
-    qtpositioning \
-    qtlocation \
-    \
-    kcoreaddons \
-    kcrash \
-    kdbusaddons \
-    kholidays \
-    kidletime \
-    kitemmodels \
-    kirigami-addons \
-    knewstuff \
-    knotifications \
-    kpackage \
-    kpeople \
-    kquickcharts \
-    krunner \
-    kstatusnotifieritem \
-    ksvg \
-    ktexteditor \
-    kunitconversion \
-    kuserfeedback \
-    kwallet \
-    kwallet \
-    networkmanager-qt \
-    plasma5support \
-    prison \
-    solid \
-    \
-    baloo \
-    breeze \
-    kded \
-    kdesu \
-    kpipewire \
-    kscreenlocker \
-    kwayland \
-    kwin \
-    libkscreen \
-    libksysguard \
-    libplasma \
-    plasma-activities \
-    plasma-activities-stats \
-    \
-    knotifyconfig \
-    libqalculate \
-    libxft \
-    phonon \
-    qcoro \
+DEPENDS += "baloo \
+            breeze \
+            kcoreaddons \
+            kcrash \
+            kdbusaddons \
+            kded \
+            kdesu \
+            kholidays \
+            kidletime \
+            kirigami-addons \
+            kitemmodels \
+            knewstuff \
+            knotifications \
+            knotifyconfig \
+            kpackage \
+            kpeople \
+            kpipewire \
+            kquickcharts \
+            krunner \
+            kscreenlocker \
+            kstatusnotifieritem \
+            ksvg \
+            ktexteditor \
+            kunitconversion \
+            kuserfeedback \
+            kwallet \
+            kwayland \
+            kwin \
+            libkscreen \
+            libksysguard \
+            libplasma \
+            libqalculate \
+            libxft \
+            networkmanager-qt \
+            phonon \
+            plasma-activities \
+            plasma-activities-stats \
+            plasma5support \
+            prison \
+            qcoro \
+            qtdeclarative \
+            qtlocation \
+            qtpositioning \
+            qtwayland-native \
+            solid \
 "
 
 inherit cmake_plasma
@@ -66,80 +62,76 @@ inherit mime-xdg
 inherit systemd
 inherit reuse_license_checksums
 
-EXTRA_OECMAKE += " \
-    -DBUILD_xembed-sni-proxy=OFF \
-    -DINSTALL_SDDM_WAYLAND_SESSION=ON \
-    -DGLIBC_LOCALE_PREGENERATED=ON \
-    -DGLIBC_LOCALE_GEN=OFF \
+EXTRA_OECMAKE += "-DBUILD_xembed-sni-proxy=OFF \
+                  -DINSTALL_SDDM_WAYLAND_SESSION=ON \
+                  -DGLIBC_LOCALE_PREGENERATED=ON \
+                  -DGLIBC_LOCALE_GEN=OFF \
 "
 
 FILES_SOLIBSDEV = ""
-FILES:${PN} += " \
-    ${datadir}/desktop-directories/*.directory \
-    ${datadir}/kcontrol \
-    ${datadir}/kdisplay \
-    ${datadir}/kfontinst \
-    ${datadir}/kglobalaccel \
-    ${datadir}/kio/servicemenus \
-    ${datadir}/kio_desktop \
-    ${datadir}/konqsidebartng \
-    ${datadir}/kpackage \
-    ${datadir}/krunner \
-    ${datadir}/kservices6 \
-    ${datadir}/ksmserver/themes \
-    ${datadir}/ksplash/Themes \
-    ${datadir}/kstyle/themes/*.themerc \
-    ${datadir}/kxmlgui5/kfontview/* \
-    ${datadir}/kxmlgui5/kfontviewpart \
-    ${datadir}/plasma/avatars \
-    ${datadir}/plasma/look-and-feel \
-    ${datadir}/plasma/nightcolor \
-    ${datadir}/plasma/plasmoids \
-    ${datadir}/plasma/services/*.operations \
-    ${datadir}/plasma/shareprovider \
-    ${datadir}/plasma/wallpapers \
-    ${datadir}/plasma/weather \
-    ${datadir}/plasma5support/services/* \
-    ${datadir}/sddm/themes \
-    ${datadir}/solid/actions/*.desktop \
-    ${datadir}/timezonefiles \
-    ${datadir}/wayland-sessions/*.desktop \
-    ${datadir}/xdg-desktop-portal/* \
-    ${datadir}/xsessions/*.desktop \
-    ${datadir}/zsh/site-functions/* \
-    ${libdir}/libkrdb.so \
-    ${libdir}/libkworkspace6.so \
-    ${libdir}/plugins/kf6/krunner/kcms/kcm_krunner_kill.so \
-    ${libdir}/plugins/plasma/kcms/systemsettings/*.so \
-    ${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_fontinst.so \
-    ${libdir}/plugins/plasmacalendarplugins \
-    ${libdir}/qml/org/kde \
+FILES:${PN} += "${datadir}/desktop-directories/*.directory \
+                ${datadir}/kcontrol \
+                ${datadir}/kdisplay \
+                ${datadir}/kfontinst \
+                ${datadir}/kglobalaccel \
+                ${datadir}/kio/servicemenus \
+                ${datadir}/kio_desktop \
+                ${datadir}/konqsidebartng \
+                ${datadir}/kpackage \
+                ${datadir}/krunner \
+                ${datadir}/kservices6 \
+                ${datadir}/ksmserver/themes \
+                ${datadir}/ksplash/Themes \
+                ${datadir}/kstyle/themes/*.themerc \
+                ${datadir}/kxmlgui5/kfontview/* \
+                ${datadir}/kxmlgui5/kfontviewpart \
+                ${datadir}/plasma/avatars \
+                ${datadir}/plasma/look-and-feel \
+                ${datadir}/plasma/nightcolor \
+                ${datadir}/plasma/plasmoids \
+                ${datadir}/plasma/services/*.operations \
+                ${datadir}/plasma/shareprovider \
+                ${datadir}/plasma/wallpapers \
+                ${datadir}/plasma/weather \
+                ${datadir}/plasma5support/services/* \
+                ${datadir}/sddm/themes \
+                ${datadir}/solid/actions/*.desktop \
+                ${datadir}/timezonefiles \
+                ${datadir}/wayland-sessions/*.desktop \
+                ${datadir}/xdg-desktop-portal/* \
+                ${datadir}/xsessions/*.desktop \
+                ${datadir}/zsh/site-functions/* \
+                ${libdir}/libkrdb.so \
+                ${libdir}/libkworkspace6.so \
+                ${libdir}/plugins/kf6/krunner/kcms/kcm_krunner_kill.so \
+                ${libdir}/plugins/plasma/kcms/systemsettings/*.so \
+                ${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_fontinst.so \
+                ${libdir}/plugins/plasmacalendarplugins \
+                ${libdir}/qml/org/kde \
 "
 
-FILES:${PN}-dev += " \
-    ${libdir}/libbatterycontrol.so \
-    ${libdir}/libcolorcorrect.so \
-    ${libdir}/libkfontinst.so \
-    ${libdir}/libkfontinstui.so \
-    ${libdir}/libklipper.so \
-    ${libdir}/libkmpris.so \
-    ${libdir}/libkworkspace5.so \
-    ${libdir}/libnotificationmanager.so \
-    ${libdir}/libplasma-geolocation-interface.so \
-    ${libdir}/libtaskmanager.so \
-    ${libdir}/libweather_ion.so \
-    ${libdir}/libklookandfeel.so \
+FILES:${PN}-dev += "${libdir}/libbatterycontrol.so \
+                    ${libdir}/libcolorcorrect.so \
+                    ${libdir}/libkfontinst.so \
+                    ${libdir}/libkfontinstui.so \
+                    ${libdir}/libklipper.so \
+                    ${libdir}/libkmpris.so \
+                    ${libdir}/libkworkspace5.so \
+                    ${libdir}/libnotificationmanager.so \
+                    ${libdir}/libplasma-geolocation-interface.so \
+                    ${libdir}/libtaskmanager.so \
+                    ${libdir}/libweather_ion.so \
+                    ${libdir}/libklookandfeel.so \
 "
 
 INSANE_SKIP:${PN} = "dev-so"
 
-RDEPENDS:${PN} += " \
-    kquickcharts \
-    milou \
-    ocean-sound-theme \
-    xprop \
-    xset \
-    qttools-tools \
+RDEPENDS:${PN} += "kquickcharts \
+                   milou \
+                   ocean-sound-theme \
+                   qttools-tools \
+                   xprop \
+                   xset \
 "
 
 do_install:append() {
