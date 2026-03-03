@@ -2,35 +2,34 @@
 #
 # SPDX-License-Identifier: MIT
 
-DESCRIPTION = "Powerdevil"
-HOMEPAGE = ""
+SUMMARY = "PowerDevil"
+DESCRIPTION = "Manages the power consumption settings of a Plasma shell"
+HOMEPAGE = "https://invent.kde.org/plasma/powerdevil"
 LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://COPYING;md5=5c213a7de3f013310bd272cdb6eb7a24"
 PR = "r0"
 
-DEPENDS = " \
-    qtwayland-native \
-    plasma-activities \
-    kidletime \
-    kconfig \
-    kdbusaddons \
-    solid \
-    kglobalaccel \
-    kio \
-    knotifyconfig \
-    libkscreen \
-    kwayland \
-    kitemmodels \
-    plasma-workspace \
-    bluez-qt \
-    ddcutil \
+DEPENDS += "bluez-qt \
+            ddcutil \
+            kconfig \
+            kdbusaddons \
+            kglobalaccel \
+            kidletime \
+            kio \
+            kitemmodels \
+            knotifyconfig \
+            kwayland \
+            libkscreen \
+            plasma-activities \
+            plasma-workspace \
+            qtwayland-native \
+            solid \
 "
 
 inherit cmake_plasma
 
-FILES:${PN} += " \
-    ${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/* \
-    ${libdir}/plugins/powerdevil/action/kcm/* \
-    ${libdir}/qml/org/kde/plasma/private/* \
-    ${datadir}/plasma/plasmoids/* \
+FILES:${PN} += "${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/* \
+                ${libdir}/plugins/powerdevil/action/kcm/* \
+                ${libdir}/qml/org/kde/plasma/private/* \
+                ${datadir}/plasma/plasmoids/* \
 "
