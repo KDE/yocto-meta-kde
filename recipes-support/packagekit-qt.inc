@@ -9,15 +9,12 @@ LICENSE = "LGPL-2.1-only"
 LIC_FILES_CHKSUM = "file://COPYING;md5=4fbd65380cdd255951079008b364516c"
 PR = "r0"
 
-DEPENDS = " \
-    qtbase \
-    packagekit \
+DEPENDS += "packagekit \
+            qtbase \
 "
 
 RDEPENDS:${PN} += "qtbase"
 
 inherit qt6-cmake xmlcatalog
 
-EXTRA_OECMAKE += " \
-    -DBUILD_WITH_QT6=ON \
-"
+EXTRA_OECMAKE += "-DBUILD_WITH_QT6=ON"
