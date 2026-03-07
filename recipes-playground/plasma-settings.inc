@@ -2,24 +2,22 @@
 #
 # SPDX-License-Identifier: MIT
 
-DESCRIPTION = "Plasma Mobile Settings"
+SUMMARY = "Plasma Mobile Settings"
+DESCRIPTION = "Settings application for Plasma Mobile"
 HOMEPAGE = "https://invent.kde.org/plasma-mobile/plasma-settings"
 LICENSE = "GPL-2.0-or-later"
 PR = "r0"
 
-DEPENDS = " \
-    kitemmodels \
-    modemmanager-qt \
-    networkmanager-qt \
-    kirigami-addons \
-    libplasma \
+DEPENDS += "kirigami-addons \
+            kitemmodels \
+            libplasma \
+            modemmanager-qt \
+            networkmanager-qt \
 "
 
 inherit cmake_plasma
-inherit kf6-kdoctools
 inherit reuse_license_checksums
 
-FILES:${PN} += " \
-    ${libdir}/qml \
-    ${datadir}/kpackage \
+FILES:${PN} += "${libdir}/qml \
+                ${datadir}/kpackage \
 "
