@@ -2,17 +2,17 @@
 #
 # SPDX-License-Identifier: MIT
 
+SUMMARY = "Kirigami Add-ons"
 DESCRIPTION = "Add-ons for the Kirigami framework"
 HOMEPAGE = "https://invent.kde.org/libraries/kirigami-addons"
 LICENSE = "LGPL-2.1-or-later & BSD-2-Clause"
 PR = "r0"
 
-DEPENDS = " \
-    kirigami \
-    ki18n \
-    qt5compat \
-    qtdeclarative \
-    plasma-activities \
+DEPENDS += "ki18n \
+            kirigami \
+            plasma-activities \
+            qt5compat \
+            qtdeclarative \
 "
 
 SRC_URI = "git://invent.kde.org/libraries/${BPN};nobranch=1;protocol=https"
