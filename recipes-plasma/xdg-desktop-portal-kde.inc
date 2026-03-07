@@ -3,32 +3,28 @@
 #
 # SPDX-License-Identifier: MIT
 
-DESCRIPTION = "XDG Desktop Portal KDE"
-HOMEPAGE = ""
+SUMMARY = "KDE Portal for XDG Desktop"
+DESCRIPTION = "A backend implementation for xdg-desktop-portal that is using Qt/KDE"
+HOMEPAGE = "https://invent.kde.org/plasma/xdg-desktop-portal-kde"
 LICENSE = "LGPL-2.1-only & GPL-2.0-or-later"
 PR = "r0"
 
-DEPENDS += " \
-    kcoreaddons \
-    knotifications \
-    kwayland \
-    kwidgetsaddons \
-    kirigami \
-    kio \
-    kdeclarative \
-    kstatusnotifieritem \
-    libplasma \
-    pipewire \
-    qtwayland-native \
+DEPENDS += "kcoreaddons \
+            kdeclarative \
+            kio \
+            kirigami \
+            knotifications \
+            kstatusnotifieritem \
+            kwayland \
+            kwidgetsaddons \
+            libplasma \
+            pipewire \
+            qtwayland-native \
 "
 
 inherit cmake_plasma
 inherit reuse_license_checksums
 
-FILES:${PN} += " \
-    ${datadir}/xdg-desktop-portal \
-"
+FILES:${PN} += "${datadir}/xdg-desktop-portal"
 
-RDEPENDS:${PN} += " \
-    xdg-desktop-portal \
-"
+RDEPENDS:${PN} += "xdg-desktop-portal"
