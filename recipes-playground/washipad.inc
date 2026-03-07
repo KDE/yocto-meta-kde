@@ -2,18 +2,17 @@
 #
 # SPDX-License-Identifier: MIT
 
+SUMMARY = "Washipad"
 DESCRIPTION = "Minimalist Sketchnoting Application"
-HOMEPAGE = ""
+HOMEPAGE = "https://invent.kde.org/graphics/washipad"
 LICENSE = "GPL-3.0-only"
 PR = "r0"
 
-DEPENDS = " \
-    qtbase \
-    qtdeclarative \
-    kdeclarative \
-    kiconthemes \
-    kirigami \
-    kpackage \
+DEPENDS += "kdeclarative \
+            kiconthemes \
+            kirigami \
+            kpackage \
+            qtdeclarative \
 "
 
 SRC_URI = "git://invent.kde.org/graphics/${BPN};nobranch=1;protocol=https"
@@ -23,6 +22,4 @@ inherit cmake_kdeapp
 inherit mime-xdg
 inherit reuse_license_checksums
 
-RDEPENDS:${PN} += " \
-    qtdeclarative \
-"
+RDEPENDS:${PN} += "qtdeclarative"
