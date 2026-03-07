@@ -2,18 +2,17 @@
 #
 # SPDX-License-Identifier: MIT
 
+SUMMARY = "Arkade"
 DESCRIPTION = "Collection of Arcade games developed in Kirigami"
-HOMEPAGE = ""
+HOMEPAGE = "https://invent.kde.org/games/arkade"
 LICENSE = "GPL-3.0-or-later"
 PR = "r0"
 
-DEPENDS = " \
-    qtbase \
-    qtdeclarative \
-    kdeclarative \
-    kiconthemes \
-    kirigami \
-    kpackage \
+DEPENDS += "kdeclarative \
+            kiconthemes \
+            kirigami \
+            kpackage \
+            qtdeclarative \
 "
 
 SRC_URI = "git://invent.kde.org/games/${BPN};nobranch=1;protocol=https"
@@ -23,12 +22,9 @@ inherit cmake_kdeapp
 inherit mime-xdg
 inherit reuse_license_checksums
 
-RDEPENDS:${PN} += " \
-    qtdeclarative \
+FILES:${PN} += "${datadir}/game/packages/org.kde.arkade.fourinline \
+                ${datadir}/game/packages/org.kde.arkade.samegame \
+                ${datadir}/game/packages/org.kde.arkade.blocktennis \
 "
 
-FILES:${PN} += "\
-    ${datadir}/game/packages/org.kde.arkade.fourinline \
-    ${datadir}/game/packages/org.kde.arkade.samegame \
-    ${datadir}/game/packages/org.kde.arkade.blocktennis \
-"
+RDEPENDS:${PN} += "qtdeclarative"
