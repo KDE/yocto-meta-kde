@@ -38,3 +38,4 @@ FILES:${PN} += "${datadir} \
                 ${libdir}/girepository-1.0 \
 "
 
+INSANE_SKIP:${PN} += "buildpaths"
