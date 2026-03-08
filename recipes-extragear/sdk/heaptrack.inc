@@ -16,7 +16,7 @@ DEPENDS += "boost \
 
 SRC_URI = "git://invent.kde.org/sdk/${BPN};nobranch=1;protocol=https"
 SRC_URI += "file://0001-cmake-Fix-C-compatibility-of-libunwind-probes.patch"
-S = "${WORKDIR}/git"
+S = "${UNPACKDIR}/git"
 
 inherit cmake
 inherit reuse_license_checksums

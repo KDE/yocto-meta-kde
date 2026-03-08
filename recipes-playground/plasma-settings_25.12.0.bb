@@ -5,4 +5,4 @@ require ${PN}.inc
 SRC_URI = "git://invent.kde.org/plasma-mobile/${BPN};nobranch=1;protocol=https"
 # v25.12.0
 SRCREV = "21edd39cce3cedc884b9c0a7c3b45b84618e8219"
-S = "${WORKDIR}/git"
+S = "${UNPACKDIR}/git"

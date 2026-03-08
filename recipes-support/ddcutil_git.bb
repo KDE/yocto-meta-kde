@@ -11,7 +11,7 @@ PV = "2.2.3"
 SRC_URI = "git://github.com/rockowitz/ddcutil.git;protocol=https;branch=master"
 SRCREV = "8660f29c0370ca093d45ea6c91277edd00d51301"
 
-S = "${WORKDIR}/git"
+S = "${UNPACKDIR}/git"
 
 inherit autotools pkgconfig
 

@@ -21,7 +21,7 @@ DEPENDS += "kcrash \
 "
 
 SRC_URI = "git://invent.kde.org/education/${BPN};nobranch=1;protocol=https"
-S = "${WORKDIR}/git"
+S = "${UNPACKDIR}/git"
 
 FILES:${PN} += "${datadir}/gcompris-qt/rcc \
                 ${datadir}/gcompris-qt/translations \

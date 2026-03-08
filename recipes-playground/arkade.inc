@@ -16,7 +16,7 @@ DEPENDS += "kdeclarative \
 "
 
 SRC_URI = "git://invent.kde.org/games/${BPN};nobranch=1;protocol=https"
-S = "${WORKDIR}/git"
+S = "${UNPACKDIR}/git"
 
 inherit cmake_kdeapp
 inherit mime-xdg

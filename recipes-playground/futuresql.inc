@@ -11,7 +11,7 @@ PR = "r0"
 DEPENDS += "qcoro"
 
 SRC_URI = "git://invent.kde.org/libraries/${BPN};nobranch=1;protocol=https"
-S = "${WORKDIR}/git"
+S = "${UNPACKDIR}/git"
 
 inherit cmake_kdeapp
 inherit reuse_license_checksums
