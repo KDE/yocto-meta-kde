@@ -9,17 +9,16 @@ LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://COPYING;md5=cb56c8b10bbb1c97490192a78c4fb273"
 PR = "r0"
 
-DEPENDS += " \
-    kcompletion \
-    kcrash \
-    ki18n \
-    kio \
-    knewstuff \
-    knotifications \
-    knotifyconfig \
-    kparts \
-    kxmlgui \
-    libkeduvocdocument \
+DEPENDS += "kcompletion \
+            kcrash \
+            ki18n \
+            kio \
+            knewstuff \
+            knotifications \
+            knotifyconfig \
+            kparts \
+            kxmlgui \
+            libkeduvocdocument \
 "
 
 inherit cmake_kdeapp
@@ -28,10 +27,6 @@ inherit kf6-kconfig
 inherit kf6-kauth
 inherit mime-xdg
 
-RDEPENDS:${PN} += " \
-    kdeedu-data \
-"
+FILES:${PN} += "${datadir}/knsrcfiles/"
 
-FILES:${PN} += " \
-    ${datadir}/knsrcfiles/ \
-"
+RDEPENDS:${PN} += "kdeedu-data"
