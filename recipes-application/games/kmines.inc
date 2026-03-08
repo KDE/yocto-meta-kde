@@ -8,14 +8,13 @@ HOMEPAGE = "https://invent.kde.org/games/kmines"
 LICENSE = "GPL-2.0-or-later"
 PR = "r0"
 
-DEPENDS += " \
-    kconfigwidgets \
-    kcrash \
-    ki18n \
-    ktextwidgets \
-    kwidgetsaddons \
-    kxmlgui \
-    libkdegames \
+DEPENDS += "kconfigwidgets \
+            kcrash \
+            ki18n \
+            ktextwidgets \
+            kwidgetsaddons \
+            kxmlgui \
+            libkdegames \
 "
 
 inherit cmake_kdeapp
