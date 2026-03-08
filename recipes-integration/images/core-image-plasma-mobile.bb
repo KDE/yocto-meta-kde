@@ -12,16 +12,16 @@ inherit features_check
 
 REQUIRED_DISTRO_FEATURES = "wayland"
 
-IMAGE_INSTALL = " \
+IMAGE_INSTALL = "dbus \
                  ${CORE_IMAGE_BASE_INSTALL} \
-                 wayland dbus \
+                 packagegroup-plasma-mobile \
                  sddm \
                  sddm-config-plasma-mobile \
-                 packagegroup-plasma-mobile \
                  ttf-noto \
                  ttf-noto-emoji-color \
-                "
+                 wayland \
+"
 
-SYSTEMD_DEFAULT_TARGET="graphical.target"
+SYSTEMD_DEFAULT_TARGET = "graphical.target"
 
 inherit core-image
