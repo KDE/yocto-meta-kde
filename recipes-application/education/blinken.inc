@@ -8,11 +8,10 @@ HOMEPAGE = "https://edu.kde.org/blinken/"
 LICENSE = "GPL-2.0-or-later"
 PR = "r0"
 
-DEPENDS += " \
-    kcrash \
-    ki18n \
-    kio \
-    phonon \
+DEPENDS += "kcrash \
+            ki18n \
+            kio \
+            phonon \
 "
 
 inherit cmake_kdeapp
