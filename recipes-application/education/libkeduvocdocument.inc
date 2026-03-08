@@ -8,10 +8,9 @@ HOMEPAGE = "https://edu.kde.org/khangman/"
 LICENSE = "GPL-2.0-or-later"
 PR = "r0"
 
-DEPENDS += " \
-    karchive \
-    ki18n \
-    kio \
+DEPENDS += "karchive \
+            ki18n \
+            kio \
 "
 
 inherit cmake_kdeapp
