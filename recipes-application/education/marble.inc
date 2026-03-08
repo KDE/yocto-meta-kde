@@ -30,6 +30,10 @@ inherit mime
 inherit mime-xdg
 inherit reuse_license_checksums
 
+do_configure:append() {
+    sed -i "s/Generated automatically by \$0/Generated automatically by AprsGatherGen.pl/g" ${S}/src/plugins/render/aprs/AprsGatherGen.pl
+}
+
 EXTRA_OECMAKE += "-DBUILD_TOUCH=ON"
 
 # note: marble-maps is the dedicated mobile version
