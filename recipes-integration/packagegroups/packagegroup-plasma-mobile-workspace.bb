@@ -13,7 +13,5 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 inherit packagegroup features_check
 require plasma-workspace-common.inc
 
-RDEPENDS:${PN}:append = " \
-    plasma-mobile \
-    ${@bb.utils.contains('DISTRO_FEATURES', 'desktop-portal', 'discover', '', d)} \
-"
+RDEPENDS:${PN}:append = " plasma-mobile"
+RDEPENDS:${PN}:append = " ${@bb.utils.contains('DISTRO_FEATURES', 'desktop-portal', 'discover', '', d)}"

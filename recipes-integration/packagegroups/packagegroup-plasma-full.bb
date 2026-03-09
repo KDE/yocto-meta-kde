@@ -2,41 +2,40 @@
 #
 # SPDX-License-Identifier: MIT
 
-DESCRIPTION = "KDE Plasma Mobile"
+SUMMARY = "KDE Plasma Mobile"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
 inherit packagegroup
 
-RDEPENDS:${PN} = " \
-    bluedevil \
-    breeze \
-    discover \
-    plasma-activities \
-    plasma-activities-stats \
-    kactivitymanagerd \
-    kde-cli-tools \
-    kdecoration \
-    kglobalacceld \
-    kpipewire \
-    kscreenlocker \
-    kwayland \
-    kwin \
-    layer-shell-qt \
-    libkscreen \
-    libksysguard \
-    milou \
-    libplasma \
-    plasma-integration \
-    plasma-mobile \
-    plasma-nano \
-    plasma-nm \
-    plasma-pa \
-    plasma-systemmonitor \
-    plasma-workspace \
-    plasma5support \
-    polkit-kde-agent-1 \
-    powerdevil \
-    systemsettings \
-    xdg-desktop-portal-kde \
+RDEPENDS:${PN} += "bluedevil \
+                   breeze \
+                   discover \
+                   kactivitymanagerd \
+                   kde-cli-tools \
+                   kdecoration \
+                   kglobalacceld \
+                   kpipewire \
+                   kscreenlocker \
+                   kwayland \
+                   kwin \
+                   layer-shell-qt \
+                   libkscreen \
+                   libksysguard \
+                   libplasma \
+                   milou \
+                   plasma-activities \
+                   plasma-activities-stats \
+                   plasma-integration \
+                   plasma-mobile \
+                   plasma-nano \
+                   plasma-nm \
+                   plasma-pa \
+                   plasma-systemmonitor \
+                   plasma-workspace \
+                   plasma5support \
+                   polkit-kde-agent-1 \
+                   powerdevil \
+                   systemsettings \
+                   xdg-desktop-portal-kde \
 "

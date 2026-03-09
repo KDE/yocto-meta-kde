@@ -11,8 +11,7 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 inherit packagegroup features_check
 require plasma-workspace-common.inc
 
-RDEPENDS:${PN} += " \
-    plasma-desktop \
-    plasma-welcome \
-    systemsettings \
+RDEPENDS:${PN} += "plasma-desktop \
+                   plasma-welcome \
+                   systemsettings \
 "
