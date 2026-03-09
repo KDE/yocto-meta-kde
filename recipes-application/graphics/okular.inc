@@ -44,43 +44,43 @@ PACKAGES += "${PN}-desktop \
              ${PN}-shared \
 "
 
-FILES:${PN} = "${bindir}/okularkirigami \
-               ${datadir}/applications/org.kde.okular.kirigami.desktop \
+FILES:${PN} += "${bindir}/okularkirigami \
+                ${datadir}/applications/org.kde.okular.kirigami.desktop \
 "
 
-FILES:${PN}-shared = "${sysconfdir}/xdg/okular.categories \
-                      ${datadir}/okular/pics \
-                      ${datadir}/okular/icons \
-                      ${datadir}/config.kcfg \
-                      ${datadir}/icons \
-                      ${datadir}/kconf_update \
-                      ${datadir}/metainfo \
-                      ${datadir}/okular \
-                      ${datadir}/applications/org.kde.mobile.okular_xps.desktop \
-                      ${datadir}/applications/okularApplication_dvi.desktop \
-                      ${datadir}/applications/okularApplication_fax.desktop \
-                      ${datadir}/applications/okularApplication_xps.desktop \
-                      ${datadir}/applications/okularApplication_fb.desktop \
-                      ${datadir}/applications/okularApplication_txt.desktop \
-                      ${datadir}/applications/org.kde.mobile.okular_fax.desktop \
-                      ${datadir}/applications/org.kde.mobile.okular_fb.desktop \
-                      ${datadir}/applications/org.kde.mobile.okular_comicbook.desktop \
-                      ${datadir}/applications/okularApplication_tiff.desktop \
-                      ${datadir}/applications/org.kde.mobile.okular_txt.desktop \
-                      ${datadir}/applications/okularApplication_comicbook.desktop \
-                      ${datadir}/applications/org.kde.mobile.okular_pdf.desktop \
-                      ${datadir}/applications/okularApplication_plucker.desktop \
-                      ${datadir}/applications/org.kde.mobile.okular_tiff.desktop \
-                      ${datadir}/applications/org.kde.mobile.okular_dvi.desktop \
-                      ${datadir}/applications/org.kde.mobile.okular_plucker.desktop \
-                      ${datadir}/applications/okularApplication_pdf.desktop \
-                      ${datadir}/applications/org.kde.mobile.okular_kimgio.desktop \
-                      ${datadir}/applications/okularApplication_kimgio.desktop \
-                      ${libdir} \
+FILES:${PN}-shared += "${sysconfdir}/xdg/okular.categories \
+                       ${datadir}/okular/pics \
+                       ${datadir}/okular/icons \
+                       ${datadir}/config.kcfg \
+                       ${datadir}/icons \
+                       ${datadir}/kconf_update \
+                       ${datadir}/metainfo \
+                       ${datadir}/okular \
+                       ${datadir}/applications/org.kde.mobile.okular_xps.desktop \
+                       ${datadir}/applications/okularApplication_dvi.desktop \
+                       ${datadir}/applications/okularApplication_fax.desktop \
+                       ${datadir}/applications/okularApplication_xps.desktop \
+                       ${datadir}/applications/okularApplication_fb.desktop \
+                       ${datadir}/applications/okularApplication_txt.desktop \
+                       ${datadir}/applications/org.kde.mobile.okular_fax.desktop \
+                       ${datadir}/applications/org.kde.mobile.okular_fb.desktop \
+                       ${datadir}/applications/org.kde.mobile.okular_comicbook.desktop \
+                       ${datadir}/applications/okularApplication_tiff.desktop \
+                       ${datadir}/applications/org.kde.mobile.okular_txt.desktop \
+                       ${datadir}/applications/okularApplication_comicbook.desktop \
+                       ${datadir}/applications/org.kde.mobile.okular_pdf.desktop \
+                       ${datadir}/applications/okularApplication_plucker.desktop \
+                       ${datadir}/applications/org.kde.mobile.okular_tiff.desktop \
+                       ${datadir}/applications/org.kde.mobile.okular_dvi.desktop \
+                       ${datadir}/applications/org.kde.mobile.okular_plucker.desktop \
+                       ${datadir}/applications/okularApplication_pdf.desktop \
+                       ${datadir}/applications/org.kde.mobile.okular_kimgio.desktop \
+                       ${datadir}/applications/okularApplication_kimgio.desktop \
+                       ${libdir} \
 "
 
-FILES:${PN}-desktop = "${bindir}/okular \
-                       ${datadir}/applications/org.kde.okular.desktop \
+FILES:${PN}-desktop += "${bindir}/okular \
+                        ${datadir}/applications/org.kde.okular.desktop \
 "
 
 RDEPENDS:${PN} += "${PN}-shared \
