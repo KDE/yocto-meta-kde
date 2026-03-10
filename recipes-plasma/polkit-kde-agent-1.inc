@@ -6,7 +6,6 @@ SUMMARY = "Polkit KDE Agent"
 DESCRIPTION = "Daemon providing a Polkit authentication UI for Plasma"
 HOMEPAGE = "https://invent.kde.org/plasma/polkit-kde-agent-1"
 LICENSE = "GPL-2.0-or-later"
-PR = "r0"
 
 DEPENDS += "kcoreaddons \
             kcrash \

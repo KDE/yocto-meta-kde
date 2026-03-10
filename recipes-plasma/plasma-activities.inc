@@ -7,7 +7,6 @@ SUMMARY = "Plasma Activities"
 DESCRIPTION = "Core components for the KDE's Activities System"
 HOMEPAGE = "https://invent.kde.org/plasma/plasma-activities"
 LICENSE = "LGPL-2.1-only"
-PR = "r0"
 
 DEPENDS += "boost \
             kconfig \

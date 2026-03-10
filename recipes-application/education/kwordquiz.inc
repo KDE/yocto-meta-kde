@@ -6,7 +6,6 @@ SUMMARY = "KWordQuiz"
 DESCRIPTION = "Flash Card Trainer"
 HOMEPAGE = "https://invent.kde.org/education/kwordquiz"
 LICENSE = "GPL-2.0-or-later"
-PR = "r0"
 
 DEPENDS += "kcrash \
             kirigami \

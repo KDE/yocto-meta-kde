@@ -8,7 +8,6 @@ SUMMARY = "Plasma Workspace"
 DESCRIPTION = "Various components needed to run a Plasma-based environment"
 HOMEPAGE = "https://invent.kde.org/plasma/plasma-workspace/"
 LICENSE = "GPL-2.0-only"
-PR = "r0"
 
 DEPENDS += "baloo \
             breeze \

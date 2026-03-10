@@ -6,7 +6,6 @@ SUMMARY = "KGamma"
 DESCRIPTION = "Adjust your monitor's gamma settings"
 HOMEPAGE = "https://invent.kde.org/plasma/kgamma"
 LICENSE = "GPL-2.0-or-later"
-PR = "r0"
 
 DEPENDS += "plasma-wayland-protocols \
             qtwayland \

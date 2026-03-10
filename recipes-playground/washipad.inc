@@ -6,7 +6,6 @@ SUMMARY = "Washipad"
 DESCRIPTION = "Minimalist Sketchnoting Application"
 HOMEPAGE = "https://invent.kde.org/graphics/washipad"
 LICENSE = "GPL-3.0-only"
-PR = "r0"
 
 DEPENDS += "kdeclarative \
             kiconthemes \

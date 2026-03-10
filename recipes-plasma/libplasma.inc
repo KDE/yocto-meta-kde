@@ -8,7 +8,6 @@ SUMMARY = "libplasma"
 DESCRIPTION = "Plasma library and runtime components"
 HOMEPAGE = "https://invent.kde.org/plasma/libplasma"
 LICENSE = "LGPL-2.1-only"
-PR = "r0"
 
 DEPENDS += "gzip-native \
             karchive \

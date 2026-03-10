@@ -8,7 +8,6 @@ DESCRIPTION = "Helps you find and install applications, games, and tools"
 HOMEPAGE = "https://invent.kde.org/plasma/discover"
 LICENSE = "GPL-3.0-only"
 LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-only.txt;md5=93e64b4a83c7e441e48bbdeeea05c977"
-PR = "r0"
 
 DEPENDS += "attica \
             karchive \

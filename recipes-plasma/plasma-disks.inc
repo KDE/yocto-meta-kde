@@ -6,7 +6,6 @@ SUMMARY = "Plasma Disks"
 DESCRIPTION = "Monitors S.M.A.R.T. capable devices for imminent failure"
 HOMEPAGE = "https://invent.kde.org/plasma/plasma-disks"
 LICENSE = "GPL-2.0-only"
-PR = "r0"
 
 DEPENDS += "kauth \
             kservice \

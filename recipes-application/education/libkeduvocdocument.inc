@@ -6,7 +6,6 @@ SUMMARY = "KEduVocDocument"
 DESCRIPTION = "Library for reading from/writing to the KVTML format."
 HOMEPAGE = "https://edu.kde.org/khangman/"
 LICENSE = "GPL-2.0-or-later"
-PR = "r0"
 
 DEPENDS += "karchive \
             ki18n \

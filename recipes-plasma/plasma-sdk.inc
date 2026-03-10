@@ -6,7 +6,6 @@ SUMMARY = "Plasma SDK"
 DESCRIPTION = "Applications useful for Plasma development"
 HOMEPAGE = "https://invent.kde.org/plasma/plasma-sdk"
 LICENSE = "BSD-2-Clause & GPL-2.0-only"
-PR = "r0"
 
 DEPENDS += "karchive \
             kcompletion \

@@ -7,7 +7,6 @@ SUMMARY = "KDE Portal for XDG Desktop"
 DESCRIPTION = "A backend implementation for xdg-desktop-portal that is using Qt/KDE"
 HOMEPAGE = "https://invent.kde.org/plasma/xdg-desktop-portal-kde"
 LICENSE = "LGPL-2.1-only & GPL-2.0-or-later"
-PR = "r0"
 
 DEPENDS += "kcoreaddons \
             kdeclarative \

@@ -8,7 +8,6 @@ SUMMARY = "Milou"
 DESCRIPTION = "A dedicated search application built on top of Baloo"
 HOMEPAGE = "https://invent.kde.org/plasma/milou"
 LICENSE = "(LGPL-2.1-only | LGPL-3.0-only | LicenseRef-KDE-Accepted-LGPL) & (GPL-2.0-only | GPL-3.0-only | LicenseRef-KDE-Accepted-GPL) & GPL-2.0-or-later"
-PR = "r0"
 
 DEPENDS += "kcoreaddons \
             kdeclarative \

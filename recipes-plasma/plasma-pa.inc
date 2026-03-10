@@ -7,7 +7,6 @@ SUMMARY = "Plasma PA"
 DESCRIPTION = "Plasma applet for audio volume management using PulseAudio"
 HOMEPAGE = "https://invent.kde.org/plasma/plasma-pa"
 LICENSE = "BSD-3-Clause & GPL-2.0-only"
-PR = "r0"
 
 DEPENDS += "kcoreaddons \
             kdeclarative \

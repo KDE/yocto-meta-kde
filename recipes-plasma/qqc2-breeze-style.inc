@@ -6,7 +6,6 @@ SUMMARY = "Breeze Style for QQC2"
 DESCRIPTION = "Breeze inspired QQC2 Style"
 HOMEPAGE = "https://invent.kde.org/plasma/qqc2-breeze-style"
 LICENSE = "LGPL-3.0-only"
-PR = "r0"
 
 DEPENDS += "kirigami \
             kquickcharts \

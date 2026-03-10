@@ -6,7 +6,6 @@ SUMMARY = "KTrip"
 DESCRIPTION = "Public Transport Assistance for Mobile Devices"
 HOMEPAGE = "https://invent.kde.org/utilities/ktrip"
 LICENSE = "GPL-2.0-only"
-PR = "r0"
 
 DEPENDS += "kcontacts \
             ki18n \

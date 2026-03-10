@@ -7,7 +7,6 @@ SUMMARY = "KDE Connect"
 DESCRIPTION = "Multi-platform app that allows your devices to communicate"
 HOMEPAGE = "https://invent.kde.org/network/kdeconnect-kde"
 LICENSE = "GPL-2.0-only"
-PR = "r0"
 
 DEPENDS += "kconfigwidgets \
             kdbusaddons \

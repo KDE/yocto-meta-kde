@@ -6,7 +6,6 @@ SUMMARY = "QMLKonsole"
 DESCRIPTION = "Terminal app for Plasma Mobile"
 HOMEPAGE = "https://invent.kde.org/plasma-mobile/qmlkonsole"
 LICENSE = "GPL-2.0-or-later"
-PR = "r0"
 
 DEPENDS += "kconfig \
             kconfig-native \

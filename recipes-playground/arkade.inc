@@ -6,7 +6,6 @@ SUMMARY = "Arkade"
 DESCRIPTION = "Collection of Arcade games developed in Kirigami"
 HOMEPAGE = "https://invent.kde.org/games/arkade"
 LICENSE = "GPL-3.0-or-later"
-PR = "r0"
 
 DEPENDS += "kdeclarative \
             kiconthemes \

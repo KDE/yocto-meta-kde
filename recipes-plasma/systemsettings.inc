@@ -6,7 +6,6 @@ SUMMARY = "System Settings"
 DESCRIPTION = "Control center to configure your Plasma Desktop"
 HOMEPAGE = "https://invent.kde.org/plasma/systemsettings"
 LICENSE = "GPL-2.0-only"
-PR = "r0"
 
 DEPENDS += "kcmutils \
             kconfig \

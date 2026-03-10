@@ -6,7 +6,6 @@ SUMMARY = "KRdp"
 DESCRIPTION = "Library and examples for creating an RDP server"
 HOMEPAGE = "https://invent.kde.org/plasma/krdp"
 LICENSE = "LGPL-2.1-only | LGPL-3.0-only"
-PR = "r0"
 
 DEPENDS += "freerdp3 \
             kpipewire \

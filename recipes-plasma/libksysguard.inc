@@ -7,7 +7,6 @@ SUMMARY = "libksysguard"
 DESCRIPTION = "Library to retrieve information on the current status of computer hardware"
 HOMEPAGE = "https://invent.kde.org/plasma/libksysguard"
 LICENSE = "LGPL-2.1-only"
-PR = "r0"
 
 DEPENDS += "kcompletion \
             kconfig \

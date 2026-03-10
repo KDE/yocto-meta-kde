@@ -6,7 +6,6 @@ SUMMARY = "KMines"
 DESCRIPTION = "KMines is the classic Minesweeper game"
 HOMEPAGE = "https://invent.kde.org/games/kmines"
 LICENSE = "GPL-2.0-or-later"
-PR = "r0"
 
 DEPENDS += "kconfigwidgets \
             kcrash \

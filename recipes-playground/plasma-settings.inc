@@ -6,7 +6,6 @@ SUMMARY = "Plasma Mobile Settings"
 DESCRIPTION = "Settings application for Plasma Mobile"
 HOMEPAGE = "https://invent.kde.org/plasma-mobile/plasma-settings"
 LICENSE = "GPL-2.0-or-later"
-PR = "r0"
 
 DEPENDS += "kirigami-addons \
             kitemmodels \

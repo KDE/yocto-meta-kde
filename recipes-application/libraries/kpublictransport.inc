@@ -6,7 +6,6 @@ SUMMARY = "KPublicTransport"
 DESCRIPTION = "Library to assist with accessing public transport timetables and other data"
 HOMEPAGE = "https://invent.kde.org/libraries/kpublictransport"
 LICENSE = "MIT & BSD-3-Clause & LGPL-2.0-or-later"
-PR = "r0"
 
 DEPENDS += "kirigami-addons \
             qtdeclarative \

@@ -8,7 +8,6 @@ SUMMARY = "Plasma Mobile"
 DESCRIPTION = "Plasma shell for mobile devices"
 HOMEPAGE = "https://invent.kde.org/plasma/plasma-mobile"
 LICENSE = "(LGPL-2.1-only | LGPL-3.0-only | LicenseRef-KDE-Accepted-LGPL) & (GPL-2.0-only | GPL-3.0-only | LicenseRef-KDE-Accepted-GPL)"
-PR = "r0"
 
 DEPENDS += "kdbusaddons \
             kglobalaccel \

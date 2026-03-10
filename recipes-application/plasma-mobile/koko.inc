@@ -7,7 +7,6 @@ SUMMARY = "KoKo"
 DESCRIPTION = "KoKo Gallery Application"
 HOMEPAGE = "https://invent.kde.org/graphics/koko"
 LICENSE = "LGPL-2.1-only"
-PR = "r0"
 
 DEPENDS += "exiv2 \
             kdeclarative \

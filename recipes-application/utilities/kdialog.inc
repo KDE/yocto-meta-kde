@@ -6,7 +6,6 @@ SUMMARY = "KDialog"
 DESCRIPTION = "Tool to show nice dialog boxes from shell scripts"
 HOMEPAGE = "https://invent.kde.org/utilities/kdialog"
 LICENSE = "GPL-2.0-or-later"
-PR = "r0"
 
 DEPENDS += "kdbusaddons\
             kguiaddons \

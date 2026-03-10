@@ -6,7 +6,6 @@ SUMMARY = "KQuickImageEditor"
 DESCRIPTION = "Image editing components"
 HOMEPAGE = "https://invent.kde.org/libraries/kquickimageeditor/"
 LICENSE = "BSD-2-Clause & LGPL-2.1-only & LGPL-2.1-or-later & LGPL-3.0-only & LicenseRef-KDE-Accepted-GPL"
-PR = "r0"
 
 DEPENDS += "qtdeclarative"
 

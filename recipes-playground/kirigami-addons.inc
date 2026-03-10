@@ -6,7 +6,6 @@ SUMMARY = "Kirigami Add-ons"
 DESCRIPTION = "Add-ons for the Kirigami framework"
 HOMEPAGE = "https://invent.kde.org/libraries/kirigami-addons"
 LICENSE = "LGPL-2.1-or-later & BSD-2-Clause"
-PR = "r0"
 
 DEPENDS += "ki18n \
             kirigami \

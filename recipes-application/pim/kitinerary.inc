@@ -6,7 +6,6 @@ SUMMARY = "KItinerary"
 DESCRIPTION = "Data Model and Extraction System for Travel Reservation information"
 HOMEPAGE = "https://invent.kde.org/pim/kitinerary"
 LICENSE = "LGPL-2.0-or-later"
-PR = "r0"
 
 DEPENDS += "kcalendarcore \
             kcontacts \

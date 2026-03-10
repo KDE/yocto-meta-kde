@@ -6,7 +6,6 @@ SUMMARY = "KWeather"
 DESCRIPTION = "Weather application for Plasma Mobile"
 HOMEPAGE = "https://invent.kde.org/utilities/kweather"
 LICENSE = "GPL-2.0-or-later"
-PR = "r0"
 
 DEPENDS += "ki18n \
             kirigami \

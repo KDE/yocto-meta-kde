@@ -6,7 +6,6 @@ SUMMARY = "KDE Desktop Sharing"
 DESCRIPTION = "Small server for the RFB protocol (vnc)"
 HOMEPAGE = "https://invent.kde.org/network/krfb"
 LICENSE = "GPL-2.0-or-later"
-PR = "r0"
 
 DEPENDS += "kconfig \
             kconfig-native \

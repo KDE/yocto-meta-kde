@@ -7,7 +7,6 @@ SUMMARY = "KDE CLI tools"
 DESCRIPTION = "Tools based on KDE Frameworks 5 to better interact with the system"
 HOMEPAGE = "https://invent.kde.org/plasma/kde-cli-tools"
 LICENSE = "GPL-2.0-or-later & LGPL-2.0-or-later & (LGPL-2.1-only | LGPL-3.0-only | LicenseRef-KDE-Accepted-LGPL) & (GPL-2.0-only | GPL-3.0-only | LicenseRef-KDE-Accepted-GPL) & LGPL-2.0-only & Artistic-2.0"
-PR = "r0"
 
 DEPENDS += "kcmutils \
             kconfig \

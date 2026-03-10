@@ -7,7 +7,6 @@ DESCRIPTION = "QML port of qtermwidget"
 HOMEPAGE = "https://github.com/Swordfish90/qmltermwidget"
 LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=4641e94ec96f98fabc56ff9cc48be14b"
-PR = "r0"
 
 DEPENDS += "qtbase \
             qtdeclarative \

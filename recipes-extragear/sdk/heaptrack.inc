@@ -6,7 +6,6 @@ SUMMARY = "Heaptrack"
 DESCRIPTION = "A heap memory profiler for Linux"
 HOMEPAGE = "https://invent.kde.org/sdk/heaptrack"
 LICENSE = "LGPL-2.1-only"
-PR = "r0"
 
 DEPENDS += "boost \
             elfutils \

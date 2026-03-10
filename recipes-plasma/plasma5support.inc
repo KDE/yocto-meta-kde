@@ -6,7 +6,6 @@ SUMMARY = "Plasma5Support"
 DESCRIPTION = "Support components for porting from KF5/Qt5 to KF6/Qt6"
 HOMEPAGE = "https://invent.kde.org/plasma/plasma5support"
 LICENSE = "GPL-2.0-or-later"
-PR = "r0"
 
 DEPENDS += "kconfig \
             kcoreaddons \

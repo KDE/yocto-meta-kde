@@ -8,7 +8,6 @@ SUMMARY = "Plasma Integration"
 DESCRIPTION = "Qt Platform Theme integration plugins for Plasma Workspaces"
 HOMEPAGE = "https://invent.kde.org/plasma/plasma-integration"
 LICENSE = "LGPL-2.0-only"
-PR = "r0"
 
 DEPENDS += "breeze \
             kconfig \

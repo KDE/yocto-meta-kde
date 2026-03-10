@@ -6,7 +6,6 @@ SUMMARY = "Kasts"
 DESCRIPTION = "Kasts is a convergent podcast application."
 HOMEPAGE = "https://invent.kde.org/plasma-mobile/kasts"
 LICENSE = "GPL-3.0-only"
-PR = "r0"
 
 DEPENDS += "kcolorscheme \
             ki18n \

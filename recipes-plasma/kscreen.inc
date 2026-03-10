@@ -6,7 +6,6 @@ SUMMARY = "KScreen"
 DESCRIPTION = "KDE's screen management software"
 HOMEPAGE = "https://invent.kde.org/plasma/kscreen"
 LICENSE = "GPL-2.0-only"
-PR = "r0"
 
 DEPENDS += "kconfigwidgets \
             kdbusaddons \

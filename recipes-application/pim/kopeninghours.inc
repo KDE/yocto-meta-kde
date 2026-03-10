@@ -6,7 +6,6 @@ SUMMARY = "KOpeningHours"
 DESCRIPTION = "Library for parsing and evaluating OSM opening hours expressions"
 HOMEPAGE = "https://invent.kde.org/libraries/kopeninghours"
 LICENSE = "LGPL-2.0-or-later"
-PR = "r0"
 
 DEPENDS += "bison-native \
             boost \

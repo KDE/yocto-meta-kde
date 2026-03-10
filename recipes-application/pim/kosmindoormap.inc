@@ -6,7 +6,6 @@ SUMMARY = "KOSMIndoorMap"
 DESCRIPTION = "OSM multi-floor indoor map renderer"
 HOMEPAGE = "https://invent.kde.org/libraries/kosmindoormap"
 LICENSE = "LGPL-2.0-or-later"
-PR = "r0"
 
 DEPENDS += "bison-native \
             ki18n \

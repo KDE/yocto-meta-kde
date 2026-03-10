@@ -6,7 +6,6 @@ SUMMARY = "Plasma Nano"
 DESCRIPTION = "A minimal plasma shell package intended for embedded devices"
 HOMEPAGE = "https://invent.kde.org/plasma/plasma-nano"
 LICENSE = "MIT & LGPL-2.0-or-later & GPL-2.0-or-later"
-PR = "r0"
 
 DEPENDS += "kitemmodels \
             kwayland \

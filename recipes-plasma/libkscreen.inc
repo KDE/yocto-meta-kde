@@ -7,7 +7,6 @@ SUMMARY = "KScreen library"
 DESCRIPTION = "KDE's screen management software"
 HOMEPAGE = "https://invent.kde.org/plasma/libkscreen"
 LICENSE = "LGPL-2.1-or-later | (GPL-2.0-only | GPL-3.0-only | LicenseRef-KDE-Accepted-GPL)"
-PR = "r0"
 
 DEPENDS += "kwayland \
             qtwayland-native \

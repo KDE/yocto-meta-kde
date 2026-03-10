@@ -6,7 +6,6 @@ SUMMARY = "Plasma Firewall"
 DESCRIPTION = "Control Panel for your system firewall"
 HOMEPAGE = "https://invent.kde.org/plasma/plasma-firewall"
 LICENSE = "GPL-2.0-only"
-PR = "r0"
 
 DEPENDS += "kauth \
             kcmutils \

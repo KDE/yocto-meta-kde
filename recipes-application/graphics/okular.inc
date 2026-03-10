@@ -7,7 +7,6 @@ SUMMARY = "Okular"
 DESCRIPTION = "KDE document viewer"
 HOMEPAGE = "https://invent.kde.org/graphics/okular"
 LICENSE = "GPL-2.0-or-later & GPL-3.0-only"
-PR = "r0"
 
 inherit cmake_kdeapp
 inherit kf6-kcoreaddons

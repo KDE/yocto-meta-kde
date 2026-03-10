@@ -7,7 +7,6 @@ DESCRIPTION = "KHangMan is a game based on the well-known hangman game."
 HOMEPAGE = "https://edu.kde.org/khangman/"
 LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://COPYING;md5=cb56c8b10bbb1c97490192a78c4fb273"
-PR = "r0"
 
 DEPENDS += "kcompletion \
             kcrash \

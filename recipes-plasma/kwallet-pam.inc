@@ -6,7 +6,6 @@ SUMMARY = "KWallet PAM Integratioon"
 DESCRIPTION = "PAM Integration with KWallet - Unlock KWallet when you login"
 HOMEPAGE = "https://invent.kde.org/plasma/kwallet-pam"
 LICENSE = "BSD-3-Clause & LGPL-2.1-or-later"
-PR = "r0"
 
 DEPENDS += "kwallet \
             libgcrypt \

@@ -7,7 +7,6 @@ DESCRIPTION = "Gwenview is a fast and easy to use image viewer by KDE, ideal for
 HOMEPAGE = "https://invent.kde.org/graphics/gwenview"
 LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://COPYING;md5=5a3169a2d39a757efd8b7aa66a69d97b"
-PR = "r0"
 
 DEPENDS += "baloo \
             exiv2 \

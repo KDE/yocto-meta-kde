@@ -6,7 +6,6 @@ SUMMARY = "KPipeWire"
 DESCRIPTION = "Components relating to Flatpak 'pipewire' use in Plasma"
 HOMEPAGE = "https://invent.kde.org/plasma/kpipewire"
 LICENSE = "LGPL-2.1-only | LGPL-3.0-only | LicenseRef-KDE-Accepted-LGPL"
-PR = "r0"
 
 DEPENDS += "ffmpeg \
             kwayland \

@@ -8,7 +8,6 @@ SUMMARY = "Activity manager service"
 DESCRIPTION = "System service to manage user's activities, track the usage patterns etc."
 HOMEPAGE = "https://invent.kde.org/plasma/kactivitymanagerd"
 LICENSE = "GPL-2.0-only"
-PR = "r0"
 
 DEPENDS += "boost \
             kconfig \

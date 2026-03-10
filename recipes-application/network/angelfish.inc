@@ -6,7 +6,6 @@ SUMMARY = "Angelfish"
 DESCRIPTION = "Web browser for Plasma Mobile"
 HOMEPAGE = "https://invent.kde.org/network/angelfish"
 LICENSE = "(LGPL-2.0-only | LGPL-2.0-or-later | LGPL-2.1-only | LGPL-3.0-or-later | LicenseRef-KDE-Accepted-LGPL) & (GPL-2.0-only | GPL-2.0-or-later | GPL-3.0-only | LicenseRef-KDE-Accepted-GPL)"
-PR = "r0"
 
 inherit kf6-cmake
 inherit kf6-kdoctools

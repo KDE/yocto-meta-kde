@@ -7,7 +7,6 @@ DESCRIPTION = "Box2D QML plugin"
 HOMEPAGE = "https://github.com/qml-box2d/qml-box2d"
 LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://COPYING;md5=7c1ecaedec0d10ec77d289e71b42165f"
-PR = "r0"
 
 DEPENDS += "qtbase \
             qtdeclarative \

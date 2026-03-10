@@ -6,7 +6,6 @@ SUMMARY = "Elisa"
 DESCRIPTION = "Elisa music player"
 HOMEPAGE = "https://apps.kde.org/de/elisa"
 LICENSE = "LGPL-3.0-only"
-PR = "r0"
 
 DEPENDS += "baloo \
             kconfigwidgets \

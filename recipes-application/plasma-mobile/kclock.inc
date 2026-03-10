@@ -6,7 +6,6 @@ SUMMARY = "KClock"
 DESCRIPTION = "Clock app for Plasma Mobile"
 HOMEPAGE = "https://invent.kde.org/utilities/kclock"
 LICENSE = "GPL-2.0-or-later | GPL-3.0-or-later | LGPL-2.0-or-later | LGPL-2.1-or-later | MIT"
-PR = "r0"
 
 DEPENDS += "kdeclarative \
             ki18n \

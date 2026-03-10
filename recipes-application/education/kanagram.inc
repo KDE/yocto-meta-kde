@@ -8,7 +8,6 @@ DESCRIPTION = "Kanagram is a game based on anagrams of words: the puzzle is solv
 HOMEPAGE = "https://edu.kde.org/kanagram/"
 LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://COPYING;md5=751419260aa954499f7abaabaa882bbe"
-PR = "r0"
 
 DEPENDS += "kcrash \
             ki18n \

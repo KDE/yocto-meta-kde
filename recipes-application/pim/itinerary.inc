@@ -7,7 +7,6 @@ DESCRIPTION = "Itinerary and boarding pass management application"
 HOMEPAGE = "https://invent.kde.org/pim/itinerary"
 LICENSE = "LGPL-2.0-or-later"
 LIC_FILES_CHKSUM = "file://LICENSES/LGPL-2.0-or-later.txt;md5=6d2d9952d88b50a51a5c73dc431d06c7"
-PR = "r0"
 
 DEPENDS += "kcalendarcore \
             kcontacts \

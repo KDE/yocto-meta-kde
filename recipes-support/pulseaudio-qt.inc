@@ -7,7 +7,6 @@ SUMMARY = "PulseAudio-Qt"
 DESCRIPTION = "Qt bindings for libpulse"
 HOMEPAGE = "https://invent.kde.org/libraries/pulseaudio-qt"
 LICENSE = "LGPL-2.1-only"
-PR = "r0"
 
 DEPENDS += "extra-cmake-modules \
             pulseaudio \

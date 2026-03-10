@@ -7,7 +7,6 @@ DESCRIPTION = "GCompris is a high quality educational software suite, \
                including a large number of activities for children aged 2 to 10."
 HOMEPAGE = "https://gcompris.net"
 LICENSE = "GPL-3.0-only"
-PR = "r0"
 
 DEPENDS += "kcrash \
             ki18n \

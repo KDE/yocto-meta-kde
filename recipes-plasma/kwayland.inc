@@ -7,7 +7,6 @@ SUMMARY = "KWayland"
 DESCRIPTION = "KWayland provides a Qt-style Client and Server library wrapper for the Wayland libraries"
 HOMEPAGE = "https://invent.kde.org/plasma/kwayland"
 LICENSE = "MIT & MIT-CMU & BSD-3-Clause & (LGPL-2.1-only | LGPL-3.0-only | LicenseRef-KDE-Accepted-LGPL)"
-PR = "r0"
 
 DEPENDS += "plasma-wayland-protocols \
             qtwayland \

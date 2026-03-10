@@ -7,7 +7,6 @@ SUMMARY = "KGlobalAccelD"
 DESCRIPTION = "Daemon providing Global Keyboard Shortcut (Accelerator) functionality"
 HOMEPAGE = "https://invent.kde.org/plasma/kglobalacceld"
 LICENSE = "LGPL-2.1-only | LGPL-3.0-only"
-PR = "r0"
 
 DEPENDS += "kcrash \
             kdbusaddons \

@@ -8,7 +8,6 @@ SUMMARY = "KWin"
 DESCRIPTION = "Easy to use, but flexible, Wayland Compositor"
 HOMEPAGE = "https://invent.kde.org/plasma/kwin"
 LICENSE = "GPL-2.0-only"
-PR = "r0"
 
 DEPENDS:class-target += "breeze \
                          fontconfig \

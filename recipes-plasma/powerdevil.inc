@@ -7,7 +7,6 @@ DESCRIPTION = "Manages the power consumption settings of a Plasma shell"
 HOMEPAGE = "https://invent.kde.org/plasma/powerdevil"
 LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://COPYING;md5=5c213a7de3f013310bd272cdb6eb7a24"
-PR = "r0"
 
 DEPENDS += "bluez-qt \
             ddcutil \

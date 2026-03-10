@@ -6,7 +6,6 @@ SUMMARY = "Marble"
 DESCRIPTION = "Marble is a virtual globe and world atlas."
 HOMEPAGE = "https://marble.kde.org/"
 LICENSE = "LGPL-2.1-only"
-PR = "r0"
 
 DEPENDS += "gpsd \
             kcrash \

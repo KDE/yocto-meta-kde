@@ -6,7 +6,6 @@ SUMMARY = "Plasma NM"
 DESCRIPTION = "Plasma applet written in QML for managing network connections"
 HOMEPAGE = "https://invent.kde.org/plasma/plasma-nm"
 LICENSE = "GPL-2.0-only"
-PR = "r0"
 
 DEPENDS += "kcompletion \
             kconfigwidgets \

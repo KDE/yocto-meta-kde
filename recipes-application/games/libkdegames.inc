@@ -6,7 +6,6 @@ SUMMARY = "libkdegames"
 DESCRIPTION = "Common code and data for many KDE games"
 HOMEPAGE = "https://invent.kde.org/games/libkdegames"
 LICENSE = "GPL-2.0-or-later"
-PR = "r0"
 
 DEPENDS += "karchive \
             kcolorscheme \

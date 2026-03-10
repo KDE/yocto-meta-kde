@@ -6,7 +6,6 @@ SUMMARY = "Plasma System Monitor"
 DESCRIPTION = "An interface for monitoring system sensors, process information and other system resources"
 HOMEPAGE = "https://invent.kde.org/plasma/plasma-systemmonitor"
 LICENSE = "GPL-2.0-only | GPL-3.0-only"
-PR = "r0"
 
 DEPENDS += "kconfig \
             kdbusaddons \

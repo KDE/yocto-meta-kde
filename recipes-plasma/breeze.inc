@@ -8,7 +8,6 @@ SUMMARY = "Breeze Style"
 DESCRIPTION = "Artwork, styles and assets for the Breeze visual style for the Plasma Desktop"
 HOMEPAGE = "https://invent.kde.org/plasma/breeze"
 LICENSE = "GPL-2.0-only"
-PR = "r0"
 
 DEPENDS += "fftw \
             frameworkintegration \

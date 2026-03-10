@@ -7,7 +7,6 @@ DESCRIPTION = "Platform-independent Qt API for storing passwords securely"
 HOMEPAGE = "https://github.com/frankosterfeld/qtkeychain"
 LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://COPYING;md5=ebece3896618ecf0b60c4fade17f026f"
-PR = "r0"
 
 DEPENDS += "libsecret \
             qtbase \

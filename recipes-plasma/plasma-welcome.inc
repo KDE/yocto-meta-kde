@@ -6,7 +6,6 @@ SUMMARY = "Welcome Center"
 DESCRIPTION = "A friendly onboarding wizard for Plasma"
 HOMEPAGE = "https://invent.kde.org/plasma/plasma-welcome"
 LICENSE = "GPL-2.0-only"
-PR = "r0"
 
 DEPENDS += "kcmutils \
             kconfig \

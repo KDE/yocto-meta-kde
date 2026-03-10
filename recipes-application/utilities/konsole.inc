@@ -6,7 +6,6 @@ SUMMARY = "Konsole"
 DESCRIPTION = "Terminal emulator by KDE"
 HOMEPAGE = "https://konsole.kde.org/"
 LICENSE = "GPL-2.0-only"
-PR = "r0"
 
 DEPENDS += "kio \
             knewstuff \

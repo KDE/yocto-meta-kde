@@ -6,7 +6,6 @@ SUMMARY = "Dragon"
 DESCRIPTION = "Multimedia player with the focus on simplicity, not features"
 HOMEPAGE = "https://invent.kde.org/multimedia/dragon/"
 LICENSE = "GPL-2.0-only"
-PR = "r0"
 
 DEPENDS += "kconfigwidgets \
             ki18n \
