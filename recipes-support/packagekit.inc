@@ -38,4 +38,5 @@ FILES:${PN} += "${datadir} \
                 ${libdir}/girepository-1.0 \
 "
 
+# nooelint: oelint.vars.insaneskip - https://github.com/PackageKit/PackageKit/issues/953
 INSANE_SKIP:${PN} += "buildpaths"
