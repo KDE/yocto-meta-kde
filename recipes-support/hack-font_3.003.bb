@@ -2,6 +2,7 @@ SUMMARY = "Hack Font"
 DESCRIPTION = "A typeface designed for source code"
 HOMEPAGE = "https://sourcefoundry.org/hack/"
 LICENSE = "MIT & Bitstream-Vera"
+# nooelint: oelint.var.licenseremotefile - License not packaged in tar.gz
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302 \
                     file://${COMMON_LICENSE_DIR}/Bitstream-Vera;md5=8c4328074cf50f27d3efb9aae5a87f4a \
 "
