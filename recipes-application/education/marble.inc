@@ -36,19 +36,17 @@ do_configure:append() {
 EXTRA_OECMAKE += "-DBUILD_TOUCH=ON"
 
 # note: marble-maps is the dedicated mobile version
-PACKAGES += "${PN}-desktop \
+PACKAGES =+ "${PN}-desktop \
              ${PN}-shared \
 "
 
-FILES_SOLIBSDEV = ""
 FILES:${PN} += "${bindir}/marble-maps \
                 ${datadir}/applications/org.kde.marble.maps.desktop \
 "
 
-INSANE_SKIP:${PN}-shared = "dev-so"
 FILES:${PN}-shared += "${datadir}/knsrcfiles \
-                       ${libdir}/libmarbledeclarative.so \
-                       ${libdir} \
+                       ${libdir}/libastro.so.* \
+                       ${libdir}/libmarblewidget-qt6.so.* \
                        ${datadir}/marble/data/ \
                        ${datadir}/icons \
                        ${datadir}/kxmlgui5 \
@@ -61,8 +59,6 @@ FILES:${PN}-desktop += "${bindir}/marble \
                         ${datadir}/applications/org.kde.marble.behaim.desktop \
                         ${datadir}/applications/marble_*.desktop \
 "
-
-FILES:${PN}-dev += "${libdir}/libastro.so"
 
 RDEPENDS:${PN} += "${PN}-shared"
 
