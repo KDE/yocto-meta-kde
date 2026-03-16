@@ -28,6 +28,7 @@ inherit kf6-kauth
 inherit mime-xdg
 inherit reuse_license_checksums
 
+# nooelint: oelint.vars.srcuridomains - needed to build koko
 SRC_URI:append = " git://invent.kde.org/packaging/geonames-data.git;protocol=https;name=geodata;nobranch=1;destsuffix=geonames-data;rev=608af80ddf04265496eccd0c63b2945042cdccdc"
 
 RDEPENDS:${PN} += "kirigami \
