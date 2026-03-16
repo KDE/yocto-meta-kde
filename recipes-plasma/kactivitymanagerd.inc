@@ -38,4 +38,4 @@ FILES:${PN} += "${libdir}/*.so \
                 ${datadir}/krunner/dbusplugins/plasma-runnners-activities.desktop \
 "
 
-FILES:${PN}-dev = "${datadir}/qlogging-categories5"
+FILES:${PN}-dev += "${datadir}/qlogging-categories5"
