@@ -25,5 +25,5 @@ inherit reuse_license_checksums
 
 EXTRA_OECMAKE += "-DBUILD_UFW_BACKEND=OFF"
 
-INSANE_SKIP:${PN} = "dev-so"
+# Do not package /usr/lib/libkcm_firewall_core.so in -dev package.
 FILES_SOLIBSDEV = ""
