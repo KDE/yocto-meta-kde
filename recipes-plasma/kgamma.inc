@@ -19,5 +19,6 @@ DEPENDS += "plasma-wayland-protocols \
 inherit cmake_plasma
 inherit reuse_license_checksums
 
+# nooelint: oelint.vars.insaneskip - This is a symlink to /usr/lib/plugins/plasma/kcms/systemsettings_qwidgets/kcm_kgamma.so, used at session start.
 INSANE_SKIP:${PN} = "dev-so"
 FILES:${PN} += "${libdir}/plugins/plasma/kcminit/kcm_kgamma_init.so"
