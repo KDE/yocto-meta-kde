@@ -39,7 +39,7 @@ do_install:append() {
 }
 
 # note: okularkirigami is the dedicated mobile version
-PACKAGES += "${PN}-desktop \
+PACKAGES =+ "${PN}-desktop \
              ${PN}-shared \
 "
 
@@ -47,6 +47,7 @@ FILES:${PN} += "${bindir}/okularkirigami \
                 ${datadir}/applications/org.kde.okular.kirigami.desktop \
 "
 
+INSANE_SKIP:${PN}-shared = "dev-so"
 FILES:${PN}-shared += "${sysconfdir}/xdg/okular.categories \
                        ${datadir}/okular/pics \
                        ${datadir}/okular/icons \
