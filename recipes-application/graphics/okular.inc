@@ -47,6 +47,8 @@ FILES:${PN} += "${bindir}/okularkirigami \
                 ${datadir}/applications/org.kde.okular.kirigami.desktop \
 "
 
+FILES:${PN}-dev += "${datadir}/qlogging-categories6"
+
 INSANE_SKIP:${PN}-shared = "dev-so"
 FILES:${PN}-shared += "${sysconfdir}/xdg/okular.categories \
                        ${datadir}/okular/pics \
