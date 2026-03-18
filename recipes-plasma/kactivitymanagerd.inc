@@ -34,9 +34,11 @@ EXTRA_OECMAKE += "-DHAVE_CXX11_AUTO=ON \
                   -DHAVE_CXX11_INITIALIZER_LISTS=ON \
 "
 
-FILES:${PN} += "${libdir}/*.so \
+FILES:${PN} += "${libdir}/libkactivitymanagerd_plugin.so \
                 ${datadir}/krunner/dbusplugins/plasma-runnners-activities.desktop \
 "
 
 FILES:${PN}-dev += "${datadir}/qlogging-categories6"
 
+# Do not package /usr/lib/libkactivitymanagerd_plugin.so in -dev package.
+FILES_SOLIBSDEV = ""
