@@ -40,9 +40,6 @@ do_configure:append() {
 }
 
 do_install:append() {
-    # compatibility workaround for Yocto versions older than Styhead
-    [ -z ${UNPACKDIR+x} ] && UNPACKDIR=${WORKDIR}
-
     install -d ${D}/${sysconfdir}/sddm.conf.d
 
     # autologin configurations
