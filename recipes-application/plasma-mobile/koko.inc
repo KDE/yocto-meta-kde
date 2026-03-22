@@ -47,9 +47,6 @@ KOKO_ADMIN2CODES = "admin2Codes.txt"
 # are maintained by the GeoNames project. These files need to be
 # copied to the src directory. CMake will take care of the rest.
 do_configure:prepend() {
-    # compatibility workaround for Yocto versions older than Styhead
-    [ -z ${UNPACKDIR+x} ] && UNPACKDIR=${WORKDIR}
-
     cp ${UNPACKDIR}/geonames-data/export/${KOKO_CITIES1000} ${S}/src
     cp ${UNPACKDIR}/geonames-data/export/${KOKO_ADMIN1CODES} ${S}/src
     cp ${UNPACKDIR}/geonames-data/export/${KOKO_ADMIN2CODES} ${S}/src
