@@ -10,6 +10,8 @@ LIC_FILES_CHKSUM = "file://LICENSES/LGPL-2.0-or-later.txt;md5=6d2d9952d88b50a51a
 
 DEPENDS += "kcalendarcore \
             kcontacts \
+            kfilemetadata \
+            khealthcertificate \
             kholidays \
             kirigami \
             kirigami-addons \
@@ -18,6 +20,8 @@ DEPENDS += "kcalendarcore \
             kpkpass \
             kpublictransport \
             kunitconversion \
+            libquotient \
+            qcoro \
             qqc2-desktop-style \
             qtdeclarative \
             qtkeychain \
@@ -29,12 +33,12 @@ inherit mime-xdg
 inherit mime
 inherit kf6-kconfig
 
-INSANE_SKIP:${PN} = "dev-so"
 FILES:${PN} += "${libdir}/libSolidExtras.so"
 FILES_SOLIBSDEV = ""
 
 RDEPENDS:${PN} += "prison \
                    qtlocation-qmlplugins \
                    qtmultimedia-qmlplugins \
+                   qtpositioning-qmlplugins \
                    solid \
 "
