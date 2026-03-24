@@ -49,7 +49,6 @@ FILES:${PN} += "${bindir}/okularkirigami \
 
 FILES:${PN}-dev += "${datadir}/qlogging-categories6"
 
-INSANE_SKIP:${PN}-shared = "dev-so"
 FILES:${PN}-shared += "${sysconfdir}/xdg/okular.categories \
                        ${datadir}/okular/pics \
                        ${datadir}/okular/icons \
@@ -78,7 +77,9 @@ FILES:${PN}-shared += "${sysconfdir}/xdg/okular.categories \
                        ${datadir}/applications/okularApplication_pdf.desktop \
                        ${datadir}/applications/org.kde.mobile.okular_kimgio.desktop \
                        ${datadir}/applications/okularApplication_kimgio.desktop \
-                       ${libdir} \
+                       ${libdir}/libOkular6Core.so.* \
+                       ${libdir}/plugins \
+                       ${libdir}/qml \
 "
 
 FILES:${PN}-desktop += "${bindir}/okular \
