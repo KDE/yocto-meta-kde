@@ -9,49 +9,51 @@ DESCRIPTION = "Easy to use, but flexible, Wayland Compositor"
 HOMEPAGE = "https://invent.kde.org/plasma/kwin"
 LICENSE = "GPL-2.0-only"
 
-DEPENDS:class-target += "breeze \
-                         fontconfig \
-                         hwdata \
-                         kcompletion \
-                         kconfigwidgets \
-                         kcrash \
-                         kdeclarative \
-                         kdecoration \
-                         kglobalaccel \
-                         kglobalacceld \
-                         kidletime \
-                         knewstuff \
-                         knighttime \
-                         knotifications \
-                         kpackage \
-                         kpackage-native \
-                         krunner \
-                         kscreenlocker \
-                         kservice \
-                         ktextwidgets \
-                         kwayland \
-                         kwin-native \
-                         kwindowsystem \
-                         kxmlgui \
-                         lcms \
-                         libcap \
-                         libdisplay-info \
-                         libei \
-                         libinput \
-                         libplasma \
-                         libxcb \
-                         libxcvt \
-                         pipewire \
-                         qtdeclarative \
-                         qtsensors \
-                         qtwayland-native \
-                         wayland \
-                         wayland-protocols \
-                         xcb-util-cursor \
+DEPENDS:append:class-target = " \
+    breeze \
+    fontconfig \
+    hwdata \
+    kcompletion \
+    kconfigwidgets \
+    kcrash \
+    kdeclarative \
+    kdecoration \
+    kglobalaccel \
+    kglobalacceld \
+    kidletime \
+    knewstuff \
+    knighttime \
+    knotifications \
+    kpackage \
+    kpackage-native \
+    krunner \
+    kscreenlocker \
+    kservice \
+    ktextwidgets \
+    kwayland \
+    kwin-native \
+    kwindowsystem \
+    kxmlgui \
+    lcms \
+    libcap \
+    libdisplay-info \
+    libei \
+    libinput \
+    libplasma \
+    libxcb \
+    libxcvt \
+    pipewire \
+    qtdeclarative \
+    qtsensors \
+    qtwayland-native \
+    wayland \
+    wayland-protocols \
+    xcb-util-cursor \
 "
 
-DEPENDS:class-native += "extra-cmake-modules-native \
-                         qtbase-native \
+DEPENDS:append:class-native = " \
+    extra-cmake-modules-native \
+    qtbase-native \
 "
 
 SRC_URI:append:class-native = " file://0001-Add-install-operation-for-native-build.patch"
