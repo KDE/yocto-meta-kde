@@ -51,6 +51,7 @@ FILES:${PN} += "${datadir}/plasma/desktoptheme/* \
                 ${libdir}/qml/org/kde/private/desktopcontainment/* \
 "
 
+# nooelint: oelint.vars.insaneskip - symlinks are needed here
 INSANE_SKIP:${PN} = "dev-so"
 
 RDEPENDS:${PN} += "gawk \
