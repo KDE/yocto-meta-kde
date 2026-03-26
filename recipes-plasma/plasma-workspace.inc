@@ -123,6 +123,7 @@ FILES:${PN}-dev += "${libdir}/libbatterycontrol.so \
                     ${libdir}/libklookandfeel.so \
 "
 
+# nooelint: oelint.vars.insaneskip - symlinks are needed here
 INSANE_SKIP:${PN} = "dev-so"
 
 RDEPENDS:${PN} += "kquickcharts \
