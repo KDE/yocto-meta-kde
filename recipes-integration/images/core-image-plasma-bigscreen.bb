@@ -2,7 +2,8 @@
 #
 # SPDX-License-Identifier: MIT
 
-SUMMARY = "A basic KDE Plasma Bigscreen image"
+SUMMARY = "Plasma Bigscreen Image"
+DESCRIPTION = "Basic image running Plasma Bigscreen"
 
 IMAGE_FEATURES += "splash hwcodecs"
 
@@ -13,13 +14,12 @@ inherit core-image
 
 REQUIRED_DISTRO_FEATURES += "wayland"
 
-IMAGE_INSTALL += " \
-    ${CORE_IMAGE_BASE_INSTALL} \
-    wayland \
-    dbus \
-    sddm \
-    sddm-config-plasma-bigscreen \
-    packagegroup-plasma-bigscreen-workspace \
+IMAGE_INSTALL += "${CORE_IMAGE_BASE_INSTALL} \
+                  dbus \
+                  packagegroup-plasma-bigscreen-workspace \
+                  sddm \
+                  sddm-config-plasma-bigscreen \
+                  wayland \
 "
 
-SYSTEMD_DEFAULT_TARGET="graphical.target"
+SYSTEMD_DEFAULT_TARGET = "graphical.target"

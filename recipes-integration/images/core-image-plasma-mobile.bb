@@ -2,7 +2,8 @@
 #
 # SPDX-License-Identifier: MIT
 
-SUMMARY = "A basic KDE Plasma Mobile image"
+SUMMARY = "Plasma Mobile Image"
+DESCRIPTION = "Basic image running Plasma Mobile"
 
 IMAGE_FEATURES += "splash hwcodecs"
 
@@ -12,14 +13,14 @@ inherit features_check
 
 REQUIRED_DISTRO_FEATURES = "wayland"
 
-IMAGE_INSTALL = "dbus \
-                 ${CORE_IMAGE_BASE_INSTALL} \
-                 packagegroup-plasma-mobile \
-                 sddm \
-                 sddm-config-plasma-mobile \
-                 ttf-noto \
-                 ttf-noto-emoji-color \
-                 wayland \
+IMAGE_INSTALL += "${CORE_IMAGE_BASE_INSTALL} \
+                  dbus \
+                  packagegroup-plasma-mobile \
+                  sddm \
+                  sddm-config-plasma-mobile \
+                  ttf-noto \
+                  ttf-noto-emoji-color \
+                  wayland \
 "
 
 SYSTEMD_DEFAULT_TARGET = "graphical.target"
