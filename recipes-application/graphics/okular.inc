@@ -43,11 +43,12 @@ PACKAGES =+ "${PN}-desktop \
              ${PN}-shared \
 "
 
+# Included in FILES:${PN}-shared
+FILES:${PN}:remove = "${libdir}/qml"
+
 FILES:${PN} += "${bindir}/okularkirigami \
                 ${datadir}/applications/org.kde.okular.kirigami.desktop \
 "
-
-FILES:${PN}-dev += "${datadir}/qlogging-categories6"
 
 FILES:${PN}-shared += "${sysconfdir}/xdg/okular.categories \
                        ${datadir}/okular/pics \
