@@ -2,19 +2,18 @@
 #
 # SPDX-License-Identifier: MIT
 
-DESCRIPTION = "Aura Browser"
-HOMEPAGE = "https://invent.kde.org/plasma-bigscreen/aura-browser/"
+SUMMARY = "Aura Browser"
+DESCRIPTION = "Browser for a fully immersed Big Screen experience allowing you to navigate the world wide web using just your remote control"
+HOMEPAGE = "https://invent.kde.org/plasma/aura-browser"
 LICENSE = "GPL-2.0-or-later & GPL-3.0-or-later"
-LIC_FILES_CHKSUM = " \
-    file://LICENSES/GPL-2.0-or-later.txt;md5=fed54355545ffd980b814dab4a3b312c \
-    file://LICENSES/GPL-3.0-or-later.txt;md5=1ebbd3e34237af26da5dc08a4e440464 \
+LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-or-later.txt;md5=fed54355545ffd980b814dab4a3b312c \
+                    file://LICENSES/GPL-3.0-or-later.txt;md5=1ebbd3e34237af26da5dc08a4e440464 \
 "
 
-DEPENDS = " \
-    kirigami \
-    qtdeclarative \
-    qtmultimedia \
-    qtwebengine \
+DEPENDS += "kirigami \
+            qtdeclarative \
+            qtmultimedia \
+            qtwebengine \
 "
 
 inherit cmake_plasma
