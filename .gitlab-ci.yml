@@ -1,0 +1,19 @@
+#
+# Authors:
+#  Marc Ferland <marc.ferland@gmail.com>
+#
+
+stages:
+  - lint
+
+lint:oelint:
+  stage: lint
+  image: python:3.11-slim
+  before_script:
+    - pip install --upgrade pip
+    - pip install oelint-adv
+  script:
+    - ./scripts/run_oelintadv.sh
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH
