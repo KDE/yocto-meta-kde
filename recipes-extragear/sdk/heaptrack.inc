@@ -14,6 +14,7 @@ DEPENDS += "boost \
 "
 
 SRC_URI = "git://invent.kde.org/sdk/${BPN};nobranch=1;protocol=https"
+# nooelint: oelint.file.patchsignedoff - Upstream commit does not have a signed-off-by entry
 SRC_URI += "file://0001-cmake-Fix-C-compatibility-of-libunwind-probes.patch"
 S = "${UNPACKDIR}/git"
 
