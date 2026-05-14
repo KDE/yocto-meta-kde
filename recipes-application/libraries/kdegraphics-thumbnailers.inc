@@ -14,7 +14,7 @@ LICENSE = "GPL-2.0-or-later & \
 DEPENDS += "kio libkexiv2"
 
 inherit cmake_kdeapp
-inherit kf6-kconfig
+inherit kf6_kconfig
 inherit reuse_license_checksums
 
 EXTRA_OECMAKE += "-DDISABLE_BLENDER=ON"

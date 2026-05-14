@@ -20,7 +20,7 @@ DEPENDS += "karchive \
 "
 
 inherit cmake_kdeapp
-inherit kf6-kconfig
+inherit kf6_kconfig
 inherit reuse_license_checksums
 
 FILES:${PN} += "${datadir}/carddecks/*"

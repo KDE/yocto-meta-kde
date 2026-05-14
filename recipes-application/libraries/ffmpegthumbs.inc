@@ -10,5 +10,5 @@ LICENSE = "BSD-3-Clause & GPL-2.0-or-later"
 DEPENDS += "ffmpeg kio"
 
 inherit cmake_kdeapp
-inherit kf6-kconfig
+inherit kf6_kconfig
 inherit reuse_license_checksums

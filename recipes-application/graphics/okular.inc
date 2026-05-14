@@ -9,9 +9,9 @@ HOMEPAGE = "https://invent.kde.org/graphics/okular"
 LICENSE = "GPL-2.0-or-later & GPL-3.0-only"
 
 inherit cmake_kdeapp
-inherit kf6-kcoreaddons
-inherit kf6-kconfig
-inherit kf6-kauth
+inherit kf6_kcoreaddons
+inherit kf6_kconfig
+inherit kf6_kauth
 inherit mime-xdg
 inherit reuse_license_checksums
 

@@ -29,9 +29,9 @@ DEPENDS += "baloo \
 "
 
 inherit cmake_kdeapp
-inherit kf6-kcoreaddons
-inherit kf6-kconfig
-inherit kf6-kauth
+inherit kf6_kcoreaddons
+inherit kf6_kconfig
+inherit kf6_kauth
 inherit mime-xdg
 
 EXTRA_OECMAKE += "-DJPEGLIB_RUN_RESULT=true"

@@ -19,5 +19,5 @@ EXTRA_OECMAKE:append = " -DBUILD_TESTING=OFF"
 EXTRA_OECMAKE:append = " -DQT_MAJOR_VERSION=6"
 EXTRA_OECMAKE:append = " -DBUILD_WITH_QT6=ON"
 
-inherit kf6-cmake
+inherit kf6_cmake
 inherit reuse_license_checksums

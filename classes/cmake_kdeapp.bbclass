@@ -3,9 +3,9 @@
 #
 # SPDX-License-Identifier: MIT
 
-inherit kf6-cmake
-inherit kf6-ki18n
-inherit kf6-kdoctools
+inherit kf6_cmake
+inherit kf6_ki18n
+inherit kf6_kdoctools
 inherit pkgconfig
 
 EXTRA_OECMAKE:append = " \

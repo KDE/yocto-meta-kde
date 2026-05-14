@@ -18,8 +18,8 @@ DEPENDS += "freerdp3 \
 "
 
 inherit cmake_kdeapp
-inherit kf6-kconfig
-inherit kf6-kcmutils
+inherit kf6_kconfig
+inherit kf6_kcmutils
 inherit systemd
 inherit reuse_license_checksums
 

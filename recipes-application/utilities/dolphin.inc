@@ -52,9 +52,9 @@ RDEPENDS:${PN} += "ffmpegthumbs \
 "
 
 inherit cmake_kdeapp
-inherit kf6-kcmutils
-inherit kf6-kconfig
-inherit kf6-kcoreaddons
+inherit kf6_kcmutils
+inherit kf6_kconfig
+inherit kf6_kcoreaddons
 inherit mime-xdg
 inherit systemd
 inherit reuse_license_checksums

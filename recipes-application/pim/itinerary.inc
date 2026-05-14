@@ -31,7 +31,7 @@ DEPENDS += "kcalendarcore \
 inherit cmake_kdeapp
 inherit mime-xdg
 inherit mime
-inherit kf6-kconfig
+inherit kf6_kconfig
 
 FILES:${PN} += "${libdir}/libSolidExtras.so"
 FILES_SOLIBSDEV = ""

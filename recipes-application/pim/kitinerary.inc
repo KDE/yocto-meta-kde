@@ -20,7 +20,7 @@ DEPENDS += "kcalendarcore \
 inherit cmake_kdeapp
 inherit mime-xdg
 inherit mime
-inherit kf6-kconfig
+inherit kf6_kconfig
 inherit reuse_license_checksums
 
 FILES:${PN} += "${datadir}/mime/packages/application-vnd-kde-itinerary.xml"

@@ -13,6 +13,6 @@ DEPENDS += "karchive \
 "
 
 inherit cmake_kdeapp
-inherit kf6-kconfig
-inherit kf6-kauth
+inherit kf6_kconfig
+inherit kf6_kauth
 inherit reuse_license_checksums

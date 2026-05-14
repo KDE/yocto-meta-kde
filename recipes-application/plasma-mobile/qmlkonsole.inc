@@ -18,7 +18,7 @@ DEPENDS += "kconfig \
 "
 
 inherit cmake_kdeapp
-inherit kf6-kcoreaddons
+inherit kf6_kcoreaddons
 inherit mime-xdg
 inherit reuse_license_checksums
 

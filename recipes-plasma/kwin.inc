@@ -62,10 +62,10 @@ OECMAKE_SOURCEPATH:class-native = "${S}/src/wayland/tools"
 EXTRA_OECMAKE:append:class-target = " -DQTWAYLANDSCANNER_KDE_EXECUTABLE=${STAGING_DIR_NATIVE}${bindir}/qtwaylandscanner_kde"
 EXTRA_OECMAKE:append:class-target = " -DBUILD_TESTING=OFF"
 
-inherit kf6-kauth
-inherit kf6-kcmutils
-inherit kf6-kconfig
-inherit kf6-kdoctools
+inherit kf6_kauth
+inherit kf6_kcmutils
+inherit kf6_kconfig
+inherit kf6_kdoctools
 inherit qt6-cmake
 inherit pkgconfig
 inherit reuse_license_checksums
