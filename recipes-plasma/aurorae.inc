@@ -14,6 +14,7 @@ DEPENDS += "kcmutils \
             ki18n \
             knewstuff \
             kpackage \
+            ksvg \
 "
 
 FILES:${PN} += "${libdir}/qml/org/kde/kwin/decoration \
