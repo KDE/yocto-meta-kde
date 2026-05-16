@@ -31,7 +31,7 @@ RDEPENDS:${PN} += "hack-font \
                    perl \
                    ttf-noto \
                    ttf-noto-emoji-color \
-                   xdg-desktop-portal-kde \
+                   ${@bb.utils.contains('DISTRO_FEATURES', 'desktop-portal', 'xdg-desktop-portal-kde', '', d)} \
 "
 
 EXTRA_OECMAKE:append = " \
