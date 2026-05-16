@@ -18,8 +18,6 @@ DEPENDS += "curl \
 
 SRC_URI = "git://github.com/Qalculate/libqalculate.git;nobranch=1;protocol=https"
 
-S = "${UNPACKDIR}/git"
-
 inherit autotools
 inherit gettext
 inherit pkgconfig
