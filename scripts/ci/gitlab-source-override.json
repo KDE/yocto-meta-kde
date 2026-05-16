@@ -1,0 +1,11 @@
+{
+    "description": "Override meta-kde with CI checkout",
+    "sources": {
+        "meta-kde": {
+            "local": {
+                "path": "../../"
+            }
+        }
+    },
+    "version": "1.0"
+}

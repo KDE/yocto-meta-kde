@@ -1,12 +1,17 @@
 # SPDX-FileCopyrightText: 2026 Marc Ferland <marc.ferland@gmail.com>
+# SPDX-FileCopyrightText: 2026 Andreas Cord-Landwehr <cordlandwehr@kde.org>
 #
 # SPDX-License-Identifier: CC0-1.0
 
-stages:
-  - lint
+include:
+  - project: sysadmin/ci-utilities
+    file:
+      - /gitlab-templates/blocks/workflow.yml
 
-lint:oelint:
-  stage: lint
+oelint:
+  tags:
+    - Linux
+  stage: validate
   image: python:3.11-slim
   before_script:
     - pip install --upgrade pip
@@ -16,3 +21,43 @@ lint:oelint:
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
     - if: $CI_COMMIT_BRANCH
+
+.yocto_base_wrynose:
+  stage: build
+  image: storage.kde.org/vm-images/yocto-builder-noble
+  tags:
+    - LargeVM
+    - amd64
+  before_script:
+# generic sysadmin tooling
+    - pip3 install --break-system-packages minio
+    - git clone https://invent.kde.org/sysadmin/ci-utilities.git
+# prepare bitbake
+    - |
+        [ -d /mnt/yocto_sstate_wrynose ] || mkdir -p /mnt/yocto_sstate_wrynose
+    - git clone --depth 1 --branch yocto-6.0 https://github.com/openembedded/bitbake.git
+    - |
+    - |
+        ./bitbake/bin/bitbake-setup init \
+            --non-interactive \
+            --source-overrides scripts/ci/gitlab-source-override.json \
+            scripts/ci/kde-master.conf.json \
+            kde \
+            distro/poky machine/beaglev-ahead
+  after_script:
+    - cp -L ./bitbake-builds/poky-master/tmp/log/cooker/beaglev-ahead/console-latest.log bitbake.log
+  artifacts:
+    expire_in: 3 days
+    when: always
+    paths:
+      - ./bitbake-builds/poky-master/build/tmp/buildstats/
+      - bitbake.log
+
+yocto_wrynose:
+  extends: .yocto_base_wrynose
+  rules:
+    - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master"'
+  script:
+    - source bitbake-builds/poky-master/build/init-build-env
+    - bitbake-config-build enable-fragment kf6/autobuilder kf6/sstate_wrynose
+    - bitbake packagegroup-plasma-desktop-workspace
