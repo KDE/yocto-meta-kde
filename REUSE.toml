@@ -20,3 +20,15 @@ SPDX-License-Identifier = "CC0-1.0"
 path = "conf/fragments/*"
 SPDX-FileCopyrightText = "none"
 SPDX-License-Identifier = "CC0-1.0"
+
+# SDDM configuration files
+[[annotations]]
+path = "recipes-support/sddm/sddm/*"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "CC0-1.0"
+
+# kscreenlocker configuration files
+[[annotations]]
+path = "recipes-plasma/kscreenlocker/*"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "CC0-1.0"
