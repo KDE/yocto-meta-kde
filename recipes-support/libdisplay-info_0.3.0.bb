@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2023 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+# SPDX-FileCopyrightText: 2025 Marc Ferland <marc.ferland@sonatest.com>
+#
+# SPDX-License-Identifier: MIT
+
 SUMMARY = "libdisplay-info"
 DESCRIPTION = "EDID and DisplayID library"
 HOMEPAGE = "https://gitlab.freedesktop.org/emersion/libdisplay-info"
