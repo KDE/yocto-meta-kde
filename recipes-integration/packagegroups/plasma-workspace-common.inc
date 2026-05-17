@@ -17,6 +17,7 @@ RDEPENDS:${PN} += "bluedevil \
                    plasma-disks \
                    plasma-firewall \
                    plasma-integration \
+                   plasma-keyboard \
                    plasma-nano \
                    plasma-nm \
                    plasma-pa \
