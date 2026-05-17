@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 Marc Ferland <marc.ferland@sonatest.com>
+#
+# SPDX-License-Identifier: MIT
+#
 # xdg-autostart
 # -------------
 # Enable the xdg-autostart option so .desktop files are automatically
