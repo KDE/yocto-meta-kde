@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 Marc Ferland <marc.ferland@sonatest.com>
+#
+# SPDX-License-Identifier: MIT
+
 SUMMARY = "ddcutil"
 DESCRIPTION = "Control monitor settings using DDC/CI and USB"
 HOMEPAGE = "https://github.com/rockowitz/ddcutil"
