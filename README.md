@@ -1,3 +1,10 @@
+<!--
+  SPDX-FileCopyrightText: 2020-2024 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+  
+  SPDX-License-Identifier: MIT
+-->
+
+
 meta-kde
 ========
 
