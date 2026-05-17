@@ -3,6 +3,9 @@ From: Andreas Cord-Landwehr <cordlandwehr@kde.org>
 Date: Sun, 26 Jun 2022 19:55:01 +0200
 Subject: [PATCH] Add install operation for native build
 
+SPDX-FileCopyrightText: 2022 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+SPDX-License-Identifier: MIT
+
 Upstream-Status: Pending
 Signed-off-by: Andreas Cord-Landwehr <cordlandwehr@kde.org>
 
