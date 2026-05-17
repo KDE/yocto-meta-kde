@@ -1,0 +1,22 @@
+# SPDX-FileCopyrightText: none
+# SPDX-License-Identifier: CC0-1.0
+
+version = 1
+
+# handle license files similar to files in LICENSES
+[[annotations]]
+path = "conf/licenses/*"
+SPDX-FileCopyrightText = "None/Various Authors of the license files"
+SPDX-License-Identifier = "LicenseRef-LicenseText"
+
+# ci fragments with only parameters
+[[annotations]]
+path = "scripts/ci/*"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "CC0-1.0"
+
+# config fragments with only parameters
+[[annotations]]
+path = "conf/fragments/*"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "CC0-1.0"
