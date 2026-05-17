@@ -25,6 +25,9 @@ In file included from /usr/include/libunwind-x86_64.h:129,
 Removing the address operator ensures that the array type decays to
 a pointer, and that the types are compatible.
 
+SPDX-FileCopyrightText: Florian Weimer <fweimer@redhat.com>
+SPDX-License-Identifier: BSD-3-Clause
+
 Upstream-Status: Backport [https://invent.kde.org/sdk/heaptrack/-/merge_requests/24]
 ---
  cmake/FindLibunwind.cmake | 4 ++--
