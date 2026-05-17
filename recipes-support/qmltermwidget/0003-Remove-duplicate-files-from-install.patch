@@ -7,6 +7,9 @@ Apparently newer qmake does not like multiple installation of same
 files. Remove separate installs where parent directory already contains
 the files.
 
+SPDX-FileCopyrightText: 2022 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+SPDX-License-Identifier: MIT
+
 Upstream-Status: Pending
 Signed-off-by: Andreas Cord-Landwehr <cordlandwehr@kde.org>
 ---
