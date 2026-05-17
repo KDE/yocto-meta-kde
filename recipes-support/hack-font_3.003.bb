@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 Marc Ferland <marc.ferland@sonatest.com>
+#
+# SPDX-License-Identifier: MIT
+
 SUMMARY = "Hack Font"
 DESCRIPTION = "A typeface designed for source code"
 HOMEPAGE = "https://sourcefoundry.org/hack/"
