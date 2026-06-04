@@ -74,4 +74,5 @@ do_compile:append() {
     sed -i -e 's,${S}/components/mobileshellstate/,,g' ${B}/components/mobileshellstate/mobileadaptor.h
     sed -i -e 's,${S}/components/waydroidintegrationplugin/,,g' ${B}/components/waydroidintegrationplugin/waydroidapplicationadaptor.h
     sed -i -e 's,${S}/components/waydroidintegrationplugin/,,g' ${B}/components/waydroidintegrationplugin/waydroidadaptor.h
+    sed -i -e 's,${S}/components/mobileshellstate/,,g' ${B}/components/mobileshellstate/panelsadaptor.h
 }
