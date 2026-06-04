@@ -1,0 +1,6 @@
+# SPDX-FileCopyrightText: none
+# SPDX-License-Identifier: CC0-1.0
+
+require ${PN}.inc
+SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/kweathercore-26.04.1.tar.xz"
+SRC_URI[sha256sum] = "fc3ac8c0c5f0ae5a2a43f9587d7e811d53d4ffafba1de3ee02ab55105a0a536c"
