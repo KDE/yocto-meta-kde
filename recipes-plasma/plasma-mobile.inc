@@ -43,6 +43,7 @@ FILES:${PN} += "${datadir}/kpackage/genericqml/org.kde.phone.dialer/* \
                 ${datadir}/wallpapers/org.kde.plasma.phone.lockers/* \
                 ${datadir}/wayland-sessions/*.desktop \
                 ${datadir}/plasma-mobile-apn-info \
+                ${datadir}/plasma-mobile-device-presets \
                 ${libdir}/plugins/kwin/effects/plugins/* \
                 ${libdir}/plugins/plasma/kcms/systemsettings/* \
                 ${libdir}/qml/QtQuick/VirtualKeyboard/Styles/Plasma/* \
