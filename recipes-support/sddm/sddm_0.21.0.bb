@@ -10,5 +10,5 @@ SRC_URI = "git://github.com/sddm/${BPN};nobranch=1;protocol=https \
            file://sddm-autologin.pam \
            file://sddm-greeter.pam \
 "
-S = "${UNPACKDIR}/git"
 SRCREV = "bc9eee8280275723767213220e88f6b14157ba1f"
+
