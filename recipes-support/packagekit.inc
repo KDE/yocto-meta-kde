@@ -13,6 +13,7 @@ DEPENDS += "docbook-xml-dtd4 \
             glib-2.0-native \
             gobject-introspection \
             gobject-introspection-native \
+            jansson \
             libxslt-native \
             polkit \
             sqlite3 \

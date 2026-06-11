@@ -3,5 +3,5 @@
 
 require ${BPN}.inc
 SRC_URI = "https://www.freedesktop.org/software/PackageKit/releases/PackageKit-${PV}.tar.xz"
-SRC_URI[sha256sum] = "aa7269e600f6011f381d869b3650552602bbb9f38982e1106621b940bab979b8"
+SRC_URI[sha256sum] = "ea9e5954bc74b24c02cf31674a3ec792b3b74d5758ac0b6aca58ad76fc54374e"
 S = "${UNPACKDIR}/PackageKit-${PV}"
