@@ -3,4 +3,4 @@
 
 require ${BPN}.inc
 SRC_URI = "git://invent.kde.org/libraries/${BPN};nobranch=1;protocol=https"
-SRCREV = "cdde86de70e1ea540ead2577e4320d452dad94b9"
+SRCREV = "10786fe31e640858f4f5db5366aed9c56d77bfab"
