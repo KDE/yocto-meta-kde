@@ -17,9 +17,6 @@ DEPENDS += "kconfig \
             qtsensors \
 "
 
-SRC_URI = "git://invent.kde.org/plasma-mobile/${BPN};nobranch=1;protocol=https"
-S = "${UNPACKDIR}/git"
-
 inherit cmake_kdeapp
 inherit reuse_license_checksums
 
