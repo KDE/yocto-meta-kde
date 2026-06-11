@@ -10,7 +10,6 @@ LICENSE = "BSD-2-Clause & LGPL-2.1-only & LGPL-2.1-or-later & LGPL-3.0-only & Li
 DEPENDS += "qtdeclarative"
 
 SRC_URI = "git://invent.kde.org/libraries/${BPN};nobranch=1;protocol=https"
-S = "${UNPACKDIR}/git"
 
 inherit cmake_kdeapp
 inherit kf6_kconfig
