@@ -10,7 +10,6 @@ LICENSE = "LGPL-2.1-or-later & BSD-2-Clause"
 DEPENDS += "ki18n \
             kirigami \
             plasma-activities \
-            qt5compat \
             qtdeclarative \
 "
 
