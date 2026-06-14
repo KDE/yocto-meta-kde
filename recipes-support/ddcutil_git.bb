@@ -10,10 +10,10 @@ LICENSE = "GPL-2.0-only"
 LIC_FILES_CHKSUM = "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263"
 
 DEPENDS += "glib-2.0 i2c-tools jansson kmod"
-PV = "2.2.3"
+PV = "2.2.7"
 
 SRC_URI = "git://github.com/rockowitz/ddcutil.git;protocol=https;branch=master"
-SRCREV = "8660f29c0370ca093d45ea6c91277edd00d51301"
+SRCREV = "4edf054c6bfddcc62174bbc453e26c73cfbe7bbf"
 
 inherit autotools pkgconfig
 
