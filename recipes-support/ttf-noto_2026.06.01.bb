@@ -14,7 +14,7 @@ inherit allarch fontcache
 INHIBIT_DEFAULT_DEPS = "1"
 
 SRC_URI = "git://github.com/notofonts/notofonts.github.io;protocol=https;nobranch=1"
-SRCREV = "7eb462dbfc5fe79b18ea35e7f1773f9495b8a1c6"
+SRCREV = "cc22e3ec1491171c13ccf17b6297ac666b2c0112"
 
 PACKAGES = "ttf-noto"
 FONT_PACKAGES = "ttf-noto"
