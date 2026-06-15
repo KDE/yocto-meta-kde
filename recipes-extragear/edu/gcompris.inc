@@ -11,16 +11,17 @@ LICENSE = "GPL-3.0-only"
 DEPENDS += "kcrash \
             ki18n \
             kio \
-            phonon \
             qml-box2d \
             qtcharts \
             qtdeclarative \
+            qtgraphs \
             qtmultimedia \
+            qtquick3d \
+            qtquick3d-native \
             qtsensors \
 "
 
 SRC_URI = "git://invent.kde.org/education/${BPN};nobranch=1;protocol=https"
-S = "${UNPACKDIR}/git"
 
 FILES:${PN} += "${datadir}/gcompris-qt/rcc \
                 ${datadir}/gcompris-qt/translations \
