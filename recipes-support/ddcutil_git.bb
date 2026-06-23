@@ -19,12 +19,13 @@ inherit autotools pkgconfig
 
 CFLAGS += "-Wno-unused-but-set-variable"
 
-PACKAGECONFIG ??= "${@bb.utils.filter('DISTRO_FEATURES', 'x11 systemd', d)} drm"
+PACKAGECONFIG ??= "${@bb.utils.filter('DISTRO_FEATURES', 'x11 systemd', d)} drm dbus"
 
 PACKAGECONFIG[drm] = "--enable-drm=yes,--enable-drm=no,libdrm"
 PACKAGECONFIG[systemd] = "--enable-udev=yes,--enable-udev=no,udev"
 PACKAGECONFIG[usb] = "--enable-usb=yes,--enable-usb=no,libusb1"
 PACKAGECONFIG[x11] = "--enable-x11=yes,--enable-x11=no,libx11 xrandr"
+PACKAGECONFIG[dbus] = "--enable-dbus=yes,--enable-dbus=no,dbus"
 
 EXTRA_OECONF += "--enable-build-timestamp=no"
 
