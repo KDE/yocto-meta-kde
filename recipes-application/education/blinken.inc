@@ -10,7 +10,6 @@ LICENSE = "GPL-2.0-or-later"
 DEPENDS += "kcrash \
             ki18n \
             kio \
-            phonon \
 "
 
 inherit cmake_kdeapp
