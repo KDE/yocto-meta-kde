@@ -12,7 +12,6 @@ DEPENDS += "kconfigwidgets \
             kirigami \
             kparts \
             kxmlgui \
-            phonon \
             solid \
 "
 
