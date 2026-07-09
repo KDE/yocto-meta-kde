@@ -21,7 +21,6 @@ DEPENDS += "kirigami \
             kwallet \
             libkexiv2 \
             libzip \
-            phonon \
             plasma-activities \
             poppler \
             purpose \
@@ -30,7 +29,7 @@ DEPENDS += "kirigami \
 "
 
 EXTRA_OECMAKE += "-DOKULAR_UI=both"
-EXTRA_OECMAKE += "-DFORCE_NOT_REQUIRED_DEPENDENCIES='KExiv2Qt6;LibSpectre;DjVuLibre;EPub;Discount'"
+EXTRA_OECMAKE += "-DFORCE_NOT_REQUIRED_DEPENDENCIES='Phonon4Qt6;KExiv2Qt6;LibSpectre;DjVuLibre;EPub;Discount'"
 
 # dirty hack to force the mobile version and hide the desktop one
 do_install:append() {
