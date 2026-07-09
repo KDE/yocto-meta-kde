@@ -21,7 +21,6 @@ DEPENDS += "baloo \
             kwidgetsaddons \
             kwindowsystem \
             lcms \
-            phonon \
             plasma-activities \
             purpose \
             qtwayland \
