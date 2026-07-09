@@ -43,7 +43,6 @@ DEPENDS += "baloo \
             libqalculate \
             libxft \
             networkmanager-qt \
-            phonon \
             plasma-activities \
             plasma-activities-stats \
             plasma5support \
