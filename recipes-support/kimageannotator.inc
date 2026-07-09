@@ -15,7 +15,6 @@ DEPENDS += "kcolorpicker \
 "
 
 SRC_URI = "git://github.com/ksnip/kImageAnnotator.git;nobranch=1;protocol=https"
-S = "${UNPACKDIR}/git"
 
 inherit qt6-cmake
 inherit pkgconfig
