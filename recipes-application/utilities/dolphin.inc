@@ -37,7 +37,6 @@ DEPENDS += "baloo \
             ktextwidgets \
             kuserfeedback \
             kwindowsystem \
-            phonon \
             solid \
 "
 
