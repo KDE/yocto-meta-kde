@@ -13,7 +13,6 @@ DEPENDS += "gpsd \
             kio \
             knewstuff \
             kparts \
-            phonon \
             protobuf \
             protobuf-native \
             qtlocation \
