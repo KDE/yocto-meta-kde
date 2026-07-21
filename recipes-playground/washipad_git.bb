@@ -1,5 +1,27 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${BPN}.inc
+SUMMARY = "Washipad"
+DESCRIPTION = "Minimalist Sketchnoting Application"
+HOMEPAGE = "https://invent.kde.org/graphics/washipad"
+LICENSE = "GPL-3.0-only"
+
+DEPENDS += "kdeclarative \
+            kiconthemes \
+            kirigami \
+            kpackage \
+            qtdeclarative \
+"
+
+SRC_URI = "git://invent.kde.org/graphics/${BPN};nobranch=1;protocol=https"
+
 SRCREV = "20bade18f23f49738e0507121b2960523abc8d19"
+
+S = "${UNPACKDIR}/git"
+
+inherit cmake_kdeapp
+inherit mime-xdg
+inherit reuse_license_checksums
+
+RDEPENDS:${PN} += "qtdeclarative"

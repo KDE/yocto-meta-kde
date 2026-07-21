@@ -1,7 +1,51 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2018-2020 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2020-2023 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/kscreenlocker-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "9ba0aee32364051eeb213d48dd3c208ae0ce7062190a30f855735ba4efe389cc"
+SUMMARY = "KScreenLocker"
+DESCRIPTION = "Library and components for secure lock screen architecture"
+HOMEPAGE = "https://invent.kde.org/plasma/kscreenlocker"
+LICENSE = "GPL-2.0-only"
+LIC_FILES_CHKSUM = "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263"
 
+DEPENDS += "kcrash \
+            kglobalaccel \
+            kidletime \
+            knotifications \
+            ksvg \
+            kwindowsystem \
+            kxmlgui \
+            layer-shell-qt \
+            libkscreen \
+            libpam \
+            libplasma \
+            libxcb \
+            qtdeclarative \
+            solid \
+            wayland-native \
+"
+
+SRC_URI:append = " \
+    file://kde.pam \
+    file://kscreenlockerrc \
+    file://kscreensaverrc \
+"
+
+inherit cmake_plasma
+require recipes-plasma/common/plasma_src.inc
+
+do_install:append() {
+    install -d 0755 ${D}${sysconfdir}/pam.d
+    install -m 0644 ${UNPACKDIR}/kde.pam ${D}${sysconfdir}/pam.d/kde
+    install -d 0755 ${D}${sysconfdir}/xdg
+    install -m 0644 ${UNPACKDIR}/kscreenlockerrc ${D}${sysconfdir}/xdg/
+    install -m 0644 ${UNPACKDIR}/kscreensaverrc ${D}${sysconfdir}/xdg/
+}
+
+FILES:${PN} += "${datadir}/ksmserver/screenlocker/org.kde.passworddialog/*.desktop \
+                ${datadir}/kpackage/kcms/kcm_screenlocker \
+                ${libdir}/plugins/plasma/kcms/systemsettings/kcm_screenlocker.so \
+"
+
+RDEPENDS:${PN} += "perl qqc2-breeze-style"

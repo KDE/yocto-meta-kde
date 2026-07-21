@@ -1,6 +1,27 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2024 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/libkdegames-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "31c83b61851eb7879a4b96c961cdeb32f4e131ab798122c18db59ed673f0af14"
+SUMMARY = "libkdegames"
+DESCRIPTION = "Common code and data for many KDE games"
+HOMEPAGE = "https://invent.kde.org/games/libkdegames"
+LICENSE = "GPL-2.0-or-later"
+
+DEPENDS += "karchive \
+            kcolorscheme \
+            kconfigwidgets \
+            kdnssd \
+            kguiaddons \
+            kiconthemes \
+            knewstuff \
+            kxmlgui \
+            openal-soft \
+            qtdeclarative \
+"
+
+inherit cmake_kdeapp
+inherit kf6_kconfig
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc
+
+FILES:${PN} += "${datadir}/carddecks/*"

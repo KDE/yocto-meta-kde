@@ -1,7 +1,20 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2025 Marc Ferland <marc.ferland@sonatest.com>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/knighttime-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "5f26692a864540b993351106f5469fd17939bd55e79f931c8f97395d9c5a809d"
+SUMMARY = "KNightTime"
+DESCRIPTION = "Helpers for scheduling the dark-light cycle"
+HOMEPAGE = "https://invent.kde.org/plasma/knighttime"
+LICENSE = "LGPL-2.1-only | LGPL-3.0-only | GPL-2.0-only | GPL-3.0-only | LicenseRef-KDE-Accepted-GPL | LicenseRef-KDE-Accepted-LGPL | MIT"
 
+DEPENDS += "kconfig \
+            kcoreaddons \
+            kdbusaddons \
+            kholidays \
+            ki18n \
+            qtpositioning \
+"
+
+inherit cmake_plasma
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc

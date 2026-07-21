@@ -1,7 +1,23 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2018-2020 Volker Krause <vkrause@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/polkit-kde-agent-1-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "91990b9cd13f205a9963f88fe605942b9e8b6ee9e9103431216bf511944ce127"
+SUMMARY = "Polkit KDE Agent"
+DESCRIPTION = "Daemon providing a Polkit authentication UI for Plasma"
+HOMEPAGE = "https://invent.kde.org/plasma/polkit-kde-agent-1"
+LICENSE = "GPL-2.0-or-later"
 
+DEPENDS += "kcoreaddons \
+            kcrash \
+            kdbusaddons \
+            kiconthemes \
+            kwidgetsaddons \
+            kwindowsystem \
+            polkit-qt-1 \
+"
+
+inherit cmake_plasma
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc
+
+EXTRA_OECMAKE += "-DOE_KF6_PATH_HOST_ROOT=${STAGING_DIR_HOST}"

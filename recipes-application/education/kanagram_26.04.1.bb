@@ -1,6 +1,30 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/kanagram-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "e39e7ebbeee0dce822334e7b6ea2f1314826299b73eaff3173ef3b5754e22065"
+SUMMARY = "Kanagram"
+DESCRIPTION = "Kanagram is a game based on anagrams of words: the puzzle is solved when \
+               the letters of the scrambled word are put back in the correct order"
+HOMEPAGE = "https://edu.kde.org/kanagram/"
+LICENSE = "GPL-2.0-only"
+LIC_FILES_CHKSUM = "file://COPYING;md5=751419260aa954499f7abaabaa882bbe"
+
+DEPENDS += "kcrash \
+            ki18n \
+            kio \
+            knewstuff \
+            knotifications \
+            knotifyconfig \
+            libkeduvocdocument \
+"
+
+inherit cmake_kdeapp
+inherit kf6_kcoreaddons
+inherit kf6_kconfig
+inherit kf6_kauth
+inherit mime-xdg
+require recipes-application/common/application_src.inc
+
+FILES:${PN} += "${datadir}/knsrcfiles/"
+
+RDEPENDS:${PN} += "kdeedu-data"

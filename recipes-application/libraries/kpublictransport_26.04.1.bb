@@ -1,6 +1,18 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2021 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/kpublictransport-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "e491c9e6aa85e662412c62ea36895f73bed33600633761dbe8fac14500e777ff"
+SUMMARY = "KPublicTransport"
+DESCRIPTION = "Library to assist with accessing public transport timetables and other data"
+HOMEPAGE = "https://invent.kde.org/libraries/kpublictransport"
+LICENSE = "MIT & BSD-3-Clause & LGPL-2.0-or-later"
+
+DEPENDS += "kirigami-addons \
+            qtdeclarative \
+            qtlocation \
+"
+
+inherit cmake_kdeapp
+inherit mime-xdg
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc

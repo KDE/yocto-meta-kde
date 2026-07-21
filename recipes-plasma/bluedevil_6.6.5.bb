@@ -1,7 +1,40 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2018-2019 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/bluedevil-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "4396447a83b5dab5c4867690824180c36f4f3922107463722fed42202d8a45ff"
+SUMMARY = "Bluedevil"
+DESCRIPTION = "Bluedevil adds Bluetooth capabilities to KDE Plasma"
+HOMEPAGE = "https://invent.kde.org/plasma/bluedevil"
+LICENSE = "GPL-2.0-only"
 
+DEPENDS += "bluez-qt \
+            kcoreaddons \
+            kdbusaddons \
+            kded \
+            kiconthemes \
+            kio \
+            knotifications \
+            ksvg \
+            kwidgetsaddons \
+            kwindowsystem \
+            libplasma \
+            qtdeclarative \
+            shared-mime-info \
+            shared-mime-info-native \
+"
+
+inherit cmake_plasma
+inherit mime-xdg
+inherit mime
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc
+
+FILES:${PN} += "${datadir}/bluedevilwizard \
+                ${datadir}/kpackage/kcms/ \
+                ${datadir}/mime/packages \
+                ${datadir}/plasma \
+                ${datadir}/remoteview \
+                ${libdir}/qml \
+                ${libdir}/plugins/plasma/kcms/systemsettings/ \
+"

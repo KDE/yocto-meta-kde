@@ -1,7 +1,35 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2018-2020 Volker Krause <vkrause@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/powerdevil-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "b125f64e73cc8dcf9e3e7e3f154f4febb4406426597cad6ebbe8c48332e35e7b"
+SUMMARY = "PowerDevil"
+DESCRIPTION = "Manages the power consumption settings of a Plasma shell"
+HOMEPAGE = "https://invent.kde.org/plasma/powerdevil"
+LICENSE = "GPL-2.0-only"
+LIC_FILES_CHKSUM = "file://COPYING;md5=5c213a7de3f013310bd272cdb6eb7a24"
 
+DEPENDS += "bluez-qt \
+            ddcutil \
+            kconfig \
+            kdbusaddons \
+            kglobalaccel \
+            kidletime \
+            kio \
+            kitemmodels \
+            knotifyconfig \
+            kwayland \
+            libkscreen \
+            plasma-activities \
+            plasma-workspace \
+            qtwayland-native \
+            solid \
+"
+
+inherit cmake_plasma
+require recipes-plasma/common/plasma_src.inc
+
+FILES:${PN} += "${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/* \
+                ${libdir}/plugins/powerdevil/action/kcm/* \
+                ${libdir}/qml/org/kde/plasma/private/* \
+                ${datadir}/plasma/plasmoids/* \
+"

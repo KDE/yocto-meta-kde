@@ -1,6 +1,22 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2026 Marc Ferland <marc.ferland@sonatest.com>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/kdegraphics-thumbnailers-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "684fe7c8bd600b99909908f816189940a3e4b8fcf3151e52db798342f529c200"
+SUMMARY = "Thumbnailers"
+DESCRIPTION = "Thumbnailers for various graphics file formats"
+HOMEPAGE = "https://invent.kde.org/graphics/kdegraphics-thumbnailers"
+LICENSE = "GPL-2.0-or-later & \
+           LGPL-2.0-or-later & \
+           LGPL-2.1-only & \
+           LGPL-3.0-only & \
+           LicenseRef-KDE-Accepted-LGPL"
+
+DEPENDS += "kio libkexiv2"
+
+inherit cmake_kdeapp
+inherit kf6_kconfig
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc
+
+EXTRA_OECMAKE += "-DDISABLE_BLENDER=ON"
+EXTRA_OECMAKE += "-DDISABLE_MOBIPOCKET=ON"

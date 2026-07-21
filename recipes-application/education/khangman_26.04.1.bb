@@ -1,6 +1,32 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/khangman-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "99618ea09efb081f230bd510af22aade1774623bf2166d69663b3b11c1aa5747"
+SUMMARY = "KHangMan"
+DESCRIPTION = "KHangMan is a game based on the well-known hangman game."
+HOMEPAGE = "https://edu.kde.org/khangman/"
+LICENSE = "GPL-2.0-only"
+LIC_FILES_CHKSUM = "file://COPYING;md5=cb56c8b10bbb1c97490192a78c4fb273"
+
+DEPENDS += "kcompletion \
+            kcrash \
+            ki18n \
+            kio \
+            knewstuff \
+            knotifications \
+            knotifyconfig \
+            kparts \
+            kxmlgui \
+            libkeduvocdocument \
+"
+
+inherit cmake_kdeapp
+inherit kf6_kcoreaddons
+inherit kf6_kconfig
+inherit kf6_kauth
+inherit mime-xdg
+require recipes-application/common/application_src.inc
+
+FILES:${PN} += "${datadir}/knsrcfiles/"
+
+RDEPENDS:${PN} += "kdeedu-data"

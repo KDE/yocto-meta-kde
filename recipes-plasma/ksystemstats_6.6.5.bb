@@ -1,7 +1,20 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2025 Marc Ferland <marc.ferland@sonatest.com>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/ksystemstats-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "6b5e2f2a6aaae97489e75818e7f83c2586578022760821c677cdebcefa542e36"
+SUMMARY = "KSystemStats"
+DESCRIPTION = "KSystemStats is a daemon that collects statistics about the running system."
+HOMEPAGE = "https://invent.kde.org/plasma/ksystemstats"
+LICENSE = "BSD-2-Clause | BSD-3-Clause | GPL-2.0-only | GPL-3.0-only | LicenseRef-KDE-Accepted-GPL"
 
+DEPENDS += "kcoreaddons \
+            kcrash \
+            kio \
+            libksysguard \
+            networkmanager-qt \
+            solid \
+"
+
+inherit cmake_plasma
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc

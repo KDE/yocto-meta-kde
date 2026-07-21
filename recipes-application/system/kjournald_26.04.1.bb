@@ -1,6 +1,23 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2021 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/kjournald-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "413dac18b34896eb74bb3d3e16647bf07a0c9461f97fbe832c1abeb5f1f687a0"
+SUMMARY = "KJournald"
+DESCRIPTION = "Framework for interacting with systemd-journald"
+HOMEPAGE = "https://invent.kde.org/system/kjournald"
+LICENSE = "MIT | LGPL-2.1-or-later"
+
+DEPENDS += "kcoreaddons \
+            kcrash \
+            kirigami \
+            kirigami-addons \
+            qtdeclarative \
+            systemd \
+"
+
+inherit cmake_kdeapp
+inherit kf6_kconfig
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc
+
+RDEPENDS:${PN} += "qtdeclarative-qmlplugins"

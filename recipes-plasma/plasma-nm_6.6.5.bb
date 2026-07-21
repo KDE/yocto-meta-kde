@@ -1,7 +1,50 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2018-2020 Volker Krause <vkrause@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/plasma-nm-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "c92d09d2978dbbe6b5c897beac822cd053c17473f1d61506e152bfcb46b70b9b"
+SUMMARY = "Plasma NM"
+DESCRIPTION = "Plasma applet written in QML for managing network connections"
+HOMEPAGE = "https://invent.kde.org/plasma/plasma-nm"
+LICENSE = "GPL-2.0-only"
 
+DEPENDS += "kcompletion \
+            kconfigwidgets \
+            kcoreaddons \
+            kdbusaddons \
+            kiconthemes \
+            kio \
+            knotifications \
+            kservice \
+            ksvg \
+            kwallet \
+            kwidgetsaddons \
+            kwindowsystem \
+            libplasma \
+            modemmanager-qt \
+            networkmanager-qt \
+            prison \
+            qca \
+            qcoro \
+            qtdeclarative \
+            qttools \
+            solid \
+"
+
+inherit cmake_plasma
+inherit mime-xdg
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc
+
+EXTRA_OECMAKE += "-DOE_QCA_PATH_HOST_ROOT=${STAGING_DIR_HOST} \
+                  -DBUILD_MOBILE=ON \
+"
+
+FILES_SOLIBSDEV = ""
+FILES:${PN} += "${libdir}/*.so \
+                ${libdir}/plugins/plasma/network/vpn/*.so \
+                ${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_networkmanagement.so \
+                ${libdir}/qml/org/kde/plasma/networkmanagement \
+                ${datadir}/plasma/plasmoids/org.kde.plasma.networkmanagement \
+                ${datadir}/kcm_networkmanagement/qml/*.qml \
+                ${datadir}/kpackage \
+"

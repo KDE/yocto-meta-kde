@@ -1,7 +1,14 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2023 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/ocean-sound-theme-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "46b76160e6998e03b3990c669d6da166bd785da356841193eb548b35811dc6df"
+SUMMARY = "Ocean Sound Theme"
+DESCRIPTION = "Ocean Sound Theme for Plasma"
+HOMEPAGE = "https://invent.kde.org/plasma/ocean-sound-theme"
+LICENSE = "BSD-2-Clause & CC-BY-SA-4.0"
+LIC_FILES_CHKSUM = "file://LICENSES/BSD-2-Clause.txt;md5=000c37ead9822c219d89c4971eeb5163 \
+                    file://LICENSES/CC-BY-SA-4.0.txt;md5=9eb9fa51640fba9c2dbeb93fe711ae80 \
+"
 
+inherit cmake_plasma
+require recipes-plasma/common/plasma_src.inc

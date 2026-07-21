@@ -1,7 +1,43 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/plasma-systemmonitor-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "b6ebf7c1e6f7a42c91a0b511971fd67041d4d9b617edc3a4fc0b08af4a0ec78f"
+SUMMARY = "Plasma System Monitor"
+DESCRIPTION = "An interface for monitoring system sensors, process information and other system resources"
+HOMEPAGE = "https://invent.kde.org/plasma/plasma-systemmonitor"
+LICENSE = "GPL-2.0-only | GPL-3.0-only"
 
+DEPENDS += "kconfig \
+            kdbusaddons \
+            kdeclarative \
+            kglobalaccel \
+            ki18n \
+            kio \
+            kirigami-addons \
+            kitemmodels \
+            knewstuff \
+            kservice \
+            libksysguard \
+            qtdeclarative \
+"
+
+FILES:${PN} += "${datadir}/kglobalaccel/ \
+                ${datadir}/ksysguard/sensorfaces/ \
+                ${datadir}/plasma/kinfocenter/externalmodules/ \
+                ${libdir}/qml/org/kde/ksysguard/table/ \
+                ${libdir}/qml/org/kde/ksysguard/page/ \
+                ${libdir}/libPlasmaSystemMonitorTable.so \
+                ${libdir}/libPlasmaSystemMonitorPage.so \
+"
+
+RDEPENDS:${PN} = "ksystemstats"
+
+inherit cmake_plasma
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc
+
+FILES_SOLIBSDEV = ""
+
+# Do not try to detect the ksystemstats runtime at configure, hardcode
+# a value to skip detection.
+EXTRA_OECMAKE:append = " -Dksystemstats_EXE=${bindir}/ksystemstats"

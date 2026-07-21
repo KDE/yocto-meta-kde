@@ -1,7 +1,30 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2024 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/plasma-firewall-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "d4acad029c24eaaa98f307e5ff39903aa6a72f373c80f3a3c17ededfa450f8ec"
+SUMMARY = "Plasma Firewall"
+DESCRIPTION = "Control Panel for your system firewall"
+HOMEPAGE = "https://invent.kde.org/plasma/plasma-firewall"
+LICENSE = "GPL-2.0-only"
 
+DEPENDS += "kauth \
+            kcmutils \
+            kconfig \
+            kcoreaddons \
+            ki18n \
+            qtdeclarative \
+"
+
+FILES:${PN} += "${libdir}/libkcm_firewall_core.so"
+
+RDEPENDS:${PN} += "firewalld"
+
+inherit cmake_plasma
+inherit mime-xdg
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc
+
+EXTRA_OECMAKE += "-DBUILD_UFW_BACKEND=OFF"
+
+# Do not package /usr/lib/libkcm_firewall_core.so in -dev package.
+FILES_SOLIBSDEV = ""

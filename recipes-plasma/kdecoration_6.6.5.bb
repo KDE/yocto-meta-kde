@@ -1,7 +1,15 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2018-2020 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/kdecoration-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "06e8ed04b8f3cdcd3057a9e2d23291ef41a3976f96fc8cf917479218871aa9fd"
+SUMMARY = "KDecoration"
+DESCRIPTION = "Plugin based library to create window decorations"
+HOMEPAGE = "https://invent.kde.org/plasma/kdecoration"
+LICENSE = "LGPL-2.1-only"
 
+inherit cmake_plasma
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc
+
+FILES:${PN} += "${datadir}/locale"

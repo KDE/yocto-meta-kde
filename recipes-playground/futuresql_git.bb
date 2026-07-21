@@ -1,5 +1,19 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2024 Maxime Roussin-Bélanger <maxime.roussinbelanger@gmail.com>
+#
+# SPDX-License-Identifier: MIT
 
-require ${BPN}.inc
+SUMMARY = "FutureSQL"
+DESCRIPTION = "A non-blocking database framework for Qt"
+HOMEPAGE = "https://invent.kde.org/libraries/futuresql"
+LICENSE = "(LGPL-2.1-only | LGPL-3.0-only | LicenseRef-KDE-Accepted-LGPL)"
+
+DEPENDS += "qcoro"
+
+SRC_URI = "git://invent.kde.org/libraries/${BPN};nobranch=1;protocol=https"
+
 SRCREV = "0fb3e7e202ea4d6cf170b3ea7edd6ea955648c50"
+
+S = "${UNPACKDIR}/git"
+
+inherit cmake_kdeapp
+inherit reuse_license_checksums

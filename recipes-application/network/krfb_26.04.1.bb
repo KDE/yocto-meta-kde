@@ -1,6 +1,30 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2024 Guillaume Champagne <champagne.guillaume.c@gmail.com>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/krfb-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "591926a203a41546bf49239fc464f730b7ad1a4a3a5ae49204616d2b635ed1fe"
+SUMMARY = "KDE Desktop Sharing"
+DESCRIPTION = "Small server for the RFB protocol (vnc)"
+HOMEPAGE = "https://invent.kde.org/network/krfb"
+LICENSE = "GPL-2.0-or-later"
+
+DEPENDS += "kconfig \
+            kconfig-native \
+            kdbusaddons \
+            kdnssd \
+            knotifications \
+            kpipewire \
+            kstatusnotifieritem \
+            kwallet \
+            kwidgetsaddons \
+            kwindowsystem \
+            kxmlgui \
+            libvncserver \
+            qtwayland \
+            qtwayland-native \
+"
+
+inherit cmake_kdeapp
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc
+
+RDEPENDS:${PN} += "xdg-desktop-portal"

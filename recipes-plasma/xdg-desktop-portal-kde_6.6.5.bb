@@ -1,7 +1,30 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2018-2020 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2020-2021 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/xdg-desktop-portal-kde-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "21d699585294064fce7c74dee685c2093ef73dd095797913e68ef14780856b27"
+SUMMARY = "KDE Portal for XDG Desktop"
+DESCRIPTION = "A backend implementation for xdg-desktop-portal that is using Qt/KDE"
+HOMEPAGE = "https://invent.kde.org/plasma/xdg-desktop-portal-kde"
+LICENSE = "LGPL-2.1-only & GPL-2.0-or-later"
 
+DEPENDS += "kcoreaddons \
+            kdeclarative \
+            kio \
+            kirigami \
+            knotifications \
+            kstatusnotifieritem \
+            kwayland \
+            kwidgetsaddons \
+            libplasma \
+            pipewire \
+            qtwayland-native \
+"
+
+inherit cmake_plasma
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc
+
+FILES:${PN} += "${datadir}/xdg-desktop-portal"
+
+RDEPENDS:${PN} += "xdg-desktop-portal"

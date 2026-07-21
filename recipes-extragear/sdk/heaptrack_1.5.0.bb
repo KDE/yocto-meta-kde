@@ -1,5 +1,27 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2017-2020 Volker Krause <vkrause@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
+SUMMARY = "Heaptrack"
+DESCRIPTION = "A heap memory profiler for Linux"
+HOMEPAGE = "https://invent.kde.org/sdk/heaptrack"
+LICENSE = "LGPL-2.1-only"
+
+DEPENDS += "boost \
+            elfutils \
+            libunwind \
+            zlib \
+"
+
+SRC_URI = "git://invent.kde.org/sdk/${BPN};nobranch=1;protocol=https"
+# nooelint: oelint.file.patchsignedoff - Upstream commit does not have a signed-off-by entry
+SRC_URI += "file://0001-cmake-Fix-C-compatibility-of-libunwind-probes.patch"
+
 SRCREV = "b54e92e88b0895f910a5b107f499d1155a086b80"
+
+S = "${UNPACKDIR}/git"
+
+inherit cmake
+inherit reuse_license_checksums
+
+EXTRA_OECMAKE += "-DHEAPTRACK_BUILD_GUI=OFF"

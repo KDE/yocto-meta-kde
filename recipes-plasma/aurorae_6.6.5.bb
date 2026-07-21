@@ -1,7 +1,30 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2025 Marc Ferland <marc.ferland@sonatest.com>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/aurorae-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "e7c3de710a75f99df8c4f80a741e3d1e90e5c5cadae44a3d180861d0f5c9dcf9"
+SUMMARY = "Aurorae Theme"
+DESCRIPTION = "Aurorae is a themeable window decoration for KWin"
+HOMEPAGE = "https://invent.kde.org/plasma/aurorae"
+LICENSE = "GPL-2.0-or-later & MIT"
 
+DEPENDS += "kcmutils \
+            kconfig \
+            kcoreaddons \
+            kdecoration \
+            ki18n \
+            knewstuff \
+            kpackage \
+            ksvg \
+"
+
+FILES:${PN} += "${libdir}/qml/org/kde/kwin/decoration \
+                ${libdir}/qml/org/kde/kwin/decorations \
+                ${datadir}/kwin/aurorae \
+                ${datadir}/kwin/decorations \
+"
+
+RDEPENDS:${PN} += "bash ksvg"
+
+inherit cmake_plasma
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc

@@ -1,7 +1,20 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2024 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/plasma-disks-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "660609a1f489c197d35419aeacbc08ec724c5e13538a736eb3d81ac331b9f639"
+SUMMARY = "Plasma Disks"
+DESCRIPTION = "Monitors S.M.A.R.T. capable devices for imminent failure"
+HOMEPAGE = "https://invent.kde.org/plasma/plasma-disks"
+LICENSE = "GPL-2.0-only"
 
+DEPENDS += "kauth \
+            kservice \
+            solid \
+"
+
+RDEPENDS:${PN} += "smartmontools"
+
+inherit cmake_plasma
+inherit mime-xdg
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc

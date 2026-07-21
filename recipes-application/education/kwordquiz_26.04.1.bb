@@ -1,6 +1,26 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2024 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/kwordquiz-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "e0e802a78ac5f410d3c16cdcd4f2fddbce26b40c6e2b9525aa324a1e7aa45dc9"
+SUMMARY = "KWordQuiz"
+DESCRIPTION = "Flash Card Trainer"
+HOMEPAGE = "https://invent.kde.org/education/kwordquiz"
+LICENSE = "GPL-2.0-or-later"
+
+DEPENDS += "kcrash \
+            kirigami \
+            kirigami-addons \
+            knewstuff \
+            libkeduvocdocument \
+            qtdeclarative \
+"
+
+inherit cmake_kdeapp
+inherit kf6_kcoreaddons
+inherit kf6_kconfig
+inherit kf6_kauth
+inherit mime-xdg
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc
+
+FILES:${PN} += "${datadir}/knsrcfiles/kwordquiz.knsrc"

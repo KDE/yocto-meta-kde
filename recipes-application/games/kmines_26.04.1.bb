@@ -1,6 +1,24 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2024 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/kmines-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "cf4a9826323620ae60998c2425b555a3b4d8fd8b4e1605bbaeb0ab3d99facd6a"
+SUMMARY = "KMines"
+DESCRIPTION = "KMines is the classic Minesweeper game"
+HOMEPAGE = "https://invent.kde.org/games/kmines"
+LICENSE = "GPL-2.0-or-later"
+
+DEPENDS += "kconfigwidgets \
+            kcrash \
+            ki18n \
+            ktextwidgets \
+            kwidgetsaddons \
+            kxmlgui \
+            libkdegames \
+"
+
+inherit cmake_kdeapp
+inherit kf6_kcoreaddons
+inherit kf6_kconfig
+inherit mime-xdg
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc

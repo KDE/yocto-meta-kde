@@ -1,6 +1,34 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2021 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/kasts-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "a59741617f1e708146c5e344206ffac0051255c18031f09631886804fdb487c4"
+SUMMARY = "Kasts"
+DESCRIPTION = "Kasts is a convergent podcast application."
+HOMEPAGE = "https://invent.kde.org/plasma-mobile/kasts"
+LICENSE = "GPL-3.0-only"
+
+DEPENDS += "kcolorscheme \
+            ki18n \
+            kirigami \
+            kirigami-addons \
+            networkmanager-qt \
+            qtdeclarative \
+            qtkeychain \
+            qtmultimedia \
+            qtsvg \
+            syndication \
+            taglib \
+            threadweaver \
+"
+
+inherit cmake_kdeapp
+inherit kf6_kconfig
+inherit kf6_kcoreaddons
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc
+
+FILES_SOLIBSDEV = ""
+
+FILES:${PN} += "${libdir}/libKastsSolidExtras.so \
+                ${libdir}/libKMediaSession.so \
+"

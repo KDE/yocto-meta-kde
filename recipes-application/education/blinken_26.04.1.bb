@@ -1,6 +1,21 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/blinken-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "d098f0788177da717c57ae63793f3bb11e20ee287d788efeb8caa5a885864c4f"
+SUMMARY = "Blinken"
+DESCRIPTION = "Memory Enhancement Game"
+HOMEPAGE = "https://edu.kde.org/blinken/"
+LICENSE = "GPL-2.0-or-later"
+
+DEPENDS += "kcrash \
+            ki18n \
+            kio \
+"
+
+inherit cmake_kdeapp
+inherit kf6_kcoreaddons
+inherit kf6_kconfig
+inherit kf6_kauth
+inherit mime-xdg
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc

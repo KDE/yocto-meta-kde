@@ -1,6 +1,26 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2021 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/ktrip-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "80a51468c09c21b11c083d43afb695655c59ba0c4ebd996f48330b0cbaf2724c"
+SUMMARY = "KTrip"
+DESCRIPTION = "Public Transport Assistance for Mobile Devices"
+HOMEPAGE = "https://invent.kde.org/utilities/ktrip"
+LICENSE = "GPL-2.0-only"
+
+DEPENDS += "kcontacts \
+            ki18n \
+            kirigami \
+            kirigami-addons \
+            kitemmodels \
+            kpublictransport \
+            qqc2-desktop-style \
+            qtdeclarative \
+"
+
+inherit cmake_kdeapp
+inherit kf6_kconfig
+inherit kf6_kcoreaddons
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc
+
+RDEPENDS:${PN} += "kirigami-addons"

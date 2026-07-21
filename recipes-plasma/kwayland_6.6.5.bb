@@ -1,7 +1,22 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2017-2020 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/kwayland-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "afbcd53ca8a5fb501038415f1473c3d11556eb56ed8f653ece03f77d799cad01"
+SUMMARY = "KWayland"
+DESCRIPTION = "KWayland provides a Qt-style Client and Server library wrapper for the Wayland libraries"
+HOMEPAGE = "https://invent.kde.org/plasma/kwayland"
+LICENSE = "MIT & MIT-CMU & BSD-3-Clause & (LGPL-2.1-only | LGPL-3.0-only | LicenseRef-KDE-Accepted-LGPL)"
 
+DEPENDS += "plasma-wayland-protocols \
+            qtwayland \
+            qtwayland-native \
+            virtual/egl \
+            wayland \
+            wayland-native \
+            wayland-protocols \
+"
+
+inherit cmake_plasma
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc

@@ -1,6 +1,65 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2020-2025 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/marble-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "174bebba04548939f84a274553994f1231917ce437405f0f62050dfd7704ff11"
+SUMMARY = "Marble"
+DESCRIPTION = "Marble is a virtual globe and world atlas."
+HOMEPAGE = "https://marble.kde.org/"
+LICENSE = "LGPL-2.1-only"
+
+DEPENDS += "gpsd \
+            kcrash \
+            ki18n \
+            kio \
+            knewstuff \
+            kparts \
+            protobuf \
+            protobuf-native \
+            qtlocation \
+            qtserialport \
+            qtwebengine \
+"
+
+inherit cmake_kdeapp
+inherit kf6_kcoreaddons
+inherit kf6_kconfig
+inherit kf6_kauth
+inherit mime
+inherit mime-xdg
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc
+
+do_configure:append() {
+    sed -i "s/Generated automatically by \$0/Generated automatically by AprsGatherGen.pl/g" ${S}/src/plugins/render/aprs/AprsGatherGen.pl
+}
+
+EXTRA_OECMAKE += "-DBUILD_TOUCH=ON"
+
+# note: marble-maps is the dedicated mobile version
+PACKAGES =+ "${PN}-desktop \
+             ${PN}-shared \
+"
+
+FILES:${PN} += "${bindir}/marble-maps \
+                ${datadir}/applications/org.kde.marble.maps.desktop \
+"
+
+FILES:${PN}-shared += "${datadir}/knsrcfiles \
+                       ${libdir}/libastro.so.* \
+                       ${libdir}/libmarblewidget-qt6.so.* \
+                       ${datadir}/marble/data/ \
+                       ${datadir}/icons \
+                       ${datadir}/kxmlgui5 \
+                       ${datadir}/mime/packages/*.xml \
+"
+
+FILES:${PN}-desktop += "${bindir}/marble \
+                        ${bindir}/marble-behaim \
+                        ${datadir}/applications/org.kde.marble.desktop \
+                        ${datadir}/applications/org.kde.marble.behaim.desktop \
+                        ${datadir}/applications/marble_*.desktop \
+"
+
+RDEPENDS:${PN} += "${PN}-shared"
+
+RDEPENDS:${PN}-desktop += "${PN}-shared"

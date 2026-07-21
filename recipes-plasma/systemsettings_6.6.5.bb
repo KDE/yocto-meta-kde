@@ -1,7 +1,34 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2018-2020 Volker Krause <vkrause@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/systemsettings-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "61334eff64567ad209e279f60c6d1ab13b670f9a300fde9480fe93596232a986"
+SUMMARY = "System Settings"
+DESCRIPTION = "Control center to configure your Plasma Desktop"
+HOMEPAGE = "https://invent.kde.org/plasma/systemsettings"
+LICENSE = "GPL-2.0-only"
 
+DEPENDS += "kcmutils \
+            kconfig \
+            kdbusaddons \
+            kiconthemes \
+            kio \
+            kirigami \
+            kitemmodels \
+            kitemviews \
+            kjobwidgets \
+            krunner \
+            kservice \
+            kwidgetsaddons \
+            kwindowsystem \
+            kxmlgui \
+            plasma-activities \
+"
+
+inherit cmake_plasma
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc
+
+FILES:${PN} += "${datadir}/kpackage/genericqml/org.kde.systemsettings.sidebar \
+                ${datadir}/kglobalaccel/systemsettings.desktop \
+                ${datadir}/zsh/site-functions/_systemsettings \
+"

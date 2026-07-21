@@ -1,6 +1,54 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2019-2020 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2021 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/koko-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "70810148e2f86325017ea6c6446d17dfb960fd8ce66b5d9f9ec0e7b8d142d954"
+SUMMARY = "KoKo"
+DESCRIPTION = "KoKo Gallery Application"
+HOMEPAGE = "https://invent.kde.org/graphics/koko"
+LICENSE = "LGPL-2.1-only"
+
+DEPENDS += "exiv2 \
+            kdeclarative \
+            kfilemetadata \
+            kiconthemes \
+            kio \
+            kirigami \
+            kirigami-addons \
+            knotifications \
+            kquickimageeditor \
+            purpose \
+            qtlocation \
+"
+
+inherit cmake_kdeapp
+inherit kf6_kconfig
+inherit kf6_kcoreaddons
+inherit kf6_kauth
+inherit mime-xdg
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc
+
+# nooelint: oelint.vars.srcuridomains - needed to build koko
+SRC_URI:append = " git://invent.kde.org/packaging/geonames-data.git;protocol=https;name=geodata;nobranch=1;destsuffix=geonames-data;rev=608af80ddf04265496eccd0c63b2945042cdccdc"
+
+RDEPENDS:${PN} += "kirigami \
+                   kirigami-addons \
+                   kquickimageeditor \
+                   purpose \
+                   qtdeclarative-qmlplugins \
+"
+
+KOKO_CITIES1000 = "cities1000.zip"
+KOKO_ADMIN1CODES = "admin1CodesASCII.txt"
+KOKO_ADMIN2CODES = "admin2Codes.txt"
+
+# To build Koko, it is required to import a few files from outside
+# this repository. These files are licensed under the CC-BY-4.0 and
+# are maintained by the GeoNames project. These files need to be
+# copied to the src directory. CMake will take care of the rest.
+do_configure:prepend() {
+    cp ${UNPACKDIR}/geonames-data/export/${KOKO_CITIES1000} ${S}/src
+    cp ${UNPACKDIR}/geonames-data/export/${KOKO_ADMIN1CODES} ${S}/src
+    cp ${UNPACKDIR}/geonames-data/export/${KOKO_ADMIN2CODES} ${S}/src
+}

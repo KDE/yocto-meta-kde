@@ -1,6 +1,25 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2024 Maxime Roussin-Bélanger <maxime.roussinbelanger@gmail.com>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/angelfish-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "1dfd5bb6816b749bd0ad21aa3a53f870abe29646c56d6921b0f811098e8a5aa9"
+SUMMARY = "Angelfish"
+DESCRIPTION = "Web browser for Plasma Mobile"
+HOMEPAGE = "https://invent.kde.org/network/angelfish"
+LICENSE = "(LGPL-2.0-only | LGPL-2.0-or-later | LGPL-2.1-only | LGPL-3.0-or-later | LicenseRef-KDE-Accepted-LGPL) & (GPL-2.0-only | GPL-2.0-or-later | GPL-3.0-only | LicenseRef-KDE-Accepted-GPL)"
+
+inherit kf6_cmake
+inherit kf6_kdoctools
+inherit kf6_kconfig
+inherit mime-xdg
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc
+
+DEPENDS += "futuresql \
+            kirigami-addons \
+            purpose \
+            qcoro \
+            qqc2-desktop-style \
+            qtwebengine \
+"
+
+FILES:${PN} += "${datadir}/*"

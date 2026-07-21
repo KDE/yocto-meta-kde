@@ -1,7 +1,47 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2018-2020 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/discover-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "0d1471adf4b0b3bf92ac93225e2e4860493677f3fb9a02dbf44b193ae7c15357"
+SUMMARY = "Discover"
+DESCRIPTION = "Helps you find and install applications, games, and tools"
+HOMEPAGE = "https://invent.kde.org/plasma/discover"
+LICENSE = "GPL-3.0-only"
+LIC_FILES_CHKSUM = "file://LICENSES/GPL-2.0-only.txt;md5=93e64b4a83c7e441e48bbdeeea05c977"
 
+DEPENDS += "appstream \
+            attica \
+            karchive \
+            kconfig \
+            kcoreaddons \
+            kcrash \
+            kdbusaddons \
+            kdeclarative \
+            kidletime \
+            kio \
+            kirigami \
+            kirigami-addons \
+            kitemmodels \
+            knewstuff \
+            knotifications \
+            kstatusnotifieritem \
+            kuserfeedback \
+            kxmlgui \
+            packagekit-qt \
+            purpose \
+            qcoro \
+            qtdeclarative \
+            qtwebview \
+"
+
+inherit cmake_plasma
+inherit mime-xdg
+require recipes-plasma/common/plasma_src.inc
+
+FILES:${PN} += "${datadir}/kpackage/kcms/kcm_updates \
+                ${datadir}/kxmlgui5 \
+                ${datadir}/libdiscover \
+                ${libdir}/plasma-discover \
+                ${libdir}/plugins/plasma/kcms/systemsettings/* \
+                ${libdir}/qml/org/kde/discovernotifier \
+"

@@ -1,7 +1,27 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2024 Marc Ferland <marc.ferland@sonatest.com>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/kwallet-pam-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "5434a50f421867fc11190389bdebc43404b64cadcc7d87b1f08ff95ef199853e"
+SUMMARY = "KWallet PAM Integratioon"
+DESCRIPTION = "PAM Integration with KWallet - Unlock KWallet when you login"
+HOMEPAGE = "https://invent.kde.org/plasma/kwallet-pam"
+LICENSE = "BSD-3-Clause & LGPL-2.1-or-later"
 
+DEPENDS += "kwallet \
+            libgcrypt \
+            libpam \
+"
+
+FILES:${PN} += "${libdir}/security/pam_kwallet5.so"
+
+RDEPENDS:${PN} += "socat"
+
+inherit cmake_plasma
+inherit systemd
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc
+
+EXTRA_OECMAKE += "-DKWALLETD_BIN_PATH=${bindir}/ksecretd"
+
+SYSTEMD_SERVICE:${PN} = "plasma-kwallet-pam.service"
+SYSTEMD_AUTO_ENABLE:${PN} = "disable"

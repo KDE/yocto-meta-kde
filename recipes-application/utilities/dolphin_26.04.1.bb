@@ -1,6 +1,64 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2024 Marc Ferland <marc.ferland@sonatest.com>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/dolphin-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "ba4da5192f7e45f392feaa74dfb18fddddcf9dbcc8f9abeb3f670e83ed9e4f57"
+SUMMARY = "Dolphin"
+DESCRIPTION = "File manager by KDE"
+HOMEPAGE = "https://invent.kde.org/system/dolphin"
+LICENSE = "BSD-2-Clause & \
+           BSD-3-Clause & \
+           GPL-2.0-only & \
+           GPL-2.0-or-later & \
+           GPL-2.0-or-later & \
+           GPL-3.0-only & \
+           LGPL-2.0-only & \
+           LGPL-2.0-or-later & \
+           LGPL-2.1-only & \
+           LGPL-3.0-only & \
+           LicenseRef-KDE-Accepted-GPL \
+"
+
+DEPENDS += "baloo \
+            baloo-widgets \
+            kbookmarks \
+            kcodecs \
+            kcompletion \
+            kconfig \
+            kcrash \
+            kdbusaddons \
+            kfilemetadata \
+            kguiaddons \
+            ki18n \
+            kiconthemes \
+            kio \
+            knewstuff \
+            knotifications \
+            kparts \
+            ktextwidgets \
+            kuserfeedback \
+            kwindowsystem \
+            solid \
+"
+
+FILES:${PN} += "${datadir}/knsrcfiles \
+                ${datadir}/kglobalaccel \
+                ${datadir}/zsh \
+"
+
+RDEPENDS:${PN} += "ffmpegthumbs \
+                   kdegraphics-thumbnailers \
+                   kio-extras \
+"
+
+inherit cmake_kdeapp
+inherit kf6_kcmutils
+inherit kf6_kconfig
+inherit kf6_kcoreaddons
+inherit mime-xdg
+inherit systemd
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc
+
+SYSTEMD_SERVICE:${PN} = "plasma-dolphin.service"
+
+SYSTEMD_AUTO_ENABLE = "disable"

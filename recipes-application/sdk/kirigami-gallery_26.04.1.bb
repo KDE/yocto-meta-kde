@@ -1,6 +1,16 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2019-2020 Volker Krause <vkrause@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/kirigami-gallery-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "5c33118b8bf1854e4b622352a23ddbaef20d092ad553b8005b5d7b0ab0200dcb"
+SUMMARY = "Kirigami Gallery"
+DESCRIPTION = "Kirigami component gallery application"
+HOMEPAGE = "https://invent.kde.org/sdk/kirigami-gallery"
+LICENSE = "LGPL-2.0-or-later"
+LIC_FILES_CHKSUM = "file://LICENSE.LGPL-2;md5=5f30f0716dfdd0d91eb439ebec522ec2"
+
+DEPENDS += "kirigami \
+            kitemmodels \
+"
+
+inherit cmake_kdeapp
+require recipes-application/common/application_src.inc

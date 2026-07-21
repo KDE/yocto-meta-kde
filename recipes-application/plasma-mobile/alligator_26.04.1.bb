@@ -1,6 +1,22 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2021 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/alligator-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "75fd1bea0a1b8a905614db3d7f17c072c0246249f5158ddc85b7c74b54c2b559"
+SUMMARY = "Alligator"
+DESCRIPTION = "Kirigami-based RSS reader"
+HOMEPAGE = "https://invent.kde.org/plasma-mobile/alligator"
+LICENSE = "GPL-3.0-only"
+
+DEPENDS += "ki18n \
+            kirigami \
+            kirigami-addons \
+            libplasma \
+            qtdeclarative \
+            syndication \
+"
+
+inherit cmake_kdeapp
+inherit kf6_kconfig
+inherit kf6_kcoreaddons
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc

@@ -1,6 +1,45 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2024 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/itinerary-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "ecb680a1eafd70f923ca8ba7fba44e480bbaef6721299d3cda0ffcce2dd19c83"
+SUMMARY = "Itinerary"
+DESCRIPTION = "Itinerary and boarding pass management application"
+HOMEPAGE = "https://invent.kde.org/pim/itinerary"
+LICENSE = "LGPL-2.0-or-later"
+LIC_FILES_CHKSUM = "file://LICENSES/LGPL-2.0-or-later.txt;md5=6d2d9952d88b50a51a5c73dc431d06c7"
+
+DEPENDS += "kcalendarcore \
+            kcontacts \
+            kfilemetadata \
+            khealthcertificate \
+            kholidays \
+            kirigami \
+            kirigami-addons \
+            kitinerary \
+            kosmindoormap \
+            kpkpass \
+            kpublictransport \
+            kunitconversion \
+            libquotient \
+            qcoro \
+            qqc2-desktop-style \
+            qtdeclarative \
+            qtkeychain \
+            qtpositioning \
+"
+
+inherit cmake_kdeapp
+inherit mime-xdg
+inherit mime
+inherit kf6_kconfig
+require recipes-application/common/application_src.inc
+
+FILES:${PN} += "${libdir}/libSolidExtras.so"
+FILES_SOLIBSDEV = ""
+
+RDEPENDS:${PN} += "prison \
+                   qtlocation-qmlplugins \
+                   qtmultimedia-qmlplugins \
+                   qtpositioning-qmlplugins \
+                   solid \
+"

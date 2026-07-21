@@ -1,7 +1,28 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2023 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/plasma5support-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "5f45687e2d281cdfc0666a0ad777adfcbbbb2534284ca6450d3aa7d700b9f763"
+SUMMARY = "Plasma5Support"
+DESCRIPTION = "Support components for porting from KF5/Qt5 to KF6/Qt6"
+HOMEPAGE = "https://invent.kde.org/plasma/plasma5support"
+LICENSE = "GPL-2.0-or-later"
 
+DEPENDS += "kconfig \
+            kcoreaddons \
+            kholidays \
+            ki18n \
+            kidletime \
+            kio \
+            kservice \
+            kunitconversion \
+            kxmlgui \
+            libksysguard \
+"
+
+inherit cmake_plasma
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc
+
+FILES:${PN} += "${libdir}/qml/org/kde/plasma/plasma5support/* \
+                ${datadir}/plasma/weather_legacy \
+"

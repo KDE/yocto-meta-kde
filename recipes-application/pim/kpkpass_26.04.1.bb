@@ -1,6 +1,18 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2024 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/kpkpass-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "1080d0fd3aeac7b19398181e0e12f06cf420f1497e80e5bb055f24048a827eb1"
+SUMMARY = "KPkPass"
+DESCRIPTION = "Apple Wallet Pass reader"
+HOMEPAGE = "https://invent.kde.org/pim/kpkpass"
+LICENSE = "BSD-3-Clause & LGPL-2.0-or-later"
+
+DEPENDS += "karchive"
+
+FILES:${PN} += "${datadir}/mime"
+
+inherit cmake_kdeapp
+inherit mime-xdg
+inherit mime
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc

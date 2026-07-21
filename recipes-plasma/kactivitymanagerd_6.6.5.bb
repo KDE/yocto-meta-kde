@@ -1,7 +1,45 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2018-2020 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2019 Alistair Francis <alistair.francis@wdc.com>
+# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/kactivitymanagerd-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "859bb8e7a6efb4210a82512abec4d7b6ea9ac6f883a2b1db4d3de5ca11452224"
+SUMMARY = "Activity manager service"
+DESCRIPTION = "System service to manage user's activities, track the usage patterns etc."
+HOMEPAGE = "https://invent.kde.org/plasma/kactivitymanagerd"
+LICENSE = "GPL-2.0-only"
 
+DEPENDS += "boost \
+            kconfig \
+            kcoreaddons \
+            kdbusaddons \
+            kglobalaccel \
+            kio \
+            kwindowsystem \
+            kxmlgui \
+"
+
+inherit cmake_plasma
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc
+
+CXXFLAGS += "-DBOOST_DISABLE_ASSERTS"
+
+# the cmake checks for those use try_run(), which fails when cross-compiling
+EXTRA_OECMAKE += "-DHAVE_CXX11_AUTO=ON \
+                  -DHAVE_CXX11_NULLPTR=ON \
+                  -DHAVE_CXX11_LAMBDA=ON \
+                  -DHAVE_CXX11_OVERRIDE=ON \
+                  -DHAVE_CXX11_UNIQUE_PTR=ON \
+                  -DHAVE_CXX11_VARIADIC_TEMPLATES=ON \
+                  -DHAVE_CXX11_INITIALIZER_LISTS=ON \
+"
+
+FILES:${PN} += "${libdir}/libkactivitymanagerd_plugin.so \
+                ${datadir}/krunner/dbusplugins/plasma-runnners-activities.desktop \
+"
+
+FILES:${PN}-dev += "${datadir}/qlogging-categories6"
+
+# Do not package /usr/lib/libkactivitymanagerd_plugin.so in -dev package.
+FILES_SOLIBSDEV = ""

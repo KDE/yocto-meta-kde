@@ -1,7 +1,35 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2018-2020 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2020 Alistair Francis <alistair.francis@wdc.com>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/libksysguard-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "f088854a021028b7b0f6a735c89e9aa53bd13e903af11ed16a49c944e33b00df"
+SUMMARY = "libksysguard"
+DESCRIPTION = "Library to retrieve information on the current status of computer hardware"
+HOMEPAGE = "https://invent.kde.org/plasma/libksysguard"
+LICENSE = "LGPL-2.1-only"
 
+DEPENDS += "kcompletion \
+            kconfig \
+            kconfigwidgets \
+            kcoreaddons \
+            kiconthemes \
+            knewstuff \
+            kservice \
+            kwidgetsaddons \
+            kwindowsystem \
+            libcap \
+            libnl \
+            libpcap \
+            libplasma \
+            lmsensors \
+            networkmanager-qt \
+            qtwebchannel \
+"
+
+inherit cmake_plasma
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc
+
+FILES:${PN} += "${datadir}/ksysguard \
+                ${libdir}/qml \
+"

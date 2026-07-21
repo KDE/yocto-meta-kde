@@ -1,7 +1,39 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2018-2020 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2019 Alistair Francis <alistair.francis@wdc.com>
+# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/breeze-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "06c4c3e466cd03a8c1e411a38b04756b6e145879a560534b2fc44666d41330f4"
+SUMMARY = "Breeze Style"
+DESCRIPTION = "Artwork, styles and assets for the Breeze visual style for the Plasma Desktop"
+HOMEPAGE = "https://invent.kde.org/plasma/breeze"
+LICENSE = "GPL-2.0-only"
 
+DEPENDS += "fftw \
+            frameworkintegration \
+            kconfigwidgets \
+            kcoreaddons \
+            kdecoration \
+            kguiaddons \
+            kirigami \
+            kpackage \
+            kwayland \
+            kwindowsystem \
+"
+
+inherit cmake_plasma
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc
+
+EXTRA_OECMAKE += "-DBUILD_QT5:BOOL=OFF"
+
+FILES:${PN} += "${libdir}/qml/QtQuick/Controls/Styles \
+                ${datadir}/kstyle/themes \
+                ${datadir}/plasma/look-and-feel \
+                ${datadir}/color-schemes \
+                ${datadir}/icons \
+                ${datadir}/QtCurve/*.qtcurve \
+                ${datadir}/wallpapers \
+"
+
+RDEPENDS:${PN} += "breeze-icons"

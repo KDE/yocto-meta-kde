@@ -1,7 +1,43 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2018-2020 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2019 Alistair Francis <alistair.francis@wdc.com>
+# SPDX-FileCopyrightText: 2025 Marc Ferland <marc.ferland@sonatest.com>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/plasma-integration-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "c28482dc8d3387b9a770fdc999dd13480b14714568395c8d86bd568b0181920a"
+SUMMARY = "Plasma Integration"
+DESCRIPTION = "Qt Platform Theme integration plugins for Plasma Workspaces"
+HOMEPAGE = "https://invent.kde.org/plasma/plasma-integration"
+LICENSE = "LGPL-2.0-only"
 
+DEPENDS += "breeze \
+            kconfig \
+            kconfigwidgets \
+            kiconthemes \
+            kio \
+            knotifications \
+            kstatusnotifieritem \
+            kwayland \
+            kwidgetsaddons \
+            kwindowsystem \
+            libxcursor \
+            qtdeclarative \
+            qtwayland-native \
+"
+
+inherit cmake_plasma
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc
+
+RDEPENDS:${PN} += "hack-font \
+                   perl \
+                   ttf-noto \
+                   ttf-noto-emoji-color \
+                   ${@bb.utils.contains('DISTRO_FEATURES', 'desktop-portal', 'xdg-desktop-portal-kde', '', d)} \
+"
+
+EXTRA_OECMAKE:append = " \
+    -DCMAKE_DISABLE_FIND_PACKAGE_FontNotoSans=true \
+    -DCMAKE_DISABLE_FIND_PACKAGE_FontNotoColorEmoji=true \
+    -DCMAKE_DISABLE_FIND_PACKAGE_FontHack=true \
+    -DCMAKE_DISABLE_FIND_PACKAGE_XDGDesktopPortalKDE=true \
+"

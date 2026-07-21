@@ -1,7 +1,32 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2024 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/plasma-welcome-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "bc9427d739cdc8ba7f49fe62d02a716351a772df1b2b696c6c1f08695c4126a2"
+SUMMARY = "Welcome Center"
+DESCRIPTION = "A friendly onboarding wizard for Plasma"
+HOMEPAGE = "https://invent.kde.org/plasma/plasma-welcome"
+LICENSE = "GPL-2.0-only"
 
+DEPENDS += "kcmutils \
+            kconfig \
+            kconfigwidgets \
+            kdbusaddons \
+            ki18n \
+            kio \
+            kirigami \
+            kirigami-addons \
+            kjobwidgets \
+            knewstuff \
+            kservice \
+            ksvg \
+            kwindowsystem \
+            libplasma \
+            qtdeclarative \
+"
+
+inherit cmake_plasma
+inherit mime-xdg
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc
+
+FILES:${PN} += "${libdir}/qml/org/kde/plasma/welcome"

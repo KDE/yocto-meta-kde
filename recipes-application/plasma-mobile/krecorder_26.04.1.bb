@@ -1,6 +1,22 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2021 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/krecorder-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "c6560619977ff00ddff7684bb7b70c743aa015e88b3b4dfd752314aee8ca2ece"
+SUMMARY = "KRecorder"
+DESCRIPTION = "Audio recorder for Plasma Mobile and other platforms"
+HOMEPAGE = "https://invent.kde.org/plasma-mobile/krecorder"
+LICENSE = "BSD-3-Clause | GPL-3.0-or-later"
+
+DEPENDS += "kirigami \
+            kirigami-addons \
+            kwindowsystem \
+            qtdeclarative \
+            qtmultimedia \
+            qtsvg \
+"
+
+inherit cmake_kdeapp
+inherit kf6_kconfig
+inherit kf6_kcoreaddons
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc

@@ -1,6 +1,31 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/elisa-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "2a8212e0e413f0de0bf3befb501c8036e03ed37b1bee618008bfda1663b8d36f"
+SUMMARY = "Elisa"
+DESCRIPTION = "Elisa music player"
+HOMEPAGE = "https://apps.kde.org/de/elisa"
+LICENSE = "LGPL-3.0-only"
+
+DEPENDS += "baloo \
+            kconfigwidgets \
+            kcrash \
+            kdbusaddons \
+            kdeclarative \
+            kfilemetadata \
+            ki18n \
+            kirigami \
+            kirigami-addons \
+            kxmlgui \
+            qqc2-desktop-style \
+            qtdeclarative \
+            qtmultimedia \
+"
+
+inherit cmake_kdeapp
+inherit kf6_kcoreaddons
+inherit kf6_kconfig
+inherit kf6_kauth
+inherit mime-xdg
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc

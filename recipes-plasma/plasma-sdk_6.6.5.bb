@@ -1,7 +1,38 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2024 Marc Ferland <marc.ferland@sonatest.com>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/plasma-sdk-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "ed540a8bda1a633881fca41f7dfe96ae17c9a654b71374a79e86cf547efcc959"
+SUMMARY = "Plasma SDK"
+DESCRIPTION = "Applications useful for Plasma development"
+HOMEPAGE = "https://invent.kde.org/plasma/plasma-sdk"
+LICENSE = "BSD-2-Clause & GPL-2.0-only"
 
+DEPENDS += "karchive \
+            kcompletion \
+            kconfig \
+            kconfigwidgets \
+            kcoreaddons \
+            kdbusaddons \
+            ki18n \
+            kiconthemes \
+            kio \
+            kitemmodels \
+            ksvg \
+            ktexteditor \
+            kwidgetsaddons \
+            libplasma \
+            plasma5support \
+"
+
+PACKAGES =+ "${PN}-zsh-completions"
+
+FILES:${PN} += "${datadir}/kpackage \
+                ${datadir}/plasma/shells \
+"
+FILES:${PN}-zsh-completions += "${datadir}/zsh"
+
+RDEPENDS:${PN} += "kirigami"
+
+inherit cmake_plasma
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc

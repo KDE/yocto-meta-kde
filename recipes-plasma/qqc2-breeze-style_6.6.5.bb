@@ -1,7 +1,22 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2023 Maxime Roussin-Bélanger <maxime.roussinbelanger@gmail.com>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/qqc2-breeze-style-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "8d279f966903219721941ea9f41681630dc14fa45769d9c672c57493f6c99603"
+SUMMARY = "Breeze Style for QQC2"
+DESCRIPTION = "Breeze inspired QQC2 Style"
+HOMEPAGE = "https://invent.kde.org/plasma/qqc2-breeze-style"
+LICENSE = "LGPL-3.0-only"
 
+DEPENDS += "kirigami \
+            kquickcharts \
+            qtdeclarative \
+"
+
+inherit cmake_plasma
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc
+
+FILES:${PN} += "${libdir}/plugins/kf6/kirigami/platform/*.so \
+                ${libdir}/qml/org/kde/kirigami/* \
+                ${libdir}/qml/org/kde/breeze/* \
+"

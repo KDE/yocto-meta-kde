@@ -19,13 +19,13 @@ for path in "${EXCLUDES[@]}"; do
     FIND_EXCLUDES+=( -not -path "$path" )
 done
 
-# Find all .bb and .bbclass files except excluded paths
+# Find all .bb, .bbclass, and .inc files except excluded paths
 mapfile -t BB_FILES < <(
-    find . -type f \( -name "*.bb" -o -name "*.bbclass" \) "${FIND_EXCLUDES[@]}"
+    find . -type f \( -name "*.bb" -o -name "*.bbclass" -o -name "*.inc" \) "${FIND_EXCLUDES[@]}"
 )
 
 if [ ${#BB_FILES[@]} -eq 0 ]; then
-    echo "No .bb or .bbclass files found."
+    echo "No .bb, .bbclass, or .inc files found."
     exit 0
 fi
 

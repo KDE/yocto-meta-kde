@@ -1,6 +1,24 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2019-2020 Volker Krause <vkrause@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/plasma-camera-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "7d7ed8ef890d7ebd54ee707772cfa9aedf5b66230b55cefa117f1d5e33ec5f44"
+SUMMARY = "Plasma Camera"
+DESCRIPTION = "Camera application for Plasma Mobile"
+HOMEPAGE = "https://invent.kde.org/plasma-mobile/plasma-camera"
+LICENSE = "GPL-3.0-or-later"
+
+DEPENDS += "kconfig \
+            kconfig-native \
+            kcoreaddons \
+            kirigami \
+            libcamera \
+            libkexiv2 \
+            libplasma \
+            qtsensors \
+"
+
+inherit cmake_kdeapp
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc
+
+RDEPENDS:${PN} += "qtmultimedia-qmlplugins"

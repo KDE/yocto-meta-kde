@@ -1,6 +1,15 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2026 Marc Ferland <marc.ferland@sonatest.com>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/ffmpegthumbs-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "df38f6782f02f4a941c25bee7edee22f48865109e27419c599b71d155a57f4fe"
+SUMMARY = "FFmpeg Thumbnailer"
+DESCRIPTION = "FFmpeg-based thumbnail creator for video files"
+HOMEPAGE = "https://invent.kde.org/multimedia/ffmpegthumbs"
+LICENSE = "BSD-3-Clause & GPL-2.0-or-later"
+
+DEPENDS += "ffmpeg kio"
+
+inherit cmake_kdeapp
+inherit kf6_kconfig
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc

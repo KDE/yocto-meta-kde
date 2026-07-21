@@ -1,7 +1,35 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2018-2020 Volker Krause <vkrause@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/kscreen-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "753ebc00cf75359c2e7ba3aabb20ff3596d0fbbe2f0b6d3ed6098d27282a3276"
+SUMMARY = "KScreen"
+DESCRIPTION = "KDE's screen management software"
+HOMEPAGE = "https://invent.kde.org/plasma/kscreen"
+LICENSE = "GPL-2.0-only"
 
+DEPENDS += "kconfigwidgets \
+            kdbusaddons \
+            kglobalaccel \
+            kwidgetsaddons \
+            kxmlgui \
+            layer-shell-qt \
+            libkscreen \
+            libplasma \
+            qtdeclarative \
+            qtsensors \
+            qtwayland-native \
+"
+
+FILES:${PN} += "${datadir}/kded_kscreen \
+                ${datadir}/kcm_kscreen \
+                ${datadir}/kpackage \
+                ${datadir}/kglobalaccel \
+                ${datadir}/plasma/plasmoids/org.kde.kscreen \
+                ${libdir}/plugins/plasma/kcms/systemsettings/ \
+"
+
+RDEPENDS:${PN} += "kimageformats"
+
+inherit cmake_plasma
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc

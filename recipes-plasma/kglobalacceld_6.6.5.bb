@@ -1,7 +1,22 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2018-2020 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/kglobalacceld-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "33c95fb7b3cddab5766e0cb063a721af5f796b2841114183a6246e0ef557edc3"
+SUMMARY = "KGlobalAccelD"
+DESCRIPTION = "Daemon providing Global Keyboard Shortcut (Accelerator) functionality"
+HOMEPAGE = "https://invent.kde.org/plasma/kglobalacceld"
+LICENSE = "LGPL-2.1-only | LGPL-3.0-only"
 
+DEPENDS += "kcrash \
+            kdbusaddons \
+            kglobalaccel \
+            kio \
+            knotifications \
+            kservice \
+            kwindowsystem \
+"
+
+inherit cmake_plasma
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc

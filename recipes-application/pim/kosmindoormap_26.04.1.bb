@@ -1,6 +1,20 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2024 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/kosmindoormap-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "77114e34956a5a4284146a25e0bfba3bf42c10d09de4ef073ea0468f263f9765"
+SUMMARY = "KOSMIndoorMap"
+DESCRIPTION = "OSM multi-floor indoor map renderer"
+HOMEPAGE = "https://invent.kde.org/libraries/kosmindoormap"
+LICENSE = "LGPL-2.0-or-later"
+
+DEPENDS += "bison-native \
+            ki18n \
+            kopeninghours \
+            kpublictransport \
+            qtdeclarative \
+"
+
+inherit cmake_kdeapp
+inherit kf6_kconfig
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc

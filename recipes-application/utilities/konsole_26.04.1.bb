@@ -1,6 +1,31 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2019-2020 Volker Krause <vkrause@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/konsole-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "4c59dabc4b64201c61458e8997a66d1aa7dc98b181e5e85f3c0f5cb69066d963"
+SUMMARY = "Konsole"
+DESCRIPTION = "Terminal emulator by KDE"
+HOMEPAGE = "https://konsole.kde.org/"
+LICENSE = "GPL-2.0-only"
+
+DEPENDS += "kio \
+            knewstuff \
+            knotifications \
+            knotifyconfig \
+            kparts \
+            kpty \
+            kxmlgui \
+"
+
+inherit cmake_kdeapp
+inherit kf6_kcoreaddons
+inherit kf6_kconfig
+inherit kf6_kauth
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc
+
+FILES_SOLIBSDEV = ""
+FILES:${PN} += "${datadir}/knsrcfiles \
+                ${datadir}/kio/servicemenus \
+                ${datadir}/kglobalaccel/* \
+                ${datadir}/zsh/* \
+"

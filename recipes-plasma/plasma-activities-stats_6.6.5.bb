@@ -1,7 +1,21 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2017-2020 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/plasma-activities-stats-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "93af76f5c4171d089cd9a4f502bba63a65f2a371aa1a83c0c6cfb0021a5efba6"
+SUMMARY = "Plasma Activities Statistics Library"
+DESCRIPTION = "A library for accessing the usage data collected by the activities system"
+HOMEPAGE = "https://invent.kde.org/plasma/plasma-activities-stats"
+LICENSE = "LGPL-2.0-or-later & (LGPL-2.1-only | LGPL-3.0-only | LicenseRef-KDE-Accepted-LGPL) & (GPL-2.0-only | GPL-3.0-only | LicenseRef-KDE-Accepted-GPL)"
 
+DEPENDS += "boost \
+            kauth-native \
+            kconfig \
+            kconfig-native \
+            kcoreaddons-native \
+            plasma-activities \
+"
+
+inherit cmake_plasma
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc

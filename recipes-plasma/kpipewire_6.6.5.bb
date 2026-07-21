@@ -1,7 +1,27 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2022 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/kpipewire-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "7aed7f721c5ba05f20812ea8cde047dcc6e3375ba521bbddd82c25915abf334d"
+SUMMARY = "KPipeWire"
+DESCRIPTION = "Components relating to Flatpak 'pipewire' use in Plasma"
+HOMEPAGE = "https://invent.kde.org/plasma/kpipewire"
+LICENSE = "LGPL-2.1-only | LGPL-3.0-only | LicenseRef-KDE-Accepted-LGPL"
 
+DEPENDS += "ffmpeg \
+            kwayland \
+            libepoxy \
+            libva \
+            pipewire \
+            qtdeclarative \
+            qtwayland-native \
+"
+
+inherit cmake_plasma
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc
+
+FILES:${PN} += "${libdir}/qml/org/kde/pipewire/* \
+                ${datadir}/zsh/site-functions/* \
+"
+
+RDEPENDS:${PN} += "pipewire"

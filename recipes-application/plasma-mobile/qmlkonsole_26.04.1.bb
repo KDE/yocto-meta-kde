@@ -1,6 +1,28 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2023 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/qmlkonsole-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "99bf4503a41ffee2dbcc6e3b6bddeb257cc91d44a23f09aa33cc2ed4c0b7865e"
+SUMMARY = "QMLKonsole"
+DESCRIPTION = "Terminal app for Plasma Mobile"
+HOMEPAGE = "https://invent.kde.org/plasma-mobile/qmlkonsole"
+LICENSE = "GPL-2.0-or-later"
+
+DEPENDS += "kconfig \
+            kconfig-native \
+            ki18n \
+            kirigami \
+            kirigami-addons \
+            kpty \
+            kwindowsystem \
+            qtdeclarative \
+"
+
+inherit cmake_kdeapp
+inherit kf6_kcoreaddons
+inherit mime-xdg
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc
+
+RDEPENDS:${PN} += "qmltermwidget \
+                   qtdeclarative-qmlplugins \
+"

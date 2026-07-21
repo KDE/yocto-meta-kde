@@ -1,7 +1,30 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/plasma-nano-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "e5143dedbbcd0d75bbde4b442780cc7f3792470ee782fc455fcb15190a579658"
+SUMMARY = "Plasma Nano"
+DESCRIPTION = "A minimal plasma shell package intended for embedded devices"
+HOMEPAGE = "https://invent.kde.org/plasma/plasma-nano"
+LICENSE = "MIT & LGPL-2.0-or-later & GPL-2.0-or-later"
 
+DEPENDS += "kitemmodels \
+            kwayland \
+            kwindowsystem \
+            libplasma \
+            qtdeclarative \
+"
+
+inherit cmake_plasma
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc
+
+FILES:${PN} += "${libdir}/qml/org/kde/plasma/ \
+                ${datadir}/plasma/shells/org.kde.plasma.nano/ \
+                ${datadir}/plasma/packages/org.kde.plasma.nano.desktoptoolbox/ \
+"
+
+RDEPENDS:${PN} += "breeze \
+                   plasma-workspace \
+                   qqc2-desktop-style \
+                   qtdeclarative \
+"

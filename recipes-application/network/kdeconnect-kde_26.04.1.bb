@@ -1,6 +1,56 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2020 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/kdeconnect-kde-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "c58277e16caac9e440211ce82cd07ca874d6f47ebdea58c44d237b5b84e3a538"
+SUMMARY = "KDE Connect"
+DESCRIPTION = "Multi-platform app that allows your devices to communicate"
+HOMEPAGE = "https://invent.kde.org/network/kdeconnect-kde"
+LICENSE = "GPL-2.0-only"
+
+DEPENDS += "kconfigwidgets \
+            kdbusaddons \
+            kiconthemes \
+            kio \
+            kirigami \
+            kirigami-addons \
+            kitemmodels \
+            knotifications \
+            kpeople \
+            kstatusnotifieritem \
+            kwayland \
+            libfakekey \
+            pulseaudio-qt \
+            qca \
+            qqc2-desktop-style \
+            qtconnectivity \
+            qtdeclarative \
+            qtmultimedia \
+            qtwayland-native \
+"
+
+inherit cmake_kdeapp
+inherit kf6_kcoreaddons
+inherit kf6_kconfig
+inherit kf6_kauth
+inherit mime-xdg
+inherit kf6_kcmutils
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc
+
+EXTRA_OECMAKE += "-DEXPERIMENTALAPP_ENABLED=ON"
+EXTRA_OECMAKE += "-DSMSAPP_ENABLED=OFF"
+# workaround for missing variable, which is only used for Windows builds
+EXTRA_OECMAKE += "-DCMAKE_SYSTEM_VERSION=0.0.0"
+
+FILES:${PN} += "${datadir}/Thunar \
+                ${datadir}/contractor \
+                ${datadir}/kdeconnect \
+                ${datadir}/deepin \
+                ${datadir}/nautilus-python \
+                ${datadir}/plasma \
+                ${datadir}/zsh \
+                ${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_kdeconnect.so \
+"
+
+RDEPENDS:${PN} += "kpeople"

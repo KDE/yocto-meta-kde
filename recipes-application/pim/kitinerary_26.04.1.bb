@@ -1,6 +1,27 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2024 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/kitinerary-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "5d1adc66de813d369730ee20bc8bec83af84e41075aea71f22fa200247b752ad"
+SUMMARY = "KItinerary"
+DESCRIPTION = "Data Model and Extraction System for Travel Reservation information"
+HOMEPAGE = "https://invent.kde.org/pim/kitinerary"
+LICENSE = "LGPL-2.0-or-later"
+
+DEPENDS += "kcalendarcore \
+            kcontacts \
+            ki18n \
+            kmime \
+            kpkpass \
+            poppler \
+            qtdeclarative \
+            zxing-cpp \
+"
+
+inherit cmake_kdeapp
+inherit mime-xdg
+inherit mime
+inherit kf6_kconfig
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc
+
+FILES:${PN} += "${datadir}/mime/packages/application-vnd-kde-itinerary.xml"

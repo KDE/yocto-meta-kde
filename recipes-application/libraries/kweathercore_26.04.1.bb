@@ -1,6 +1,17 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2021 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/kweathercore-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "fc3ac8c0c5f0ae5a2a43f9587d7e811d53d4ffafba1de3ee02ab55105a0a536c"
+SUMMARY = "KWeatherCore"
+DESCRIPTION = "Library to facilitate retrieval of weather information including forecasts and alerts"
+HOMEPAGE = "https://invent.kde.org/libraries/kweathercore"
+LICENSE = "LGPL-2.0-or-later"
+
+DEPENDS += "kholidays \
+            ki18n \
+            qtlocation \
+"
+
+inherit cmake_kdeapp
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc

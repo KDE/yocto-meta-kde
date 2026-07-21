@@ -1,7 +1,80 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2017-2020 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2019 Alistair Francis <alistair.francis@wdc.com>
+# SPDX-FileCopyrightText: 2020-2023 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/plasma-mobile-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "164380a6e1d75dc6fb072090caa3c4e5fb80bbb3f188d305bce767c90b9e4600"
+SUMMARY = "Plasma Mobile"
+DESCRIPTION = "Plasma shell for mobile devices"
+HOMEPAGE = "https://invent.kde.org/plasma/plasma-mobile"
+LICENSE = "(LGPL-2.1-only | LGPL-3.0-only | LicenseRef-KDE-Accepted-LGPL) & (GPL-2.0-only | GPL-3.0-only | LicenseRef-KDE-Accepted-GPL)"
 
+DEPENDS += "kdbusaddons \
+            kglobalaccel \
+            kio \
+            kirigami-addons \
+            kjobwidgets \
+            knotifications \
+            kpackage \
+            kwayland \
+            libplasma \
+            modemmanager-qt \
+            networkmanager-qt \
+            plasma-workspace \
+            qcoro \
+            qtwayland \
+            qtwayland-native \
+"
+
+inherit cmake_plasma
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc
+
+FILES:${PN} += "${datadir}/kpackage/genericqml/org.kde.phone.dialer/* \
+                ${datadir}/kpackage/kcms/kcm_mobileshell/* \
+                ${datadir}/kwin/effects/* \
+                ${datadir}/kwin/scripts/* \
+                ${datadir}/plasma/layout-templates \
+                ${datadir}/plasma/look-and-feel/* \
+                ${datadir}/plasma/mobileinitialstart \
+                ${datadir}/plasma/plasmoids/* \
+                ${datadir}/plasma/quicksettings/* \
+                ${datadir}/plasma/shells/org.kde.plasma.mobileshell/* \
+                ${datadir}/telepathy/clients/Plasma.Dialer.client \
+                ${datadir}/wallpapers/org.kde.plasma.phone.lockers/* \
+                ${datadir}/wayland-sessions/*.desktop \
+                ${datadir}/plasma-mobile-apn-info \
+                ${datadir}/plasma-mobile-device-presets \
+                ${libdir}/plugins/kwin/effects/plugins/* \
+                ${libdir}/plugins/plasma/kcms/systemsettings/* \
+                ${libdir}/qml/QtQuick/VirtualKeyboard/Styles/Plasma/* \
+                ${libdir}/qml/org/kde/plasma/mm/* \
+                ${libdir}/qml/org/kde/plasma/mobileinitialstart/* \
+                ${libdir}/qml/org/kde/plasma/private/kpeoplehelper/* \
+                ${libdir}/qml/org/kde/plasma/private/mobilehomescreencomponents/* \
+                ${libdir}/qml/org/kde/plasma/private/mobileshell/* \
+                ${libdir}/qml/org/kde/plasma/quicksetting/flashlight/* \
+                ${libdir}/qml/org/kde/plasma/quicksetting/kscreenosd/* \
+                ${libdir}/qml/org/kde/plasma/quicksetting/nightcolor/* \
+                ${libdir}/qml/org/kde/plasma/quicksetting/powermenu/* \
+                ${libdir}/qml/org/kde/plasma/quicksetting/record/* \
+                ${libdir}/qml/org/kde/plasma/quicksetting/screenrotation/* \
+                ${libdir}/qml/org/kde/plasma/quicksetting/screenshot/* \
+                ${libdir}/qml/org/kde/private/mobile/homescreen/* \
+"
+
+RDEPENDS:${PN} += "breeze \
+                   kde-cli-tools \
+                   kded \
+                   kirigami \
+                   kirigami-addons \
+                   plasma-nano \
+                   qqc2-breeze-style \
+"
+
+do_compile:append() {
+    sed -i -e 's,${S}/components/mobileshellstate/,,g' ${B}/components/mobileshellstate/mobileadaptor.h
+    sed -i -e 's,${S}/components/waydroidintegrationplugin/,,g' ${B}/components/waydroidintegrationplugin/waydroidapplicationadaptor.h
+    sed -i -e 's,${S}/components/waydroidintegrationplugin/,,g' ${B}/components/waydroidintegrationplugin/waydroidadaptor.h
+    sed -i -e 's,${S}/components/mobileshellstate/,,g' ${B}/components/mobileshellstate/panelsadaptor.h
+}

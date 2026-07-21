@@ -1,6 +1,23 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2021 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/kongress-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "341341514a02b315ff90590b8eb9569edcfc1f1c8a29c64a31b86bb7a5171e37"
+SUMMARY = "Kongress"
+DESCRIPTION = "Companion application for conferences"
+HOMEPAGE = "https://invent.kde.org/utilities/kongress"
+LICENSE = "BSD-2-Clause | BSD-3-Clause | GPL-3.0-or-later | LGPL-3.0-or-later"
+
+DEPENDS += "kcalendarcore \
+            kdbusaddons \
+            kirigami \
+            kirigami-addons \
+            knotifications \
+            kosmindoormap \
+            qtdeclarative \
+            qtsvg \
+"
+
+inherit cmake_kdeapp
+inherit kf6_kconfig
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc

@@ -1,7 +1,24 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2017-2020 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2020-2023 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/plasma-activities-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "54d06a22a5765aa1e92834885d02abc7ce1bf8d6bda9533bb3472d4fef575562"
+SUMMARY = "Plasma Activities"
+DESCRIPTION = "Core components for the KDE's Activities System"
+HOMEPAGE = "https://invent.kde.org/plasma/plasma-activities"
+LICENSE = "LGPL-2.1-only"
 
+DEPENDS += "boost \
+            kconfig \
+            kconfig-native \
+            kcoreaddons \
+            kcoreaddons-native \
+            kwindowsystem \
+            qtdeclarative \
+"
+
+inherit cmake_plasma
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc
+
+FILES:${PN} += "${libdir}/qml/org/kde/activities/*"

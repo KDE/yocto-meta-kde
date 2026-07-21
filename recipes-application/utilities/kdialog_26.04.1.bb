@@ -1,6 +1,24 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2019-2020 Volker Krause <vkrause@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/kdialog-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "64714ea3e68b207223e3867587966d6aff57f1e2ef282b1f09786c4f4244ae01"
+SUMMARY = "KDialog"
+DESCRIPTION = "Tool to show nice dialog boxes from shell scripts"
+HOMEPAGE = "https://invent.kde.org/utilities/kdialog"
+LICENSE = "GPL-2.0-or-later"
+
+DEPENDS += "kdbusaddons\
+            kguiaddons \
+            kiconthemes \
+            kio \
+            knotifications \
+            ktextwidgets \
+            kwindowsystem \
+"
+
+inherit cmake_kdeapp
+inherit kf6_kcoreaddons
+inherit kf6_kconfig
+inherit kf6_kauth
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc

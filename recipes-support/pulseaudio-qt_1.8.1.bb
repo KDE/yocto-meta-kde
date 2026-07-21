@@ -1,6 +1,26 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2020 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2024 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${BPN}.inc
+SUMMARY = "PulseAudio-Qt"
+DESCRIPTION = "Qt bindings for libpulse"
+HOMEPAGE = "https://invent.kde.org/libraries/pulseaudio-qt"
+LICENSE = "LGPL-2.1-only"
+
+DEPENDS += "extra-cmake-modules \
+            pulseaudio \
+            qtbase \
+"
+
 SRC_URI = "git://invent.kde.org/libraries/${BPN};nobranch=1;protocol=https"
 SRCREV = "10786fe31e640858f4f5db5366aed9c56d77bfab"
+
+RDEPENDS:${PN} += "pulseaudio-module-gsettings"
+
+EXTRA_OECMAKE:append = " -DBUILD_TESTING=OFF"
+EXTRA_OECMAKE:append = " -DQT_MAJOR_VERSION=6"
+EXTRA_OECMAKE:append = " -DBUILD_WITH_QT6=ON"
+
+inherit kf6_cmake
+inherit reuse_license_checksums

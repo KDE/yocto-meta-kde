@@ -1,6 +1,40 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/gwenview-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "47c8d6d97c1ec3c6e8138df4b233f7e1f7ebc86d3b04bf0b43196dea430a03bd"
+SUMMARY = "Gwenview - Image Viewer"
+DESCRIPTION = "Gwenview is a fast and easy to use image viewer by KDE, ideal for browsing and displaying a collection of images."
+HOMEPAGE = "https://invent.kde.org/graphics/gwenview"
+LICENSE = "GPL-2.0-only"
+LIC_FILES_CHKSUM = "file://COPYING;md5=5a3169a2d39a757efd8b7aa66a69d97b"
+
+DEPENDS += "baloo \
+            exiv2 \
+            jpeg \
+            ki18n \
+            kiconthemes \
+            kimageannotator \
+            kio \
+            kitemmodels \
+            knotifications \
+            kparts \
+            kwidgetsaddons \
+            kwindowsystem \
+            lcms \
+            plasma-activities \
+            purpose \
+            qtwayland \
+            qtwayland-native \
+"
+
+inherit cmake_kdeapp
+inherit kf6_kcoreaddons
+inherit kf6_kconfig
+inherit kf6_kauth
+inherit mime-xdg
+require recipes-application/common/application_src.inc
+
+EXTRA_OECMAKE += "-DJPEGLIB_RUN_RESULT=true"
+EXTRA_OECMAKE += "-DJPEGLIB_RUN_RESULT__TRYRUN_OUTPUT=0"
+
+FILES:${PN} += "${datadir}/solid/actions"

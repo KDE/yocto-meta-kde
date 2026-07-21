@@ -1,6 +1,19 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2020 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/libkeduvocdocument-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "2994fa1b3c66dcb20d969147fffef28faf375c073b29aeda37db5f3432c21e29"
+SUMMARY = "KEduVocDocument"
+DESCRIPTION = "Library for reading from/writing to the KVTML format."
+HOMEPAGE = "https://edu.kde.org/khangman/"
+LICENSE = "GPL-2.0-or-later"
+
+DEPENDS += "karchive \
+            ki18n \
+            kio \
+"
+
+inherit cmake_kdeapp
+inherit kf6_kconfig
+inherit kf6_kauth
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc

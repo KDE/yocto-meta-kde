@@ -1,7 +1,34 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2024 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/krdp-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "85e35131f640c269f8db6b2f858fb043f6f6266b1f65030129d110c0adcb8061"
+SUMMARY = "KRdp"
+DESCRIPTION = "Library and examples for creating an RDP server"
+HOMEPAGE = "https://invent.kde.org/plasma/krdp"
+LICENSE = "LGPL-2.1-only | LGPL-3.0-only"
 
+DEPENDS += "freerdp3 \
+            kpipewire \
+            kstatusnotifieritem \
+            libxkbcommon \
+            plasma-wayland-protocols \
+            qtkeychain \
+            qtwayland \
+            qtwayland-native \
+"
+
+inherit cmake_kdeapp
+inherit kf6_kconfig
+inherit kf6_kcmutils
+inherit systemd
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc
+
+FILES:${PN} += "${libdir}/plugins/plasma/kcms/systemsettings/* \
+                ${libdir}/systemd/user-preset/00-krdp.preset \
+"
+
+RDEPENDS:${PN} += "xdg-desktop-portal"
+
+SYSTEMD_SERVICE:${PN} = "app-org.kde.krdpserver.service"
+SYSTEMD_AUTO_ENABLE:${PN} = "disable"

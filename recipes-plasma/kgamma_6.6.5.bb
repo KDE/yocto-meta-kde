@@ -1,7 +1,25 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2024 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/kgamma-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "fab70445c88c98ce907e896d8c71cbf7771044880b5ef116fee969863e53360a"
+SUMMARY = "KGamma"
+DESCRIPTION = "Adjust your monitor's gamma settings"
+HOMEPAGE = "https://invent.kde.org/plasma/kgamma"
+LICENSE = "GPL-2.0-or-later"
 
+DEPENDS += "plasma-wayland-protocols \
+            qtwayland \
+            qtwayland-native \
+            virtual/egl \
+            wayland \
+            wayland-native \
+            wayland-protocols \
+"
+
+inherit cmake_plasma
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc
+
+# nooelint: oelint.vars.insaneskip - This is a symlink to /usr/lib/plugins/plasma/kcms/systemsettings_qwidgets/kcm_kgamma.so, used at session start.
+INSANE_SKIP:${PN} = "dev-so"
+FILES:${PN} += "${libdir}/plugins/plasma/kcminit/kcm_kgamma_init.so"

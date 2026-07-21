@@ -1,6 +1,22 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2024 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI = "https://download.kde.org/stable/release-service/26.04.1/src/kopeninghours-26.04.1.tar.xz"
-SRC_URI[sha256sum] = "b3c4c8771d3a41b44e06ac3516a5b496012b80b890e62fc66a53a46050c48b87"
+SUMMARY = "KOpeningHours"
+DESCRIPTION = "Library for parsing and evaluating OSM opening hours expressions"
+HOMEPAGE = "https://invent.kde.org/libraries/kopeninghours"
+LICENSE = "LGPL-2.0-or-later"
+
+DEPENDS += "bison-native \
+            boost \
+            flex \
+            kholidays \
+            ki18n \
+"
+
+inherit cmake_kdeapp
+inherit python3native
+inherit reuse_license_checksums
+require recipes-application/common/application_src.inc
+
+FILES:${PN} += "${libdir}/${PYTHON_DIR}/site-packages/PyKOpeningHours/*"

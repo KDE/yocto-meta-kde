@@ -1,7 +1,20 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2026 Marc Ferland <marc.ferland@sonatest.com>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/plasma-keyboard-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "3bb8be109cc449af54d03f28cc1c1a9e4d4150cb01b9af916a5516ed64740671"
+SUMMARY = "Plasma Keyboard"
+DESCRIPTION = "Virtual Keyboard for Qt based desktops"
+HOMEPAGE = "https://invent.kde.org/plasma/plasma-keyboard"
+LICENSE = "BSD-2-Clause & BSD-3-Clause & GPL-2.0-only & GPL-2.0-or-later & GPL-3.0-only & GPL-3.0-or-later & LGPL-2.1-only & LGPL-3.0-only & LicenseRef-KDE-Accepted-GPL"
 
+DEPENDS += "qtvirtualkeyboard \
+            qtwayland-native \
+"
+
+FILES:${PN} += "${datadir}/plasma/keyboard \
+                ${libdir}/qml \
+"
+
+inherit cmake_plasma
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc

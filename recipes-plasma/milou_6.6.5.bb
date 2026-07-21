@@ -1,7 +1,27 @@
-# SPDX-FileCopyrightText: none
-# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2018-2020 Volker Krause <vkrause@kde.org>
+# SPDX-FileCopyrightText: 2018 Alistair Francis <alistair.francis@wdc.com>
+# SPDX-FileCopyrightText: 2020-2021 Andreas Cord-Landwehr <cordlandwehr@kde.org>
+#
+# SPDX-License-Identifier: MIT
 
-require ${PN}.inc
-SRC_URI += "https://download.kde.org/stable/plasma/6.6.5/milou-6.6.5.tar.xz"
-SRC_URI[sha256sum] = "3f6285e5fb6a9dc7634352bb3aff802dc391040e92cd3c7f1b9601dd9d5c54d0"
+SUMMARY = "Milou"
+DESCRIPTION = "A dedicated search application built on top of Baloo"
+HOMEPAGE = "https://invent.kde.org/plasma/milou"
+LICENSE = "(LGPL-2.1-only | LGPL-3.0-only | LicenseRef-KDE-Accepted-LGPL) & (GPL-2.0-only | GPL-3.0-only | LicenseRef-KDE-Accepted-GPL) & GPL-2.0-or-later"
 
+DEPENDS += "kcoreaddons \
+            kdeclarative \
+            kitemmodels \
+            krunner \
+            kservice \
+            libplasma \
+            qtdeclarative \
+"
+
+inherit cmake_plasma
+inherit reuse_license_checksums
+require recipes-plasma/common/plasma_src.inc
+
+FILES:${PN} += "${libdir}/qml/org/kde/milou/* \
+                ${datadir}/plasma/plasmoids/org.kde.milou \
+"
