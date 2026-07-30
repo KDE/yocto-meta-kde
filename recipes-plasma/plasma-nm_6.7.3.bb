@@ -26,6 +26,7 @@ DEPENDS += "kcompletion \
             qca \
             qcoro \
             qtdeclarative \
+	    qtkeychain \
             qttools \
             solid \
 "
