@@ -10,11 +10,13 @@ LICENSE = "GPL-2.0-only"
 DEPENDS += "kconfigwidgets \
             kdbusaddons \
             kglobalaccel \
+            kitemmodels \
             kwidgetsaddons \
             kxmlgui \
             layer-shell-qt \
             libkscreen \
             libplasma \
+            plasma5support \
             qtdeclarative \
             qtsensors \
             qtwayland-native \
