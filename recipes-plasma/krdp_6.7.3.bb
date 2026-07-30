@@ -8,6 +8,7 @@ HOMEPAGE = "https://invent.kde.org/plasma/krdp"
 LICENSE = "LGPL-2.1-only | LGPL-3.0-only"
 
 DEPENDS += "freerdp3 \
+            kirigami-addons \
             kpipewire \
             kstatusnotifieritem \
             libxkbcommon \
