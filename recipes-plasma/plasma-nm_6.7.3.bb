@@ -48,3 +48,5 @@ FILES:${PN} += "${libdir}/*.so \
                 ${datadir}/kcm_networkmanagement/qml/*.qml \
                 ${datadir}/kpackage \
 "
+
+RDEPENDS:${PN} += "kquickcharts"
