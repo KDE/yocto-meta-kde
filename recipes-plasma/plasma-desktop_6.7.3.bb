@@ -61,4 +61,5 @@ RDEPENDS:${PN} += "gawk \
                    kirigami-addons \
                    plasma-nano \
                    qqc2-desktop-style \
+                   xdg-user-dirs \
 "
