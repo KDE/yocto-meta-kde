@@ -107,6 +107,7 @@ FILES:${PN} += "${datadir}/desktop-directories/*.directory \
                 ${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_fontinst.so \
                 ${libdir}/plugins/plasmacalendarplugins \
                 ${libdir}/qml/org/kde \
+		${libdir}/sddm \
 "
 
 FILES:${PN}-dev += "${libdir}/libbatterycontrol.so \
