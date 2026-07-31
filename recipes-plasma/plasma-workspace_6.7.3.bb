@@ -107,7 +107,7 @@ FILES:${PN} += "${datadir}/desktop-directories/*.directory \
                 ${libdir}/plugins/plasma/kcms/systemsettings_qwidgets/kcm_fontinst.so \
                 ${libdir}/plugins/plasmacalendarplugins \
                 ${libdir}/qml/org/kde \
-		${libdir}/sddm \
+                ${libdir}/sddm \
 "
 
 FILES:${PN}-dev += "${libdir}/libbatterycontrol.so \
@@ -127,7 +127,8 @@ FILES:${PN}-dev += "${libdir}/libbatterycontrol.so \
 # nooelint: oelint.vars.insaneskip - symlinks are needed here
 INSANE_SKIP:${PN} = "dev-so"
 
-RDEPENDS:${PN} += "kquickcharts \
+RDEPENDS:${PN} += "kio-extras \
+                   kquickcharts \
                    milou \
                    ocean-sound-theme \
                    qttools-tools \
