@@ -127,7 +127,7 @@ FILES:${PN}-dev += "${libdir}/libkwin*.so \
                     ${datadir}/dbus-1/interfaces/*.xml \
 "
 
-RDEPENDS:${PN}:append:class-target = " aurorae perl qtwayland-plugins xwayland"
+RDEPENDS:${PN}:append:class-target = " aurorae perl qtwayland-plugins xwayland milou"
 
 RRECOMMENDS:${PN}:append:class-target = " plasma-keyboard"
 
