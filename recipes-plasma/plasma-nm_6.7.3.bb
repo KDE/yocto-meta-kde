@@ -13,6 +13,7 @@ DEPENDS += "kcompletion \
             kdbusaddons \
             kiconthemes \
             kio \
+            kirigami-addons \
             knotifications \
             kservice \
             ksvg \
@@ -26,7 +27,7 @@ DEPENDS += "kcompletion \
             qca \
             qcoro \
             qtdeclarative \
-	    qtkeychain \
+            qtkeychain \
             qttools \
             solid \
 "
