@@ -36,8 +36,8 @@
         "meta-riscv": {
             "git-remote": {
                 "uri": "https://github.com/riscv/meta-riscv",
-                "branch": "master",
-                "rev": "master"
+                "branch": "wrynose",
+                "rev": "50941215124f126229ad3702bedabd87dec130c9"
             }
         },
         "meta-qt6": {
