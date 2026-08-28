@@ -31,7 +31,7 @@ EXTRA_OECONF += "--enable-build-timestamp=no"
 
 do_install:append () {
     install -d ${D}${sysconfdir}/udev/rules.d
-    cp -rf ${D}${datadir}/ddcutil/data/* ${D}${sysconfdir}/udev/rules.d
+    install -m 0644 ${D}${datadir}/ddcutil/data/* ${D}${sysconfdir}/udev/rules.d
 }
 
 FILES:${PN} += "${libdir}/modules-load.d/ddcutil.conf"
