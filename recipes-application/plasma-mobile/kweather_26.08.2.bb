@@ -7,7 +7,8 @@ DESCRIPTION = "Weather application for Plasma Mobile"
 HOMEPAGE = "https://invent.kde.org/utilities/kweather"
 LICENSE = "GPL-2.0-or-later"
 
-DEPENDS += "ki18n \
+DEPENDS += "krunner \
+            ki18n \
             kirigami \
             kirigami-addons \
             knotifications \
