@@ -15,6 +15,7 @@ DEPENDS += "exiv2 \
             kio \
             kirigami \
             kirigami-addons \
+            kirigami-app-components \
             knotifications \
             kquickimageeditor \
             purpose \
@@ -34,6 +35,7 @@ SRC_URI:append = " git://invent.kde.org/packaging/geonames-data.git;protocol=htt
 
 RDEPENDS:${PN} += "kirigami \
                    kirigami-addons \
+                   kirigami-app-components \
                    kquickimageeditor \
                    purpose \
                    qtdeclarative-qmlplugins \
