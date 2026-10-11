@@ -14,6 +14,7 @@ DEPENDS += "kio \
             kparts \
             kpty \
             kxmlgui \
+            libssh \
 "
 
 inherit cmake_kdeapp
