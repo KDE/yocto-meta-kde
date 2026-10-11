@@ -34,6 +34,7 @@ FILES:${PN}:append = " \
     ${libdir}/plugins/*/*.so \
     ${libdir}/plugins/*/*/*.so \
     ${libdir}/qml \
+    ${libdir}/metatypes \
     ${datadir}/config.kcfg/*.kcfg \
     ${datadir}/dbus-1/services/*.service \
     ${datadir}/dbus-1/system-services/*.service \
