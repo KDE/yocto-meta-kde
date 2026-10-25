@@ -25,7 +25,7 @@ oelint:
 
 .yocto_base_wrynose:
   stage: build
-  image: storage.kde.org/vm-images/yocto-builder-noble
+  image: s3.kde.org/ci-vm-images/yocto-builder-noble
   tags:
     - LargeVM
     - amd64
